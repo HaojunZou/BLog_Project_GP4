@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27bfb4a5-66ff-4978-8a94-466a55ae186c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/blog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/img/logo.png" afterPath="$PROJECT_DIR$/web/WEB-INF/img/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/blog.html" afterPath="$PROJECT_DIR$/web/WEB-INF/blog.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BLog_Project_GP4.iws" />
@@ -59,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/blog.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6472946" vertical-offset="51" max-vertical-offset="2550">
-              <caret line="22" column="87" selection-start-line="22" selection-start-column="87" selection-end-line="22" selection-end-column="87" />
+              <caret line="22" column="74" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#button#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -640,7 +639,7 @@
       <workItem from="1430221101411" duration="189000" />
       <workItem from="1430230739908" duration="2497000" />
       <workItem from="1430235942696" duration="11906000" />
-      <workItem from="1430334830134" duration="3989000" />
+      <workItem from="1430334830134" duration="4166000" />
     </task>
     <task id="LOCAL-00001" summary="Startsidan implementeras">
       <created>1430231798439</created>
@@ -672,11 +671,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430338296078</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="startsidan uppdateras">
+      <created>1430338843547</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1430338843547</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20025000" />
+    <option name="totallyTimeSpent" value="20202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="2" width="1177" height="724" extended-state="0" />
@@ -731,7 +736,8 @@
     <MESSAGE value="Startsidan implementeras" />
     <MESSAGE value="Servlets implementeras" />
     <MESSAGE value="lib added" />
-    <option name="LAST_COMMIT_MESSAGE" value="lib added" />
+    <MESSAGE value="startsidan uppdateras" />
+    <option name="LAST_COMMIT_MESSAGE" value="startsidan uppdateras" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -931,7 +937,7 @@
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/blog.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6472946" vertical-offset="51" max-vertical-offset="2550">
-          <caret line="22" column="87" selection-start-line="22" selection-start-column="87" selection-end-line="22" selection-end-column="87" />
+          <caret line="22" column="74" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
           <folding>
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#button#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#html#0;n#!!top" expanded="true" />
