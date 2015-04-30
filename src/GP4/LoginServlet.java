@@ -15,13 +15,19 @@ public class LoginServlet extends HttpServlet {
         super();
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //response.getWriter().write("Hej");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
         String page = "/WEB-INF/index.jsp";
         User user = null;
 
+        if(password == "ok"){
+            user = new User();
+            user.setName("haojun");
+            user.setEmail("1@haojun.com");
+
+            page = "/WEB-INF/blog.html";
+        }
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
         request.setAttribute("user", user); // Request scope

@@ -17,13 +17,14 @@ public class ControllerServlet extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
-        response.getWriter().write("Post: " + name);
+        String password = request.getParameter("password");
+        response.getWriter().write("Post:\n" + "Name: " + name + "\n"+ "Password :" + password);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
-        user.setName("arne");
-        user.setEmail("arne@parallell.com");
+        user.setName("Haojun");
+        user.setEmail("1@haojun.com");
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
         request.setAttribute("user", user); // Request scope
         dispatcher.forward(request, response);

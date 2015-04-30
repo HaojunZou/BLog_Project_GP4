@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>This is a blog</title>
+    <title>Log In</title>
   </head>
   <body>
     <%
@@ -19,6 +19,9 @@
     <form action="ControllerServlet" method="post">
       <p>
         Namn: <input type="text" name="name" />
+      </p>
+      <p>
+        Password: <input type="text" name="password" />
       </p>
       <p>
         <input type="submit" value="Skicka" />
