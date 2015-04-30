@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        String page = "/WEB-INF/index.jsp";
+        String page = "/jsp/index.jsp";
         User user = null;
 
         if(password == "ok"){
