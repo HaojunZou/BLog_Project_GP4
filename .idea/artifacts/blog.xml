@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="blog">
+    <output-path>C:/Program Files/Apache Software Foundation/Tomcat 8.0/webapps</output-path>
+    <root id="archive" name="blog.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Blog_Project_GP4" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Blog_Project_GP4/web/Web" />
+    </root>
+  </artifact>
+</component>
