@@ -10,34 +10,34 @@
   <title>Insert title here</title>
 </head>
 <body>
-<%
-  User user = (User)request.getAttribute("user");
-  if(user == null){
-    user = new User();
-  }
-%>
-
-<h1>Välkommen <%= user.getName() %></h1>
-
-<ul>
   <%
-    ArrayList<String> phoneNumbers = user.getPhoneNumbers();
-    for(String phoneNumber : phoneNumbers) {
-  %>
-  <li><%= phoneNumber %></li>
-  <%
+    User user = (User)request.getAttribute("user");
+    if(user == null){
+      user = new User();
     }
   %>
-</ul>
 
-<form action="ControllerServlet" method="post">
-  <p>
-    Namn: <input type="text" name="name" />
-  </p>
-  <p>
-    <input type="submit" value="Skicka" />
-  </p>
-</form>
+  <h1>Välkommen <%= user.getName() %></h1>
+
+  <ul>
+    <%
+      ArrayList<String> phoneNumbers = user.getPhoneNumbers();
+      for(String phoneNumber : phoneNumbers) {
+    %>
+    <li><%= phoneNumber %></li>
+    <%
+      }
+    %>
+  </ul>
+
+  <form action="ControllerServlet" method="post">
+    <p>
+      Namn: <input type="text" name="name" />
+    </p>
+    <p>
+      <input type="submit" value="Skicka" />
+    </p>
+  </form>
 
 </body>
 </html>
