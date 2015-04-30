@@ -1,12 +1,10 @@
 package GP4;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -14,27 +12,20 @@ public class LoginServlet extends HttpServlet {
     public LoginServlet() {
         super();
     }
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        String page = "/jsp/index.jsp";
-        User user = null;
-
-        if(password == "ok"){
-            user = new User();
-            user.setName("haojun");
-            user.setEmail("1@haojun.com");
-
-            page = "/WEB-INF/blog.html";
-        }
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-        request.setAttribute("user", user); // Request scope
-        dispatcher.forward(request, response);
+        //doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String page = "/jsp/index.jsp";
+        User user = null;
+
+        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher(page);
+        request.setAttribute("user", user);
+        dispatcher.forward(request, response);
 
     }
 }
