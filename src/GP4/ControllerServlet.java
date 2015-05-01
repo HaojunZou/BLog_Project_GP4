@@ -17,7 +17,7 @@ public class ControllerServlet extends HttpServlet {
         User user = new User();
         user.setName("demo");
         user.setEmail("demo@demo.com");
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/jsp/index.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/jsp/login.jsp");
         request.setAttribute("user", user); // Request scope
         dispatcher.forward(request, response);
     }

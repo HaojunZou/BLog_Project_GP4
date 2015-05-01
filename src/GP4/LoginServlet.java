@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String page = "/jsp/index.jsp";
+        String page = "/jsp/login.jsp";
         User user = null;
 
         RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher(page);
