@@ -2,10 +2,7 @@ package GP4;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.*;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
@@ -52,6 +49,7 @@ public class logIn extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.print("<script>alert('Log in successfully!'); window.location.href='../WEB-INF/home.html'</script>");
 */
+        response.sendRedirect("/blog/login.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -62,6 +60,5 @@ public class logIn extends HttpServlet {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
         request.setAttribute("user", user);
         dispatcher.forward(request, response);
-
     }
 }
