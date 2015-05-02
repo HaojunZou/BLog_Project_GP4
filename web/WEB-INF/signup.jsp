@@ -49,7 +49,7 @@
       <div style="text-align: center;">
         <table align="center">
           <tr>
-            <td>Namn:</td><td><input type="text" name="name"/></td>
+            <td>Name:</td><td><input type="text" name="name"/></td>
           </tr>
           <br/><br/>
           <tr>
