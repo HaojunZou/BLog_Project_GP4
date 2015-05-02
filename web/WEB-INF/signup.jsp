@@ -68,7 +68,7 @@
       <br/>
       <div style="text-align: center;">
         <tr>
-          <input type="submit" value="Register"/>
+          <input type="submit" value="Sing Up"/>
         </tr>
       </div>
     </form>

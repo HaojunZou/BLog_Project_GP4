@@ -63,11 +63,11 @@
         </tr>
       </div>
     </form>
-    <form action="register.jsp" method="post">
+    <form action="signup.jsp" method="post">
       <div style="text-align: center;">
         <p>New here?</p>
         <tr>
-          <input type="submit" value="Register" />
+          <input type="submit" value="Sing Up" />
         </tr>
       </div>
     </form>
