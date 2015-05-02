@@ -24,11 +24,25 @@ public class Home extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect("/blog/home.html");
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println(filterHtml(request.getParameter("blogText") + "<br/>"));
     /*
         String name = request.getParameter("name");
         String password = request.getParameter("password");
         response.getWriter().write("Post:\n" + "Name: " + name + "\n" + "Password: " + password);
     */
+    }
+
+    public String filterHtml(String value){ //html filter to prevent special characters in text
+        value = value.replaceAll("&", "&amp;");
+        value = value.replaceAll("<", "&lt;");
+        value = value.replaceAll(">", "&gt;");
+        value = value.replaceAll(" ", "&nbsp;");
+        value = value.replaceAll("'", "&#39;");
+        value = value.replaceAll("\"", "&quot;");
+        value = value.replaceAll("\n", "<br/>;");
+        return value;
     }
 
 }
