@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Log In</title>
   </head>
-  <body background="../WEB-INF/img/bg.jpg"/>
+  <body background="img/bg.jpg"/>
   <!-- check if name or password is empty -->
   <script language="JavaScript">
     function validate(v){
@@ -31,10 +31,10 @@
       }
     %>
   <div style="text-align: center;">
-    <h1>Welcome</h1>
+    <h1>Welcome  <%= user.getName()%></h1>
   </div>
 
-    <form action="ControllerServlet" method="post" onsubmit="return validate(this)">
+    <form action="home.html" method="post" onsubmit="return validate(this)">
       <div style="text-align: center;">
         <table align="center">
           <tr>
