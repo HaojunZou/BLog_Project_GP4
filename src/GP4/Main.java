@@ -6,9 +6,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 @WebServlet("/main.html")
-public class main extends HttpServlet {
+public class Main extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    public main() {
+    public Main() {
         super();
     }
 

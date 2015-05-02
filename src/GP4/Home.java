@@ -7,9 +7,9 @@ import javax.servlet.http.*;
 
 
 @WebServlet("/home.html")
-public class home extends HttpServlet {
+public class Home extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    public home() {
+    public Home() {
         super();
     }
 

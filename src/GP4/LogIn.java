@@ -8,9 +8,9 @@ import javax.servlet.http.*;
 
 
 @WebServlet("/login.jsp")
-public class logIn extends HttpServlet {
+public class LogIn extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    public logIn() {
+    public LogIn() {
         super();
     }
     
