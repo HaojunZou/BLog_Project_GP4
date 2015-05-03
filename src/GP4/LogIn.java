@@ -52,37 +52,44 @@ public class LogIn extends HttpServlet {
         out.print("<script>alert('Log in successfully!'); window.location.href='../WEB-INF/home.html'</script>");
 */
 
-        User user = new User();
+        try{
+            response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            String un = request.getParameter("un");
+            String pwd = request.getParameter("pwd");
 
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        un = request.getParameter(user.getUn());
-        email = request.getParameter(user.getEmail());
-        pwd = request.getParameter(user.getPwd());
-        response.sendRedirect("/blog/login.jsp");
+            String url = "jdbc:mysql://localhost/blog";
+            String userName = "root";
+            String password = "haojun";
+            String query = "select * from users where un=? and pwd=?";
+            Class.forName("org.gjt.mm.mysql.Driver");
+            Connection connection= DriverManager.getConnection(url, userName, password);
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, un);
+            preparedStatement.setString(2, pwd);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-        if(Validate.checkUser(un, email, pwd))
+            if(resultSet.next()){
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/home.html");
+                response.sendRedirect("/blog/login.jsp");
+                dispatcher.forward(request, response);
+            }
+            else{
+                out.println("Username or Password incorrect");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/login.jsp");
+                dispatcher.include(request, response);
+            }
+
+        }catch(Exception e)
         {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/home.html");
-            dispatcher.forward(request, response);
-        }
-        else
-        {
-            out.println("Username or Password incorrect");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/login.jsp");
-            dispatcher.include(request, response);
+            e.printStackTrace();
         }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        User user = null;
-
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
-        request.setAttribute("user", user);
         dispatcher.forward(request, response);
 
     }

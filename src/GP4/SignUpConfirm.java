@@ -8,11 +8,11 @@ import javax.servlet.http.*;
 
 @WebServlet("/signupconfirm.html")
 public class SignUpConfirm extends HttpServlet {
-    int id;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
+        int id;
         User user = new User();
         String un = request.getParameter("un");
         String email = request.getParameter("email");

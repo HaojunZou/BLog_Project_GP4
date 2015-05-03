@@ -17,14 +17,14 @@
   <!-- check if name or password is empty -->
   <script language="JavaScript">
     function validate(v){
-      if (v.name.value.length==0){
+      if (v.un.value.length==0){
         alert("Please enter a name!");
-        v.name.focus();
+        v.un.focus();
         return false;
       }
-      if (v.password.value.length==0){
+      if (v.pwd.value.length==0){
         alert("Please enter a password!");
-        v.password.focus();
+        v.pwd.focus();
         return false;
       }
     }
@@ -48,11 +48,11 @@
       <div style="text-align: center;">
         <table align="center">
           <tr>
-            <td>Name:</td><td><input type="text" name="name"/></td>
+            <td>Name:</td><td><input type="text" name="un"/></td>
           </tr>
           <br/><br/>
           <tr>
-            <td>Password:</td><td><input type="text" name="password"/></td>
+            <td>Password:</td><td><input type="text" name="pwd"/></td>
           </tr>
         </table>
       </div>
