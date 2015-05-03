@@ -9,15 +9,17 @@ import javax.servlet.http.*;
 @WebServlet("/signupconfirm.html")
 public class SignUpConfirm extends HttpServlet {
     int id;
-    String un, email, pwd;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
         User user = new User();
-        un = request.getParameter(user.getUn());
-        email = request.getParameter(user.getEmail());
-        pwd = request.getParameter(user.getPwd());
+        String un = request.getParameter("un");
+        String email = request.getParameter("email");
+        String pwd = request.getParameter("pwd");
+        user.setUn(un);
+        user.setEmail(email);
+        user.setPwd(pwd);
 
         String driver = "org.gjt.mm.mysql.Driver";
         String url = "jdbc:mysql://localhost/blog";
@@ -42,9 +44,9 @@ public class SignUpConfirm extends HttpServlet {
 
             PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
             preparedStatement.setString(1, Integer.toString(numberOfRowsReturned+1));
-            preparedStatement.setString(2, un);
-            preparedStatement.setString(3, email);
-            preparedStatement.setString(4, pwd);
+            preparedStatement.setString(2, user.getUn());
+            preparedStatement.setString(3, user.getEmail());
+            preparedStatement.setString(4, user.getPwd());
             preparedStatement.executeUpdate();
 
             preparedStatement.close();
