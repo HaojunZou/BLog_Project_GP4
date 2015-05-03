@@ -1,0 +1,10 @@
+CREATE DATABASE blog
+USE blog
+
+CREATE TABLE users
+(
+	id INT(6) PRIMARY KEY,
+	un VARCHAR(50),
+	email	VARCHAR(50),
+	pwd	VARCHAR(50)
+)

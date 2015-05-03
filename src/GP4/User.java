@@ -1,18 +1,19 @@
 package GP4;
 
 public class User {
-    private String name;
+    private String un;
     private String email;
+    private String pwd;
 
     public User(){
     }
 
-    public String getName(){
-        return name;
+    public String getUn(){
+        return un;
     }
 
-    public void setName(String value){
-        name = value;
+    public void setUn(String value){
+        un = value;
     }
 
     public String getEmail(){
@@ -21,6 +22,14 @@ public class User {
 
     public void setEmail(String value){
         email = value;
+    }
+
+    public String getPwd(){
+        return pwd;
+    }
+
+    public void setPwd(String value){
+        pwd = value;
     }
 
 }

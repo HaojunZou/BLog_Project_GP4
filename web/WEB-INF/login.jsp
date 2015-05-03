@@ -42,7 +42,7 @@
       </a><br/>
     </div>
     <div style="text-align: center;">
-      <h1>Welcome  <%= user.getName()%></h1>
+      <h1>Welcome</h1>
     </div>
     <form action="home.html" method="post" onsubmit="return validate(this)">
       <div style="text-align: center;">

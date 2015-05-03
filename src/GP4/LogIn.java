@@ -9,11 +9,13 @@ import javax.servlet.http.*;
 
 @WebServlet("/login.jsp")
 public class LogIn extends HttpServlet {
+    int id;
+    String un = "", email = "", pwd = "";
     private static final long serialVersionUID = 1L;
     public LogIn() {
         super();
     }
-    
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 /*
         String driver = "com.microsoft.jdbc.sqlserver.SQLServerDriver";
@@ -49,10 +51,32 @@ public class LogIn extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.print("<script>alert('Log in successfully!'); window.location.href='../WEB-INF/home.html'</script>");
 */
+
+        User user = new User();
+
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        un = request.getParameter(user.getUn());
+        email = request.getParameter(user.getEmail());
+        pwd = request.getParameter(user.getPwd());
         response.sendRedirect("/blog/login.jsp");
+
+        if(Validate.checkUser(un, email, pwd))
+        {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/home.html");
+            dispatcher.forward(request, response);
+        }
+        else
+        {
+            out.println("Username or Password incorrect");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/login.jsp");
+            dispatcher.include(request, response);
+        }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = null;
@@ -60,5 +84,6 @@ public class LogIn extends HttpServlet {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
         request.setAttribute("user", user);
         dispatcher.forward(request, response);
+
     }
 }
