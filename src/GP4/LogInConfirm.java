@@ -29,15 +29,14 @@ public class LogInConfirm extends HttpServlet {
             if(resultSet.next()){   //if there's record
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/home.html");
                 response.sendRedirect("/blog/home.html");   //redirect to home.html
-                dispatcher.forward(request, response);
             }
             else{   //if there's no record
                 out.print("<script>alert('User Name or Password is incorrect!')</script>"); //give warning, but... not working???
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/login.jsp");
                 response.sendRedirect("/blog/login.jsp");   //stay at the same page
-                dispatcher.include(request, response);
             }
-
+            preparedStatement.close();
+            connection.close();
         }catch(Exception e)
         {
             e.printStackTrace();
