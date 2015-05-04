@@ -55,7 +55,6 @@ public class SignUpConfirm extends HttpServlet {
             }
             else{
                 out.print("<script>alert('User Name or Password has already been registered!')</script>"); //give warning, but... not working???
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/signup.jsp");
                 response.sendRedirect("/blog/signup.jsp");   //stay at the same page
             }
             preparedStatementExist.close();

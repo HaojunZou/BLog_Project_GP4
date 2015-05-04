@@ -27,12 +27,10 @@ public class LogInConfirm extends HttpServlet {
             ResultSet resultSet = preparedStatement.executeQuery(); //execute query and save it to ResultSet object
 
             if(resultSet.next()){   //if there's record
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/home.html");
                 response.sendRedirect("/blog/home.html");   //redirect to home.html
             }
             else{   //if there's no record
                 out.print("<script>alert('User Name or Password is incorrect!')</script>"); //give warning, but... not working???
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/login.jsp");
                 response.sendRedirect("/blog/login.jsp");   //stay at the same page
             }
             preparedStatement.close();
