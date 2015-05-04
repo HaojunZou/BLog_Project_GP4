@@ -12,7 +12,7 @@ public class SignUpConfirm extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        int id;
+
         User user = new User();
         String un = request.getParameter("un");
         String email = request.getParameter("email");
@@ -33,7 +33,7 @@ public class SignUpConfirm extends HttpServlet {
             Class.forName(driver);  //load driver
             Connection connection = DriverManager.getConnection(url, userName, password);   //set connection
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(checkQuery);
+            ResultSet resultSet = statement.executeQuery(checkQuery); //execute query
 
             if (resultSet.next()) { //if there's record
                 resultSet.last();   //then set resultSet to the last one

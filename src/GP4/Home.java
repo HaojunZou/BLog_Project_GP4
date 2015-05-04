@@ -2,7 +2,6 @@ package GP4;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.*;
-import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
@@ -16,11 +15,8 @@ public class Home extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //User user = new User();
-        //user.setName("demo");
-        //user.setEmail("demo@demo.com");
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.html");
-        //request.setAttribute("user", user); // Request scope
         dispatcher.forward(request, response);
     }
 
@@ -29,11 +25,7 @@ public class Home extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println(filterHtml(request.getParameter("blogText") + "<br/>"));
-    /*
-        String name = request.getParameter("name");
-        String password = request.getParameter("password");
-        response.getWriter().write("Post:\n" + "Name: " + name + "\n" + "Password: " + password);
-    */
+
     }
 
     public String filterHtml(String value){ //html filter to prevent special characters in text
