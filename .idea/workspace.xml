@@ -6,9 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="registration has no-repeat rules, applies to no same username, no same email">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/SignUpConfirm.java" afterPath="$PROJECT_DIR$/src/GP4/SignUpConfirm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/loginconfirm.html" afterPath="$PROJECT_DIR$/web/WEB-INF/loginconfirm.html" />
+    <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GP4/TextFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/Home.java" afterPath="$PROJECT_DIR$/src/GP4/Home.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimpleServlet.iws" />
@@ -76,20 +76,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogIn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GP4/LogIn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="561">
-              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#271#272#0" expanded="true" />
-                <element signature="e#294#295#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -100,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginconfirm.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loginconfirm.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/loginconfirm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="336">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
               <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
               <folding />
             </state>
@@ -120,14 +106,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Home.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GP4/Home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="37" max-vertical-offset="782">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.56160456" vertical-offset="229" max-vertical-offset="595">
+              <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GP4/TextFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -186,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/GP4/Validate.java" />
         <option value="$PROJECT_DIR$/src/GP4/User.java" />
         <option value="$PROJECT_DIR$/src/GP4/LogIn.java" />
-        <option value="$PROJECT_DIR$/src/GP4/Home.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/home.html" />
         <option value="$PROJECT_DIR$/web/WEB-INF/signup.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/main.html" />
@@ -197,6 +192,8 @@
         <option value="$PROJECT_DIR$/src/GP4/LogInConfirm.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/loginconfirm.html" />
         <option value="$PROJECT_DIR$/src/GP4/SignUpConfirm.java" />
+        <option value="$PROJECT_DIR$/src/GP4/TextFilter.java" />
+        <option value="$PROJECT_DIR$/src/GP4/Home.java" />
       </list>
     </option>
   </component>
@@ -204,8 +201,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="169" />
-    <option name="y" value="3" />
+    <option name="x" value="7" />
+    <option name="y" value="6" />
     <option name="width" value="1195" />
     <option name="height" value="712" />
   </component>
@@ -873,7 +870,7 @@
       <workItem from="1430398917310" duration="85000" />
       <workItem from="1430399045126" duration="26852000" />
       <workItem from="1430572053362" duration="158000" />
-      <workItem from="1430572525664" duration="54057000" />
+      <workItem from="1430572525664" duration="54438000" />
     </task>
     <task id="LOCAL-00001" summary="Servlets implment">
       <created>1430399862096</created>
@@ -965,14 +962,20 @@
       <option name="project" value="LOCAL" />
       <updated>1430769089350</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="registration has no-repeat rules, applies to no same username, no same email">
+      <created>1430771645634</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1430771645634</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84835000" />
+    <option name="totallyTimeSpent" value="85216000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="169" y="3" width="1195" height="712" extended-state="0" />
+    <frame x="7" y="6" width="1195" height="712" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1323,16 +1326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GP4/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="37" max-vertical-offset="782">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GP4/LogIn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="561">
@@ -1420,6 +1413,24 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="336">
           <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GP4/TextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GP4/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56160456" vertical-offset="229" max-vertical-offset="595">
+          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

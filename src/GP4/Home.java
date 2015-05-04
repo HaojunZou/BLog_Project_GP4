@@ -21,22 +21,11 @@ public class Home extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        TextFilter textFilter = new TextFilter();
         response.sendRedirect("/blog/home.html");
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println(filterHtml(request.getParameter("blogText") + "<br/>"));
-
-    }
-
-    public String filterHtml(String value){ //html filter to prevent special characters in text
-        value = value.replaceAll("&", "&amp;");
-        value = value.replaceAll("<", "&lt;");
-        value = value.replaceAll(">", "&gt;");
-        value = value.replaceAll(" ", "&nbsp;");
-        value = value.replaceAll("'", "&#39;");
-        value = value.replaceAll("\"", "&quot;");
-        value = value.replaceAll("\n", "<br/>;");
-        return value;
+        out.println(textFilter.filterHtml(request.getParameter("blogText") + "<br/>"));
     }
 
 }
