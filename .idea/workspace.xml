@@ -6,9 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/LogInConfirm.java" afterPath="$PROJECT_DIR$/src/GP4/LogInConfirm.java" />
+    <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="registration has no-repeat rules, applies to no same username, no same email">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/SignUpConfirm.java" afterPath="$PROJECT_DIR$/src/GP4/SignUpConfirm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/loginconfirm.html" afterPath="$PROJECT_DIR$/web/WEB-INF/loginconfirm.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimpleServlet.iws" />
@@ -48,16 +48,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignUpConfirm.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SignUpConfirm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GP4/SignUpConfirm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57020056" vertical-offset="804" max-vertical-offset="1343">
-              <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1343">
+              <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1430768979675" expanded="true" signature="860:901" placeholder="select * fro..users..." />
-                <marker date="1430768979675" expanded="true" signature="967:986" placeholder="select * fro..users..." />
-                <marker date="1430768979675" expanded="true" signature="1046:1100" placeholder="insert into ..." />
+                <marker date="1430771220759" expanded="true" signature="860:901" placeholder="select * fro..users..." />
+                <marker date="1430771220759" expanded="true" signature="967:986" placeholder="select * fro..users..." />
+                <marker date="1430771220759" expanded="true" signature="1046:1100" placeholder="insert into ..." />
               </folding>
             </state>
           </provider>
@@ -100,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginconfirm.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="loginconfirm.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/loginconfirm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="336">
+              <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -185,7 +185,6 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/GP4/Validate.java" />
         <option value="$PROJECT_DIR$/src/GP4/User.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/loginconfirm.html" />
         <option value="$PROJECT_DIR$/src/GP4/LogIn.java" />
         <option value="$PROJECT_DIR$/src/GP4/Home.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/home.html" />
@@ -195,8 +194,9 @@
         <option value="$PROJECT_DIR$/src/GP4/SignUp.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/signupconfirm.html" />
         <option value="$PROJECT_DIR$/web/WEB-INF/login.jsp" />
-        <option value="$PROJECT_DIR$/src/GP4/SignUpConfirm.java" />
         <option value="$PROJECT_DIR$/src/GP4/LogInConfirm.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/loginconfirm.html" />
+        <option value="$PROJECT_DIR$/src/GP4/SignUpConfirm.java" />
       </list>
     </option>
   </component>
@@ -873,7 +873,7 @@
       <workItem from="1430398917310" duration="85000" />
       <workItem from="1430399045126" duration="26852000" />
       <workItem from="1430572053362" duration="158000" />
-      <workItem from="1430572525664" duration="52394000" />
+      <workItem from="1430572525664" duration="54057000" />
     </task>
     <task id="LOCAL-00001" summary="Servlets implment">
       <created>1430399862096</created>
@@ -959,11 +959,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430767485089</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="registration has no-repeat rules, applies to no same username, no same email">
+      <created>1430769089350</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1430769089350</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83172000" />
+    <option name="totallyTimeSpent" value="84835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="169" y="3" width="1195" height="712" extended-state="0" />
@@ -1350,26 +1356,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/signupconfirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="362">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.307692" vertical-offset="477" max-vertical-offset="1258">
           <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/loginconfirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="362">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1406,14 +1396,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GP4/SignUpConfirm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57020056" vertical-offset="804" max-vertical-offset="1343">
-          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1343">
+          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1430768979675" expanded="true" signature="860:901" placeholder="select * fro..users..." />
-            <marker date="1430768979675" expanded="true" signature="967:986" placeholder="select * fro..users..." />
-            <marker date="1430768979675" expanded="true" signature="1046:1100" placeholder="insert into ..." />
+            <marker date="1430771220759" expanded="true" signature="860:901" placeholder="select * fro..users..." />
+            <marker date="1430771220759" expanded="true" signature="967:986" placeholder="select * fro..users..." />
+            <marker date="1430771220759" expanded="true" signature="1046:1100" placeholder="insert into ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/signupconfirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="362">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/loginconfirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="336">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -35,7 +35,7 @@ public class SignUpConfirm extends HttpServlet {
             preparedStatementExist.setString(2, email);
             ResultSet resultSetExist = preparedStatementExist.executeQuery();
 
-            if(!resultSetExist.next()){
+            if((!resultSetExist.next()) && (un.length()!=0) && (email.length()!=0)){
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(checkQuery); //execute query
                 if (resultSet.next()) { //if there's record
