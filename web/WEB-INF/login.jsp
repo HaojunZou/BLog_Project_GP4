@@ -38,7 +38,7 @@
 <div style="text-align: center;">
     <h1>Welcome</h1>
 </div>
-<form action="loginconfirm.html" method="post" onsubmit="return validate(this)">
+<form action="/blog/LogInConfirm" method="post" onsubmit="return validate(this)">
     <div style="text-align: center;">
         <table align="center">
             <tr>

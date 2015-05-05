@@ -45,7 +45,7 @@
 <div style="text-align: center;">
     <h1>Welcome To Blog Registration</h1>
 </div>
-<form action="signupconfirm.html" method="post" onsubmit="return validate(this)">
+<form action="/blog/SignUpConfirm" method="post" onsubmit="return validate(this)">
     <div style="text-align: center;">
         <table align="center">
             <tr>

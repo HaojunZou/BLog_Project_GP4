@@ -6,7 +6,7 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-@WebServlet("/loginconfirm.html")
+@WebServlet("/LogInConfirm")
 public class LogInConfirm extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try{
@@ -31,12 +31,13 @@ public class LogInConfirm extends HttpServlet {
             }
             else{   //if there's no record
                 out.print(
-                        "<script language='JavaScript'>" +
-                                "alert('User Name or Password is incorrect!');" +
+                        "<script type='text/javascript'>" +
+                            "window.alert('User name or password is incorrect！');" +
+                            "history.go(-1);" +
                         "</script>"
                 ); //give warning, but... not working???
-                response.sendRedirect("/blog/login.jsp");   //stay at the same page
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/loginconfirm.html");
+                //response.sendRedirect("/blog/login.jsp");   //stay at the same page
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
                 dispatcher.forward(request, response);
             }
             preparedStatement.close();
