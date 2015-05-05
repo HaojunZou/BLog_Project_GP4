@@ -30,8 +30,14 @@ public class LogInConfirm extends HttpServlet {
                 response.sendRedirect("/blog/home.html");   //redirect to home.html
             }
             else{   //if there's no record
-                out.print("<script>alert('User Name or Password is incorrect!')</script>"); //give warning, but... not working???
+                out.print(
+                        "<script language='JavaScript'>" +
+                                "alert('User Name or Password is incorrect!');" +
+                        "</script>"
+                ); //give warning, but... not working???
                 response.sendRedirect("/blog/login.jsp");   //stay at the same page
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/loginconfirm.html");
+                dispatcher.forward(request, response);
             }
             preparedStatement.close();
             connection.close();
@@ -42,7 +48,6 @@ public class LogInConfirm extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/loginconfirm.html");
-        dispatcher.forward(request, response);
+        doPost(request, response);
     }
 }
