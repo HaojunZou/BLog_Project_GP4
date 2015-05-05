@@ -6,14 +6,18 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-@WebServlet("/LogInConfirm")
-public class LogInConfirm extends HttpServlet {
+@WebServlet("/LogInControl")
+public class LogInControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try{
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
+
+            User user = new User();
             String un = request.getParameter("un");
             String pwd = request.getParameter("pwd");
+            user.setUn(un);
+            user.setPwd(pwd);
 
             String url = "jdbc:mysql://localhost/blog";
             String userName = "root";
@@ -22,8 +26,8 @@ public class LogInConfirm extends HttpServlet {
             Class.forName("org.gjt.mm.mysql.Driver");     //load driver
             Connection connection= DriverManager.getConnection(url, userName, password);    //set connection
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, un); //set first string
-            preparedStatement.setString(2, pwd);    //set second string
+            preparedStatement.setString(1, user.getUn()); //set first string
+            preparedStatement.setString(2, user.getPwd());    //set second string
             ResultSet resultSet = preparedStatement.executeQuery(); //execute query and save it to ResultSet object
 
             if(resultSet.next()){   //if there's record
@@ -31,14 +35,11 @@ public class LogInConfirm extends HttpServlet {
             }
             else{   //if there's no record
                 out.print(
-                        "<script type='text/javascript'>" +
-                            "window.alert('User name or password is incorrect！');" +
-                            "history.go(-1);" +
-                        "</script>"
-                ); //give warning, but... not working???
-                //response.sendRedirect("/blog/login.jsp");   //stay at the same page
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
-                dispatcher.forward(request, response);
+                    "<script type='text/javascript'>" +
+                        "window.alert('User name or password is incorrect！');" +
+                        "history.go(-1);" +
+                    "</script>"
+                ); //give warning
             }
             preparedStatement.close();
             connection.close();
@@ -49,6 +50,7 @@ public class LogInConfirm extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
+        dispatcher.forward(request, response);
     }
 }
