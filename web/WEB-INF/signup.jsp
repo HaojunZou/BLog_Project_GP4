@@ -30,7 +30,7 @@
                     v.userPassword.focus();
                     return false;
                 }
-                if (v.userPasswordConfirm.value != v.pwd.value){
+                if (v.userPasswordConfirm.value != v.userPassword.value){
                     alert("Confirm password is not correct!");
                     v.userPasswordConfirm.focus();
                     return false;
@@ -47,32 +47,50 @@
                 <img src="img/logo-white.png" style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
             </a><br/>
         </div>
+        <div style="text-align: center;"><h1>Welcome To Blog Registration</h1></div>
         <div style="text-align: center;">
-            <h1>Welcome To Blog Registration</h1>
-        </div>
-        <form action="/blog/SignUpControl" method="post" onsubmit="return validate(this)">
-            <div style="text-align: center;">
+            <form action="/blog/SignUpControl" id="information" method="post" onsubmit="return validate(this)">
                 <table align="center">
                     <tr>
-                        <td>Name:</td><td><input type="text" name="userName"/></td>
+                        <td>User Name:</td><td><input type="text" name="userName"/><span style="color: red;"> *</span></td>
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Email:</td><td><input type="text" name="email"/></td>
+                        <td>Email:</td><td><input type="text" name="email"/><span style="color: red;"> *</span></td>
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Password:</td><td><input type="text" name="userPassword"/></td>
+                        <td>Password:</td><td><input type="text" name="userPassword"/><span style="color: red;"> *</span></td>
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Confirm Password:</td><td><input type="text" name="userPasswordConfirm"/></td>
+                        <td>Confirm Password:</td><td><input type="text" name="userPasswordConfirm"/><span style="color: red;"> *</span></td>
+                    </tr>
+                    <br/><br/>
+                    <tr>
+                        <td>Real Name:</td><td><input type="text" name="realName"/></td>
+                    </tr>
+                    <br/><br/>
+                    <tr>
+                        <td>Gender:</td><td>
+                            <select name="gender">
+                                <option value=""></option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <br/><br/>
+                    <tr>
+                        <td>Birthday:</td><td><input type="date" name="birthday"/></td>
+                    </tr>
+                    <br/><br/>
+                    <tr>
+                        <td>Country:</td><td><input type="text" name="country"/></td>
                     </tr>
                 </table>
-            </div>
-            <br/>
-
-            <div style="text-align: center;">
+                <br/>
                 <textarea rows="6" cols="30" readonly>
         No violence!
         No reactionary!
@@ -86,7 +104,7 @@
                 <tr>
                     <input type="submit" value="Sign Up"/>
                 </tr>
-            </div>
-        </form>
+            </form>
+        </div>
     </body>
 </html>

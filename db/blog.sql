@@ -9,10 +9,9 @@ CREATE TABLE users
 	email		VARCHAR(50),
 	userPassword	VARCHAR(50),
 	realName	VARCHAR(50),
-	sex		VARCHAR(1),
+	gender		VARCHAR(5),
 	birthday	VARCHAR(50),
 	country 	VARCHAR(50)
-	
 )
 
 

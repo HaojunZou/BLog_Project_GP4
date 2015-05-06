@@ -6,18 +6,18 @@ public class User {
     private String email;
     private String userPassword;
     private String realName;
-    private String sex;
+    private String gender;
     private String birthday;
     private String country;
 
     public User(){
     }
 
-    public int getflags(){
+    public int getFlags(){
         return flags;
     }
 
-    public void setflags(int value){
+    public void setFlags(int value){
         flags = value;
     }
 
@@ -53,12 +53,12 @@ public class User {
         realName = value;
     }
 
-    public String getSex(){
-        return sex;
+    public String getGender(){
+        return gender;
     }
 
-    public void setSex(String value){
-        sex = value;
+    public void setGender(String value){
+        gender = value;
     }
 
     public String getBirthday(){

@@ -17,11 +17,19 @@ public class SignUpControl extends HttpServlet {
         String userName = request.getParameter("userName");
         String email = request.getParameter("email");
         String userPassword = request.getParameter("userPassword");
-        String userPasswordConfirm = request.getParameter("userPasswordConfirm");
+        String realName = request.getParameter("realName");
+        String gender = request.getParameter("gender");
+        String birthday = request.getParameter("birthday");
+        String country = request.getParameter("country");
         String accept = request.getParameter("accept");
+        user.setFlags(2);
         user.setUserName(userName);
         user.setEmail(email);
         user.setUserPassword(userPassword);
+        user.setRealName(realName);
+        user.setGender(gender);
+        user.setBirthday(birthday);
+        user.setCountry(country);
 
         String driver = "org.gjt.mm.mysql.Driver";
         String url = "jdbc:mysql://localhost/blog";
@@ -30,7 +38,9 @@ public class SignUpControl extends HttpServlet {
         int numberOfRowsReturned;
         String checkExistQuery = "select * from users where userName=? or email=?"; //check if user or email is exist
         String checkQuery = "select * from users";    //check the users table
-        String insertQuery = "insert into users (id, userName, email, userPassword) values(?,?,?,?)";   //insert a record to user table
+        String insertQuery =
+                "insert into users (id, flags, userName, email, userPassword, realName, gender, birthday, country)" +
+                "values(?,?,?,?,?,?,?,?,?)";   //insert a record to user table
 
         try {
             Class.forName(driver);  //load driver
@@ -52,9 +62,14 @@ public class SignUpControl extends HttpServlet {
                 }
                 PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
                 preparedStatement.setString(1, Integer.toString(numberOfRowsReturned+1));
-                preparedStatement.setString(2, user.getUserName());
-                preparedStatement.setString(3, user.getEmail());
-                preparedStatement.setString(4, user.getUserPassword());
+                preparedStatement.setString(2, Integer.toString(user.getFlags()));
+                preparedStatement.setString(3, user.getUserName());
+                preparedStatement.setString(4, user.getEmail());
+                preparedStatement.setString(5, user.getUserPassword());
+                preparedStatement.setString(6, user.getRealName());
+                preparedStatement.setString(7, user.getGender());
+                preparedStatement.setString(8, user.getBirthday());
+                preparedStatement.setString(9, user.getCountry());
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
                 response.sendRedirect("/blog/home.html");
