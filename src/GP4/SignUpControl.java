@@ -14,30 +14,30 @@ public class SignUpControl extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         User user = new User();
-        String un = request.getParameter("un");
+        String userName = request.getParameter("userName");
         String email = request.getParameter("email");
-        String pwd = request.getParameter("pwd");
-        String pwdConfirm = request.getParameter("passwordConfirm");
+        String userPassword = request.getParameter("userPassword");
+        String userPasswordConfirm = request.getParameter("userPasswordConfirm");
         String accept = request.getParameter("accept");
-        user.setUn(un);
+        user.setUserName(userName);
         user.setEmail(email);
-        user.setPwd(pwd);
+        user.setUserPassword(userPassword);
 
         String driver = "org.gjt.mm.mysql.Driver";
         String url = "jdbc:mysql://localhost/blog";
-        String userName = "root";
-        String password = "haojun";
+        String dbUserName = "root";
+        String dbPassword = "haojun";
         int numberOfRowsReturned;
-        String checkExistQuery = "select * from users where un=? or email=?"; //check if user or email is exist
+        String checkExistQuery = "select * from users where userName=? or email=?"; //check if user or email is exist
         String checkQuery = "select * from users";    //check the users table
-        String insertQuery = "insert into users (id, un, email, pwd) values(?,?,?,?)";   //insert a record to user table
+        String insertQuery = "insert into users (id, userName, email, userPassword) values(?,?,?,?)";   //insert a record to user table
 
         try {
             Class.forName(driver);  //load driver
-            Connection connection = DriverManager.getConnection(url, userName, password);   //set connection
+            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);   //set connection
 
             PreparedStatement preparedStatementExist = connection.prepareStatement(checkExistQuery);
-            preparedStatementExist.setString(1, user.getUn());
+            preparedStatementExist.setString(1, user.getUserName());
             preparedStatementExist.setString(2, user.getEmail());
             ResultSet resultSetExist = preparedStatementExist.executeQuery();
 
@@ -52,9 +52,9 @@ public class SignUpControl extends HttpServlet {
                 }
                 PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
                 preparedStatement.setString(1, Integer.toString(numberOfRowsReturned+1));
-                preparedStatement.setString(2, user.getUn());
+                preparedStatement.setString(2, user.getUserName());
                 preparedStatement.setString(3, user.getEmail());
-                preparedStatement.setString(4, user.getPwd());
+                preparedStatement.setString(4, user.getUserPassword());
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
                 response.sendRedirect("/blog/home.html");

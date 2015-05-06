@@ -17,19 +17,18 @@
         <!-- check if name or password is empty -->
         <script language="JavaScript">
             function validate(v){
-                if (v.un.value.length==0){
+                if (v.userName.value.length==0){
                     alert("Please enter a name!");
-                    v.un.focus();
+                    v.userName.focus();
                     return false;
                 }
-                if (v.pwd.value.length==0){
+                if (v.userPassword.value.length==0){
                     alert("Please enter a password!");
-                    v.pwd.focus();
+                    v.userPassword.focus();
                     return false;
                 }
             }
         </script>
-
 
         <div>
             <a class="navbar-brand" style="font-size:40" href="main.html">
@@ -43,11 +42,11 @@
             <div style="text-align: center;">
                 <table align="center">
                     <tr>
-                        <td>Name:</td><td><input type="text" name="un"/></td>
+                        <td>Name:</td><td><input type="text" name="userName"/></td>
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Password:</td><td><input type="text" name="pwd"/></td>
+                        <td>Password:</td><td><input type="text" name="userPassword"/></td>
                     </tr>
                 </table>
             </div>

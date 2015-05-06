@@ -14,20 +14,20 @@ public class LogInControl extends HttpServlet {
             PrintWriter out = response.getWriter();
 
             User user = new User();
-            String un = request.getParameter("un");
-            String pwd = request.getParameter("pwd");
-            user.setUn(un);
-            user.setPwd(pwd);
+            String userName = request.getParameter("userName");
+            String userPassword = request.getParameter("userPassword");
+            user.setUserName(userName);
+            user.setUserPassword(userPassword);
 
             String url = "jdbc:mysql://localhost/blog";
-            String userName = "root";
-            String password = "haojun";
-            String query = "select un, pwd from users where un=? and pwd=?";    //check un and pwd column in table users
+            String dbUserName = "root";
+            String dbPassword = "haojun";
+            String query = "select userName, userPassword from users where userName=? and userPassword=?";    //check un and pwd column in table users
             Class.forName("org.gjt.mm.mysql.Driver");     //load driver
-            Connection connection= DriverManager.getConnection(url, userName, password);    //set connection
+            Connection connection= DriverManager.getConnection(url, dbUserName, dbPassword);    //set connection
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, user.getUn()); //set first string
-            preparedStatement.setString(2, user.getPwd());    //set second string
+            preparedStatement.setString(1, user.getUserName()); //set first string
+            preparedStatement.setString(2, user.getUserPassword());    //set second string
             ResultSet resultSet = preparedStatement.executeQuery(); //execute query and save it to ResultSet object
 
             if(resultSet.next()){   //if there's record
