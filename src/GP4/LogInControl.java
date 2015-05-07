@@ -30,6 +30,10 @@ public class LogInControl extends HttpServlet {
             preparedStatement.setString(2, user.getUserPassword());    //set second string
             ResultSet resultSet = preparedStatement.executeQuery(); //execute query and save it to ResultSet object
 
+            if(user.getUserName().equals("admin")){   //if there's record
+                response.sendRedirect("/blog/adminpanel.jsp");   //redirect to home.html
+            }
+
             if(resultSet.next()){   //if there's record
                 response.sendRedirect("/blog/home.html");   //redirect to home.html
             }
