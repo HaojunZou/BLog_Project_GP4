@@ -10,7 +10,7 @@ CREATE TABLE users
 	userPassword	VARCHAR(50),
 	realName	VARCHAR(50),
 	gender		VARCHAR(6),
-	birthday	VARCHAR(50),
+	birthday	VARCHAR(10),
 	country 	VARCHAR(50)
 )
 
