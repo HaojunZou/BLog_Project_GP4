@@ -59,8 +59,8 @@
       <file leaf-file-name="SignUpControl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GP4/SignUpControl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4798387" vertical-offset="0" max-vertical-offset="1751">
-              <caret line="18" column="67" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.34274194" vertical-offset="0" max-vertical-offset="1751">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <marker date="1430985887889" expanded="true" signature="1488:1535" placeholder="select * fro..users..." />
                 <marker date="1430985887889" expanded="true" signature="1601:1620" placeholder="select * fro..users..." />
@@ -704,7 +704,7 @@
       <workItem from="1430839597004" duration="58406000" />
       <workItem from="1430982957295" duration="28000" />
       <workItem from="1430983071447" duration="3140000" />
-      <workItem from="1430986377475" duration="621000" />
+      <workItem from="1430986377475" duration="707000" />
     </task>
     <task id="LOCAL-00001" summary="Servlets implment">
       <created>1430399862096</created>
@@ -886,11 +886,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430986974644</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="database has been upgraded">
+      <created>1430987015442</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1430987015442</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161507000" />
+    <option name="totallyTimeSpent" value="161593000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="243" y="4" width="1121" height="669" extended-state="0" />
@@ -1046,8 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GP4/SignUpControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4798387" vertical-offset="0" max-vertical-offset="1751">
-          <caret line="18" column="67" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.34274194" vertical-offset="0" max-vertical-offset="1751">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <marker date="1430985887889" expanded="true" signature="1488:1535" placeholder="select * fro..users..." />
             <marker date="1430985887889" expanded="true" signature="1601:1620" placeholder="select * fro..users..." />
