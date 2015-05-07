@@ -22,7 +22,7 @@ public class SignUpControl extends HttpServlet {
         String birthday = request.getParameter("birthday");
         String country = request.getParameter("country");
         String accept = request.getParameter("accept");
-        user.setFlags(2);
+        user.setUserType(2);
         user.setUserName(userName);
         user.setEmail(email);
         user.setUserPassword(userPassword);
@@ -39,7 +39,7 @@ public class SignUpControl extends HttpServlet {
         String checkExistQuery = "select * from users where userName=? or email=?"; //check if user or email is exist
         String checkQuery = "select * from users";    //check the users table
         String insertQuery =
-                "insert into users (id, flags, userName, email, userPassword, realName, gender, birthday, country)" +
+                "insert into users (id, userType, userName, email, userPassword, realName, gender, birthday, country)" +
                 "values(?,?,?,?,?,?,?,?,?)";   //insert a record to user table
 
         try {
@@ -62,7 +62,7 @@ public class SignUpControl extends HttpServlet {
                 }
                 PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
                 preparedStatement.setString(1, Integer.toString(numberOfRowsReturned+1));
-                preparedStatement.setString(2, Integer.toString(user.getFlags()));
+                preparedStatement.setString(2, Integer.toString(user.getUserType()));
                 preparedStatement.setString(3, user.getUserName());
                 preparedStatement.setString(4, user.getEmail());
                 preparedStatement.setString(5, user.getUserPassword());

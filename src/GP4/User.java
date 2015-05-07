@@ -1,7 +1,7 @@
 package GP4;
 
 public class User {
-    private int flags;
+    private int userType;
     private String userName;
     private String email;
     private String userPassword;
@@ -13,12 +13,12 @@ public class User {
     public User(){
     }
 
-    public int getFlags(){
-        return flags;
+    public int getUserType(){
+        return userType;
     }
 
-    public void setFlags(int value){
-        flags = value;
+    public void setUserType(int value){
+        userType = value;
     }
 
     public String getUserName(){
