@@ -41,6 +41,14 @@ public class AdminPanelControl extends HttpServlet {
                     dispatcher.forward(request, response);
                 }
             }
+            else{
+                out.print(
+                    "<script type='text/javascript'>" +
+                        "window.alert('Please enter a value！');" +
+                        "history.go(-1);" +
+                    "</script>"
+                );
+            }
         }catch(Exception e)
         {
             e.printStackTrace();
