@@ -8,7 +8,7 @@
     <div style="text-align: center;"><h1>Welcome back, Administrator</h1></div>
         <form action="/blog/AdminPanelControl" method="post">
             <div style="text-align: center;">
-Enter a user name or email to start search:
+Enter a key word to start fuzzy search:
                 <input type="text" name="searchRecord"/><input type="submit" value="Search"/>
                 <!-- <input type="text" name="changeRecord"/><input type="submit" value="Change"/> -->
                 <!-- <input type="text" name="deleteRecord"/><input type="submit" value="Delete"/> -->
