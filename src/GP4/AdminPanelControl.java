@@ -28,7 +28,7 @@ public class AdminPanelControl extends HttpServlet {
                 pstSearch.setString(2, "%" + searchValue + "%");
                 ResultSet resultSearch = pstSearch.executeQuery();
                 while (resultSearch.next()) {
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/adminpanelresult.jsp");
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/admin_panel_result.jsp");
                     request.setAttribute("resultId", resultSearch.getString(1));
                     request.setAttribute("resultUserType", resultSearch.getString(2));
                     request.setAttribute("resultUserName", resultSearch.getString(3));
@@ -38,8 +38,19 @@ public class AdminPanelControl extends HttpServlet {
                     request.setAttribute("resultGender", resultSearch.getString(7));
                     request.setAttribute("resultBirthday", resultSearch.getString(8));
                     request.setAttribute("resultCountry", resultSearch.getString(9));
-                    dispatcher.forward(request, response);
+                    if(resultSearch.getString(1) == null) {
+                        out.print(
+                            "<script type='text/javascript'>" +
+                                "window.alert('Nothing found, try again!');" +
+                                "history.go(-1);" +
+                            "</script>"
+                        );
+                    }else {
+                        dispatcher.forward(request, response);
+                    }
                 }
+                pstSearch.close();
+                connection.close();
             }
             else{
                 out.print(

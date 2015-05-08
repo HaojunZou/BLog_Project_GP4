@@ -36,8 +36,8 @@ public class SignUpControl extends HttpServlet {
         String dbUserName = "root";
         String dbPassword = "haojun";
         int numberOfRowsReturned;
-        String checkExistQuery = "select * from users where userName=? or email=?"; //check if user or email is exist
-        String checkQuery = "select * from users";    //check the users table
+        String checkExistQuery = "select id from users where userName=? or email=?"; //check if user or email is exist
+        String getMaxIdQuery = "select max(id) from users"; //check to greatest id number
         String insertQuery =
                 "insert into users (id, userType, userName, email, userPassword, realName, gender, birthday, country)" +
                 "values(?,?,?,?,?,?,?,?,?)";   //insert a record to user table
@@ -52,16 +52,15 @@ public class SignUpControl extends HttpServlet {
             ResultSet resultSetExist = preparedStatementExist.executeQuery();
 
             if(!resultSetExist.next() && accept.equals("accept")){
-                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery(checkQuery); //execute query
-                if (resultSet.next()) { //if there's record
-                    resultSet.last();   //then set resultSet to the last one
-                    numberOfRowsReturned = resultSet.getRow();  //to get the number of rows
+                Statement getMaxIdStatement = connection.createStatement();
+                ResultSet resultSetMaxId = getMaxIdStatement.executeQuery(getMaxIdQuery);  //to get the greatest id number
+                if (resultSetMaxId.next()) { //if there's greatest id number
+                    numberOfRowsReturned = Integer.parseInt(resultSetMaxId.getString(1)); //greatest id number
                 } else {
-                    numberOfRowsReturned = 0;   //otherwise set row to 0
+                    numberOfRowsReturned = 0;   //otherwise set greatest id number to 0
                 }
                 PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
-                preparedStatement.setString(1, Integer.toString(numberOfRowsReturned+1));
+                preparedStatement.setString(1, Integer.toString(numberOfRowsReturned + 1));
                 preparedStatement.setString(2, Integer.toString(user.getUserType()));
                 preparedStatement.setString(3, user.getUserName());
                 preparedStatement.setString(4, user.getEmail());

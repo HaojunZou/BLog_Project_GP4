@@ -4,9 +4,18 @@
         <title>Admin Panel Result</title>
     </head>
     <body>
+    <script language="JavaScript">
+        function validate(v){
+            if (v.deleteRecord.value.length==0){
+                alert("Please enter an id number!");
+                v.deleteRecord.focus();
+                return false;
+            }
+        }
+    </script>
         <div style="text-align: center;">
             <h1>Here's the result, Administrator</h1>
-            <form action="adminpanelresult.jsp" method="post">
+            <form action="admin_panel_result.jsp" method="post">
                 <table border="1">
                     <%
                         String result1 = (String) request.getAttribute("resultId");
@@ -45,9 +54,13 @@
                     </tbody>
                 </table>
             </form>
+            <form action="/blog/AdminPanelResultControl" method="post" onsubmit="return validate(this)">
+                Enter the user name to delete an user:
+                <input type="text" name="deleteRecord"/><input type="submit" value="Delete"/>
+            </form>
         </div>
         <div style="text-align: center;">
-            <button><a href="adminpanel.jsp">Go back to panel</a></button>
+            <button><a href="admin_panel.jsp">Go back to panel</a></button>
             <button><a href="main.html">Log out</a></button>
         </div>
     </body>

@@ -31,7 +31,7 @@ public class LogInControl extends HttpServlet {
             ResultSet resultSet = preparedStatement.executeQuery(); //execute query and save it to ResultSet object
 
             if(user.getUserName().equals("admin")){   //log in as admin
-                response.sendRedirect("/blog/adminpanel.jsp");
+                response.sendRedirect("/blog/admin_panel.jsp");
             }
 
             if(resultSet.next()){   //if there's record
@@ -45,8 +45,7 @@ public class LogInControl extends HttpServlet {
                     "</script>"
                 ); //give warning
             }
-            preparedStatement.close();
-            connection.close();
+
         }catch(Exception e)
         {
             e.printStackTrace();
