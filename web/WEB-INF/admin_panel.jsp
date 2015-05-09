@@ -3,6 +3,12 @@
 <html>
     <head>
         <title>Admin Panel</title>
+        <style>
+            body{
+                background-image: url("http://localhost:8080/blog/img/su-35.jpg");
+                background-size: cover;
+            }
+        </style>
     </head>
     <body>
     <script language="JavaScript">

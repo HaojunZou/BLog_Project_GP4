@@ -22,7 +22,7 @@ public class LogInControl extends HttpServlet {
             String url = "jdbc:mysql://localhost/blog";
             String dbUserName = "root";
             String dbPassword = "haojun";
-            String query = "select userName, userPassword from users where userName=? and userPassword=?";    //check un and pwd column in table users
+            String query = "select * from users where userName=? and userPassword=?";    //check un and pwd column in table users
             Class.forName("org.gjt.mm.mysql.Driver");     //load driver
             Connection connection= DriverManager.getConnection(url, dbUserName, dbPassword);    //set connection
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -30,12 +30,17 @@ public class LogInControl extends HttpServlet {
             preparedStatement.setString(2, user.getUserPassword());    //set second string
             ResultSet resultSet = preparedStatement.executeQuery(); //execute query and save it to ResultSet object
 
-            if(user.getUserName().equals("admin")){   //log in as admin
-                response.sendRedirect("/blog/admin_panel.jsp");
-            }
-
             if(resultSet.next()){   //if there's record
-                response.sendRedirect("/blog/home.html");   //redirect to home.html
+                if(user.getUserName().equals("admin") && resultSet.getString(2).equals("1")){   //log in as admin
+                    preparedStatement.close();
+                    response.sendRedirect("/blog/admin_panel.jsp");
+                    connection.close();
+                }
+                if(resultSet.getString(2).equals("2")){ //log in as normal user
+                    preparedStatement.close();
+                    response.sendRedirect("/blog/home.html");   //redirect to home.html
+                    connection.close();
+                }
             }
             else{   //if there's no record
                 out.print(
@@ -45,7 +50,7 @@ public class LogInControl extends HttpServlet {
                     "</script>"
                 ); //give warning
             }
-
+        connection.close();
         }catch(Exception e)
         {
             e.printStackTrace();
