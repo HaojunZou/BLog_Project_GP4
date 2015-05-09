@@ -7,7 +7,7 @@
     <script language="JavaScript">
         function validate(v){
             if (v.deleteRecord.value.length==0){
-                alert("Please enter an id number!");
+                alert("Please enter an user name!");
                 v.deleteRecord.focus();
                 return false;
             }
@@ -55,7 +55,7 @@
                 </table>
             </form>
             <form action="/blog/AdminPanelResultControl" method="post" onsubmit="return validate(this)">
-                Enter the user name to delete an user:
+                Enter the user name to delete an user: <span style="color:red">(this action may not be reversed)</span>
                 <input type="text" name="deleteRecord"/><input type="submit" value="Delete"/>
             </form>
         </div>

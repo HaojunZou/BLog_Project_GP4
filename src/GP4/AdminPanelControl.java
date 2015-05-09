@@ -21,41 +21,29 @@ public class AdminPanelControl extends HttpServlet {
 
             String searchValue = request.getParameter("searchRecord");
 
-            if(!searchValue.equals("")){
-                String searchQuery = "select * from users where userName like ? or userPassword like ?";
-                PreparedStatement pstSearch = connection.prepareStatement(searchQuery);
-                pstSearch.setString(1, "%" + searchValue + "%");
-                pstSearch.setString(2, "%" + searchValue + "%");
-                ResultSet resultSearch = pstSearch.executeQuery();
-                while (resultSearch.next()) {
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/admin_panel_result.jsp");
-                    request.setAttribute("resultId", resultSearch.getString(1));
-                    request.setAttribute("resultUserType", resultSearch.getString(2));
-                    request.setAttribute("resultUserName", resultSearch.getString(3));
-                    request.setAttribute("resultEmail", resultSearch.getString(4));
-                    request.setAttribute("resultUserPassword", resultSearch.getString(5));
-                    request.setAttribute("resultRealName", resultSearch.getString(6));
-                    request.setAttribute("resultGender", resultSearch.getString(7));
-                    request.setAttribute("resultBirthday", resultSearch.getString(8));
-                    request.setAttribute("resultCountry", resultSearch.getString(9));
-                    if(resultSearch.getString(1) == null) {
-                        out.print(
-                            "<script type='text/javascript'>" +
-                                "window.alert('Nothing found, try again!');" +
-                                "history.go(-1);" +
-                            "</script>"
-                        );
-                    }else {
-                        dispatcher.forward(request, response);
-                    }
-                }
+            String searchQuery = "select * from users where userName like ? or userPassword like ?";
+            PreparedStatement pstSearch = connection.prepareStatement(searchQuery);
+            pstSearch.setString(1, "%" + searchValue + "%");
+            pstSearch.setString(2, "%" + searchValue + "%");
+            ResultSet resultSearch = pstSearch.executeQuery();
+            if(resultSearch.next()){
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/admin_panel_result.jsp");
+                request.setAttribute("resultId", resultSearch.getString(1));
+                request.setAttribute("resultUserType", resultSearch.getString(2));
+                request.setAttribute("resultUserName", resultSearch.getString(3));
+                request.setAttribute("resultEmail", resultSearch.getString(4));
+                request.setAttribute("resultUserPassword", resultSearch.getString(5));
+                request.setAttribute("resultRealName", resultSearch.getString(6));
+                request.setAttribute("resultGender", resultSearch.getString(7));
+                request.setAttribute("resultBirthday", resultSearch.getString(8));
+                request.setAttribute("resultCountry", resultSearch.getString(9));
+                dispatcher.forward(request, response);
                 pstSearch.close();
                 connection.close();
-            }
-            else{
+            }else{
                 out.print(
                     "<script type='text/javascript'>" +
-                        "window.alert('Please enter a value！');" +
+                        "window.alert('Nothing found, try again!');" +
                         "history.go(-1);" +
                     "</script>"
                 );

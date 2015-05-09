@@ -5,8 +5,17 @@
         <title>Admin Panel</title>
     </head>
     <body>
+    <script language="JavaScript">
+        function validate(v){
+            if (v.searchRecord.value.length==0){
+                alert("Please enter an user name or an email!");
+                v.searchRecord.focus();
+                return false;
+            }
+        }
+    </script>
     <div style="text-align: center;"><h1>Welcome back, Administrator</h1></div>
-        <form action="/blog/AdminPanelControl" method="post">
+        <form action="/blog/AdminPanelControl" method="post" onsubmit="return validate(this)">
             <div style="text-align: center;">
 Enter a key word to start fuzzy search:
                 <input type="text" name="searchRecord"/><input type="submit" value="Search"/>

@@ -27,58 +27,22 @@ public class AdminPanelResultControl extends HttpServlet {
                 PreparedStatement pstCheck = connection.prepareStatement(checkQuery);
                 pstCheck.setString(1, deleteValue);
                 ResultSet resultSetCheck = pstCheck.executeQuery();
-
                 if(resultSetCheck.next()){
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/admin_panel_executed.html");
-                    dispatcher.forward(request, response);
-/*
                     PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
                     pstDelete.setString(1, resultSetCheck.getString(3));
-                    ResultSet resultSetDelete = pstDelete.executeQuery();
                     pstDelete.executeUpdate();
+                    pstCheck.close();
                     pstDelete.close();
-
-                    PreparedStatement pstRecheck = connection.prepareStatement(checkQuery);
-                    pstRecheck.setString(1, deleteValue);
-                    ResultSet resultSetRecheck = pstRecheck.executeQuery();
-                    if(!resultSetRecheck.next()){
-                        out.print(
-                            "<script type='text/javascript'>" +
-                                "window.alert('User has been successfully deleted！');" +
-                            "</script>"
-                        );
-                        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/admin_panel_executed.html");
-                        dispatcher.forward(request, response);
-                    }else{
-                        out.print(
-                            "<script type='text/javascript'>" +
-                                "window.alert('Cannot delete user！');" +
-                                "history.go(-1);" +
-                            "</script>"
-                        );
-                    }
-                    pstDelete.close();
-                    pstRecheck.close();
-                    */
+                    connection.close();
+                    response.sendRedirect("/blog/admin_panel_executed.html");
                 }else{
                     out.print(
                         "<script type='text/javascript'>" +
-                            "window.alert('No such record！');" +
+                            "window.alert('No such data！');" +
                             "history.go(-1);" +
                         "</script>"
                     );
                 }
-                pstCheck.close();
-                connection.close();
-            }
-
-            else{
-                out.print(
-                    "<script type='text/javascript'>" +
-                        "window.alert('Please enter a value！');" +
-                        "history.go(-1);" +
-                    "</script>"
-                );
             }
         }catch(Exception e)
         {
