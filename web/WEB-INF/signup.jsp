@@ -52,27 +52,27 @@
             <form action="/blog/SignUpControl" id="information" method="post" onsubmit="return validate(this)">
                 <table align="center">
                     <tr>
-                        <td>User Name:</td><td><input type="text" name="userName"/><span style="color: red;"> *</span></td>
+                        <td>User Name</td><td><input type="text" name="userName"/><span style="color: red;"> *</span></td>
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Email:</td><td><input type="text" name="email"/><span style="color: red;"> *</span></td>
+                        <td>Email</td><td><input type="email" name="email"/><span style="color: red;"> *</span></td>
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Password:</td><td><input type="text" name="userPassword"/><span style="color: red;"> *</span></td>
+                        <td>Password</td><td><input type="password" name="userPassword"/><span style="color: red;"> *</span></td>
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Confirm Password:</td><td><input type="text" name="userPasswordConfirm"/><span style="color: red;"> *</span></td>
+                        <td>Confirm Password</td><td><input type="password" name="userPasswordConfirm"/><span style="color: red;"> *</span></td>
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Real Name:</td><td><input type="text" name="realName"/></td>
+                        <td>Real Name</td><td><input type="text" name="realName"/></td>
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Gender:</td><td>
+                        <td>Gender</td><td>
                             <select name="gender">
                                 <option value=""></option>
                                 <option value="male">Male</option>
@@ -83,11 +83,11 @@
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Birthday:</td><td><input type="date" name="birthday"/></td>
+                        <td>Birthday</td><td><input type="date" name="birthday"/></td>
                     </tr>
                     <br/><br/>
                     <tr>
-                        <td>Country:</td><td>
+                        <td>Country</td><td>
                             <select name="country">
                                 <option value=""></option>
                                 <option value="Afghanistan">Afghanistan</option>
@@ -337,7 +337,7 @@
                 <input type="radio" name="accept" value="decline" checked="checked"/> I decline
                 <br/><br/>
                 <tr>
-                    <input type="submit" value="Sign Up"/>
+                    <input type="submit" value="Sign up"/>
                 </tr>
             </form>
         </div>
