@@ -22,7 +22,7 @@
         <div style="text-align: center;">
             <h1>Here's the result, Administrator</h1>
             <form action="admin_panel_result.jsp" method="post">
-                <table border="1">
+                <table border="1" style="background-color: white">
                     <%
                         String result1 = (String) request.getAttribute("resultId");
                         String result2 = (String) request.getAttribute("resultUserType");
