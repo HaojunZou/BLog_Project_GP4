@@ -29,7 +29,13 @@ public class AdminPanelControl extends HttpServlet {
             if(resultSearch.next()){
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/admin_panel_result.jsp");
                 request.setAttribute("resultId", resultSearch.getString(1));
-                request.setAttribute("resultUserType", resultSearch.getString(2));
+                String userType = resultSearch.getString(2);
+                if(userType.equals("1")){
+                    request.setAttribute("resultUserType", "Administrator");
+                }
+                if(userType.equals("2")) {
+                    request.setAttribute("resultUserType", "Normal User");
+                }
                 request.setAttribute("resultUserName", resultSearch.getString(3));
                 request.setAttribute("resultEmail", resultSearch.getString(4));
                 request.setAttribute("resultUserPassword", resultSearch.getString(5));
