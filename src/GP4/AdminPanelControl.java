@@ -1,11 +1,18 @@
 package GP4;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import java.io.*;
-import java.sql.*;
-import java.util.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 @WebServlet("/AdminPanelControl")
 public class AdminPanelControl extends HttpServlet {
@@ -21,7 +28,7 @@ public class AdminPanelControl extends HttpServlet {
         ArrayList<String> country = new ArrayList<String>();
         ArrayList<String> userStatus = new ArrayList<String>();
 
-        try{
+        try {
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
 
@@ -29,7 +36,7 @@ public class AdminPanelControl extends HttpServlet {
             String dbUserName = "root";
             String dbPassword = "admin";
             Class.forName("org.gjt.mm.mysql.Driver");
-            Connection connection= DriverManager.getConnection(url, dbUserName, dbPassword);
+            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
 
             String searchValue = request.getParameter("searchRecord");
             String searchQuery = "select * from users where userName like ? or userPassword like ?";
@@ -37,15 +44,14 @@ public class AdminPanelControl extends HttpServlet {
             pstSearch.setString(1, "%" + searchValue + "%");
             pstSearch.setString(2, "%" + searchValue + "%");
             ResultSet resultSearch = pstSearch.executeQuery();
-            while(resultSearch.next()) {
+            while (resultSearch.next()) {
                 id.add(resultSearch.getString(1));
                 if (resultSearch.getString(2).equals("1")) {
                     userType.add("Administrator");
                 }
                 if (resultSearch.getString(2).equals("2")) {
                     userType.add("Normal User");
-                }
-                else{
+                } else {
                     userType.add("Unknown");
                 }
                 userName.add(resultSearch.getString(3));
@@ -71,8 +77,7 @@ public class AdminPanelControl extends HttpServlet {
             dispatcher.forward(request, response);
             pstSearch.close();
             connection.close();
-        }catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

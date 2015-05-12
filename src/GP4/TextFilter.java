@@ -1,7 +1,7 @@
 package GP4;
 
 public class TextFilter {
-    public String filterHtml(String value){ //html filter to prevent special characters in text
+    public String filterHtml(String value) { //html filter to prevent special characters in text
         value = value.replaceAll("&", "&amp;");
         value = value.replaceAll("<", "&lt;");
         value = value.replaceAll(">", "&gt;");

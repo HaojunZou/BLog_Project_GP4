@@ -4,7 +4,7 @@
 <head>
     <title>Admin Panel Result</title>
     <style>
-        body{
+        body {
             background-image: url("http://localhost:8080/blog/img/su-35.jpg");
             background-size: cover;
         }
@@ -12,8 +12,8 @@
 </head>
 <body>
 <script language="JavaScript">
-    function validate(v){
-        if (v.deleteRecord.value.length==0){
+    function validate(v) {
+        if (v.deleteRecord.value.length == 0) {
             alert("Please enter an user name!");
             v.deleteRecord.focus();
             return false;
@@ -22,6 +22,7 @@
 </script>
 <div style="text-align: center;">
     <h1>Here's the result, Administrator</h1>
+
     <form action="admin_panel_result.jsp" method="post">
         <%
             List<String> result1 = (List) request.getAttribute("resultId");
@@ -36,85 +37,192 @@
             List<String> result10 = (List) request.getAttribute("resultStatus");
         %>
         <table border="1" style="background-color: white; float:left;">
-            <tr><th>ID</th></tr>
+            <tr>
+                <th>ID</th>
+            </tr>
             <tbody align="center" valign="middle">
-            <%for(int i=0; i<result1.size(); i++){String id = result1.get(i);%><tr>
-                <td> <%= id %> </td></tr><%}%>
+            <%
+                for (int i = 0; i < result1.size(); i++) {
+                    String id = result1.get(i);
+            %>
+            <tr>
+                <td><%= id %>
+                </td>
+            </tr>
+            <%}%>
             </tbody>
         </table>
         <table border="1" style="background-color: white; float:left;">
-            <tr><th>User Type</th></tr>
+            <tr>
+                <th>User Type</th>
+            </tr>
             <tbody align="center" valign="middle">
-            <%for(int i=0; i<result1.size(); i++){String userType = result2.get(i);
-                if(userType.equals("")){userType = "N/A";}%><tr>
-                <td> <%= userType %> </td></tr><%}%>
+            <%
+                for (int i = 0; i < result1.size(); i++) {
+                    String userType = result2.get(i);
+                    if (userType.equals("")) {
+                        userType = "N/A";
+                    }
+            %>
+            <tr>
+                <td><%= userType %>
+                </td>
+            </tr>
+            <%}%>
             </tbody>
         </table>
         <table border="1" style="background-color: white; float:left;">
-            <tr><th>User Name</th></tr>
+            <tr>
+                <th>User Name</th>
+            </tr>
             <tbody align="center" valign="middle">
-            <%for(int i=0; i<result1.size(); i++){String userName = result3.get(i);
-                if(userName.equals("")){userName = "N/A";}%><tr>
-                <td> <%= userName %> </td></tr><%}%>
+            <%
+                for (int i = 0; i < result1.size(); i++) {
+                    String userName = result3.get(i);
+                    if (userName.equals("")) {
+                        userName = "N/A";
+                    }
+            %>
+            <tr>
+                <td><%= userName %>
+                </td>
+            </tr>
+            <%}%>
             </tbody>
         </table>
         <table border="1" style="background-color: white; float:left;">
-            <tr><th>Email</th></tr>
+            <tr>
+                <th>Email</th>
+            </tr>
             <tbody align="center" valign="middle">
-            <%for(int i=0; i<result1.size(); i++){String email = result4.get(i);
-                if(email.equals("")){email = "N/A";}%><tr>
-                <td> <%= email %> </td></tr><%}%>
+            <%
+                for (int i = 0; i < result1.size(); i++) {
+                    String email = result4.get(i);
+                    if (email.equals("")) {
+                        email = "N/A";
+                    }
+            %>
+            <tr>
+                <td><%= email %>
+                </td>
+            </tr>
+            <%}%>
             </tbody>
         </table>
         <table border="1" style="background-color: white; float:left;">
-            <tr><th>User Password</th></tr>
+            <tr>
+                <th>User Password</th>
+            </tr>
             <tbody align="center" valign="middle">
-            <%for(int i=0; i<result1.size(); i++){String userPassword = result5.get(i);
-                if(userPassword.equals("")){userPassword = "N/A";}%><tr>
-                <td> <%= userPassword %> </td></tr><%}%>
+            <%
+                for (int i = 0; i < result1.size(); i++) {
+                    String userPassword = result5.get(i);
+                    if (userPassword.equals("")) {
+                        userPassword = "N/A";
+                    }
+            %>
+            <tr>
+                <td><%= userPassword %>
+                </td>
+            </tr>
+            <%}%>
             </tbody>
         </table>
         <table border="1" style="background-color: white; float:left;">
-            <tr><th>Real Name</th></tr>
+            <tr>
+                <th>Real Name</th>
+            </tr>
             <tbody align="center" valign="middle">
-            <%for(int i=0; i<result1.size(); i++){String realName = result6.get(i);
-                if(realName.equals("")){realName = "N/A";}%><tr>
-                <td> <%= realName %> </td></tr><%}%>
+            <%
+                for (int i = 0; i < result1.size(); i++) {
+                    String realName = result6.get(i);
+                    if (realName.equals("")) {
+                        realName = "N/A";
+                    }
+            %>
+            <tr>
+                <td><%= realName %>
+                </td>
+            </tr>
+            <%}%>
             </tbody>
         </table>
         <table border="1" style="background-color: white; float:left;">
-            <tr><th>Gender</th></tr>
+            <tr>
+                <th>Gender</th>
+            </tr>
             <tbody align="center" valign="middle">
-            <%for(int i=0; i<result1.size(); i++){String gender = result7.get(i);
-                if(gender.equals("")){gender = "N/A";}%><tr>
-                <td> <%= gender %> </td></tr><%}%>
+            <%
+                for (int i = 0; i < result1.size(); i++) {
+                    String gender = result7.get(i);
+                    if (gender.equals("")) {
+                        gender = "N/A";
+                    }
+            %>
+            <tr>
+                <td><%= gender %>
+                </td>
+            </tr>
+            <%}%>
             </tbody>
         </table>
         <table border="1" style="background-color: white; float:left;">
-            <tr><th>Birthday</th></tr>
+            <tr>
+                <th>Birthday</th>
+            </tr>
             <tbody align="center" valign="middle">
-            <%for(int i=0; i<result1.size(); i++){String birthday = result8.get(i);
-                if(birthday.equals("")){birthday = "N/A";}%><tr>
-                <td> <%= birthday %> </td></tr><%}%>
+            <%
+                for (int i = 0; i < result1.size(); i++) {
+                    String birthday = result8.get(i);
+                    if (birthday.equals("")) {
+                        birthday = "N/A";
+                    }
+            %>
+            <tr>
+                <td><%= birthday %>
+                </td>
+            </tr>
+            <%}%>
             </tbody>
         </table>
         <table border="1" style="background-color: white; float:left;">
-            <tr><th>Country</th></tr>
+            <tr>
+                <th>Country</th>
+            </tr>
             <tbody align="center" valign="middle">
-            <%for(int i=0; i<result1.size(); i++){String country = result9.get(i);
-                if(country.equals("")){country = "N/A";}%><tr>
-                <td> <%= country %> </td></tr><%}%>
+            <%
+                for (int i = 0; i < result1.size(); i++) {
+                    String country = result9.get(i);
+                    if (country.equals("")) {
+                        country = "N/A";
+                    }
+            %>
+            <tr>
+                <td><%= country %>
+                </td>
+            </tr>
+            <%}%>
             </tbody>
         </table>
         <table border="1" style="background-color: white;">
-            <tr><th>User Status</th></tr>
+            <tr>
+                <th>User Status</th>
+            </tr>
             <tbody align="center" valign="middle">
-            <%for(int i=0; i<result1.size(); i++){String userStatus = result10.get(i);%><tr>
-                <td> <%= userStatus %> </td></tr><%}%>
+            <%
+                for (int i = 0; i < result1.size(); i++) {
+                    String userStatus = result10.get(i);
+            %>
+            <tr>
+                <td><%= userStatus %>
+                </td>
+            </tr>
+            <%}%>
             </tbody>
         </table>
     </form>
     <br/>
+
     <form action="/blog/AdminPanelResultControl" method="post" onsubmit="return validate(this)">
         Enter the user name to delete an user: <span style="color:red">(this action may not be reversed)</span>
         <input type="text" name="deleteRecord"/><input type="submit" value="Delete"/>

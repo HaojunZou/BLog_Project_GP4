@@ -1,8 +1,5 @@
 package GP4;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 public class User {
     private int userType;
     private String userName;
@@ -12,72 +9,72 @@ public class User {
     private String gender;
     private String birthday;
     private String country;
-    private ArrayList<String> userList;
 
-    public User(){
+
+    public User() {
     }
 
-    public int getUserType(){
+    public int getUserType() {
         return userType;
     }
 
-    public void setUserType(int value){
+    public void setUserType(int value) {
         userType = value;
     }
 
-    public String getUserName(){
+    public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String value){
+    public void setUserName(String value) {
         userName = value;
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(String value){
+    public void setEmail(String value) {
         email = value;
     }
 
-    public String getUserPassword(){
+    public String getUserPassword() {
         return userPassword;
     }
 
-    public void setUserPassword(String value){
+    public void setUserPassword(String value) {
         userPassword = value;
     }
 
-    public String getRealName(){
+    public String getRealName() {
         return realName;
     }
 
-    public void setRealName(String value){
+    public void setRealName(String value) {
         realName = value;
     }
 
-    public String getGender(){
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(String value){
+    public void setGender(String value) {
         gender = value;
     }
 
-    public String getBirthday(){
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String value){
+    public void setBirthday(String value) {
         birthday = value;
     }
 
-    public String getCountry(){
+    public String getCountry() {
         return country;
     }
 
-    public void setCountry(String value){
+    public void setCountry(String value) {
         country = value;
     }
 

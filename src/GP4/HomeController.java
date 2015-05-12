@@ -23,7 +23,7 @@ public class HomeController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<String> resultList = new ArrayList<String>();
 
-        try{
+        try {
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
 
@@ -31,12 +31,12 @@ public class HomeController extends HttpServlet {
             String dbUserName = "root";
             String dbPassword = "admin";
             Class.forName("org.gjt.mm.mysql.Driver");
-            Connection connection= DriverManager.getConnection(url, dbUserName, dbPassword);
+            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
 
             String searchQuery = "select username from users";
             PreparedStatement pstSearch = connection.prepareStatement(searchQuery);
             ResultSet resultSearch = pstSearch.executeQuery();
-            while(resultSearch.next()){
+            while (resultSearch.next()) {
                 resultList.add(resultSearch.getString(1));
             }
             request.setAttribute("resultUserNames", resultList);
@@ -44,8 +44,7 @@ public class HomeController extends HttpServlet {
             dispatcher.forward(request, response);
             pstSearch.close();
             connection.close();
-        }catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
