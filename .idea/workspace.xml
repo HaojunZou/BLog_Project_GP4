@@ -7,90 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\.idea\libraries\Java_EE_6_Java_EE_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\.idea\libraries\javax_annotation.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\.idea\libraries\mysql_connector_java_5_1_35_bin.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\web\META-INF\MANIFEST.MF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/AdminPanelControl.class" afterPath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/AdminPanelControl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/AdminPanelResultControl.class" afterPath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/AdminPanelResultControl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/Home.class" afterPath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/Home.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/HomeController.class" afterPath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/HomeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/LogInControl.class" afterPath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/LogInControl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/SignUpControl.class" afterPath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/SignUpControl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/User.class" afterPath="$PROJECT_DIR$/out/production/Blog_Project_GP4/GP4/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/AdminPanel.java" afterPath="$PROJECT_DIR$/src/GP4/AdminPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/AdminPanelControl.java" afterPath="$PROJECT_DIR$/src/GP4/AdminPanelControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/AdminPanelExecuted.java" afterPath="$PROJECT_DIR$/src/GP4/AdminPanelExecuted.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/AdminPanelResult.java" afterPath="$PROJECT_DIR$/src/GP4/AdminPanelResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/AdminPanelResultControl.java" afterPath="$PROJECT_DIR$/src/GP4/AdminPanelResultControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Blog_Project_GP4.iml" afterPath="$PROJECT_DIR$/Blog_Project_GP4.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/Home.java" afterPath="$PROJECT_DIR$/src/GP4/Home.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/HomeController.java" afterPath="$PROJECT_DIR$/src/GP4/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/LogIn.java" afterPath="$PROJECT_DIR$/src/GP4/LogIn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/LogInControl.java" afterPath="$PROJECT_DIR$/src/GP4/LogInControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/Main.java" afterPath="$PROJECT_DIR$/src/GP4/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/SignUp.java" afterPath="$PROJECT_DIR$/src/GP4/SignUp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/SignUpControl.java" afterPath="$PROJECT_DIR$/src/GP4/SignUpControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/TextFilter.java" afterPath="$PROJECT_DIR$/src/GP4/TextFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/User.java" afterPath="$PROJECT_DIR$/src/GP4/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel_executed.html" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel_executed.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/alerts.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/alerts.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/badges.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/badges.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/blog.sql" afterPath="$PROJECT_DIR$/db/blog.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/blog.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/blog.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/web/WEB-INF/css/bootstrap-theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/web/WEB-INF/css/bootstrap-theme.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/css/bootstrap.css" afterPath="$PROJECT_DIR$/web/WEB-INF/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/bootstrap.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/bootstrap.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/web/WEB-INF/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/web/WEB-INF/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/breadcrumbs.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/breadcrumbs.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/button-groups.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/button-groups.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/buttons.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/buttons.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/carousel.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/carousel.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/close.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/close.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/code.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/code.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/component-animations.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/component-animations.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/dropdowns.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/dropdowns.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/forms.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/forms.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/web/WEB-INF/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/glyphicons.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/glyphicons.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/grid.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/grid.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/home.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/js/html5shiv.js" afterPath="$PROJECT_DIR$/web/WEB-INF/js/html5shiv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/input-groups.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/input-groups.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/js/jquery.min.js" afterPath="$PROJECT_DIR$/web/WEB-INF/js/jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/jumbotron.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/jumbotron.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/labels.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/labels.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/js/less-1.3.3.min.js" afterPath="$PROJECT_DIR$/web/WEB-INF/js/less-1.3.3.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/list-group.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/list-group.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/login.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/main.html" afterPath="$PROJECT_DIR$/web/WEB-INF/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/media.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/media.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/mixins.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/mixins.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/modals.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/modals.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/navbar.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/navbar.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/navs.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/navs.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/normalize.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/normalize.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/pager.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/pager.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/pagination.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/pagination.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/panels.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/panels.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/popovers.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/popovers.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/print.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/print.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/progress-bars.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/progress-bars.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/responsive-utilities.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/responsive-utilities.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/scaffolding.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/scaffolding.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/signup.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/signup.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/tables.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/tables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/theme.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/theme.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/thumbnails.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/thumbnails.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/tooltip.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/tooltip.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/type.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/type.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/utilities.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/utilities.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/variables.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/less/wells.less" afterPath="$PROJECT_DIR$/web/WEB-INF/less/wells.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimpleServlet.iws" />
@@ -145,13 +63,13 @@
       <file leaf-file-name="AdminPanelControl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GP4/AdminPanelControl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="1513">
-              <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1207">
+              <caret line="50" column="48" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#423#431#0" expanded="true" />
-                <marker date="1431446700873" expanded="true" signature="1214:1278" placeholder="select * fro..users..." />
-                <marker date="1431446700873" expanded="true" signature="1515:1579" placeholder="select * fro..users..." />
+                <element signature="e#429#437#0" expanded="true" />
+                <marker date="1431447717478" expanded="true" signature="662:726" placeholder="select * fro..users..." />
+                <marker date="1431447717478" expanded="true" signature="963:1027" placeholder="select * fro..users..." />
               </folding>
             </state>
           </provider>
@@ -172,9 +90,23 @@
       <file leaf-file-name="admin_panel_result.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37869823" vertical-offset="1521" max-vertical-offset="2278">
-              <caret line="97" column="60" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.2514793" vertical-offset="629" max-vertical-offset="1292">
+              <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GP4/HomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="884">
+              <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#426#434#0" expanded="true" />
+                <marker date="1431445594793" expanded="true" signature="891:917" placeholder="select userN..users..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -215,24 +147,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/home.jsp">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385" vertical-offset="1020" max-vertical-offset="3417">
-              <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+            <state vertical-scroll-proportion="7.5" vertical-offset="790" max-vertical-offset="1309">
+              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogIn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GP4/LogIn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -304,9 +224,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="295" />
+    <option name="x" value="180" />
     <option name="y" value="5" />
-    <option name="width" value="1065" />
+    <option name="width" value="1180" />
     <option name="height" value="718" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -888,7 +808,7 @@
       <workItem from="1431022595955" duration="135000" />
       <workItem from="1431106213684" duration="44486000" />
       <workItem from="1431332818011" duration="28538000" />
-      <workItem from="1431442296379" duration="4633000" />
+      <workItem from="1431442296379" duration="8156000" />
     </task>
     <task id="LOCAL-00001" summary="Servlets implment">
       <created>1430399862096</created>
@@ -1172,11 +1092,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431371890274</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="new colum user status added in database, make sure you update your database first or rebuilt it.">
+      <created>1431447028925</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1431447028925</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265060000" />
+    <option name="totallyTimeSpent" value="268583000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1199,7 +1125,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="295" y="5" width="1065" height="718" extended-state="0" />
+    <frame x="180" y="5" width="1180" height="718" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1222,7 +1148,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275862" sideWeight="0.4994995" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32588455" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25870648" sideWeight="0.49658704" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23214285" sideWeight="0.49658704" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2266783" sideWeight="0.50341296" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3225256" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1270,7 +1196,8 @@
     <MESSAGE value="login page fixed a bug, it can detecte with kind of user is logging in" />
     <MESSAGE value="password input changed" />
     <MESSAGE value="admin panel search function returns as a list" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin panel search function returns as a list" />
+    <MESSAGE value="new colum user status added in database, make sure you update your database first or rebuilt it." />
+    <option name="LAST_COMMIT_MESSAGE" value="new colum user status added in database, make sure you update your database first or rebuilt it." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1310,9 +1237,9 @@
           <caret line="34" column="83" selection-start-line="34" selection-start-column="83" selection-end-line="34" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#423#431#0" expanded="true" />
-            <marker date="1431446700873" expanded="true" signature="1214:1278" placeholder="select * fro..users..." />
-            <marker date="1431446700873" expanded="true" signature="1515:1579" placeholder="select * fro..users..." />
+            <element signature="e#429#437#0" expanded="true" />
+            <marker date="1431447717478" expanded="true" signature="662:726" placeholder="select * fro..users..." />
+            <marker date="1431447717478" expanded="true" signature="963:1027" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>
@@ -1400,9 +1327,9 @@
           <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#423#431#0" expanded="true" />
-            <marker date="1431446700873" expanded="true" signature="1214:1278" placeholder="select * fro..users..." />
-            <marker date="1431446700873" expanded="true" signature="1515:1579" placeholder="select * fro..users..." />
+            <element signature="e#429#437#0" expanded="true" />
+            <marker date="1431447717478" expanded="true" signature="662:726" placeholder="select * fro..users..." />
+            <marker date="1431447717478" expanded="true" signature="963:1027" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>
@@ -1587,31 +1514,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GP4/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="884">
-          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#426#434#0" expanded="true" />
-            <marker date="1431445594793" expanded="true" signature="-1:-1" placeholder="select userN..users..." />
-            <marker date="1431445594793" expanded="true" signature="-1:-1" placeholder="select userN..users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel_executed.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="425">
           <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.5" vertical-offset="790" max-vertical-offset="1309">
-          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1675,6 +1581,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.384615" vertical-offset="190" max-vertical-offset="748">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GP4/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="884">
+          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#426#434#0" expanded="true" />
+            <marker date="1431445594793" expanded="true" signature="891:917" placeholder="select userN..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GP4/AdminPanelResultControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="1054">
@@ -1687,31 +1613,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GP4/AdminPanelControl.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="1513">
-          <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#423#431#0" expanded="true" />
-            <marker date="1431446700873" expanded="true" signature="1214:1278" placeholder="select * fro..users..." />
-            <marker date="1431446700873" expanded="true" signature="1515:1579" placeholder="select * fro..users..." />
-          </folding>
+        <state vertical-scroll-proportion="7.5" vertical-offset="790" max-vertical-offset="1309">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel.jsp">
+    <entry file="file://$PROJECT_DIR$/src/GP4/AdminPanelControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.384615" vertical-offset="190" max-vertical-offset="748">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1207">
+          <caret line="50" column="48" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#429#437#0" expanded="true" />
+            <marker date="1431447717478" expanded="true" signature="662:726" placeholder="select * fro..users..." />
+            <marker date="1431447717478" expanded="true" signature="963:1027" placeholder="select * fro..users..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37869823" vertical-offset="1521" max-vertical-offset="2278">
-          <caret line="97" column="60" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.2514793" vertical-offset="629" max-vertical-offset="1292">
+          <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
           <folding />
         </state>
       </provider>
