@@ -30,11 +30,11 @@ public class AdminPanelControl extends HttpServlet {
             ResultSet resultSearch = pstSearch.executeQuery();
             while(resultSearch.next()) {
                 userList.add(resultSearch.getString(1));
-                if (resultSearch.getString(2).equals("1")) {
-                    userList.add("Administrator");
-                }
                 if (resultSearch.getString(2).equals("2")) {
                     userList.add("Normal User");
+                }
+                else if (resultSearch.getString(2).equals("1")) {
+                    userList.add("Administrator");
                 }
                 else{
                     userList.add("Unknown");

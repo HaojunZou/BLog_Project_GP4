@@ -26,7 +26,7 @@
                 <%
                     List<String> userList = (List) request.getAttribute("resultUserList");
                 %>
-                <table border="1" style="background-color: white; float:left;">
+                <table border="1" style="background-color: white;">
                     <tr>
                         <th>ID</th>
                         <th>User Type</th>
