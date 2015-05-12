@@ -34,7 +34,7 @@ public class SignUpControl extends HttpServlet {
         String driver = "org.gjt.mm.mysql.Driver";
         String url = "jdbc:mysql://localhost/blog";
         String dbUserName = "root";
-        String dbPassword = "haojun";
+        String dbPassword = "admin";
         String checkExistQuery = "select id from users where userName=? or email=?"; //check if user or email is exist
         String idCheckQuery = "select * from users where id=?"; //check if this id number has been token
         String insertQuery =

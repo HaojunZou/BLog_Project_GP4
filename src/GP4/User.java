@@ -1,5 +1,8 @@
 package GP4;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class User {
     private int userType;
     private String userName;
@@ -9,6 +12,7 @@ public class User {
     private String gender;
     private String birthday;
     private String country;
+    private ArrayList<String> userList;
 
     public User(){
     }
@@ -76,4 +80,5 @@ public class User {
     public void setCountry(String value){
         country = value;
     }
+
 }

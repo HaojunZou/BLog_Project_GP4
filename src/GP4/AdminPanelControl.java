@@ -15,7 +15,7 @@ public class AdminPanelControl extends HttpServlet {
 
             String url = "jdbc:mysql://localhost/blog";
             String dbUserName = "root";
-            String dbPassword = "haojun";
+            String dbPassword = "admin";
             Class.forName("org.gjt.mm.mysql.Driver");
             Connection connection= DriverManager.getConnection(url, dbUserName, dbPassword);
 

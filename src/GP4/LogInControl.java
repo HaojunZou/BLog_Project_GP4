@@ -21,7 +21,7 @@ public class LogInControl extends HttpServlet {
 
             String url = "jdbc:mysql://localhost/blog";
             String dbUserName = "root";
-            String dbPassword = "haojun";
+            String dbPassword = "admin";
             String query = "select * from users where userName=? and userPassword=?";    //check un and pwd column in table users
             Class.forName("org.gjt.mm.mysql.Driver");     //load driver
             Connection connection= DriverManager.getConnection(url, dbUserName, dbPassword);    //set connection
@@ -38,7 +38,7 @@ public class LogInControl extends HttpServlet {
                 }
                 if(resultSet.getString(2).equals("2")){ //log in as normal user
                     preparedStatement.close();
-                    response.sendRedirect("/blog/home.html");   //redirect to home.html
+                    response.sendRedirect("/blog/home.jsp");   //redirect to home.html
                     connection.close();
                 }
             }

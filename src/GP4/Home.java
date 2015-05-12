@@ -2,11 +2,15 @@ package GP4;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
 
-@WebServlet("/home.html")
+@WebServlet("/home.jsp")
 public class Home extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -15,17 +19,13 @@ public class Home extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.html");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
         dispatcher.forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        TextFilter textFilter = new TextFilter();
-        response.sendRedirect("/blog/home.html");
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println(textFilter.filterHtml(request.getParameter("blogText") + "<br/>"));
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
+        dispatcher.forward(request, response);
     }
 
 }
