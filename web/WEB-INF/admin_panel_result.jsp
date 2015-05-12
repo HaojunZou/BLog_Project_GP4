@@ -107,7 +107,7 @@
             </tbody>
         </table>
         <table border="1" style="background-color: white;">
-            <tr><th>Country</th></tr>
+            <tr><th>User Status</th></tr>
             <tbody align="center" valign="middle">
             <%for(int i=0; i<result1.size(); i++){String userStatus = result10.get(i);%><tr>
                 <td> <%= userStatus %> </td></tr><%}%>
