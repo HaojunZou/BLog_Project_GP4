@@ -19,6 +19,7 @@ public class AdminPanelControl extends HttpServlet {
         ArrayList<String> gender = new ArrayList<String>();
         ArrayList<String> birthday = new ArrayList<String>();
         ArrayList<String> country = new ArrayList<String>();
+        ArrayList<String> userStatus = new ArrayList<String>();
 
         try{
             response.setContentType("text/html;charset=UTF-8");
@@ -54,6 +55,7 @@ public class AdminPanelControl extends HttpServlet {
                 gender.add(resultSearch.getString(7));
                 birthday.add(resultSearch.getString(8));
                 country.add(resultSearch.getString(9));
+                userStatus.add(resultSearch.getString(10));
             }
             request.setAttribute("resultId", id);
             request.setAttribute("resultUserType", userType);
@@ -64,6 +66,7 @@ public class AdminPanelControl extends HttpServlet {
             request.setAttribute("resultGender", gender);
             request.setAttribute("resultBirthday", birthday);
             request.setAttribute("resultCountry", country);
+            request.setAttribute("resultStatus", userStatus);
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/admin_panel_result.jsp");
             dispatcher.forward(request, response);
             pstSearch.close();

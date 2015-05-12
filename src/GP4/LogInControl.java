@@ -48,8 +48,7 @@ public class LogInControl extends HttpServlet {
                     preparedStatement.close();
                     connection.close();
                     //redirect to home.html
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.html");
-                    dispatcher.forward(request, response);
+                    response.sendRedirect("/blog/home.html");
                 }
             }
             else{   //if there's no record
