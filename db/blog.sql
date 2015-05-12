@@ -5,13 +5,16 @@ CREATE TABLE users
 (
 	id 		INT(6) PRIMARY KEY,
 	userType   	INT(1),
-	userName 	VARCHAR(50),
-	email		VARCHAR(50),
-	userPassword	VARCHAR(50),
-	realName	VARCHAR(50),
+	userName 	VARCHAR(30),
+	email		VARCHAR(30),
+	userPassword	VARCHAR(30),
+	realName	VARCHAR(30),
 	gender		VARCHAR(6),
 	birthday	VARCHAR(10),
-	country 	VARCHAR(50)
+	country 	VARCHAR(30),
+	userStatus	VARCHAR(10)
 )
+
+ALTER TABLE users ADD userStatus VARCHAR(10) DEFAULT "Not Logged";
 
 DROP DATABASE blog

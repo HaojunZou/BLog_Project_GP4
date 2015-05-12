@@ -7,15 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="password input changed">
-      <change type="DELETED" beforePath="C:\Users\Optimus\Documents\GitHub\Blog_Project_GP4\web\WEB-INF\home.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/AdminPanelControl.java" afterPath="$PROJECT_DIR$/src/GP4/AdminPanelControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/AdminPanelResultControl.java" afterPath="$PROJECT_DIR$/src/GP4/AdminPanelResultControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Blog_Project_GP4.iml" afterPath="$PROJECT_DIR$/Blog_Project_GP4.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/Home.java" afterPath="$PROJECT_DIR$/src/GP4/Home.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/LogInControl.java" afterPath="$PROJECT_DIR$/src/GP4/LogInControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/SignUpControl.java" afterPath="$PROJECT_DIR$/src/GP4/SignUpControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GP4/User.java" afterPath="$PROJECT_DIR$/src/GP4/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/blog.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/blog.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/blog.sql" afterPath="$PROJECT_DIR$/db/blog.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/home.html" afterPath="$PROJECT_DIR$/web/WEB-INF/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimpleServlet.iws" />
@@ -52,18 +48,31 @@
               <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
               <folding>
                 <element signature="e#777#785#0" expanded="true" />
-                <marker date="1431435170975" expanded="true" signature="1239:1265" placeholder="select usern..users..." />
+                <marker date="1431435397322" expanded="true" signature="1239:1265" placeholder="select usern..users..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15625">
+            <state vertical-scroll-proportion="-3.4615386">
               <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogInControl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GP4/LogInControl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.60465115">
+              <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
+              <folding>
+                <marker date="1431435442468" expanded="true" signature="905:960" placeholder="select * fro..users..." />
+                <marker date="1431435442468" expanded="true" signature="1041:1119" placeholder="update users..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,7 +147,6 @@
         <option value="$PROJECT_DIR$/src/GP4/AdminPanelControl.java" />
         <option value="$PROJECT_DIR$/src/GP4/AdminPanelResultControl.java" />
         <option value="$PROJECT_DIR$/src/GP4/SignUpControl.java" />
-        <option value="$PROJECT_DIR$/src/GP4/LogInControl.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/home.html" />
         <option value="$PROJECT_DIR$/src/GP4/IndexController.java" />
         <option value="$PROJECT_DIR$/src/GP4/Home.java" />
@@ -147,6 +155,7 @@
         <option value="$PROJECT_DIR$/src/GP4/User.java" />
         <option value="$PROJECT_DIR$/src/GP4/HomeController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/home.jsp" />
+        <option value="$PROJECT_DIR$/src/GP4/LogInControl.java" />
       </list>
     </option>
   </component>
@@ -754,7 +763,7 @@
       <workItem from="1431106213684" duration="42061000" />
       <workItem from="1431330228824" duration="9298000" />
       <workItem from="1431416737754" duration="5366000" />
-      <workItem from="1431428509132" duration="6784000" />
+      <workItem from="1431428509132" duration="6921000" />
     </task>
     <task id="LOCAL-00001" summary="Servlets implment">
       <created>1430399862096</created>
@@ -1024,7 +1033,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250912000" />
+    <option name="totallyTimeSpent" value="251049000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1047,7 +1056,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="833" height="738" extended-state="1" />
+    <frame x="0" y="0" width="833" height="738" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1062,7 +1071,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32588455" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42578712" sideWeight="0.49071208" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4247246" sideWeight="0.49071208" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16398244" sideWeight="0.50928795" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298351" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24789594" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1155,7 +1164,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#777#785#0" expanded="true" />
-            <marker date="1431435170975" expanded="true" signature="1239:1265" placeholder="select usern..users..." />
+            <marker date="1431435397322" expanded="true" signature="1239:1265" placeholder="select usern..users..." />
           </folding>
         </state>
       </provider>
@@ -1165,7 +1174,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="44" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1185,7 +1194,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="83" selection-start-line="34" selection-start-column="83" selection-end-line="34" selection-end-column="83" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1235,7 +1244,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1262,7 +1271,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1394,16 +1403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GP4/LogInControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5481728">
-          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.125">
@@ -1452,8 +1451,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
           <folding>
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="false" />
+            <element signature="e#412#413#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1483,7 +1482,7 @@
         <state vertical-scroll-proportion="0.24757281">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1509,7 +1508,7 @@
         <state vertical-scroll-proportion="0.77408636">
           <caret line="34" column="86" selection-start-line="34" selection-start-column="86" selection-end-line="34" selection-end-column="86" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1520,9 +1519,9 @@
           <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1431332439481" expanded="true" signature="-1:-1" placeholder="select id fr..users..." />
-            <marker date="1431332439481" expanded="true" signature="-1:-1" placeholder="select * fro..users..." />
-            <marker date="1431332439481" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1431435397334" expanded="true" signature="-1:-1" placeholder="select id fr..users..." />
+            <marker date="1431435397334" expanded="true" signature="-1:-1" placeholder="select * fro..users..." />
+            <marker date="1431435397334" expanded="true" signature="-1:-1" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
@@ -1547,16 +1546,27 @@
           <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
           <folding>
             <element signature="e#777#785#0" expanded="true" />
-            <marker date="1431435170975" expanded="true" signature="1239:1265" placeholder="select usern..users..." />
+            <marker date="1431435397322" expanded="true" signature="1239:1265" placeholder="select usern..users..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15625">
+        <state vertical-scroll-proportion="-3.4615386">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GP4/LogInControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60465115">
+          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
+          <folding>
+            <marker date="1431435442468" expanded="true" signature="905:960" placeholder="select * fro..users..." />
+            <marker date="1431435442468" expanded="true" signature="1041:1119" placeholder="update users..." />
+          </folding>
         </state>
       </provider>
     </entry>
