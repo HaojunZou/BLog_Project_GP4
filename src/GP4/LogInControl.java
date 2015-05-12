@@ -23,6 +23,7 @@ public class LogInControl extends HttpServlet {
             String dbUserName = "root";
             String dbPassword = "haojun";
             String query = "select * from users where userName=? and userPassword=?";    //check un and pwd column in table users
+            String loggedQuery = "update users set userStatus = 'Logged' where userName = ? and userPassword = ?";
             Class.forName("org.gjt.mm.mysql.Driver");     //load driver
             Connection connection= DriverManager.getConnection(url, dbUserName, dbPassword);    //set connection
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -31,15 +32,24 @@ public class LogInControl extends HttpServlet {
             ResultSet resultSet = preparedStatement.executeQuery(); //execute query and save it to ResultSet object
 
             if(resultSet.next()){   //if there's record
+                PreparedStatement pstLogged = connection.prepareStatement(loggedQuery);
+                pstLogged.setString(1, resultSet.getString(3));
+                pstLogged.setString(2, resultSet.getString(5));
+                pstLogged.executeUpdate();
+
                 if(user.getUserName().equals("admin") && resultSet.getString(2).equals("1")){   //log in as admin
+                    pstLogged.close();
                     preparedStatement.close();
-                    response.sendRedirect("/blog/admin_panel.jsp");
                     connection.close();
+                    response.sendRedirect("/blog/admin_panel.jsp");
                 }
                 if(resultSet.getString(2).equals("2")){ //log in as normal user
+                    pstLogged.close();
                     preparedStatement.close();
-                    response.sendRedirect("/blog/home.html");   //redirect to home.html
                     connection.close();
+                    //redirect to home.html
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.html");
+                    dispatcher.forward(request, response);
                 }
             }
             else{   //if there's no record
@@ -51,8 +61,7 @@ public class LogInControl extends HttpServlet {
                 ); //give warning
             }
         connection.close();
-        }catch(Exception e)
-        {
+        }catch(Exception e) {
             e.printStackTrace();
         }
     }
