@@ -1,10 +1,5 @@
 <%@ page import="java.util.List" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Optimus
-  Date: 2015-05-07
-  Time: 12:12
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -22,15 +17,15 @@
     <script src="https://cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
 
 </head>
-<body background="img/bg.jpg"/>
+<body background="img/bg.jpg">
 
 <div class="container-fluid">
     <nav class="navbar">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="home.html"><img src="img/logo-white.png"
-                                                              style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
+                <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
+                                                             style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
                 </a><br/>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#navbar-collapse-3">
@@ -68,23 +63,23 @@
                 <form action="home.jsp" method="post">
                     <%
                         List<String> resultList = (List) request.getAttribute("resultUserNames");
-                        if (resultList != null) {
+                        if (resultList != null && resultList.size()>5) {
                     %>
                     <table>
-                        <ul>
-                            <%
-                                for (int i = 0; i <= 4; i++) {
-                                    String id = resultList.get(i);
-                            %>
-                            <tr>
-                                <td><%= id %>
-                                </td>
-                            </tr>
-                            <%
-                                    }
-                                }
-                            %></ul>
+                        <ul><%for (int i = 1; i < 6; i++) {
+                            String id = resultList.get(i);
+                        %><tr><td><%= id %></td></tr>
+                            <%}
+                    } if (resultList != null && resultList.size()<6) {%></ul>
                     </table>
+                    <table>
+                        <ul><%for (int i = 1; i < resultList.size(); i++) {
+                            String id = resultList.get(i);
+                        %><tr><td><%= id %></td></tr>
+                            <%}
+                            }%></ul>
+                    </table>
+
                 </form>
             </div>
         </div>

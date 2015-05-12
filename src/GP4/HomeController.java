@@ -1,22 +1,12 @@
 package GP4;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
+import java.io.*;
+import java.sql.*;
+import java.util.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-/**
- * Created by Optimus on 2015-05-11.
- */
 @WebServlet("/HomeController")
 public class HomeController extends HttpServlet {
 
@@ -29,21 +19,21 @@ public class HomeController extends HttpServlet {
 
             String url = "jdbc:mysql://localhost/blog";
             String dbUserName = "root";
-            String dbPassword = "admin";
+            String dbPassword = "haojun";
             Class.forName("org.gjt.mm.mysql.Driver");
             Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
 
-            String searchQuery = "select username from users";
+            String searchQuery = "select userName from users";
             PreparedStatement pstSearch = connection.prepareStatement(searchQuery);
             ResultSet resultSearch = pstSearch.executeQuery();
             while (resultSearch.next()) {
                 resultList.add(resultSearch.getString(1));
             }
             request.setAttribute("resultUserNames", resultList);
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
-            dispatcher.forward(request, response);
             pstSearch.close();
             connection.close();
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
+            dispatcher.forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -53,3 +43,4 @@ public class HomeController extends HttpServlet {
 
     }
 }
+

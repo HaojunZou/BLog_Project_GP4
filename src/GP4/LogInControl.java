@@ -1,22 +1,15 @@
 package GP4;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.io.*;
+import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 @WebServlet("/LogInControl")
 public class LogInControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
+        try{
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
 
@@ -28,45 +21,42 @@ public class LogInControl extends HttpServlet {
 
             String url = "jdbc:mysql://localhost/blog";
             String dbUserName = "root";
-            String dbPassword = "admin";
+            String dbPassword = "haojun";
             String query = "select * from users where userName=? and userPassword=?";    //check un and pwd column in table users
-            String loggedQuery = "update users set userStatus = 'Logged' where userName = ? and userPassword = ?";
+            String logQuery = "update users set userStatus='Logged' where userName=?";
             Class.forName("org.gjt.mm.mysql.Driver");     //load driver
-            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);    //set connection
+            Connection connection= DriverManager.getConnection(url, dbUserName, dbPassword);    //set connection
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, user.getUserName()); //set first string
             preparedStatement.setString(2, user.getUserPassword());    //set second string
             ResultSet resultSet = preparedStatement.executeQuery(); //execute query and save it to ResultSet object
 
-            if (resultSet.next()) {   //if there's record
-                PreparedStatement pstLogged = connection.prepareStatement(loggedQuery);
-                pstLogged.setString(1, resultSet.getString(3));
-                pstLogged.setString(2, resultSet.getString(5));
-                pstLogged.executeUpdate();
-
-                if (user.getUserName().equals("admin") && resultSet.getString(2).equals("1")) {   //log in as admin
-                    pstLogged.close();
+            if(resultSet.next()){   //if there's record
+                PreparedStatement pstLog = connection.prepareStatement(logQuery);
+                pstLog.setString(1, resultSet.getString(3));
+                pstLog.executeUpdate();
+                if(user.getUserName().equals("admin") && resultSet.getString(2).equals("1")){   //log in as admin
                     preparedStatement.close();
-                    connection.close();
                     response.sendRedirect("/blog/admin_panel.jsp");
-                }
-                if (resultSet.getString(2).equals("2")) { //log in as normal user
-                    pstLogged.close();
-                    preparedStatement.close();
-                    response.sendRedirect("/blog/home.jsp");   //redirect to home.html
-
                     connection.close();
                 }
-            } else {   //if there's no record
+                if(resultSet.getString(2).equals("2")){ //log in as normal user
+                    preparedStatement.close();
+                    response.sendRedirect("/blog/home.jsp");   //redirect to home.jsp
+                    connection.close();
+                }
+            }
+            else{   //if there's no record
                 out.print(
-                        "<script type='text/javascript'>" +
-                                "window.alert('User name or password is incorrect！');" +
-                                "history.go(-1);" +
-                                "</script>"
+                    "<script type='text/javascript'>" +
+                        "window.alert('User name or password is incorrect！');" +
+                        "history.go(-1);" +
+                    "</script>"
                 ); //give warning
             }
-            connection.close();
-        } catch (Exception e) {
+        connection.close();
+        }catch(Exception e)
+        {
             e.printStackTrace();
         }
     }

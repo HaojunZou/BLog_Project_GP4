@@ -12,7 +12,7 @@ CREATE TABLE users
 	gender		VARCHAR(6),
 	birthday	VARCHAR(10),
 	country 	VARCHAR(30),
-	userStatus	VARCHAR(10)
+	userStatus	VARCHAR(10) DEFAULT "Not Logged"
 )
 
 ALTER TABLE users ADD userStatus VARCHAR(10) DEFAULT "Not Logged";

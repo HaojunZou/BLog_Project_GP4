@@ -1,39 +1,33 @@
 package GP4;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.io.*;
+import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 @WebServlet("/AdminPanelResultControl")
 public class AdminPanelResultControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
+        try{
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
 
             String url = "jdbc:mysql://localhost/blog";
             String dbUserName = "root";
-            String dbPassword = "admin";
+            String dbPassword = "haojun";
             Class.forName("org.gjt.mm.mysql.Driver");
-            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+            Connection connection= DriverManager.getConnection(url, dbUserName, dbPassword);
             String checkQuery = "select * from users where userName = ?";
             String deleteQuery = "delete from users where userName = ?";
 
             String deleteValue = request.getParameter("deleteRecord");
 
-            if (!deleteValue.equals("")) {
+            if(!deleteValue.equals("")){
                 PreparedStatement pstCheck = connection.prepareStatement(checkQuery);
                 pstCheck.setString(1, deleteValue);
                 ResultSet resultSetCheck = pstCheck.executeQuery();
-                if (resultSetCheck.next()) {
+                if(resultSetCheck.next()){
                     PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
                     pstDelete.setString(1, resultSetCheck.getString(3));
                     pstDelete.executeUpdate();
@@ -41,16 +35,17 @@ public class AdminPanelResultControl extends HttpServlet {
                     pstDelete.close();
                     connection.close();
                     response.sendRedirect("/blog/admin_panel_executed.html");
-                } else {
+                }else{
                     out.print(
-                            "<script type='text/javascript'>" +
-                                    "window.alert('No such data！');" +
-                                    "history.go(-1);" +
-                                    "</script>"
+                        "<script type='text/javascript'>" +
+                            "window.alert('No such data！');" +
+                            "history.go(-1);" +
+                        "</script>"
                     );
                 }
             }
-        } catch (Exception e) {
+        }catch(Exception e)
+        {
             e.printStackTrace();
         }
     }
