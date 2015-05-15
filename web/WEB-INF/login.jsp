@@ -3,7 +3,6 @@
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <base href="<%=basePath%>">
-<%@ page import="GP4.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@
         <div style="text-align: center;">
             <h1>Welcome</h1>
         </div>
-        <form action="/blog/LogInControl" method="post" onsubmit="return validate(this)">
+        <form action="/blog/UserLogInControl" method="post" onsubmit="return validate(this)">
             <div style="text-align: center;">
                 <table align="center">
                     <tr>

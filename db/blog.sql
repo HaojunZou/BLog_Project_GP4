@@ -1,20 +1,38 @@
 CREATE DATABASE blog
 USE blog
 
-CREATE TABLE users
+CREATE TABLE Users
 (
-	id 		INT(6) PRIMARY KEY,
-	userType   	INT(1),
+	user_id 	INT(6),
+	PRIMARY KEY(user_id),
+	userType   	VARCHAR(15),
 	userName 	VARCHAR(30),
 	email		VARCHAR(30),
 	userPassword	VARCHAR(30),
 	realName	VARCHAR(30),
 	gender		VARCHAR(6),
 	birthday	VARCHAR(10),
-	country 	VARCHAR(30),
-	userStatus	VARCHAR(10) DEFAULT "Not Logged"
+	country 	VARCHAR(30)
 )
 
-ALTER TABLE users ADD userStatus VARCHAR(10) DEFAULT "Not Logged";
+CREATE TABLE Categories
+(
+	cate_id		INT(100),
+	PRIMARY KEY(cate_id),
+	cateName	VARCHAR(20)
+)
+
+CREATE TABLE Posts
+(
+	post_id		INT(20),
+	PRIMARY KEY(post_id),
+	postTitle	VARCHAR(100),
+	postBody	VARCHAR(2000),
+	userId	INT,
+	categoryId	INT,
+	FOREIGN KEY (userId) REFERENCES Users(user_id),
+	FOREIGN KEY (categoryId) REFERENCES Categories(cate_id),
+	published	BOOL
+)
 
 DROP DATABASE blog

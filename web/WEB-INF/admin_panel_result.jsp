@@ -1,4 +1,6 @@
-<%@ page import="java.util.List" %>
+
+<%@ page import="se.molk.blog.domain.User" %>
+<%@ page import="java.util.LinkedList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -24,7 +26,10 @@
             <h1>Here's the result, Administrator</h1>
             <form action="admin_panel_result.jsp" method="post">
                 <%
-                    List<String> userList = (List) request.getAttribute("resultUserList");
+                    LinkedList<User> userList = (LinkedList<User>)request.getAttribute("users");
+                    if(userList == null){
+                        userList = new LinkedList<User>();
+                    }
                 %>
                 <table border="1" style="background-color: white;">
                     <tr>
@@ -37,23 +42,23 @@
                         <th>Gender</th>
                         <th>Birthday</th>
                         <th>Country</th>
-                        <th>User Status</th>
                     </tr>
+                    <%
+                        for(User user : userList) {
+                    %>
                     <tbody align="center" valign="middle">
-                        <%for(int i=0; i<(userList.size()); i+=10){
-                            %><tr>
-                        <td> <%= userList.get(i) %> </td>
-                        <td> <%= userList.get(i+1) %> </td>
-                        <td> <%= userList.get(i+2) %> </td>
-                        <td> <%= userList.get(i+3) %> </td>
-                        <td> <%= userList.get(i+4) %> </td>
-                        <td> <%= userList.get(i+5) %> </td>
-                        <td> <%= userList.get(i+6) %> </td>
-                        <td> <%= userList.get(i+7) %> </td>
-                        <td> <%= userList.get(i+8) %> </td>
-                        <td> <%= userList.get(i+9) %> </td>
-                        </tr><%}%>
-                    </tbody>
+                    <tr>
+                        <td><%= user.getUserId() %></td>
+                        <td><%= user.getUserType() %></td>
+                        <td><%= user.getUserName() %></td>
+                        <td><%= user.getEmail() %></td>
+                        <td><%= user.getUserPassword() %></td>
+                        <td><%= user.getRealName() %></td>
+                        <td><%= user.getGender() %></td>
+                        <td><%= user.getBirthday() %></td>
+                        <td><%= user.getCountry() %></td>
+                    </tr>
+                    </tbody><%}%>
                 </table>
             </form>
             <br/>

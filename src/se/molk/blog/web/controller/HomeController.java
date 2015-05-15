@@ -1,4 +1,4 @@
-package GP4;
+package se.molk.blog.web.controller;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.*;
@@ -23,7 +23,7 @@ public class HomeController extends HttpServlet {
             Class.forName("org.gjt.mm.mysql.Driver");
             Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
 
-            String searchQuery = "select userName from users";
+            String searchQuery = "select userName from Users";
             PreparedStatement pstSearch = connection.prepareStatement(searchQuery);
             ResultSet resultSearch = pstSearch.executeQuery();
             while (resultSearch.next()) {

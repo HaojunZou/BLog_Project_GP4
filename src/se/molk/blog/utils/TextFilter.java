@@ -1,4 +1,4 @@
-package GP4;
+package se.molk.blog.utils;
 
 public class TextFilter {
     public String filterHtml(String value){ //html filter to prevent special characters in text

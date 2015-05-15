@@ -3,7 +3,7 @@
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <base href="<%=basePath%>">
-<%@ page import="GP4.User" %>
+<%@ page import="se.molk.blog.domain.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -49,7 +49,7 @@
         </div>
         <div style="text-align: center;"><h1>Welcome To Blog Registration</h1></div>
         <div style="text-align: center;">
-            <form action="/blog/SignUpControl" id="information" method="post" onsubmit="return validate(this)">
+            <form action="/blog/UserSignUpControl" id="information" method="post" onsubmit="return validate(this)">
                 <table align="center">
                     <tr>
                         <td>User Name</td><td><input type="text" name="userName"/><span style="color: red;"> *</span></td>

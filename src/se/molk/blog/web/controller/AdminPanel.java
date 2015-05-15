@@ -1,4 +1,4 @@
-package GP4;
+package se.molk.blog.web.controller;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.*;

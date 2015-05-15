@@ -1,24 +1,25 @@
-package GP4;
+package se.molk.blog.web.controller;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-@WebServlet("/main.html")
-public class Main extends HttpServlet {
+
+@WebServlet("/home.jsp")
+public class Home extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
-    public Main() {
+    public Home() {
         super();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/main.html");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
         dispatcher.forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/blog/main.html");
 
     }
 
