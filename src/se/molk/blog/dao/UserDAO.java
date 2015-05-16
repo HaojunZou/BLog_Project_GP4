@@ -128,6 +128,8 @@ public class UserDAO {
                 userType = resultSet.getString("userType");
                 pstSearch.close();
                 connection.close();
+            }else{
+                userType = "Unknown";
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -235,4 +237,27 @@ public class UserDAO {
         }
         return false;
     }
+
+    public boolean changePassword(String userName, String newUserPassword) throws SQLException {
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        if(checkUserByUserName(userName)){
+            try{
+                String changePwdQuery = "update Users set userPassword = ? where userName = ?";
+                PreparedStatement pstChangePwd = connection.prepareStatement(changePwdQuery);
+                pstChangePwd.setString(1, newUserPassword);
+                pstChangePwd.setString(2, userName);
+                pstChangePwd.executeUpdate();
+                pstChangePwd.close();
+                connection.close();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }else{
+            connection.close();
+            return false;
+        }
+        return false;
+    }
+
 }

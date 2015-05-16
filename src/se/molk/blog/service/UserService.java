@@ -26,6 +26,7 @@ public class UserService {
         int getUserType;
         if(userType.equals("Normal User")){getUserType = 2;}
         else if(userType.equals("Administrator")){getUserType = 1;}
+        else if(userType.equals("Unknown")){getUserType = 3;}
         else{getUserType = 0;}
         return getUserType;
     }

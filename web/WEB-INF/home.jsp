@@ -58,6 +58,10 @@
         <div class="container col-md-3">
             <div class="well" id="userList">
                 <form action="/blog/HomeController" method="post">
+                    <%
+                        String currentUserName = (String) request.getAttribute("currentUserName");
+                    %>
+                    <p>Welcome back, <%= currentUserName%></p>
                     <input type="submit" value="Hämta"/>
                 </form>
                 <form action="home.jsp" method="post">

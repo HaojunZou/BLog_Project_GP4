@@ -31,10 +31,21 @@ public class UserLogInControl extends HttpServlet {
         try {
             int userType = userService.logIn(userName, userPassword);
             if (userType == 2){
-                response.sendRedirect("/blog/home.jsp");
+                request.setAttribute("currentUserName", userName);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
+                dispatcher.forward(request, response);
+                //response.sendRedirect("/blog/home.jsp");
             }else if (userType == 1){
                 response.sendRedirect("/blog/admin_panel.jsp");
-            }else{
+            }else if (userType == 3){
+                out.print(
+                        "<script type='text/javascript'>" +
+                                "window.alert('User name or password is incorrect');" +
+                                "history.go(-1)" +
+                                "</script>"
+                );
+            }
+            else{
                 out.print(
                         "<script type='text/javascript'>" +
                                 "window.alert('Sorry! Incorrect user name or password');" +
