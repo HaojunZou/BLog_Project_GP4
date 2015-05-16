@@ -1,9 +1,11 @@
 package se.molk.blog.web.controller;
 
 import se.molk.blog.dao.UserDAO;
+import se.molk.blog.domain.User;
 import se.molk.blog.service.UserService;
 
 import java.io.*;
+import java.util.List;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
@@ -25,16 +27,18 @@ public class UserLogInControl extends HttpServlet {
             e.printStackTrace();
         }
         UserService userService = new UserService(user);
+        List<User> userList;
         String userName = request.getParameter("userName");
         String userPassword = request.getParameter("userPassword");
 
         try {
             int userType = userService.logIn(userName, userPassword);
             if (userType == 2){
-                request.setAttribute("currentUserName", userName);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
-                dispatcher.forward(request, response);
-                //response.sendRedirect("/blog/home.jsp");
+                userList = userService.getAllUsers();
+                HttpSession session = request.getSession();
+                session.setAttribute("currentUserName", userName);
+                session.setAttribute("userList", userList);
+                response.sendRedirect("/blog/home.jsp");
             }else if (userType == 1){
                 response.sendRedirect("/blog/admin_panel.jsp");
             }else if (userType == 3){

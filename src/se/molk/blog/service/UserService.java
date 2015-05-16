@@ -40,4 +40,8 @@ public class UserService {
         return userDAO.addUser(userName, email, userPassword, realName, gender, birthday, country);
     }
 
+    public boolean changePassword(String userName, String newUserPassword) throws SQLException {
+        return userDAO.changePassword(userName, newUserPassword);
+    }
+
 }

@@ -1,4 +1,6 @@
-<%@ page import="java.util.List" %>
+
+<%@ page import="se.molk.blog.domain.User" %>
+<%@ page import="java.util.LinkedList" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -25,7 +27,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
-                                                             style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
+                                                                   style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
                 </a><br/>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#navbar-collapse-3">
@@ -57,33 +59,31 @@
         <!--LEFT COLUMN-->
         <div class="container col-md-3">
             <div class="well" id="userList">
-                <form action="/blog/HomeController" method="post">
+                <%
+                    LinkedList<User> userList;
+                %>
+                <form action="/HomeController" method="post">
                     <%
-                        String currentUserName = (String) request.getAttribute("currentUserName");
+                        String currentUserName = (String) session.getAttribute("currentUserName");
+                        userList = (LinkedList<User>)session.getAttribute("userList");
+                        if(userList == null){
+                            userList = new LinkedList<User>();
+                        }
                     %>
-                    <p>Welcome back, <%= currentUserName%></p>
-                    <input type="submit" value="Hämta"/>
-                </form>
-                <form action="home.jsp" method="post">
-                    <%
-                        List<String> resultList = (List) request.getAttribute("resultUserNames");
-                        if (resultList != null && resultList.size()>5) {
-                    %>
+                    <p>Welcome back, <%=currentUserName %>!</p>
                     <table>
-                        <ul><%for (int i = 1; i < 6; i++) {
-                            String id = resultList.get(i);
-                        %><tr><td><%= id %></td></tr>
-                            <%}
-                    } if (resultList != null && resultList.size()<6) {%></ul>
+                        <tr>
+                            <th>User List:</th>
+                        </tr>
+                        <%
+                            for(User user : userList) {
+                        %>
+                        <tbody align="center" valign="middle">
+                        <tr>
+                            <td><%= user.getUserName() %></td>
+                        </tr>
+                        </tbody><%}%>
                     </table>
-                    <table>
-                        <ul><%for (int i = 1; i < resultList.size(); i++) {
-                            String id = resultList.get(i);
-                        %><tr><td><%= id %></td></tr>
-                            <%}
-                            }%></ul>
-                    </table>
-
                 </form>
             </div>
         </div>
