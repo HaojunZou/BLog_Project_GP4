@@ -179,7 +179,7 @@ public class UserDAO {
         return false;
     }
 
-    public void addUser(String userName, String email, String userPassword, String realName,
+    public boolean addUser(String userName, String email, String userPassword, String realName,
                         String gender, String birthday, String country) throws SQLException {
         User user = new User();
         user.setUserType("Normal User");
@@ -195,7 +195,7 @@ public class UserDAO {
             preparedStatementExist.setString(2, email);
             ResultSet resultSetExist = preparedStatementExist.executeQuery();
 
-            if(!resultSetExist.next()) {  //if this record is not exist and user accepted provision
+            if(!resultSetExist.next()) {  //if this record is not exist
                 int idNumber = 1;
                 for (int i = 1; i < 1000000; i++) {
                     PreparedStatement pstIdCheck = connection.prepareStatement(idCheckQuery);
@@ -222,15 +222,17 @@ public class UserDAO {
                 preparedStatement.setString(9, country);
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
+                preparedStatementExist.close();
+                connection.close();
+                return true;
             }else{
-
+                preparedStatementExist.close();
+                connection.close();
+                return false;
             }
-            preparedStatementExist.close();
-            connection.close();
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            connection.close();
         }
+        return false;
     }
 }

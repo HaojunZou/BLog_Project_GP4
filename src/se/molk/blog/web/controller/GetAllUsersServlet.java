@@ -1,26 +1,22 @@
-package GP4;
+package se.molk.blog.web.controller;
 
-import javax.servlet.annotation.WebServlet;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/signup.jsp")
-public class SignUp extends HttpServlet {
-
+@WebServlet("/test_get_all_users.jsp")
+public class GetAllUsersServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    public SignUp() {
+    public GetAllUsersServlet() {
         super();
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        response.sendRedirect("/blog/signup.jsp");
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/signup.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/test_get_all_users.jsp");
         dispatcher.forward(request, response);
     }
 }

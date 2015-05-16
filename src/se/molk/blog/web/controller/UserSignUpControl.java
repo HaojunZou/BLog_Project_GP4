@@ -11,6 +11,8 @@ import javax.servlet.annotation.WebServlet;
 @WebServlet("/UserSignUpControl")
 public class UserSignUpControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
 
         UserDAO user = null;
         try {
@@ -28,9 +30,17 @@ public class UserSignUpControl extends HttpServlet {
         String country = request.getParameter("country");
 
         try {
-            userService.addUser(userName, email, userPassword, realName, gender, birthday, country);
-
-            response.sendRedirect("/blog/home.jsp");
+            boolean userAdded = userService.addUser(userName, email, userPassword, realName, gender, birthday, country);
+            if(userAdded){
+                response.sendRedirect("/blog/home.jsp");
+            }else{
+                out.print(
+                        "<script type='text/javascript'>" +
+                                "window.alert('This user has already been registered！');" +
+                                "history.go(-1);" +
+                                "</script>"
+                );
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

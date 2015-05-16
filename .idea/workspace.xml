@@ -7,49 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/service/BlogService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/domain/Category.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/GetAllUsersServletControl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/domain/Post.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogIn.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogInControl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/service/UserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUpControl.java" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\AdminPanel.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\AdminPanelControl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\AdminPanelExecuted.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\AdminPanelResult.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\AdminPanelResultControl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\Home.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\HomeController.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\LogIn.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\LogInControl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\Main.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\SignUp.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\SignUpControl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\TextFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\out\production\Blog_Project_GP4\GP4\User.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\LogInControl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\SignUpControl.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\AdminPanel.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanel.java" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\AdminPanelControl.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelControl.java" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\AdminPanelExecuted.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelExecuted.java" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\AdminPanelResult.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelResult.java" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\AdminPanelResultControl.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelResultControl.java" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\Home.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/Home.java" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\HomeController.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/HomeController.java" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\LogIn.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUp.java" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\Main.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/Main.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/service/PostService.java" />
       <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\SignUp.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/GetAllUsersServlet.java" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\TextFilter.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/utils/TextFilter.java" />
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\GP4\User.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/domain/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/blog.sql" afterPath="$PROJECT_DIR$/db/blog.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/login.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/signup.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/signup.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/service/UserService.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUpControl.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUpControl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimpleServlet.iws" />
@@ -81,11 +45,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="UserLogInControl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogInControl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="263" max-vertical-offset="969">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminPanelResultControl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelResultControl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="1938">
+              <caret line="204" column="73" selection-start-line="204" selection-start-column="73" selection-end-line="204" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getAllUsers#0;class#UserDAO#0" expanded="false" />
+                <element signature="method#getUserByFuzzySearch#0;class#UserDAO#0" expanded="false" />
+                <element signature="e#2002#2008#0" expanded="true" />
+                <element signature="method#getUserById#0;class#UserDAO#0" expanded="false" />
+                <element signature="method#logIn#0;class#UserDAO#0" expanded="false" />
+                <element signature="method#checkUserByUserName#0;class#UserDAO#0" expanded="false" />
+                <marker date="1431767272849" expanded="true" signature="831:850" placeholder="select * fro..Users..." />
+                <marker date="1431767272849" expanded="true" signature="2160:2224" placeholder="select * fro..Users..." />
+                <marker date="1431767272849" expanded="true" signature="3665:3702" placeholder="select * fro..Users..." />
+                <marker date="1431767272849" expanded="true" signature="5084:5143" placeholder="select * fro..Users..." />
+                <marker date="1431767272849" expanded="true" signature="5924:5962" placeholder="select * fro..Users..." />
+                <marker date="1431767272849" expanded="true" signature="6783:6819" placeholder="delete from ..." />
+                <marker date="1431767272849" expanded="true" signature="7709:7762" placeholder="select user_..Users..." />
+                <marker date="1431767272849" expanded="true" signature="7834:7869" placeholder="select * fro..Users..." />
+                <marker date="1431767272849" expanded="true" signature="7967:8130" placeholder="insert into ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserSignUpControl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUpControl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.70705247" vertical-offset="255" max-vertical-offset="1003">
+              <caret line="38" column="69" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminPanelControl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelControl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="748">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoryDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="641" max-vertical-offset="1207">
+              <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1431765812006" expanded="true" signature="912:936" placeholder="select * fro..Categories..." />
+                <marker date="1431765812006" expanded="true" signature="1745:1785" placeholder="select * fro..Categories..." />
+                <marker date="1431765812006" expanded="true" signature="1745:1787" placeholder="select * fro..Categories..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="578">
+              <caret line="37" column="93" selection-start-line="37" selection-start-column="93" selection-end-line="37" selection-end-column="93" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getAllUsers#0;class#UserService#0" expanded="false" />
@@ -96,106 +150,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/HomeController.java">
+      <file leaf-file-name="PostService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/PostService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="884">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#450#458#0" expanded="true" />
-                <marker date="1431693319150" expanded="true" signature="915:941" placeholder="select userN..Users..." />
+                <element signature="e#163#164#0" expanded="true" />
+                <element signature="e#201#202#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserLogInControl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogInControl.java">
+      <file leaf-file-name="BlogService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/BlogService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="606" max-vertical-offset="969">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/Home.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserSignUpControl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUpControl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="470" max-vertical-offset="833">
-              <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3846154" vertical-offset="437" max-vertical-offset="2567">
-              <caret line="37" column="46" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
+      <file leaf-file-name="Category.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/domain/Category.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769" vertical-offset="663" max-vertical-offset="1292">
-              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserSignUp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-              <caret line="18" column="103" selection-start-line="18" selection-start-column="103" selection-end-line="18" selection-end-column="103" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signup.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/signup.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="42.5" vertical-offset="1836" max-vertical-offset="5950">
-              <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserLogIn.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogIn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3443526" vertical-offset="96" max-vertical-offset="459">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -209,7 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/WEB-INF/adminpanel.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/adminpanelexecuted.html" />
         <option value="$PROJECT_DIR$/web/WEB-INF/adminpanelresult.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/adminpanelexecuted.jsp" />
@@ -237,7 +219,6 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/test_site.jsp" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/SignUpServlet.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/SignUpServletControl.java" />
-        <option value="$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/test_sign_up.jsp" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/test_get_all_users.jsp" />
@@ -252,14 +233,16 @@
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanel.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelControl.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" />
-        <option value="$PROJECT_DIR$/src/se/molk/blog/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelResultControl.java" />
-        <option value="$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogInControl.java" />
-        <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUpControl.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/signup.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/login.jsp" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUp.java" />
+        <option value="$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java" />
+        <option value="$PROJECT_DIR$/src/se/molk/blog/service/PostService.java" />
+        <option value="$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/se/molk/blog/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUpControl.java" />
       </list>
     </option>
   </component>
@@ -318,6 +301,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -433,10 +417,6 @@
               <option name="myItemId" value="blog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -535,7 +515,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1004,13 +983,8 @@
       <workItem from="1431442296379" duration="23964000" />
       <workItem from="1431525928396" duration="34864000" />
       <workItem from="1431627739909" duration="8051000" />
-      <workItem from="1431684637765" duration="10067000" />
-    </task>
-    <task id="LOCAL-00002" summary="logo changed">
-      <created>1430407333798</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1430407333798</updated>
+      <workItem from="1431684637765" duration="10419000" />
+      <workItem from="1431763346063" duration="4711000" />
     </task>
     <task id="LOCAL-00003" summary="logo changed">
       <created>1430407360167</created>
@@ -1300,11 +1274,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431451180769</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="New architecture, new database. Make sure remake database and application">
+      <created>1431694846150</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1431694846152</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337373000" />
+    <option name="totallyTimeSpent" value="342436000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1333,7 +1313,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32774675" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31986532" sideWeight="0.49864987" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31986532" sideWeight="0.49864987" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863435" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1341,7 +1321,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2979798" sideWeight="0.50135016" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291367" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275862" sideWeight="0.4994995" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32659933" sideWeight="0.4994995" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1400,11 +1380,12 @@
     <MESSAGE value="admin panel search function returns as a list" />
     <MESSAGE value="new colum user status added in database, make sure you update your database first or rebuilt it." />
     <MESSAGE value="admin searching function upgraded" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin searching function upgraded" />
+    <MESSAGE value="New architecture, new database. Make sure remake database and application" />
+    <option name="LAST_COMMIT_MESSAGE" value="New architecture, new database. Make sure remake database and application" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1413,6 +1394,24 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogIn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="459">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/utils/TextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="340">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="442">
@@ -1427,12 +1426,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="1003">
           <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding>
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1505,7 +1499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1513,13 +1506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50737464" vertical-offset="2531" max-vertical-offset="3366">
           <caret line="159" column="3" selection-start-line="159" selection-start-column="3" selection-end-line="159" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/utils/TextFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1534,7 +1520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.384615" vertical-offset="164" max-vertical-offset="748">
           <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1542,13 +1527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16732283" vertical-offset="0" max-vertical-offset="765">
           <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/domain/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1564,15 +1542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="5950">
           <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="557" max-vertical-offset="1207">
-          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1587,23 +1556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
           <caret line="17" column="87" selection-start-line="17" selection-start-column="87" selection-end-line="17" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/BlogService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1611,9 +1563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="37" max-vertical-offset="408">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1621,7 +1570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.115385" vertical-offset="26" max-vertical-offset="952">
           <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1629,9 +1577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1639,6 +1584,202 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="850">
           <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="850" max-vertical-offset="1377">
+          <caret line="70" column="49" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel_executed.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="425">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="1037">
+          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelExecuted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="884">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="2567">
+          <caret line="37" column="46" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/signup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="5950">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1292">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="18" column="103" selection-start-line="18" selection-start-column="103" selection-end-line="18" selection-end-column="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogIn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="459">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/utils/TextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="557" max-vertical-offset="1207">
+          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+          <folding>
+            <marker date="1431514905472" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/domain/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="641" max-vertical-offset="1207">
+          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1431765812006" expanded="true" signature="912:936" placeholder="select * fro..Categories..." />
+            <marker date="1431765812006" expanded="true" signature="1745:1785" placeholder="select * fro..Categories..." />
+            <marker date="1431765812006" expanded="true" signature="1745:1787" placeholder="select * fro..Categories..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/BlogService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/PostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="e#163#164#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="824" max-vertical-offset="1938">
+          <caret line="204" column="73" selection-start-line="204" selection-start-column="73" selection-end-line="204" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getAllUsers#0;class#UserDAO#0" expanded="false" />
+            <element signature="method#getUserByFuzzySearch#0;class#UserDAO#0" expanded="false" />
+            <element signature="e#2002#2008#0" expanded="true" />
+            <element signature="method#getUserById#0;class#UserDAO#0" expanded="false" />
+            <element signature="method#logIn#0;class#UserDAO#0" expanded="false" />
+            <element signature="method#checkUserByUserName#0;class#UserDAO#0" expanded="false" />
+            <marker date="1431767272849" expanded="true" signature="831:850" placeholder="select * fro..Users..." />
+            <marker date="1431767272849" expanded="true" signature="2160:2224" placeholder="select * fro..Users..." />
+            <marker date="1431767272849" expanded="true" signature="3665:3702" placeholder="select * fro..Users..." />
+            <marker date="1431767272849" expanded="true" signature="5084:5143" placeholder="select * fro..Users..." />
+            <marker date="1431767272849" expanded="true" signature="5924:5962" placeholder="select * fro..Users..." />
+            <marker date="1431767272849" expanded="true" signature="6783:6819" placeholder="delete from ..." />
+            <marker date="1431767272849" expanded="true" signature="7709:7762" placeholder="select user_..Users..." />
+            <marker date="1431767272849" expanded="true" signature="7834:7869" placeholder="select * fro..Users..." />
+            <marker date="1431767272849" expanded="true" signature="7967:8130" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="578">
+          <caret line="37" column="93" selection-start-line="37" selection-start-column="93" selection-end-line="37" selection-end-column="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getAllUsers#0;class#UserService#0" expanded="false" />
+            <element signature="method#getUserByFuzzySearch#0;class#UserService#0" expanded="false" />
+            <element signature="method#logIn#0;class#UserService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogInControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="969">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1655,168 +1796,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923" vertical-offset="850" max-vertical-offset="1377">
-          <caret line="70" column="49" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel_executed.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="425">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="1037">
-          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelExecuted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelResultControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="901">
-          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="807" max-vertical-offset="1377">
-          <caret line="166" column="49" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getAllUsers#0;class#UserDAO#0" expanded="false" />
-            <element signature="method#getUserByFuzzySearch#0;class#UserDAO#0" expanded="false" />
-            <element signature="e#2002#2008#0" expanded="true" />
-            <element signature="method#getUserById#0;class#UserDAO#0" expanded="false" />
-            <element signature="method#logIn#0;class#UserDAO#0" expanded="false" />
-            <element signature="method#addUser#0;class#UserDAO#0" expanded="false" />
-            <marker date="1431693159797" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
-            <marker date="1431693159797" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
-            <marker date="1431693159797" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
-            <marker date="1431693159797" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
-            <marker date="1431693159797" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
-            <marker date="1431693159797" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1431693159797" expanded="true" signature="-1:-1" placeholder="select user_..Users..." />
-            <marker date="1431693159797" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
-            <marker date="1431693159797" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getAllUsers#0;class#UserService#0" expanded="false" />
-            <element signature="method#getUserByFuzzySearch#0;class#UserService#0" expanded="false" />
-            <element signature="method#logIn#0;class#UserService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="884">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#450#458#0" expanded="true" />
-            <marker date="1431693319150" expanded="true" signature="915:941" placeholder="select userN..Users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3846154" vertical-offset="437" max-vertical-offset="2567">
-          <caret line="37" column="46" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogInControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="969">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/signup.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="42.5" vertical-offset="1836" max-vertical-offset="5950">
-          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="663" max-vertical-offset="1292">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUpControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="470" max-vertical-offset="833">
-          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="18" column="103" selection-start-line="18" selection-start-column="103" selection-end-line="18" selection-end-column="103" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3443526" vertical-offset="96" max-vertical-offset="459">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.70705247" vertical-offset="255" max-vertical-offset="1003">
+          <caret line="38" column="69" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

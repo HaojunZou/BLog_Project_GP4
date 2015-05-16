@@ -43,7 +43,23 @@ public class CategoryDAO {
         return categoryList;
     }
 
-    public Category getCategoryById(int id){
-        return null;
+    public Category getCategoryById(int cate_id){
+        Category category = new Category();
+        try{
+            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+            String categorySearchQuery = "select * from Categories where cate_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(categorySearchQuery);
+            preparedStatement.setInt(1, cate_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                category.setCate_id(resultSet.getInt("cate_id"));
+                category.setName(resultSet.getString("cateName"));
+            }
+            preparedStatement.close();
+            connection.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return category;
     }
 }

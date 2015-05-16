@@ -31,14 +31,12 @@ public class UserService {
     }
 
     public boolean deleteAnUser(String userName) throws SQLException {
-        if(userDAO.deleteAnUser(userName)){return true;}
-        else{return false;}
+        return userDAO.deleteAnUser(userName);
     }
 
-    public void addUser(String userName, String email, String userPassword, String realName,
+    public boolean addUser(String userName, String email, String userPassword, String realName,
                         String gender, String birthday, String country) throws SQLException {
-
-        userDAO.addUser(userName, email, userPassword, realName, gender, birthday, country);
+        return userDAO.addUser(userName, email, userPassword, realName, gender, birthday, country);
     }
 
 }
