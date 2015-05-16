@@ -62,7 +62,7 @@
                 <%
                     LinkedList<User> userList;
                 %>
-                <form action="/HomeController" method="post">
+                <form action="/HomeControl" method="post">
                     <%
                         String currentUserName = (String) session.getAttribute("currentUserName");
                         userList = (LinkedList<User>)session.getAttribute("userList");
