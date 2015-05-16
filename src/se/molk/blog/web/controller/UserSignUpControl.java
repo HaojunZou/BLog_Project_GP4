@@ -1,9 +1,11 @@
 package se.molk.blog.web.controller;
 
 import se.molk.blog.dao.UserDAO;
+import se.molk.blog.domain.User;
 import se.molk.blog.service.UserService;
 
 import java.io.*;
+import java.util.List;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
@@ -29,9 +31,15 @@ public class UserSignUpControl extends HttpServlet {
         String birthday = request.getParameter("birthday");
         String country = request.getParameter("country");
 
+        List<User> userList;
+
         try {
             boolean userAdded = userService.addUser(userName, email, userPassword, realName, gender, birthday, country);
             if(userAdded){
+                userList = userService.getAllUsers();
+                HttpSession session = request.getSession();
+                session.setAttribute("currentUserName", userName);
+                session.setAttribute("userList", userList);
                 response.sendRedirect("/blog/home.jsp");
             }else{
                 out.print(

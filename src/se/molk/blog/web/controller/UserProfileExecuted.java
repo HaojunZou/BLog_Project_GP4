@@ -5,18 +5,14 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/login.jsp")
-public class UserLogIn extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    public UserLogIn() {
-        super();
-    }
+@WebServlet("/user_profile_executed.html")
+public class UserProfileExecuted extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/user_profile_executed.html");
         dispatcher.forward(request, response);
     }
 }

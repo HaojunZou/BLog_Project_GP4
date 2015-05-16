@@ -238,14 +238,15 @@ public class UserDAO {
         return false;
     }
 
-    public boolean changePassword(String userName, String newUserPassword) throws SQLException {
+    public boolean changePassword(String currentUserName, String oldUserPassword, String newUserPassword) throws SQLException {
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
-        if(checkUserByUserName(userName)){
+        String user = logIn(currentUserName, oldUserPassword);
+        if(user.equals("Normal User")){
             try{
                 String changePwdQuery = "update Users set userPassword = ? where userName = ?";
                 PreparedStatement pstChangePwd = connection.prepareStatement(changePwdQuery);
                 pstChangePwd.setString(1, newUserPassword);
-                pstChangePwd.setString(2, userName);
+                pstChangePwd.setString(2, currentUserName);
                 pstChangePwd.executeUpdate();
                 pstChangePwd.close();
                 connection.close();
