@@ -115,6 +115,29 @@ public class UserDAO {
         return user;
     }
 
+    public String [] getUserInfoByName(String userName) throws SQLException {
+        String [] info = new String[4];
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String userSearchQuery = "select realName, gender, birthday, country from Users where userName = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(userSearchQuery);
+            preparedStatement.setString(1, userName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                info[0] = resultSet.getString(1);
+                info[1] = resultSet.getString(2);
+                info[2] = resultSet.getString(3);
+                info[3] = resultSet.getString(4);
+            }
+            preparedStatement.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+        return info;
+    }
+
     public String logIn(String userName, String userPassword){
         String userType = null;
         try {
@@ -249,6 +272,37 @@ public class UserDAO {
                 pstChangePwd.setString(2, currentUserName);
                 pstChangePwd.executeUpdate();
                 pstChangePwd.close();
+                connection.close();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }else{
+            connection.close();
+            return false;
+        }
+        return false;
+    }
+
+    public boolean updateUserInfo(String currentUserName, String realName, String gender,
+                                    String birthday, String country) throws SQLException {
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        String[] info = getUserInfoByName(currentUserName);
+        if(info!=null){
+            if(realName == ""){realName = info[0];}
+            if(gender == ""){gender = info[1];}
+            if(birthday == ""){birthday = info[2];}
+            if(country == ""){country = info[3];}
+            try{
+                String updateInfoQuery = "update Users set realName=?, gender=?, birthday=?, country=? where userName=?";
+                PreparedStatement pstUpdateInfo = connection.prepareStatement(updateInfoQuery);
+                pstUpdateInfo.setString(1, realName);
+                pstUpdateInfo.setString(2, gender);
+                pstUpdateInfo.setString(3, birthday);
+                pstUpdateInfo.setString(4, country);
+                pstUpdateInfo.setString(5, currentUserName);
+                pstUpdateInfo.executeUpdate();
+                pstUpdateInfo.close();
                 connection.close();
                 return true;
             } catch (SQLException e) {

@@ -1,18 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
-        <title>Profile configuration</title>
+        <title>Change Password</title>
     </head>
     <body background="img/bg.jpg">
         <%
             String currentUserName = (String) session.getAttribute("currentUserName");
         %>
-        <form action="user_profile.jsp" method="post">
+        <form action="user_change_pwd.jsp" method="post">
             <div style="text-align: center;">
                 <h1><%=currentUserName %></h1>
             </div>
         </form>
-        <form action="/blog/UserProfileControl" method="post" onsubmit="return validate(this)">
+        <form action="/blog/UserChangePwdControl" method="post" onsubmit="return validate(this)">
             <div style="text-align: center;">
                 <h2>Change password</h2>
                 <table align="center">
@@ -30,9 +30,10 @@
                     </tr>
                 </table>
                 <input type="submit" value="Change password"/>
-                <button><a href="home.jsp">Back to home</a></button>
             </div>
         </form>
+
+        <div style="text-align: center;"><button><a href="home.jsp">Back to home</a></button></div>
 
         <!-- check if password is empty -->
         <script language="JavaScript">

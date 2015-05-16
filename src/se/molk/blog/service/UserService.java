@@ -44,4 +44,8 @@ public class UserService {
         return userDAO.changePassword(currentUserName, oldUserPassword, newUserPassword);
     }
 
+    public boolean updateUserInfo(String currentUserName, String realName, String gender,
+                                  String birthday, String country) throws SQLException {
+        return userDAO.updateUserInfo(currentUserName, realName, gender, birthday, country);
+    }
 }

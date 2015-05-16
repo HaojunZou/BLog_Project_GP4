@@ -8,12 +8,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/UserProfileControl")
-public class UserProfileControl extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    public UserProfileControl() {
-        super();
-    }
+@WebServlet("/UserUpdateProfileControl")
+public class UserUpdateProfileControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -27,17 +23,19 @@ public class UserProfileControl extends HttpServlet {
         UserService userService = new UserService(user);
         HttpSession session = request.getSession();
         String currentUserName = (String) session.getAttribute("userName");
-        String oldUserPassword = request.getParameter("oldUserPassword");
-        String newUserPassword = request.getParameter("newUserPassword");
+        String realName = request.getParameter("realName");
+        String gender = request.getParameter("gender");
+        String birthday = request.getParameter("birthday");
+        String country = request.getParameter("country");
 
         try {
-            boolean passwordChanged = userService.changePassword(currentUserName, oldUserPassword, newUserPassword);
-            if (passwordChanged){
+            boolean profileUpdated = userService.updateUserInfo(currentUserName, realName, gender, birthday, country);
+            if(profileUpdated){
                 response.sendRedirect("/blog/user_profile_executed.html");
-            }else{
+            }else {
                 out.print(
                         "<script type='text/javascript'>" +
-                                "window.alert('Password is incorrect');" +
+                                "window.alert('Ops, something goes wrong!');" +
                                 "history.go(-1)" +
                                 "</script>"
                 );

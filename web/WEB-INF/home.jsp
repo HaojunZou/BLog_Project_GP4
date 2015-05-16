@@ -40,7 +40,8 @@
 
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="user_profile.jsp"><i class="fa fa-cog"><b> Configure profile</b></i></a></li>
+                    <li><a href="user_update_profile.jsp"><i class="fa fa-cog"><b> Config my profile</b></i></a></li>
+                    <li><a href="user_change_pwd.jsp"><i class="fa fa-eye"><b> Change Password</b></i></a></li>
                     <li><a href="#"><i class="fa fa-phone"><b> Contact</b></i></a></li>
                     <li><a href="main.html"><i class="fa fa-sign-out"><b> Log Out</b></i></a></li>
                 </ul>
