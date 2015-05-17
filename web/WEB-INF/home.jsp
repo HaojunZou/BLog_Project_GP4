@@ -1,11 +1,17 @@
-
+<%
+    LinkedList<User> userList;
+    String currentUserName = (String) session.getAttribute("currentUserName");
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <%@ page import="se.molk.blog.domain.User" %>
 <%@ page import="java.util.LinkedList" %>
-
+<%@ page import="se.molk.blog.domain.Post" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
+    <base href="<%=basePath%>">
     <meta charset="UTF-8">
     <title>Home</title>
 
@@ -60,12 +66,8 @@
         <!--LEFT COLUMN-->
         <div class="container col-md-3">
             <div class="well" id="userList">
-                <%
-                    LinkedList<User> userList;
-                %>
-                <form action="/HomeControl" method="post">
+                <form action="home.jsp" method="post">
                     <%
-                        String currentUserName = (String) session.getAttribute("currentUserName");
                         userList = (LinkedList<User>)session.getAttribute("userList");
                         if(userList == null){
                             userList = new LinkedList<User>();
@@ -82,6 +84,8 @@
                         <tbody align="center" valign="middle">
                         <tr>
                             <td><%= user.getUserName() %></td>
+                            <td><%= user.getGender() %></td>
+                            <td><%= user.getCountry() %></td>
                         </tr>
                         </tbody><%}%>
                     </table>
@@ -89,100 +93,44 @@
             </div>
         </div>
 
-
         <!--POSTS-->
         <div class="container col-md-6">
-            <div class="well">
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="img/profile1.jpg">
-                    </a>
-
-                    <div class="media-body">
-                        <h4 class="media-heading">Receta 1</h4>
-
-                        <p class="text-right">By Francisco</p>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet
-                            vulputate.
-                            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit
-                            amet felis
-                            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor
-                            accumsan.
-                            Aliquam in felis sit amet augue.</p>
-                        <ul class="list-inline list-unstyled">
-                            <li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
-                            <li>|</li>
-                            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
-                            <li>|</li>
-                            <li>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </li>
-                            <li>|</li>
-                            <li>
-                                <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
-                                <span><i class="fa fa-facebook-square"></i></span>
-                                <span><i class="fa fa-twitter-square"></i></span>
-                                <span><i class="fa fa-google-plus-square"></i></span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="well">
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="img/profile2.png">
-                    </a>
-
-                    <div class="media-body">
-                        <h4 class="media-heading">Receta 2</h4>
-
-                        <p class="text-right">By Anailuj</p>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet
-                            vulputate.
-                            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit
-                            amet felis
-                            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor
-                            accumsan.
-                            Aliquam in felis sit amet augue.</p>
-                        <ul class="list-inline list-unstyled">
-                            <li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
-                            <li>|</li>
-                            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
-                            <li>|</li>
-                            <li>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </li>
-                            <li>|</li>
-                            <li>
-                                <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
-                                <span><i class="fa fa-facebook-square"></i></span>
-                                <span><i class="fa fa-twitter-square"></i></span>
-                                <span><i class="fa fa-google-plus-square"></i></span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <form action="home.html" method="post">
-                <div>Title: <input type="text" name="title"/><br/><br/>
-                    <textarea name="blogEditor"></textarea><br/>
-                    <script>
-                        CKEDITOR.replace("blogEditor");
-                    </script>
-                    <input type="submit" name="blogText" value="Send This Blog"/>
-                </div>
+            <form action="admin_panel_result.jsp" method="post">
+                <%
+                    LinkedList<Post> postLinkedList = (LinkedList<Post>)request.getAttribute("posts");
+                    if(postLinkedList == null){
+                        postLinkedList = new LinkedList<Post>();
+                    }
+                    for(Post post : postLinkedList) {
+                %>
+                <table border="1" style="background-color: white;" align="center" valign="middle">
+                    <tr>
+                        <th><%= post.getTitle() %></th>
+                    </tr>
+                    <tbody>
+                    <tr>
+                        <td><%= post.getBody() %></td>
+                    </tr>
+                    </tbody>
+                </table><br/><%}%>
             </form>
+            <br/><br/><br/><br/>
+            <form action="/blog/HomeControl" method="post" id="blogBody">
+                    <!--
+                    <select name="category">
+                        <option value=""></option>
+                        <option value="life">life</option>
+                        <option value="education">education</option>
+                        <option value="animal">animal</option>
+                    </select>
+                    -->
+                    <input type="submit" value="Send This Blog"/>
+            </form>
+            Blog Title: <input type="text" name="title" form="blogBody"/><br/>
+            <textarea name="body" form="blogBody">Write blog here...</textarea><br/>
+            <script>
+                CKEDITOR.replace("body");
+            </script>
         </div>
 
         <!--RIGHT COLUMN-->

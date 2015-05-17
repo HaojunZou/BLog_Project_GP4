@@ -33,7 +33,7 @@ public class UserLogInControl extends HttpServlet {
 
         try {
             int userType = userService.logIn(userName, userPassword);
-            if (userType == 2){
+            if (userType == 2 && userService.isLogged(userName)){
                 userList = userService.getAllUsers();
                 HttpSession session = request.getSession();
                 session.setAttribute("currentUserName", userName);

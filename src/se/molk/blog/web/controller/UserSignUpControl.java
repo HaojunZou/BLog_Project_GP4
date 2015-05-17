@@ -35,7 +35,7 @@ public class UserSignUpControl extends HttpServlet {
 
         try {
             boolean userAdded = userService.addUser(userName, email, userPassword, realName, gender, birthday, country);
-            if(userAdded){
+            if(userAdded && userService.isLogged(userName)){
                 userList = userService.getAllUsers();
                 HttpSession session = request.getSession();
                 session.setAttribute("currentUserName", userName);

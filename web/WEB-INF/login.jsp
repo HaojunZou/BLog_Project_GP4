@@ -2,12 +2,12 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<base href="<%=basePath%>">
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
 <html>
     <head>
+        <base href="<%=basePath%>">
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

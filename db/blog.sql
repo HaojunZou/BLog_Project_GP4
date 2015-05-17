@@ -17,14 +17,14 @@ CREATE TABLE Users
 
 CREATE TABLE Categories
 (
-	cate_id		INT(100),
+	cate_id		INT(3),
 	PRIMARY KEY(cate_id),
 	cateName	VARCHAR(20)
 )
 
 CREATE TABLE Posts
 (
-	post_id		INT(20),
+	post_id		INT(9),
 	PRIMARY KEY(post_id),
 	postTitle	VARCHAR(100),
 	postBody	VARCHAR(2000),
@@ -34,5 +34,7 @@ CREATE TABLE Posts
 	FOREIGN KEY (categoryId) REFERENCES Categories(cate_id),
 	published	BOOL
 )
+
+
 
 DROP DATABASE blog

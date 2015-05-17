@@ -1,5 +1,6 @@
 package se.molk.blog.dao;
 
+import javafx.geometry.Pos;
 import se.molk.blog.domain.Post;
 import java.sql.*;
 import java.util.*;
@@ -17,7 +18,7 @@ public class PostDAO {
             throw  new Exception("Error creating driver");
         }
     }
-
+/*
     public List<Post> getAllPublishedPosts() throws SQLException, ClassNotFoundException {
         return getAllPosts(true);
     }
@@ -25,20 +26,22 @@ public class PostDAO {
     public List<Post> getAllPosts() throws SQLException, ClassNotFoundException {
         return getAllPosts(false);
     }
-
-    private List<Post> getAllPosts(boolean onlyPublished) throws ClassNotFoundException, SQLException {
+*/
+    public List<Post> getAllPosts() throws ClassNotFoundException, SQLException {
         List<Post> postList = new LinkedList<Post>();
-        Post post = new Post();
 
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try{
             String postSearchQuery = "select * from Posts";
             Statement statement = connection.createStatement();
+            /*
             if(onlyPublished){
                 postSearchQuery += "where published = true";
             }
+            */
             ResultSet resultSet = statement.executeQuery(postSearchQuery);
             while (resultSet.next()){
+                Post post = new Post();
                 post.setId(resultSet.getInt("post_id"));
                 post.setTitle(resultSet.getString("postTitle"));
                 post.setBody(resultSet.getString("postBody"));
@@ -65,5 +68,46 @@ public class PostDAO {
 
     public Post getPostById(int id){
         return null;
+    }
+
+    public void publishNewPost(String title, String body) throws SQLException {
+        int userId = 0;
+        try {
+            UserDAO userDAO = new UserDAO();
+            //userId = userDAO.getUserIdByUserName(author);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String idCheckQuery = "select * from Posts where post_id=?"; //check if this id number has been token
+            String insertQuery =
+                    "insert into Posts (post_id, postTitle, postBody)" +
+                            "values(?,?,?)";   //insert a record to user table
+            int idNumber = 1;
+            for (int i = 1; i < 100; i++) {
+                PreparedStatement pstIdCheck = connection.prepareStatement(idCheckQuery);
+                pstIdCheck.setString(1, Integer.toString(i));
+                ResultSet resultSetId = pstIdCheck.executeQuery();  //check if this id number has been token
+                if (resultSetId.next()) {     //if id number exist, than make it plus 1
+                    pstIdCheck.setString(1, Integer.toString(i + 1));
+                    pstIdCheck.close();
+                } else {                      //if not, use this id number
+                    idNumber = i;
+                    pstIdCheck.close();
+                    break;
+                }
+            }
+            PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+            preparedStatement.setString(1, Integer.toString(idNumber));
+            preparedStatement.setString(2, title);
+            preparedStatement.setString(3, body);
+            //preparedStatement.setString(4, Integer.toString(userId));
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

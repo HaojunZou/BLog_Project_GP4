@@ -48,4 +48,8 @@ public class UserService {
                                   String birthday, String country) throws SQLException {
         return userDAO.updateUserInfo(currentUserName, realName, gender, birthday, country);
     }
+
+    public boolean isLogged(String currentUserName){
+        return currentUserName != null;
+    }
 }

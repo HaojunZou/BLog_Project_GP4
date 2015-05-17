@@ -115,6 +115,26 @@ public class UserDAO {
         return user;
     }
 
+    public int getUserIdByUserName(String userName) throws SQLException {
+        int user_id = 0;
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String userSearchQuery = "select user_id from Users where userName = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(userSearchQuery);
+            preparedStatement.setString(1, userName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                user_id = resultSet.getInt("user_id");
+            }
+            preparedStatement.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+        return user_id;
+    }
+
     public String [] getUserInfoByName(String userName) throws SQLException {
         String [] info = new String[4];
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
