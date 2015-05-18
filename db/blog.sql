@@ -1,5 +1,5 @@
-CREATE DATABASE blog
-USE blog
+CREATE DATABASE blog;
+USE blog;
 
 CREATE TABLE Users
 (
@@ -13,14 +13,14 @@ CREATE TABLE Users
 	gender		VARCHAR(6),
 	birthday	VARCHAR(10),
 	country 	VARCHAR(30)
-)
+);
 
 CREATE TABLE Categories
 (
 	cate_id		INT(3),
 	PRIMARY KEY(cate_id),
 	cateName	VARCHAR(20)
-)
+);
 
 CREATE TABLE Posts
 (
@@ -34,8 +34,4 @@ CREATE TABLE Posts
 	FOREIGN KEY (categoryId) REFERENCES Categories(cate_id),
 	published	BOOL,
 	publishedDate	VARCHAR(20)
-)
-
-SELECT * FROM posts ORDER BY post_id DESC
-
-DROP DATABASE blog
+);

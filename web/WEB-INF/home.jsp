@@ -106,7 +106,11 @@
                     if(postLinkedList == null){
                         postLinkedList = new LinkedList<Post>();
                     }
+                    int i=0;
                     for(Post post : postLinkedList) {
+                        i++;
+                        if(i>=10)
+                            break;
                 %>
                 <div class="container">
                     <div class="row">

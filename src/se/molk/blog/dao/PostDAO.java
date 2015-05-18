@@ -23,13 +23,6 @@ public class PostDAO {
         }
     }
 
-    public static void main(String [] args){
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
-        System.out.println(dateFormat.format(date));
-    }
-
-
 /*
     public List<Post> getAllPublishedPosts() throws SQLException, ClassNotFoundException {
         return getAllPosts(true);
