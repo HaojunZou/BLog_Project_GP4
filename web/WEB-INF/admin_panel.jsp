@@ -29,10 +29,8 @@ Enter a key word to start fuzzy search:
                 <!-- <input type="text" name="deleteRecord"/><input type="submit" value="Delete"/> -->
             </div>
         </form>
-        <form action="main.html" method="post">
-            <div style="text-align: center;">
-                <input type="submit" value="Back to main"/>
-            </div>
-        </form>
+        <div style="text-align: center;">
+            <button><a href="main.html">Log out</a></button>
+        </div>
     </body>
 </html>
