@@ -7,6 +7,8 @@
 <%@ page import="se.molk.blog.domain.User" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="se.molk.blog.domain.Post" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -59,7 +61,7 @@
     <!-- /.navbar -->
 
 
-    <div class="container-fluid " align="center"><br/><br/>
+    <div class="container-fluid "><br/><br/>
         <link rel="stylesheet"
               href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
 
@@ -80,6 +82,9 @@
                         </tr>
                         <%
                             for(User user : userList) {
+                                if(user.getUserType().equals("Administrator")){
+                                    continue;
+                                }
                         %>
                         <tbody align="center" valign="middle">
                         <tr>
@@ -103,19 +108,56 @@
                     }
                     for(Post post : postLinkedList) {
                 %>
-                <table border="1" style="background-color: white;" align="center" valign="middle">
-                    <tr>
-                        <th><%= post.getTitle() %></th>
-                    </tr>
-                    <tbody>
-                    <tr>
-                        <td><%= post.getBody() %></td>
-                    </tr>
-                    </tbody>
-                </table><br/><%}%>
+
+                <%
+                    Date date = new Date();
+                    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                    String formattedDate = sdf.format(date);
+
+                    System.out.println(formattedDate); // 12/01/2011 4:48:16 PM
+                %>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-6">
+                            <div id="postlist">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <div class="text-center">
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <h4 class="pull-right">
+                                                        <small><em><%= formattedDate %><br></em></small>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <%= post.getBody() %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/><%}%>
             </form>
             <br/><br/><br/><br/>
+
+
             <form action="/blog/HomeControl" method="post" id="blogBody">
+
+                <label for="title"><b>Blog Title:</b></label>
+                <input type="text" name="title" id="title" form="blogBody"/><br/>
+                <textarea name="body">Write blog here...</textarea><br/>
+                <script>
+                    CKEDITOR.replace("body");
+                </script>
                     <!--
                     <select name="category">
                         <option value=""></option>
@@ -126,11 +168,7 @@
                     -->
                     <input type="submit" value="Send This Blog"/>
             </form>
-            Blog Title: <input type="text" name="title" form="blogBody"/><br/>
-            <textarea name="body" form="blogBody">Write blog here...</textarea><br/>
-            <script>
-                CKEDITOR.replace("body");
-            </script>
+
         </div>
 
         <!--RIGHT COLUMN-->

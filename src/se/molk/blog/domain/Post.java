@@ -1,9 +1,12 @@
 package se.molk.blog.domain;
 
+import java.util.Date;
+
 public class Post {
     private int id;
     private String title;
     private String body;
+    private Date date;
     private User author;
     private Category category;
     private boolean published;
@@ -28,6 +31,10 @@ public class Post {
         this.category = category;
     }
 
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public void setPublished(boolean published) {
         this.published = published;
     }
@@ -46,6 +53,10 @@ public class Post {
 
     public User getAuthor() {
         return author;
+    }
+
+    public Date getDate() {
+        return date;
     }
 
     public Category getCategory() {
