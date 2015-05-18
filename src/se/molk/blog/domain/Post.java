@@ -6,7 +6,7 @@ public class Post {
     private int id;
     private String title;
     private String body;
-    private Date date;
+    private String date;
     private User author;
     private Category category;
     private boolean published;
@@ -31,7 +31,7 @@ public class Post {
         this.category = category;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -55,7 +55,7 @@ public class Post {
         return author;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 

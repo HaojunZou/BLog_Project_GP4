@@ -1,9 +1,13 @@
 package se.molk.blog.dao;
 
 import javafx.geometry.Pos;
+import jdk.internal.dynalink.beans.StaticClass;
 import se.molk.blog.domain.Post;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Date;
 
 public class PostDAO {
     private static final String driver = "org.gjt.mm.mysql.Driver";
@@ -18,6 +22,14 @@ public class PostDAO {
             throw  new Exception("Error creating driver");
         }
     }
+
+    public static void main(String [] args){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        System.out.println(dateFormat.format(date));
+    }
+
+
 /*
     public List<Post> getAllPublishedPosts() throws SQLException, ClassNotFoundException {
         return getAllPosts(true);
@@ -32,7 +44,7 @@ public class PostDAO {
 
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try{
-            String postSearchQuery = "select * from Posts";
+            String postSearchQuery = "select * from Posts order by publishedDate desc";
             Statement statement = connection.createStatement();
             /*
             if(onlyPublished){
@@ -45,6 +57,7 @@ public class PostDAO {
                 post.setId(resultSet.getInt("post_id"));
                 post.setTitle(resultSet.getString("postTitle"));
                 post.setBody(resultSet.getString("postBody"));
+                post.setDate(resultSet.getString("publishedDate"));
                 post.setPublished(resultSet.getBoolean("published"));
 
                 int userId = resultSet.getInt("userId");
@@ -72,6 +85,9 @@ public class PostDAO {
 
     public void publishNewPost(String title, String body) throws SQLException {
         int userId = 0;
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        String publishedDate = dateFormat.format(date);
         try {
             UserDAO userDAO = new UserDAO();
             //userId = userDAO.getUserIdByUserName(author);
@@ -82,10 +98,10 @@ public class PostDAO {
         try{
             String idCheckQuery = "select * from Posts where post_id=?"; //check if this id number has been token
             String insertQuery =
-                    "insert into Posts (post_id, postTitle, postBody)" +
-                            "values(?,?,?)";   //insert a record to user table
+                    "insert into Posts (post_id, postTitle, postBody, publishedDate)" +
+                            "values(?,?,?,?)";   //insert a record to user table
             int idNumber = 1;
-            for (int i = 1; i < 100; i++) {
+            for (int i = 1; i < 1.0e9; i++) {
                 PreparedStatement pstIdCheck = connection.prepareStatement(idCheckQuery);
                 pstIdCheck.setString(1, Integer.toString(i));
                 ResultSet resultSetId = pstIdCheck.executeQuery();  //check if this id number has been token
@@ -102,6 +118,7 @@ public class PostDAO {
             preparedStatement.setString(1, Integer.toString(idNumber));
             preparedStatement.setString(2, title);
             preparedStatement.setString(3, body);
+            preparedStatement.setString(4, publishedDate);
             //preparedStatement.setString(4, Integer.toString(userId));
             preparedStatement.executeUpdate();
             preparedStatement.close();

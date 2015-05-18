@@ -108,14 +108,6 @@
                     }
                     for(Post post : postLinkedList) {
                 %>
-
-                <%
-                    Date date = new Date();
-                    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
-                    String formattedDate = sdf.format(date);
-
-                    System.out.println(formattedDate); // 12/01/2011 4:48:16 PM
-                %>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-1"></div>
@@ -130,7 +122,7 @@
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <h4 class="pull-right">
-                                                        <small><em><%= formattedDate %><br></em></small>
+                                                        <small><em><%= post.getDate() %><br></em></small>
                                                     </h4>
                                                 </div>
                                             </div>

@@ -32,9 +32,10 @@ CREATE TABLE Posts
 	categoryId	INT,
 	FOREIGN KEY (userId) REFERENCES Users(user_id),
 	FOREIGN KEY (categoryId) REFERENCES Categories(cate_id),
-	published	BOOL
+	published	BOOL,
+	publishedDate	VARCHAR(20)
 )
 
-
+SELECT * FROM posts ORDER BY post_id DESC
 
 DROP DATABASE blog
