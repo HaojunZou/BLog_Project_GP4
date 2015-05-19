@@ -16,6 +16,7 @@ public class PostService {
 
     public List<Post> getAllPosts() throws SQLException, ClassNotFoundException {
         return postDAO.getAllPosts();
+
     }
 
     public void publishNewPost(String title, String body) throws SQLException {

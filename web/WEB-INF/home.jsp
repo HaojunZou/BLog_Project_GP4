@@ -60,12 +60,11 @@
     </nav>
     <!-- /.navbar -->
 
-
     <div class="container-fluid "><br/><br/>
         <link rel="stylesheet"
               href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
 
-        <!--LEFT COLUMN-->
+        <!--LEFT COLUMN, USERS LIST-->
         <div class="container col-md-3">
             <div class="well" id="userList">
                 <form action="home.jsp" method="post">
@@ -98,7 +97,7 @@
             </div>
         </div>
 
-        <!--POSTS-->
+        <!-- BLOG POSTS -->
         <div class="container col-md-6">
             <form action="admin_panel_result.jsp" method="post">
                 <%
@@ -132,7 +131,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="panel-body">
                                         <%= post.getBody() %>
                                     </div>
@@ -145,37 +143,32 @@
             </form>
             <br/><br/><br/><br/>
 
-
             <form action="/blog/HomeControl" method="post" id="blogBody">
-
                 <label for="title"><b>Blog Title:</b></label>
                 <input type="text" name="title" id="title" form="blogBody"/><br/>
-                <textarea name="body">Write blog here...</textarea><br/>
+                <textarea name="body">Write blog here...<br/><br/><br/>
+                    <textarea style="text-align: right"><%= currentUserName%></textarea></textarea><br/>
                 <script>
                     CKEDITOR.replace("body");
                 </script>
-                    <!--
-                    <select name="category">
-                        <option value=""></option>
-                        <option value="life">life</option>
-                        <option value="education">education</option>
-                        <option value="animal">animal</option>
-                    </select>
-                    -->
-                    <input type="submit" value="Send This Blog"/>
-            </form>
 
+                <!--
+                <select name="category">
+                    <option value=""></option>
+                    <option value="life">life</option>
+                    <option value="education">education</option>
+                    <option value="animal">animal</option>
+                </select>
+                -->
+                <input type="submit" value="Send This Blog"/>
+            </form>
         </div>
 
-        <!--RIGHT COLUMN-->
-        <div class="container col-md-3">
-            <div class="well">
-                <div class="media">
-                    <a href="#">
-                        <img class="media-object" src="img/profile1.jpg">
-                    </a>
-                </div>
-            </div>
+        <!--RIGHT COLUMN, CHOOSE BLOG POST BY DATE -->
+        <div class="container col-md-1"></div>
+        <div class="container col-md-2">
+            <b>Date:</b><br/>
+            <input type="date" name="date"/>
         </div>
     </div>
 </div>

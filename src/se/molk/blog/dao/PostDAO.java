@@ -1,19 +1,19 @@
 package se.molk.blog.dao;
 
-import javafx.geometry.Pos;
-import jdk.internal.dynalink.beans.StaticClass;
 import se.molk.blog.domain.Post;
+
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 public class PostDAO {
     private static final String driver = "org.gjt.mm.mysql.Driver";
     private static final String url = "jdbc:mysql://localhost/blog";
     private static final String dbUserName = "root";
-    private static final String dbPassword = "haojun";
+    private static final String dbPassword = "christelle";
 
     public PostDAO() throws Exception{
         try{
@@ -32,6 +32,7 @@ public class PostDAO {
         return getAllPosts(false);
     }
 */
+
     public List<Post> getAllPosts() throws ClassNotFoundException, SQLException {
         List<Post> postList = new LinkedList<Post>();
 
@@ -50,13 +51,14 @@ public class PostDAO {
                 post.setId(resultSet.getInt("post_id"));
                 post.setTitle(resultSet.getString("postTitle"));
                 post.setBody(resultSet.getString("postBody"));
+                post.setUserId(resultSet.getInt("userId"));
                 post.setDate(resultSet.getString("publishedDate"));
                 post.setPublished(resultSet.getBoolean("published"));
-
+/*
                 int userId = resultSet.getInt("userId");
                 UserDAO userDAO = new UserDAO();
                 post.setAuthor(userDAO.getUserById(userId));
-
+*/
                 int categoryId = resultSet.getInt("categoryId");
                 CategoryDAO categoryDAO = new CategoryDAO();
                 post.setCategory(categoryDAO.getCategoryById(categoryId));
@@ -77,12 +79,12 @@ public class PostDAO {
     }
 
     public void publishNewPost(String title, String body) throws SQLException {
-        int userId = 0;
+        //int userId = 0;
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         String publishedDate = dateFormat.format(date);
         try {
-            UserDAO userDAO = new UserDAO();
+            //UserDAO userDAO = new UserDAO();
             //userId = userDAO.getUserIdByUserName(author);
         } catch (Exception e) {
             e.printStackTrace();
@@ -111,8 +113,8 @@ public class PostDAO {
             preparedStatement.setString(1, Integer.toString(idNumber));
             preparedStatement.setString(2, title);
             preparedStatement.setString(3, body);
-            preparedStatement.setString(4, publishedDate);
             //preparedStatement.setString(4, Integer.toString(userId));
+            preparedStatement.setString(4, publishedDate);
             preparedStatement.executeUpdate();
             preparedStatement.close();
             connection.close();
@@ -120,4 +122,6 @@ public class PostDAO {
             e.printStackTrace();
         }
     }
+
+
 }

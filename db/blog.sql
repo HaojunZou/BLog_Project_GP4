@@ -28,7 +28,7 @@ CREATE TABLE Posts
 	PRIMARY KEY(post_id),
 	postTitle	VARCHAR(100),
 	postBody	VARCHAR(2000),
-	userId	INT,
+	userId		INT,
 	categoryId	INT,
 	FOREIGN KEY (userId) REFERENCES Users(user_id),
 	FOREIGN KEY (categoryId) REFERENCES Categories(cate_id),

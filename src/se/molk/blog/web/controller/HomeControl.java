@@ -1,17 +1,14 @@
 package se.molk.blog.web.controller;
 
 import se.molk.blog.dao.PostDAO;
-import se.molk.blog.dao.UserDAO;
-import se.molk.blog.domain.Post;
-import se.molk.blog.domain.User;
 import se.molk.blog.service.PostService;
-import se.molk.blog.service.UserService;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import java.io.*;
-import java.util.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @WebServlet("/HomeControl")
 public class HomeControl extends HttpServlet {
@@ -30,7 +27,7 @@ public class HomeControl extends HttpServlet {
         String title = request.getParameter("title");
         String body = request.getParameter("body");
         //String category = request.getParameter("category");
-        //String author = (String) request.getAttribute("currentUserName");
+        //String author = request.getParameter("author");
         try {
             postService.publishNewPost(title, body);
             response.sendRedirect("/blog/home.jsp");
