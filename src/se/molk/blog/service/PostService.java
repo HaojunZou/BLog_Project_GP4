@@ -23,4 +23,11 @@ public class PostService {
         postDAO.publishNewPost(title, body);
     }
 
+    public List<Post> getPostsByTitle(String title) throws SQLException {
+        return postDAO.getPostsByTitle(title);
+    }
+
+    public boolean deleteAPost(int post_id) throws SQLException{
+        return postDAO.deleteAPost(post_id);
+    }
 }

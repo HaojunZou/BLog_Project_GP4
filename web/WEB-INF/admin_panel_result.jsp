@@ -1,20 +1,16 @@
 
 <%@ page import="se.molk.blog.domain.User" %>
 <%@ page import="java.util.LinkedList" %>
+<%@ page import="se.molk.blog.domain.Post" %>
+<%@ page import="javafx.geometry.Pos" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
         <title>Admin Panel Result</title>
-        <style>
-            body{
-                background-image: url("http://localhost:8080/blog/img/su-35.jpg");
-                background-size: cover;
-            }
-        </style>
     </head>
     <body>
 
-        <div style="text-align: center;">
+        <div class="container" style="text-align: center;">
             <h1>Here's the result, Administrator</h1>
             <form action="admin_panel_result.jsp" method="post">
                 <%
@@ -25,7 +21,7 @@
                 %>
                 <table border="1" style="background-color: white;">
                     <tr>
-                        <th>ID</th>
+                        <th>User ID</th>
                         <th>User Type</th>
                         <th>User Name</th>
                         <th>Email</th>
@@ -39,14 +35,6 @@
                         for(User user : userList) {
                     %>
                     <tbody align="center" valign="middle">
-                    <%
-                        String email = user.getEmail();
-                        String userPassword = user.getUserPassword();
-                        String realName = user.getRealName();
-                        String gender = user.getGender();
-                        String birthday = user.getBirthday();
-                        String country = user.getCountry();
-                    %>
                     <tr>
                         <td><%= user.getUserId() %></td>
                         <td><%= user.getUserType() %></td>
@@ -61,38 +49,72 @@
                     </tbody><%}%>
                 </table>
             </form>
-            <br/>
         </div>
-
-
-        <div style="text-align: center;">
+        <hr/>
+        <div class="container" style="text-align: center;">
+            <form action="admin_panel_result.jsp" method="post">
+                <%
+                    LinkedList<Post> postList = (LinkedList<Post>)request.getAttribute("posts");
+                    if(postList == null){
+                        postList = new LinkedList<Post>();
+                    }
+                %>
+                <table border="1" style="background-color: white;">
+                    <tr>
+                        <th>Post ID</th>
+                        <th>Post Title</th>
+                        <th>Post Body</th>
+                        <th>Author ID</th>
+                        <th>Published Date</th>
+                    </tr>
+                    <%
+                        for(Post post: postList) {
+                    %>
+                    <tbody align="center" valign="middle">
+                    <tr>
+                        <td><%= post.getId() %></td>
+                        <td><%= post.getTitle() %></td>
+                        <td><%= post.getBody() %></td>
+                        <td><%= post.getAuthor() %></td>
+                        <td><%= post.getDate() %></td>
+                    </tr>
+                    </tbody><%}%>
+                </table>
+            </form>
+        </div>
+        <hr/>
+        <div class="container" style="text-align: center;">
             <form action="/blog/AdminPanelResultControl" method="post">
-                <h2>Delete an user</h2>
-                Enter the user name to delete an user: <span style="color:red">(this action may not be reversed)</span>
-                <br/>
-                <input type="text" name="deleteRecord"/>
-                <input type="submit" name="deleteAction" value="Delete"/>
-
                 <table align="center" style="background-color: white;">
-                    <tr><th><h2>Update user profile</h2></th></tr><br/><br/>
+                    <tr><th><h2>Delete an user</h2></th></tr>
+                    <td colspan=2>Enter the user name to delete an user:
+                        <span style="color:red">(this action may not be reversed)</span></td>
+                    <br/>
+                    <tr>
+                        <td>
+                            <input type="text" name="deleteUserRecord" placeholder="Enter an user name"/>
+                            <input type="submit" name="deleteUserAction" value="Delete User"/>
+                        </td>
+                    </tr>
+                    <tr><th><h2>Update user profile</h2></th></tr>
                     <tr>
                         <td colspan=2>Which user need to be updated?<br/>(information will be restored if area is empty)</td>
-                    </tr><br/><br/>
+                    </tr>
                     <tr>
                         <td><input type="text" name="userName" placeholder="User Name"/></td>
-                    </tr><br/><br/>
+                    </tr>
                     <tr>
                         <td>New User Name</td><td><input type="text" name="newUserName" placeholder="New User Name"/></td>
-                    </tr><br/><br/>
+                    </tr>
                     <tr>
                         <td>New Password</td><td><input type="text" name="newPassword" placeholder="New Password"/></td>
-                    </tr><br/><br/>
+                    </tr>
                     <tr>
                         <td>New Email</td><td><input type="email" name="newEmail" placeholder="New Email"/></td>
-                    </tr><br/><br/>
+                    </tr>
                     <tr>
                         <td>New Real Name</td><td><input type="text" name="newRealName" placeholder="New Real Name"/></td>
-                    </tr><br/><br/>
+                    </tr>
                     <tr>
                         <td>New Gender</td><td>
                         <select name="newGender">
@@ -101,10 +123,10 @@
                             <option value="female">Female</option>
                             <option value="other">Other</option>
                         </select></td>
-                    </tr><br/><br/>
+                    </tr>
                     <tr>
                         <td>New Birthday</td><td><input type="date" name="newBirthday"/></td>
-                    </tr><br/><br/>
+                    </tr>
                     <tr>
                         <td>New Country</td><td>
                         <select name="newCountry">
@@ -339,15 +361,26 @@
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select></td>
-                    </tr><br/><br/>
+                    </tr>
                     <tr>
-                        <td colspan=2><input type="submit" name="updateAction" value="Update"/></td>
+                        <td colspan=2><input type="submit" name="updateUserAction" value="Update User"/></td>
+                    </tr>
+
+                    <tr><th><h2>Delete a post</h2></th></tr>
+                    <td colspan=2>Enter the post id to delete a post:
+                        <span style="color:red">(this action may not be reversed)</span></td>
+                    <br/>
+                    <tr>
+                        <td>
+                            <input type="text" name="deletePostRecord" placeholder="Enter a post id"/>
+                            <input type="submit" name="deletePostAction" value="Delete Post"/>
+                        </td>
                     </tr>
                 </table>
             </form>
         </div>
-
-        <div style="text-align: center;">
+        <hr/>
+        <div  class="container" style="text-align: center;">
             <button><a href="admin_panel.jsp">Go back to panel</a></button>
             <button><a href="main.html">Log out</a></button>
         </div>

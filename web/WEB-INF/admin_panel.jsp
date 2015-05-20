@@ -23,10 +23,11 @@
     <div style="text-align: center;"><h1>Welcome back, Administrator</h1></div>
         <form action="/blog/AdminPanelControl" method="post" onsubmit="return validate(this)">
             <div style="text-align: center;">
-Enter a key word to start fuzzy search:
-                <input type="text" name="searchRecord"/><input type="submit" value="Search"/>
-                <!-- <input type="text" name="changeRecord"/><input type="submit" value="Change"/> -->
-                <!-- <input type="text" name="deleteRecord"/><input type="submit" value="Delete"/> -->
+Enter a key word to start fuzzy search user
+                <input type="text" name="userSearchRecord"/><input type="submit" name="userSearchAction" value="User Search"/>
+                <br/><hr/>
+Enter a title to start fuzzy search post
+                <input type="text" name="postSearchRecord"/><input type="submit" name="postSearchAction" value="Post Search"/>
             </div>
         </form>
         <div style="text-align: center;">

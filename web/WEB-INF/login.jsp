@@ -28,18 +28,18 @@
             <div style="text-align: center;">
                 <table align="center">
                     <tr>
-                        <td>User Name</td><td><input type="text" class="form-control" name="userName"/></td>
+                        <td>User Name</td><td><input type="text" class="form-control" name="userName" placeholder="User Name"/></td>
                     </tr>
-                    <br/><br/>
                     <tr>
-                        <td>Password</td><td><input type="password" class="form-control" name="userPassword"/></td>
+                        <td>Password</td><td><input type="password" class="form-control" name="userPassword" placeholder="Password"/></td>
                     </tr>
                 </table>
             </div>
             <br/>
             <div style="text-align: center;">
                 <tr>
-                    <input type="submit" value="Log in" />
+                    <input type="submit" value="Log in"/>
+                    <button><a href="main.html">Back to main</a></button>
                 </tr>
             </div>
         </form>
@@ -47,7 +47,7 @@
             <div style="text-align: center;">
                 <p>New here?</p>
                 <tr>
-                    <input type="submit" value="Sign up" />
+                    <input type="submit" value="Sign up"/>
                 </tr>
             </div>
         </form>

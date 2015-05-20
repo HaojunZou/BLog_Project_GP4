@@ -74,6 +74,38 @@ public class PostDAO {
         return postList;
     }
 
+    public List<Post> getPostsByTitle(String title) throws SQLException {
+        List<Post> postList = new LinkedList<Post>();
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String postSearchQuery = "select * from Posts where postTitle like ?";
+            PreparedStatement pstSearch = connection.prepareStatement(postSearchQuery);
+            pstSearch.setString(1, "%" + title + "%");
+            ResultSet resultSet = pstSearch.executeQuery();
+            while (resultSet.next()){
+                Post post = new Post();
+                post.setId(resultSet.getInt("post_id"));
+                post.setTitle(resultSet.getString("postTitle"));
+                post.setBody(resultSet.getString("postBody"));
+                post.setUserId(resultSet.getInt("userId"));
+                post.setDate(resultSet.getString("publishedDate"));
+                post.setPublished(resultSet.getBoolean("published"));
+
+                int categoryId = resultSet.getInt("categoryId");
+                CategoryDAO categoryDAO = new CategoryDAO();
+                post.setCategory(categoryDAO.getCategoryById(categoryId));
+
+                postList.add(post);
+            }
+            pstSearch.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+        return postList;
+    }
+
     public Post getPostById(int id){
         return null;
     }
@@ -123,5 +155,22 @@ public class PostDAO {
         }
     }
 
+    public boolean deleteAPost(int post_id) throws SQLException {
+
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String deleteQuery = "delete from Posts where post_id = ?";
+            PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
+            pstDelete.setInt(1, post_id);
+            pstDelete.executeUpdate();
+            pstDelete.close();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+        return false;
+    }
 
 }
