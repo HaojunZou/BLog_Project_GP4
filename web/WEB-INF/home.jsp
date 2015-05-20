@@ -7,8 +7,6 @@
 <%@ page import="se.molk.blog.domain.User" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="se.molk.blog.domain.Post" %>
-<%@ page import="java.util.Date" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>

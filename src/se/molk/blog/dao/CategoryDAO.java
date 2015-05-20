@@ -9,7 +9,7 @@ public class CategoryDAO {
     private static final String driver = "org.gjt.mm.mysql.Driver";
     private static final String url = "jdbc:mysql://localhost/blog";
     private static final String dbUserName = "root";
-    private static final String dbPassword = "shit";
+    private static final String dbPassword = "haojun";
 
     public CategoryDAO() throws Exception {
         try{

@@ -49,6 +49,11 @@ public class UserService {
         return userDAO.updateUserInfo(currentUserName, realName, gender, birthday, country);
     }
 
+    public String adminUpdateUserInfo(String userName, String newUserName, String newEmail, String newPassword,
+                  String newRealName, String newGender, String newBirthday, String newCountry) throws SQLException{
+        return userDAO.adminUpdateUserInfo(userName, newUserName, newEmail, newPassword, newRealName, newGender, newBirthday, newCountry);
+    }
+
     public boolean isLogged(String currentUserName){
         return currentUserName != null;
     }

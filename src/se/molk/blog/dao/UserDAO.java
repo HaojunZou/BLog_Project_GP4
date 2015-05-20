@@ -9,7 +9,7 @@ public class UserDAO {
     private static final String driver = "org.gjt.mm.mysql.Driver";
     private static final String url = "jdbc:mysql://localhost/blog";
     private static final String dbUserName = "root";
-    private static final String dbPassword = "shit";
+    private static final String dbPassword = "haojun";
 
 
     public UserDAO() throws Exception {
@@ -137,10 +137,10 @@ public class UserDAO {
     }
 
     public String [] getUserInfoByName(String userName) throws SQLException {
-        String [] info = new String[4];
+        String [] info = new String[7];
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try{
-            String userSearchQuery = "select realName, gender, birthday, country from Users where userName = ?";
+            String userSearchQuery = "select userName, email, userPassword, realName, gender, birthday, country from Users where userName = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(userSearchQuery);
             preparedStatement.setString(1, userName);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -149,6 +149,9 @@ public class UserDAO {
                 info[1] = resultSet.getString(2);
                 info[2] = resultSet.getString(3);
                 info[3] = resultSet.getString(4);
+                info[4] = resultSet.getString(5);
+                info[5] = resultSet.getString(6);
+                info[6] = resultSet.getString(7);
             }
             preparedStatement.close();
         }catch (Exception e){
@@ -306,14 +309,14 @@ public class UserDAO {
     }
 
     public boolean updateUserInfo(String currentUserName, String realName, String gender,
-                                    String birthday, String country) throws SQLException {
+                                  String birthday, String country) throws SQLException {
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         String[] info = getUserInfoByName(currentUserName);
         if(info!=null){
-            if(realName == ""){realName = info[0];}
-            if(gender == ""){gender = info[1];}
-            if(birthday == ""){birthday = info[2];}
-            if(country == ""){country = info[3];}
+            if(realName == ""){realName = info[3];}
+            if(gender == ""){gender = info[4];}
+            if(birthday == ""){birthday = info[5];}
+            if(country == ""){country = info[6];}
             try{
                 String updateInfoQuery = "update Users set realName=?, gender=?, birthday=?, country=? where userName=?";
                 PreparedStatement pstUpdateInfo = connection.prepareStatement(updateInfoQuery);
@@ -334,6 +337,71 @@ public class UserDAO {
             return false;
         }
         return false;
+    }
+
+    public String adminUpdateUserInfo(String userName, String newUsername, String newEmail, String newPassword,
+                                      String newRealName, String newGender, String newBirthday, String newCountry) throws SQLException {
+        String updateResult = null;
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+
+        try{
+            String checkQuery = "select * from Users where userName=? or email=?";
+            String updateInfoQuery = "update Users set userName=?, email=?, userPassword=?, realName=?, gender=?, birthday=?, country=? where userName=?";
+            if(getUserIdByUserName(userName)!=0) {
+                PreparedStatement pstCheck = connection.prepareStatement(checkQuery);
+                pstCheck.setString(1, newUsername);
+                pstCheck.setString(2, newEmail);
+                ResultSet checkResult = pstCheck.executeQuery();
+                if (!checkResult.next()) {
+                    String[] info = getUserInfoByName(userName);
+                    if (newUsername.equals("")) {
+                        newUsername = info[0];
+                    }
+                    if (newEmail.equals("")) {
+                        newEmail = info[1];
+                    }
+                    if (newPassword.equals("")) {
+                        newPassword = info[2];
+                    }
+                    if (newRealName.equals("")) {
+                        newRealName = info[3];
+                    }
+                    if (newGender.equals("")) {
+                        newGender = info[4];
+                    }
+                    if (newBirthday.equals("")) {
+                        newBirthday = info[5];
+                    }
+                    if (newCountry.equals("")) {
+                        newCountry = info[6];
+                    }
+                    PreparedStatement pstUpdateInfo = connection.prepareStatement(updateInfoQuery);
+                    pstUpdateInfo.setString(1, newUsername);
+                    pstUpdateInfo.setString(2, newEmail);
+                    pstUpdateInfo.setString(3, newPassword);
+                    pstUpdateInfo.setString(4, newRealName);
+                    pstUpdateInfo.setString(5, newGender);
+                    pstUpdateInfo.setString(6, newBirthday);
+                    pstUpdateInfo.setString(7, newCountry);
+                    pstUpdateInfo.setString(8, userName);
+                    pstUpdateInfo.executeUpdate();
+                    pstUpdateInfo.close();
+                    pstCheck.close();
+                    updateResult = "updateSuccessful";
+                } else {
+                    pstCheck.close();
+                    updateResult = "updateFailed";
+                }
+            }else{
+                updateResult = "userNotExist";
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+
+        return updateResult;
     }
 
 }
