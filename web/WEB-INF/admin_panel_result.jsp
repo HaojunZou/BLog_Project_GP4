@@ -64,7 +64,6 @@
                         <th>Post ID</th>
                         <th>Post Title</th>
                         <th>Post Body</th>
-                        <th>Author ID</th>
                         <th>Published Date</th>
                     </tr>
                     <%
@@ -75,7 +74,6 @@
                         <td><%= post.getId() %></td>
                         <td><%= post.getTitle() %></td>
                         <td><%= post.getBody() %></td>
-                        <td><%= post.getAuthor() %></td>
                         <td><%= post.getDate() %></td>
                     </tr>
                     </tbody><%}%>
@@ -84,16 +82,16 @@
         </div>
         <hr/>
         <div class="container" style="text-align: center;">
-            <form action="/blog/AdminPanelResultControl" method="post">
+            <form action="/blog/AdminPanelResultControl" method="post" name="execute_form" id="execute_form">
                 <table align="center" style="background-color: white;">
                     <tr><th><h2>Delete an user</h2></th></tr>
-                    <td colspan=2>Enter the user name to delete an user:
-                        <span style="color:red">(this action may not be reversed)</span></td>
-                    <br/>
+                    <tr>
+                        <td colspan=2>Enter the user name to delete an user:
+                        <span style="color:red">(this action may not be reversed)</span></td></tr>
                     <tr>
                         <td>
-                            <input type="text" name="deleteUserRecord" placeholder="Enter an user name"/>
-                            <input type="submit" name="deleteUserAction" value="Delete User"/>
+                            <input type="text" id="delete_user_record" name="deleteUserRecord" placeholder="Enter an user name"/>
+                            <input type="submit" name="deleteUserAction" value="Delete User" onclick="return deleteUserValidate()"/>
                         </td>
                     </tr>
                     <tr><th><h2>Update user profile</h2></th></tr>
@@ -101,7 +99,7 @@
                         <td colspan=2>Which user need to be updated?<br/>(information will be restored if area is empty)</td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="userName" placeholder="User Name"/></td>
+                        <td><input type="text" id="user_name" name="userName" placeholder="User Name"/></td>
                     </tr>
                     <tr>
                         <td>New User Name</td><td><input type="text" name="newUserName" placeholder="New User Name"/></td>
@@ -363,7 +361,7 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <td colspan=2><input type="submit" name="updateUserAction" value="Update User"/></td>
+                        <td colspan=2><input type="submit" name="updateUserAction" value="Update User" onclick="return updateUserValidate()"/></td>
                     </tr>
 
                     <tr><th><h2>Delete a post</h2></th></tr>
@@ -372,18 +370,42 @@
                     <br/>
                     <tr>
                         <td>
-                            <input type="text" name="deletePostRecord" placeholder="Enter a post id"/>
-                            <input type="submit" name="deletePostAction" value="Delete Post"/>
+                            <input type="text" id="delete_post_record" name="deletePostRecord" placeholder="Enter a post id"/>
+                            <input type="submit" name="deletePostAction" value="Delete Post" onclick="return deletePostValidate()"/>
                         </td>
                     </tr>
                 </table>
             </form>
         </div>
         <hr/>
-        <div  class="container" style="text-align: center;">
+        <div class="container" style="text-align: center;">
             <button><a href="admin_panel.jsp">Go back to panel</a></button>
             <button><a href="main.html">Log out</a></button>
         </div>
+
+        <script language="javascript">
+            function deleteUserValidate(){
+                if (document.execute_form.deleteUserRecord.value==""){
+                    alert("Please enter a value to delete an user!");
+                    document.execute_form.deleteUserRecord.focus();
+                    return false;
+                }
+            }
+            function deletePostValidate(){
+                if (document.execute_form.deletePostRecord.value==""){
+                    alert("Please enter a value to delete a post!");
+                    document.execute_form.deletePostRecord.focus();
+                    return false;
+                }
+            }
+            function updateUserValidate(){
+                if (document.execute_form.userName.value==""){
+                    alert("Please enter a value to update an user!");
+                    document.execute_form.userName.focus();
+                    return false;
+                }
+            }
+        </script>
 
     </body>
 </html>

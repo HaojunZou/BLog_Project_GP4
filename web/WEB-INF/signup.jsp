@@ -12,36 +12,6 @@
         <title>Sign Up</title>
     </head>
     <body background="img/bg.jpg">
-    <!-- check if name, email or password is empty, also confirm password is as same as password -->
-        <script language="JavaScript">
-            function validate(v){
-                if (v.userName.value.length==0){
-                    alert("Please enter a name!");
-                    v.userName.focus();
-                    return false;
-                }
-                if (v.email.value.length==0){
-                    alert("Please enter an email!");
-                    v.email.focus();
-                    return false;
-                }
-                if (v.userPassword.value.length==0){
-                    alert("Please enter a password!");
-                    v.userPassword.focus();
-                    return false;
-                }
-                if (v.userPasswordConfirm.value != v.userPassword.value){
-                    alert("Confirm password is not correct!");
-                    v.userPasswordConfirm.focus();
-                    return false;
-                }
-                if (v.accept.value != "accept"){
-                    alert("Accept the provision");
-                    v.accept.focus();
-                    return false;
-                }
-            }
-        </script>
         <div>
             <a class="navbar-brand" style="font-size:40" href="main.html">
                 <img src="img/logo-white.png" style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
@@ -335,5 +305,37 @@
                 </tr>
             </form>
         </div>
+
+        <!-- check if name, email or password is empty, also confirm password is as same as password -->
+        <script language="JavaScript">
+            function validate(v){
+                if (v.userName.value.length==0){
+                    alert("Please enter a name!");
+                    v.userName.focus();
+                    return false;
+                }
+                if (v.email.value.length==0){
+                    alert("Please enter an email!");
+                    v.email.focus();
+                    return false;
+                }
+                if (v.userPassword.value.length==0){
+                    alert("Please enter a password!");
+                    v.userPassword.focus();
+                    return false;
+                }
+                if (v.userPasswordConfirm.value != v.userPassword.value){
+                    alert("Confirm password is not correct!");
+                    v.userPasswordConfirm.focus();
+                    return false;
+                }
+                if (v.accept.value != "accept"){
+                    alert("Accept the provision");
+                    v.accept.focus();
+                    return false;
+                }
+            }
+        </script>
+
     </body>
 </html>
