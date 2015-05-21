@@ -164,15 +164,15 @@ public class PostDAO {
             ResultSet checkResult = pstCheck.executeQuery();
             if(checkResult.next()){
                 pstCheck.close();
+                connection.close();
                 return true;
             }else {
                 pstCheck.close();
+                connection.close();
                 return false;
             }
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            connection.close();
         }
         return false;
     }
