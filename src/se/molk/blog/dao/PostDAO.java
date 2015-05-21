@@ -155,20 +155,41 @@ public class PostDAO {
         }
     }
 
-    public boolean deleteAPost(int post_id) throws SQLException {
-
+    public boolean checkPostByPostId(int post_id) throws SQLException {
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try{
-            String deleteQuery = "delete from Posts where post_id = ?";
-            PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
-            pstDelete.setInt(1, post_id);
-            pstDelete.executeUpdate();
-            pstDelete.close();
+            String checkQuery = "select * from Posts where post_id = ?";
+            PreparedStatement pstCheck = connection.prepareStatement(checkQuery);
+            pstCheck.setInt(1, post_id);
+            pstCheck.executeUpdate();
+            pstCheck.close();
             return true;
         }catch (Exception e){
             e.printStackTrace();
         }finally {
             connection.close();
+        }
+        return false;
+    }
+
+    public boolean deleteAPost(int post_id) throws SQLException {
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        if(checkPostByPostId(post_id)){
+            try{
+                String deleteQuery = "delete from Posts where post_id = ?";
+                PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
+                pstDelete.setInt(1, post_id);
+                pstDelete.executeUpdate();
+                pstDelete.close();
+                return true;
+            }catch (Exception e){
+                e.printStackTrace();
+            }finally {
+                connection.close();
+            }
+        }else{
+            connection.close();
+            return false;
         }
         return false;
     }

@@ -229,7 +229,7 @@ public class UserDAO {
     }
 
     public boolean addUser(String userName, String email, String userPassword, String realName,
-                        String gender, String birthday, String country) throws SQLException {
+                           String gender, String birthday, String country) throws SQLException {
         User user = new User();
         user.setUserType("Normal User");
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);

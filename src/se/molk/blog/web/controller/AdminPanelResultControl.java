@@ -32,7 +32,6 @@ public class AdminPanelResultControl extends HttpServlet {
         String updateUserAction = request.getParameter("updateUserAction");
         String deleteUserRecord = textFilter.filterHtml(request.getParameter("deleteUserRecord"));
         String deletePostAction = request.getParameter("deletePostAction");
-        int deletePostRecord = Integer.parseInt(request.getParameter("deletePostRecord"));
         String userName = textFilter.filterHtml(request.getParameter("userName"));
         String newUserName = textFilter.filterHtml(request.getParameter("newUserName"));
         String newPassword = textFilter.filterHtml(request.getParameter("newPassword"));
@@ -41,6 +40,7 @@ public class AdminPanelResultControl extends HttpServlet {
         String newGender = request.getParameter("newGender");
         String newBirthday = request.getParameter("newBirthday");
         String newCountry = request.getParameter("newCountry");
+        String deletePostRecord = request.getParameter("deletePostRecord");
 
         try {
             if("Delete User".equals(deleteUserAction)){
@@ -58,13 +58,27 @@ public class AdminPanelResultControl extends HttpServlet {
             }
 
             if("Delete Post".equals(deletePostAction)){
-                boolean postDeleted = postService.deleteAPost(deletePostRecord);
-                if (postDeleted){
-                    response.sendRedirect("/blog/admin_panel_executed.html");
-                }else {
+                int post_id;
+                try
+                {
+                    post_id = Integer.parseInt(deletePostRecord);
+                    boolean postDeleted = postService.deleteAPost(post_id);
+                    if (postDeleted){
+                        response.sendRedirect("/blog/admin_panel_executed.html");
+                    }else {
+                        out.print(
+                                "<script type='text/javascript'>" +
+                                        "window.alert('No such data！');" +
+                                        "history.go(-1);" +
+                                        "</script>"
+                        );
+                    }
+                }
+                catch(Exception e)
+                {
                     out.print(
                             "<script type='text/javascript'>" +
-                                    "window.alert('No such data！');" +
+                                    "window.alert('Please enter a number！');" +
                                     "history.go(-1);" +
                                     "</script>"
                     );
