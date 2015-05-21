@@ -20,11 +20,9 @@
                     <tr>
                         <td>Old Password</td><td><input type="password" class="form-control" name="oldUserPassword"/></td>
                     </tr>
-                    <br/><br/>
                     <tr>
                         <td>New Password</td><td><input type="password" class="form-control" name="newUserPassword"/></td>
                     </tr>
-                    <br/><br/>
                     <tr>
                         <td>Confirm Password</td><td><input type="password" class="form-control" name="newUserPasswordConfirm"/></td>
                     </tr>

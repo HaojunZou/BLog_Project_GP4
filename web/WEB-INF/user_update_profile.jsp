@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
-        <title>Update profile</title>
+        <title>Update Profile</title>
     </head>
     <body background="img/bg.jpg">
     <%
@@ -21,7 +21,6 @@
                 <tr>
                     <td>Real Name</td><td><input type="text" name="realName"/></td>
                 </tr>
-                <br/><br/>
                 <tr>
                     <td>Gender</td><td>
                     <select name="gender">
@@ -32,11 +31,9 @@
                     </select>
                 </td>
                 </tr>
-                <br/><br/>
                 <tr>
                     <td>Birthday</td><td><input type="date" name="birthday"/></td>
                 </tr>
-                <br/><br/>
                 <tr>
                     <td>Country</td><td>
                     <select name="country">
