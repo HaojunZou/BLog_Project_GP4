@@ -11,22 +11,14 @@
         </style>
     </head>
     <body>
-    <script language="JavaScript">
-        function validate(v){
-            if (v.searchRecord.value.length==0){
-                alert("Please enter an user name or an email!");
-                v.searchRecord.focus();
-                return false;
-            }
-        }
-    </script>
+
     <div style="text-align: center;"><h1>Welcome back, Administrator</h1></div>
         <form action="/blog/AdminPanelControl" method="post" onsubmit="return validate(this)">
             <div style="text-align: center;">
-Enter a key word to start fuzzy search user
+Enter a key word to start fuzzy search user(empty for search all)
                 <input type="text" name="userSearchRecord"/><input type="submit" name="userSearchAction" value="User Search"/>
                 <br/><hr/>
-Enter a title to start fuzzy search post
+Enter a title to start fuzzy search post(empty for search all)
                 <input type="text" name="postSearchRecord"/><input type="submit" name="postSearchAction" value="Post Search"/>
             </div>
         </form>
