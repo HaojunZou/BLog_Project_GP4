@@ -63,9 +63,9 @@
               href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
 
         <!--LEFT COLUMN, USERS LIST-->
-        <div class="container col-md-3">
-            <div class="well" id="userList">
-                <form action="home.jsp" method="post">
+        <form action="home.jsp" method="post">
+            <div class="container col-md-3">
+                <div class="well" id="userList">
                     <%
                         userList = (LinkedList<User>)session.getAttribute("userList");
                         if(userList == null){
@@ -91,13 +91,11 @@
                         </tr>
                         </tbody><%}%>
                     </table>
-                </form>
+                </div>
             </div>
-        </div>
 
-        <!-- BLOG POSTS -->
-        <div class="container col-md-6">
-            <form action="admin_panel_result.jsp" method="post">
+            <!-- BLOG POSTS -->
+            <div class="container col-md-6">
                 <%
                     LinkedList<Post> postLinkedList = (LinkedList<Post>)request.getAttribute("posts");
                     if(postLinkedList == null){
@@ -112,31 +110,31 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <div class="col-md-6">
-                            <div id="postlist">
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <div class="text-center">
-                                            <div class="row">
-                                                <div class="col-sm-9">
-                                                    <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <h4 class="pull-right">
-                                                        <small><em><%= post.getDate() %><br></em></small>
-                                                    </h4>
+                            <div class="col-md-6">
+                                <div id="postlist">
+                                    <div class="panel">
+                                        <div class="panel-heading">
+                                            <div class="text-center">
+                                                <div class="row">
+                                                    <div class="col-sm-9">
+                                                        <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <h4 class="pull-right">
+                                                            <small><em><%= post.getDate() %><br></em></small>
+                                                        </h4>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="panel-body">
-                                        <%= post.getBody() %>
+                                        <div class="panel-body">
+                                            <%= post.getBody() %>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <br/><%}%>
             </form>
             <br/><br/><br/><br/>

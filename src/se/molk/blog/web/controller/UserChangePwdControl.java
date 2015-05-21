@@ -2,6 +2,7 @@ package se.molk.blog.web.controller;
 
 import se.molk.blog.dao.UserDAO;
 import se.molk.blog.service.UserService;
+import se.molk.blog.utils.TextFilter;
 
 import java.io.*;
 import javax.servlet.*;
@@ -24,11 +25,12 @@ public class UserChangePwdControl extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        TextFilter textFilter = new TextFilter();
         UserService userService = new UserService(user);
         HttpSession session = request.getSession();
         String currentUserName = (String) session.getAttribute("userName");
-        String oldUserPassword = request.getParameter("oldUserPassword");
-        String newUserPassword = request.getParameter("newUserPassword");
+        String oldUserPassword = textFilter.filterHtml(request.getParameter("oldUserPassword"));
+        String newUserPassword = textFilter.filterHtml(request.getParameter("newUserPassword"));
 
         try {
             boolean passwordChanged = userService.changePassword(currentUserName, oldUserPassword, newUserPassword);

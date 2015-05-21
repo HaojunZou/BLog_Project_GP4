@@ -6,6 +6,7 @@ import se.molk.blog.domain.Post;
 import se.molk.blog.domain.User;
 import se.molk.blog.service.PostService;
 import se.molk.blog.service.UserService;
+import se.molk.blog.utils.TextFilter;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.*;
@@ -24,12 +25,13 @@ public class AdminPanelControl extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        TextFilter textFilter = new TextFilter();
         UserService userService = new UserService(user);
         PostService postService = new PostService(post);
-        String userSearchRecord = request.getParameter("userSearchRecord");
-        String postSearchRecord = request.getParameter("postSearchRecord");
-        String userSearchAction = request.getParameter("userSearchAction");
-        String postSearchAction = request.getParameter("postSearchAction");
+        String userSearchRecord = textFilter.filterHtml(request.getParameter("userSearchRecord"));
+        String postSearchRecord = textFilter.filterHtml(request.getParameter("postSearchRecord"));
+        String userSearchAction = textFilter.filterHtml(request.getParameter("userSearchAction"));
+        String postSearchAction = textFilter.filterHtml(request.getParameter("postSearchAction"));
         List<User> users;
         List<Post> posts;
         try {

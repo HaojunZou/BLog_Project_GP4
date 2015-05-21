@@ -3,6 +3,7 @@ package se.molk.blog.web.controller;
 import se.molk.blog.dao.UserDAO;
 import se.molk.blog.domain.User;
 import se.molk.blog.service.UserService;
+import se.molk.blog.utils.TextFilter;
 
 import java.io.*;
 import java.util.List;
@@ -15,6 +16,7 @@ public class UserSignUpControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        TextFilter textFilter = new TextFilter();
 
         UserDAO user = null;
         try {
@@ -23,10 +25,10 @@ public class UserSignUpControl extends HttpServlet {
             e.printStackTrace();
         }
         UserService userService = new UserService(user);
-        String userName = request.getParameter("userName");
+        String userName = textFilter.filterHtml(request.getParameter("userName"));
         String email = request.getParameter("email");
-        String userPassword = request.getParameter("userPassword");
-        String realName = request.getParameter("realName");
+        String userPassword = textFilter.filterHtml(request.getParameter("userPassword"));
+        String realName = textFilter.filterHtml(request.getParameter("realName"));
         String gender = request.getParameter("gender");
         String birthday = request.getParameter("birthday");
         String country = request.getParameter("country");
@@ -44,7 +46,7 @@ public class UserSignUpControl extends HttpServlet {
             }else{
                 out.print(
                         "<script type='text/javascript'>" +
-                                "window.alert('This user has already been registered！');" +
+                                "window.alert('Registration failed！');" +
                                 "history.go(-1);" +
                                 "</script>"
                 );

@@ -2,6 +2,7 @@ package se.molk.blog.web.controller;
 
 import se.molk.blog.dao.UserDAO;
 import se.molk.blog.service.UserService;
+import se.molk.blog.utils.TextFilter;
 
 import java.io.*;
 import javax.servlet.*;
@@ -20,10 +21,11 @@ public class UserUpdateProfileControl extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        TextFilter textFilter = new TextFilter();
         UserService userService = new UserService(user);
         HttpSession session = request.getSession();
         String currentUserName = (String) session.getAttribute("userName");
-        String realName = request.getParameter("realName");
+        String realName = textFilter.filterHtml(request.getParameter("realName"));
         String gender = request.getParameter("gender");
         String birthday = request.getParameter("birthday");
         String country = request.getParameter("country");

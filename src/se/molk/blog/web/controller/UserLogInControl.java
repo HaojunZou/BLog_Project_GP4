@@ -3,6 +3,7 @@ package se.molk.blog.web.controller;
 import se.molk.blog.dao.UserDAO;
 import se.molk.blog.domain.User;
 import se.molk.blog.service.UserService;
+import se.molk.blog.utils.TextFilter;
 
 import java.io.*;
 import java.util.List;
@@ -26,10 +27,11 @@ public class UserLogInControl extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        TextFilter textFilter = new TextFilter();
         UserService userService = new UserService(user);
         List<User> userList;
-        String userName = request.getParameter("userName");
-        String userPassword = request.getParameter("userPassword");
+        String userName = textFilter.filterHtml(request.getParameter("userName"));
+        String userPassword = textFilter.filterHtml(request.getParameter("userPassword"));
 
         try {
             int userType = userService.logIn(userName, userPassword);

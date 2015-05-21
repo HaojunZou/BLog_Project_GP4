@@ -2,6 +2,7 @@ package se.molk.blog.web.controller;
 
 import se.molk.blog.dao.PostDAO;
 import se.molk.blog.service.PostService;
+import se.molk.blog.utils.TextFilter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,10 +22,10 @@ public class HomeControl extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        TextFilter textFilter = new TextFilter();
         PostService postService = new PostService(post);
 
-        String title = request.getParameter("title");
+        String title = textFilter.filterHtml(request.getParameter("title"));
         String body = request.getParameter("body");
         //String category = request.getParameter("category");
         //String author = request.getParameter("author");

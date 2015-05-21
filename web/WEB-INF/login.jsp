@@ -66,6 +66,16 @@
                     return false;
                 }
             }
+            /*
+            function containSpecial(s)
+            {
+                var containSpecial = RegExp(/[(\ )(\~)(\!)(\@)(\#)
+                                            (\$)(\%)(\^)(\&)(\*)(\()(\))(\-)(\_)(\+)(\=)
+                                            (\[)(\])(\{)(\})(\|)(\\)(\;)(\:)(\')(\")(\,)(\.)(\/)
+                                            (\<)(\>)(\?)(\)]+/);
+                return ( containSpecial.test(s) );
+            }
+            */
         </script>
     </body>
 </html>

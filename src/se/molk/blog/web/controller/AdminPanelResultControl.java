@@ -4,6 +4,7 @@ import se.molk.blog.dao.PostDAO;
 import se.molk.blog.dao.UserDAO;
 import se.molk.blog.service.PostService;
 import se.molk.blog.service.UserService;
+import se.molk.blog.utils.TextFilter;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.*;
@@ -24,19 +25,19 @@ public class AdminPanelResultControl extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        TextFilter textFilter = new TextFilter();
         UserService userService = new UserService(user);
         PostService postService = new PostService(post);
-        String deleteUserAction = request.getParameter("deleteUserAction");
-        String updateUserAction = request.getParameter("updateUserAction");
-        String deleteUserRecord = request.getParameter("deleteUserRecord");
-        String deletePostAction = request.getParameter("deletePostAction");
+        String deleteUserAction = textFilter.filterHtml(request.getParameter("deleteUserAction"));
+        String updateUserAction = textFilter.filterHtml(request.getParameter("updateUserAction"));
+        String deleteUserRecord = textFilter.filterHtml(request.getParameter("deleteUserRecord"));
+        String deletePostAction = textFilter.filterHtml(request.getParameter("deletePostAction"));
         int deletePostRecord = Integer.parseInt(request.getParameter("deletePostRecord"));
-        String userName = request.getParameter("userName");
-        String newUserName = request.getParameter("newUserName");
-        String newPassword = request.getParameter("newPassword");
+        String userName = textFilter.filterHtml(request.getParameter("userName"));
+        String newUserName = textFilter.filterHtml(request.getParameter("newUserName"));
+        String newPassword = textFilter.filterHtml(request.getParameter("newPassword"));
         String newEmail = request.getParameter("newEmail");
-        String newRealName = request.getParameter("newRealName");
+        String newRealName = textFilter.filterHtml(request.getParameter("newRealName"));
         String newGender = request.getParameter("newGender");
         String newBirthday = request.getParameter("newBirthday");
         String newCountry = request.getParameter("newCountry");
