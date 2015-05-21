@@ -36,7 +36,7 @@ public class UserService {
     }
 
     public boolean addUser(String userName, String email, String userPassword, String realName,
-                        String gender, String birthday, String country) throws SQLException {
+                           String gender, String birthday, String country) throws SQLException {
         return userDAO.addUser(userName, email, userPassword, realName, gender, birthday, country);
     }
 
@@ -50,7 +50,7 @@ public class UserService {
     }
 
     public String adminUpdateUserInfo(String userName, String newUserName, String newEmail, String newPassword,
-                  String newRealName, String newGender, String newBirthday, String newCountry) throws SQLException{
+                                      String newRealName, String newGender, String newBirthday, String newCountry) throws SQLException{
         return userDAO.adminUpdateUserInfo(userName, newUserName, newEmail, newPassword, newRealName, newGender, newBirthday, newCountry);
     }
 
