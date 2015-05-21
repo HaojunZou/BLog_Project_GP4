@@ -161,9 +161,14 @@ public class PostDAO {
             String checkQuery = "select * from Posts where post_id = ?";
             PreparedStatement pstCheck = connection.prepareStatement(checkQuery);
             pstCheck.setInt(1, post_id);
-            pstCheck.executeUpdate();
-            pstCheck.close();
-            return true;
+            ResultSet checkResult = pstCheck.executeQuery();
+            if(checkResult.next()){
+                pstCheck.close();
+                return true;
+            }else {
+                pstCheck.close();
+                return false;
+            }
         }catch (Exception e){
             e.printStackTrace();
         }finally {
