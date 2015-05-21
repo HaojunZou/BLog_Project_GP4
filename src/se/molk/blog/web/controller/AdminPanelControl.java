@@ -30,8 +30,8 @@ public class AdminPanelControl extends HttpServlet {
         PostService postService = new PostService(post);
         String userSearchRecord = textFilter.filterHtml(request.getParameter("userSearchRecord"));
         String postSearchRecord = textFilter.filterHtml(request.getParameter("postSearchRecord"));
-        String userSearchAction = textFilter.filterHtml(request.getParameter("userSearchAction"));
-        String postSearchAction = textFilter.filterHtml(request.getParameter("postSearchAction"));
+        String userSearchAction = request.getParameter("userSearchAction");
+        String postSearchAction = request.getParameter("postSearchAction");
         List<User> users;
         List<Post> posts;
         try {
