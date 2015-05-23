@@ -16,7 +16,7 @@
     <body background="img/bg.jpg">
 
         <div>
-            <a class="navbar-brand" style="font-size:40" href="main.html">
+            <a class="navbar-brand" style="font-size:40" href="main.jsp">
                 <img src="img/logo-white.png" style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
             </a><br/>
         </div>
@@ -39,7 +39,7 @@
             <div style="text-align: center;">
                 <tr>
                     <input type="submit" value="Log in"/>
-                    <button><a href="main.html">Back to main</a></button>
+                    <button><a href="main.jsp">Back to main</a></button>
                 </tr>
             </div>
         </form>

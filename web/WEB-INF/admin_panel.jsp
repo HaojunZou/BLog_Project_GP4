@@ -23,7 +23,7 @@ Enter a title to start fuzzy search post(empty for search all)
             </div>
         </form>
         <div style="text-align: center;">
-            <button><a href="main.html">Log out</a></button>
+            <button><a href="main.jsp">Log out</a></button>
         </div>
     </body>
 </html>

@@ -380,7 +380,7 @@
         <hr/>
         <div class="container" style="text-align: center;">
             <button><a href="admin_panel.jsp">Go back to panel</a></button>
-            <button><a href="main.html">Log out</a></button>
+            <button><a href="main.jsp">Log out</a></button>
         </div>
 
         <script language="javascript">
