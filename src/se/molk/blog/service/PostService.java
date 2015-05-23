@@ -19,12 +19,16 @@ public class PostService {
 
     }
 
-    public void publishNewPost(String title, String body) throws SQLException {
-        postDAO.publishNewPost(title, body);
+    public boolean publishNewPost(String title, String body, String author) throws SQLException {
+        return postDAO.publishNewPost(title, body, author);
     }
 
     public List<Post> getPostsByTitle(String title) throws SQLException {
         return postDAO.getPostsByTitle(title);
+    }
+
+    public List<Post> getPostsByUserName(String userName) throws SQLException{
+        return postDAO.getPostsByUserName(userName);
     }
 
     public boolean deleteAPost(int post_id) throws SQLException{

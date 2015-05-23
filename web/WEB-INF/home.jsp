@@ -1,5 +1,6 @@
 <%
     LinkedList<User> userList;
+    LinkedList<Post> postLinkedList;
     String currentUserName = (String) session.getAttribute("currentUserName");
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -95,7 +96,7 @@
             <!-- BLOG POSTS -->
             <div class="container col-md-6">
                 <%
-                    LinkedList<Post> postLinkedList = (LinkedList<Post>)request.getAttribute("posts");
+                    postLinkedList = (LinkedList<Post>)request.getAttribute("posts");
                     if(postLinkedList == null){
                         postLinkedList = new LinkedList<Post>();
                     }
@@ -105,66 +106,67 @@
                         if(i>=10)
                             break;
                 %>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-1"></div>
-                            <div class="col-md-6">
-                                <div id="postlist">
-                                    <div class="panel">
-                                        <div class="panel-heading">
-                                            <div class="text-center">
-                                                <div class="row">
-                                                    <div class="col-sm-9">
-                                                        <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <h4 class="pull-right">
-                                                            <small><em><%= post.getDate() %><br></em></small>
-                                                        </h4>
-                                                    </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                        <div class="col-md-6">
+                            <div id="postlist">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <div class="text-center">
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <h4 class="pull-right">
+                                                        <small><em><%= post.getDate() %><br></em></small>
+                                                    </h4>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel-body">
-                                            <%= post.getBody() %>
-                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <%= post.getBody() %>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                <br/><%}%>
-            </form>
-            <br/><br/><br/><br/>
+                </div>
+            <br/><%}%>
+        </form>
+        <br/><br/><br/><br/>
 
-            <form action="/blog/HomeControl" method="post" id="blogBody">
-                <label for="title"><b>Blog Title:</b></label>
-                <input type="text" name="title" id="title" form="blogBody"/><br/>
-                <textarea name="body">Write blog here...<br/><br/><br/>
-                    <textarea style="text-align: right"><%= currentUserName%></textarea></textarea><br/>
-                <script>
-                    CKEDITOR.replace("body");
-                </script>
+        <form action="/blog/HomeControl" method="post" id="blogBody">
+            <label for="title"><b>Blog Title:</b></label>
+            <%session.setAttribute("blogUserName", currentUserName);%>
+            <input type="text" name="title" id="title" form="blogBody"/><br/>
+            <textarea name="body">Write blog here...<br/><br/><br/>
+                <textarea style="text-align: right"><%= currentUserName%></textarea></textarea><br/>
+            <script>
+                CKEDITOR.replace("body");
+            </script>
 
-                <!--
-                <select name="category">
-                    <option value=""></option>
-                    <option value="life">life</option>
-                    <option value="education">education</option>
-                    <option value="animal">animal</option>
-                </select>
-                -->
-                <input type="submit" value="Send This Blog"/>
-            </form>
-        </div>
+            <!--
+            <select name="category">
+                <option value=""></option>
+                <option value="life">life</option>
+                <option value="education">education</option>
+                <option value="animal">animal</option>
+            </select>
+            -->
+            <input type="submit" name="sendBlog" value="Send This Blog"/>
+        </form>
+    </div>
 
-        <!--RIGHT COLUMN, CHOOSE BLOG POST BY DATE -->
-        <div class="container col-md-1"></div>
+    <!--RIGHT COLUMN, CHOOSE BLOG POST BY DATE -->
+    <div class="container col-md-1"></div>
         <div class="container col-md-2">
             <b>Date:</b><br/>
             <input type="date" name="date"/>
         </div>
     </div>
-</div>
+
 </body>
 </html>

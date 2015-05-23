@@ -106,53 +106,104 @@ public class PostDAO {
         return postList;
     }
 
+    public List<Post> getPostsByUserName(String userName) throws SQLException {
+        List<Post> postList = new LinkedList<Post>();
+        UserDAO userDAO;
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try {
+            userDAO = new UserDAO();
+            int userId = userDAO.getUserIdByUserName(userName);
+            if(userId!=0){
+                try{
+                    String postSearchQuery = "select * from Posts where userId = ?";
+                    PreparedStatement pstSearch = connection.prepareStatement(postSearchQuery);
+                    pstSearch.setInt(1, userId);
+                    ResultSet resultSet = pstSearch.executeQuery();
+                    while (resultSet.next()){
+                        Post post = new Post();
+                        post.setId(resultSet.getInt("post_id"));
+                        post.setTitle(resultSet.getString("postTitle"));
+                        post.setBody(resultSet.getString("postBody"));
+                        post.setUserId(resultSet.getInt("userId"));
+                        post.setDate(resultSet.getString("publishedDate"));
+                        post.setPublished(resultSet.getBoolean("published"));
+
+                        int categoryId = resultSet.getInt("categoryId");
+                        CategoryDAO categoryDAO = new CategoryDAO();
+                        post.setCategory(categoryDAO.getCategoryById(categoryId));
+
+                        postList.add(post);
+                    }
+                    pstSearch.close();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }finally {
+                    connection.close();
+                }
+            }else{
+                postList = null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return postList;
+    }
+
     public Post getPostById(int id){
         return null;
     }
 
-    public void publishNewPost(String title, String body) throws SQLException {
-        //int userId = 0;
+    public boolean publishNewPost(String title, String body, String author) throws SQLException {
+        boolean published = false;
+        int userId;
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         String publishedDate = dateFormat.format(date);
         try {
-            //UserDAO userDAO = new UserDAO();
-            //userId = userDAO.getUserIdByUserName(author);
+            UserDAO userDAO = new UserDAO();
+            userId = userDAO.getUserIdByUserName(author);
+            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+            if(userId!=0){
+                try{
+                    String idCheckQuery = "select * from Posts where post_id=?"; //check if this id number has been token
+                    String insertQuery =
+                            "insert into Posts (post_id, postTitle, postBody, userId, publishedDate)" +
+                                    "values(?,?,?,?,?)";   //insert a record to user table
+                    int idNumber = 1;
+                    for (int i = 1; i < 1.0e9; i++) {
+                        PreparedStatement pstIdCheck = connection.prepareStatement(idCheckQuery);
+                        pstIdCheck.setString(1, Integer.toString(i));
+                        ResultSet resultSetId = pstIdCheck.executeQuery();  //check if this id number has been token
+                        if (resultSetId.next()) {     //if id number exist, than make it plus 1
+                            pstIdCheck.setString(1, Integer.toString(i + 1));
+                            pstIdCheck.close();
+                        } else {                      //if not, use this id number
+                            idNumber = i;
+                            pstIdCheck.close();
+                            break;
+                        }
+                    }
+                    PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+                    preparedStatement.setInt(1, idNumber);
+                    preparedStatement.setString(2, title);
+                    preparedStatement.setString(3, body);
+                    preparedStatement.setInt(4, userId);
+                    preparedStatement.setString(5, publishedDate);
+                    preparedStatement.executeUpdate();
+                    preparedStatement.close();
+                    connection.close();
+                    published = true;
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else{
+                connection.close();
+                published = false;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
-        try{
-            String idCheckQuery = "select * from Posts where post_id=?"; //check if this id number has been token
-            String insertQuery =
-                    "insert into Posts (post_id, postTitle, postBody, publishedDate)" +
-                            "values(?,?,?,?)";   //insert a record to user table
-            int idNumber = 1;
-            for (int i = 1; i < 1.0e9; i++) {
-                PreparedStatement pstIdCheck = connection.prepareStatement(idCheckQuery);
-                pstIdCheck.setString(1, Integer.toString(i));
-                ResultSet resultSetId = pstIdCheck.executeQuery();  //check if this id number has been token
-                if (resultSetId.next()) {     //if id number exist, than make it plus 1
-                    pstIdCheck.setString(1, Integer.toString(i + 1));
-                    pstIdCheck.close();
-                } else {                      //if not, use this id number
-                    idNumber = i;
-                    pstIdCheck.close();
-                    break;
-                }
-            }
-            PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
-            preparedStatement.setString(1, Integer.toString(idNumber));
-            preparedStatement.setString(2, title);
-            preparedStatement.setString(3, body);
-            //preparedStatement.setString(4, Integer.toString(userId));
-            preparedStatement.setString(4, publishedDate);
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
-            connection.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        return published;
     }
 
     public boolean checkPostByPostId(int post_id) throws SQLException {

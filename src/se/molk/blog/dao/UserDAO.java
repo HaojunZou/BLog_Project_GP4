@@ -260,7 +260,7 @@ public class UserDAO {
                     }
                 }
                 PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
-                preparedStatement.setString(1, Integer.toString(idNumber));
+                preparedStatement.setInt(1, idNumber);
                 preparedStatement.setString(2, user.getUserType());
                 preparedStatement.setString(3, userName);
                 preparedStatement.setString(4, email);
