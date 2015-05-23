@@ -106,45 +106,34 @@ public class PostDAO {
         return postList;
     }
 
-    public List<Post> getPostsByUserName(String userName) throws SQLException {
+    public List<Post> getPostsByUserId(int userId) throws SQLException {
         List<Post> postList = new LinkedList<Post>();
-        UserDAO userDAO;
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
-        try {
-            userDAO = new UserDAO();
-            int userId = userDAO.getUserIdByUserName(userName);
-            if(userId!=0){
-                try{
-                    String postSearchQuery = "select * from Posts where userId = ?";
-                    PreparedStatement pstSearch = connection.prepareStatement(postSearchQuery);
-                    pstSearch.setInt(1, userId);
-                    ResultSet resultSet = pstSearch.executeQuery();
-                    while (resultSet.next()){
-                        Post post = new Post();
-                        post.setId(resultSet.getInt("post_id"));
-                        post.setTitle(resultSet.getString("postTitle"));
-                        post.setBody(resultSet.getString("postBody"));
-                        post.setUserId(resultSet.getInt("userId"));
-                        post.setDate(resultSet.getString("publishedDate"));
-                        post.setPublished(resultSet.getBoolean("published"));
+        try{
+            String postSearchQuery = "select * from Posts where userId = ?";
+            PreparedStatement pstSearch = connection.prepareStatement(postSearchQuery);
+            pstSearch.setInt(1, userId);
+            ResultSet resultSet = pstSearch.executeQuery();
+            while (resultSet.next()){
+                Post post = new Post();
+                post.setId(resultSet.getInt("post_id"));
+                post.setTitle(resultSet.getString("postTitle"));
+                post.setBody(resultSet.getString("postBody"));
+                post.setUserId(resultSet.getInt("userId"));
+                post.setDate(resultSet.getString("publishedDate"));
+                post.setPublished(resultSet.getBoolean("published"));
 
-                        int categoryId = resultSet.getInt("categoryId");
-                        CategoryDAO categoryDAO = new CategoryDAO();
-                        post.setCategory(categoryDAO.getCategoryById(categoryId));
+                int categoryId = resultSet.getInt("categoryId");
+                CategoryDAO categoryDAO = new CategoryDAO();
+                post.setCategory(categoryDAO.getCategoryById(categoryId));
 
-                        postList.add(post);
-                    }
-                    pstSearch.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }finally {
-                    connection.close();
-                }
-            }else{
-                postList = null;
+                postList.add(post);
             }
-        } catch (Exception e) {
+            pstSearch.close();
+        }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            connection.close();
         }
         return postList;
     }

@@ -27,8 +27,8 @@ public class PostService {
         return postDAO.getPostsByTitle(title);
     }
 
-    public List<Post> getPostsByUserName(String userName) throws SQLException{
-        return postDAO.getPostsByUserName(userName);
+    public List<Post> getPostsByUserId(int userId) throws SQLException{
+        return postDAO.getPostsByUserId(userId);
     }
 
     public boolean deleteAPost(int post_id) throws SQLException{
