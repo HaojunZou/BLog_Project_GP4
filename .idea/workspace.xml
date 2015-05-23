@@ -7,14 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\web\WEB-INF\main.html" afterPath="$PROJECT_DIR$/web/WEB-INF/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/web/controller/Main.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel_executed.html" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel_executed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/home.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/login.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/signup.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/signup.jsp" />
+      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\se\molk\blog\web\controller\AdminPanel.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/AdminPanel.java" />
+      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\se\molk\blog\web\controller\AdminPanelExecuted.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/AdminPanelExecuted.java" />
+      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\se\molk\blog\web\controller\AdminPanelResult.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/AdminPanelResult.java" />
+      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\se\molk\blog\web\controller\Home.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/Home.java" />
+      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\se\molk\blog\web\controller\Main.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/Main.java" />
+      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\se\molk\blog\web\controller\UserChangePwd.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/UserChangePwd.java" />
+      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\se\molk\blog\web\controller\UserLogIn.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/UserLogIn.java" />
+      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\se\molk\blog\web\controller\UserProfileExecuted.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/UserProfileExecuted.java" />
+      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\se\molk\blog\web\controller\UserSignUp.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/UserSignUp.java" />
+      <change type="MOVED" beforePath="C:\Users\apoll_000\Documents\GitHub\Blog_Project_GP4\src\se\molk\blog\web\controller\UserUpdateProfile.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/UserUpdateProfile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimpleServlet.iws" />
@@ -46,38 +48,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3531" max-vertical-offset="4012">
-              <caret line="331" column="38" selection-start-line="331" selection-start-column="38" selection-end-line="331" selection-end-column="38" />
-              <folding>
-                <element signature="method#logIn#0;class#UserDAO#0" expanded="false" />
-                <element signature="method#checkUserByUserName#0;class#UserDAO#0" expanded="false" />
-                <element signature="method#deleteAnUser#0;class#UserDAO#0" expanded="false" />
-                <element signature="method#addUser#0;class#UserDAO#0" expanded="false" />
-                <element signature="method#adminUpdateUserInfo#0;class#UserDAO#0" expanded="false" />
-                <marker date="1432226612437" expanded="true" signature="832:851" placeholder="select * fro..Users..." />
-                <marker date="1432226612437" expanded="true" signature="2161:2225" placeholder="select * fro..Users..." />
-                <marker date="1432226612437" expanded="true" signature="3666:3703" placeholder="select * fro..Users..." />
-                <marker date="1432226612437" expanded="true" signature="5088:5132" placeholder="select user_..Users..." />
-                <marker date="1432226612437" expanded="true" signature="5912:6015" placeholder="select userN..Users..." />
-                <marker date="1432226612437" expanded="true" signature="7065:7124" placeholder="select * fro..Users..." />
-                <marker date="1432226612437" expanded="true" signature="7962:8000" placeholder="select * fro..Users..." />
-                <marker date="1432226612437" expanded="true" signature="8821:8857" placeholder="delete from ..." />
-                <marker date="1432226612437" expanded="true" signature="9750:9803" placeholder="select user_..Users..." />
-                <marker date="1432226612437" expanded="true" signature="9875:9910" placeholder="select * fro..Users..." />
-                <marker date="1432226612437" expanded="true" signature="10008:10171" placeholder="insert into ..." />
-                <marker date="1432226612437" expanded="true" signature="12855:12907" placeholder="update Users..." />
-                <marker date="1432226612437" expanded="true" signature="13704:13781" placeholder="update Users..." />
-                <marker date="1432226612437" expanded="true" signature="14089:14166" placeholder="update Users..." />
-                <marker date="1432226612437" expanded="true" signature="15314:15361" placeholder="select * fro..Users..." />
-                <marker date="1432226612437" expanded="true" signature="15402:15516" placeholder="update Users..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="user_update_profile.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/user_update_profile.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -91,7 +61,7 @@
         </entry>
       </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="765">
               <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
@@ -100,18 +70,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3278237" vertical-offset="374" max-vertical-offset="2584">
-              <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+            <state vertical-scroll-proportion="-2.6153846" vertical-offset="374" max-vertical-offset="2584">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/Home.java">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/Home.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="816">
               <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
@@ -123,9 +93,31 @@
       <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="1207" max-vertical-offset="2975">
-              <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
+            <state vertical-scroll-proportion="2.1153846" vertical-offset="1313" max-vertical-offset="2975">
+              <caret line="74" column="65" selection-start-line="74" selection-start-column="65" selection-end-line="74" selection-end-column="65" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/utils/TextFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminPanel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/AdminPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5604396" vertical-offset="0" max-vertical-offset="546">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,16 +145,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserChangePwdControl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserChangePwdControl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="884">
-              <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserUpdateProfileControl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserUpdateProfileControl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -182,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/test_get_all_users.jsp" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/service/BlogService.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserServletControl.java" />
@@ -233,6 +214,7 @@
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/Main.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/home.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/main.jsp" />
+        <option value="$PROJECT_DIR$/src/se/molk/blog/web/UI/AdminPanel.java" />
       </list>
     </option>
   </component>
@@ -367,6 +349,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -976,13 +962,7 @@
       <workItem from="1432106375392" duration="174000" />
       <workItem from="1432107876174" duration="883000" />
       <workItem from="1432109192826" duration="56762000" />
-      <workItem from="1432364956104" duration="2370000" />
-    </task>
-    <task id="LOCAL-00024" summary="database has been upgraded">
-      <created>1430929648028</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1430929648028</updated>
+      <workItem from="1432364956104" duration="2954000" />
     </task>
     <task id="LOCAL-00025" summary="Country list added">
       <created>1430930968308</created>
@@ -1272,11 +1252,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432227042527</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="main page implement">
+      <created>1432367390456</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1432367390458</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="486343000" />
+    <option name="totallyTimeSpent" value="486927000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1316,7 +1302,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26746166" sideWeight="0.49864987" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26746166" sideWeight="0.49864987" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32659933" sideWeight="0.4994995" order="10" side_tool="false" content_ui="tabs" />
@@ -1349,7 +1335,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="TextFilter class added" />
     <MESSAGE value="provision added in registration page" />
     <MESSAGE value="Country list added" />
     <MESSAGE value="database has been upgraded" />
@@ -1374,7 +1359,8 @@
     <MESSAGE value="admin panel, search and delete post function" />
     <MESSAGE value="special character filter function added" />
     <MESSAGE value="fixed bugs in admin panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs in admin panel" />
+    <MESSAGE value="main page implement" />
+    <option name="LAST_COMMIT_MESSAGE" value="main page implement" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1409,7 +1395,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/Home.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/Home.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
@@ -1448,22 +1434,22 @@
             <element signature="method#deleteAnUser#0;class#UserDAO#0" expanded="false" />
             <element signature="method#addUser#0;class#UserDAO#0" expanded="false" />
             <element signature="method#adminUpdateUserInfo#0;class#UserDAO#0" expanded="false" />
-            <marker date="1432226612437" expanded="true" signature="832:851" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="2161:2225" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="3666:3703" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="5088:5132" placeholder="select user_..Users..." />
-            <marker date="1432226612437" expanded="true" signature="5912:6015" placeholder="select userN..Users..." />
-            <marker date="1432226612437" expanded="true" signature="7065:7124" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="7962:8000" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="8821:8857" placeholder="delete from ..." />
-            <marker date="1432226612437" expanded="true" signature="9750:9803" placeholder="select user_..Users..." />
-            <marker date="1432226612437" expanded="true" signature="9875:9910" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="10008:10171" placeholder="insert into ..." />
-            <marker date="1432226612437" expanded="true" signature="12855:12907" placeholder="update Users..." />
-            <marker date="1432226612437" expanded="true" signature="13704:13781" placeholder="update Users..." />
-            <marker date="1432226612437" expanded="true" signature="14089:14166" placeholder="update Users..." />
-            <marker date="1432226612437" expanded="true" signature="15314:15361" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="15402:15516" placeholder="update Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select user_..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select userN..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select user_..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="update Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="update Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="update Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="update Users..." />
           </folding>
         </state>
       </provider>
@@ -1498,7 +1484,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/Home.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/Home.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
@@ -1562,7 +1548,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/AdminPanelResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
@@ -1570,22 +1556,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/utils/TextFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserChangePwd.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/UserChangePwd.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
@@ -1595,7 +1566,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserLogIn.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/UserLogIn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
@@ -1611,7 +1582,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserProfileExecuted.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/UserProfileExecuted.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
@@ -1619,7 +1590,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUp.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/UserSignUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
@@ -1637,7 +1608,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelExecuted.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/AdminPanelExecuted.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
@@ -1743,22 +1714,22 @@
             <element signature="method#deleteAnUser#0;class#UserDAO#0" expanded="false" />
             <element signature="method#addUser#0;class#UserDAO#0" expanded="false" />
             <element signature="method#adminUpdateUserInfo#0;class#UserDAO#0" expanded="false" />
-            <marker date="1432226612437" expanded="true" signature="832:851" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="2161:2225" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="3666:3703" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="5088:5132" placeholder="select user_..Users..." />
-            <marker date="1432226612437" expanded="true" signature="5912:6015" placeholder="select userN..Users..." />
-            <marker date="1432226612437" expanded="true" signature="7065:7124" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="7962:8000" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="8821:8857" placeholder="delete from ..." />
-            <marker date="1432226612437" expanded="true" signature="9750:9803" placeholder="select user_..Users..." />
-            <marker date="1432226612437" expanded="true" signature="9875:9910" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="10008:10171" placeholder="insert into ..." />
-            <marker date="1432226612437" expanded="true" signature="12855:12907" placeholder="update Users..." />
-            <marker date="1432226612437" expanded="true" signature="13704:13781" placeholder="update Users..." />
-            <marker date="1432226612437" expanded="true" signature="14089:14166" placeholder="update Users..." />
-            <marker date="1432226612437" expanded="true" signature="15314:15361" placeholder="select * fro..Users..." />
-            <marker date="1432226612437" expanded="true" signature="15402:15516" placeholder="update Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select user_..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select userN..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select user_..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="update Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="update Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="update Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1432226612437" expanded="true" signature="-1:-1" placeholder="update Users..." />
           </folding>
         </state>
       </provider>
@@ -1800,7 +1771,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="765">
           <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
@@ -1808,7 +1779,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/Home.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/Home.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="816">
           <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
@@ -1816,19 +1787,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/home.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/main.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="1207" max-vertical-offset="2975">
-          <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
+        <state vertical-scroll-proportion="-2.6153846" vertical-offset="374" max-vertical-offset="2584">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/main.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3278237" vertical-offset="374" max-vertical-offset="2584">
-          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        <state vertical-scroll-proportion="2.1153846" vertical-offset="1313" max-vertical-offset="2975">
+          <caret line="74" column="65" selection-start-line="74" selection-start-column="65" selection-end-line="74" selection-end-column="65" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/utils/TextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/UI/AdminPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5604396" vertical-offset="0" max-vertical-offset="546">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

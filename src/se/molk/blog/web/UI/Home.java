@@ -1,4 +1,4 @@
-package se.molk.blog.web.controller;
+package se.molk.blog.web.UI;
 
 import se.molk.blog.dao.PostDAO;
 import se.molk.blog.dao.UserDAO;
