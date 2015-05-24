@@ -2,16 +2,50 @@
 <%@ page import="se.molk.blog.domain.User" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="se.molk.blog.domain.Post" %>
-<%@ page import="javafx.geometry.Pos" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
         <title>Admin Panel Result</title>
+
+        <style>
+            .inner-addon {
+                position: relative;
+            }
+
+            /* style icon */
+            .inner-addon .glyphicon {
+                position: absolute;
+                padding: 10px;
+                pointer-events: none;
+            }
+
+            /* align icon */
+            .left-addon .glyphicon  { left:  15px;}
+            .right-addon .glyphicon { right: 15px;}
+
+            /* add padding  */
+            .left-addon input  { padding-left:  30px; }
+            .right-addon input { padding-right: 30px; }
+        </style>
+
     </head>
     <body>
 
         <div class="container" style="text-align: center;">
-            <h1>Here's the result, Administrator</h1>
+            <div style="text-align: center;" class="animated slideInDown">
+                <h1><b>Here's the result, Administrator</b></h1>
+            </div>
             <form action="admin_panel_result.jsp" method="post">
                 <%
                     LinkedList<User> userList = (LinkedList<User>)request.getAttribute("users");
@@ -48,11 +82,7 @@
                     </tr>
                     </tbody><%}%>
                 </table>
-            </form>
-        </div>
-        <hr/>
-        <div class="container" style="text-align: center;">
-            <form action="admin_panel_result.jsp" method="post">
+                <br/>
                 <%
                     LinkedList<Post> postList = (LinkedList<Post>)request.getAttribute("posts");
                     if(postList == null){
@@ -64,6 +94,7 @@
                         <th>Post ID</th>
                         <th>Post Title</th>
                         <th>Post Body</th>
+                        <th>Author ID</th>
                         <th>Published Date</th>
                     </tr>
                     <%
@@ -74,60 +105,113 @@
                         <td><%= post.getId() %></td>
                         <td><%= post.getTitle() %></td>
                         <td><%= post.getBody() %></td>
+                        <td><%= post.getUserId() %></td>
                         <td><%= post.getDate() %></td>
                     </tr>
                     </tbody><%}%>
                 </table>
             </form>
         </div>
-        <hr/>
-        <div class="container" style="text-align: center;">
-            <form action="/blog/AdminPanelResultControl" method="post" name="execute_form" id="execute_form">
-                <table align="center" style="background-color: white;">
-                    <tr><th><h2>Delete an user</h2></th></tr>
-                    <tr>
-                        <td colspan=2>Enter the user name to delete an user:
-                        <span style="color:red">(this action may not be reversed)</span></td></tr>
-                    <tr>
-                        <td>
-                            <input type="text" id="delete_user_record" name="deleteUserRecord" placeholder="Enter an user name"/>
-                            <input type="submit" name="deleteUserAction" value="Delete User" onclick="return deleteUserValidate()"/>
-                        </td>
-                    </tr>
-                    <tr><th><h2>Update user profile</h2></th></tr>
-                    <tr>
-                        <td colspan=2>Which user need to be updated?<br/>(information will be restored if area is empty)</td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="user_name" name="userName" placeholder="User Name"/></td>
-                    </tr>
-                    <tr>
-                        <td>New User Name</td><td><input type="text" name="newUserName" placeholder="New User Name"/></td>
-                    </tr>
-                    <tr>
-                        <td>New Password</td><td><input type="text" name="newPassword" placeholder="New Password"/></td>
-                    </tr>
-                    <tr>
-                        <td>New Email</td><td><input type="email" name="newEmail" placeholder="New Email"/></td>
-                    </tr>
-                    <tr>
-                        <td>New Real Name</td><td><input type="text" name="newRealName" placeholder="New Real Name"/></td>
-                    </tr>
-                    <tr>
-                        <td>New Gender</td><td>
-                        <select name="newGender">
-                            <option value=""></option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select></td>
-                    </tr>
-                    <tr>
-                        <td>New Birthday</td><td><input type="date" name="newBirthday"/></td>
-                    </tr>
-                    <tr>
-                        <td>New Country</td><td>
-                        <select name="newCountry">
+
+        <form action="/blog/AdminPanelResultControl" method="post" name="execute_form" id="execute_form">
+            <!-- DELETE USER-->
+            <div style="text-align: center;">
+                <h2><b>Delete An User</b></h2><br/>
+                <h4><b>Enter the user name to delete an user:</b></h4>
+                <span style="color:red">(this action may not be reversed)</span>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="inner-addon left-addon col-md-4">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" id="delete_user_record" name="deleteUserRecord"
+                           class="form-control" form="execute_form" placeholder="Enter an user name"/>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-warning btn-lg" name="deleteUserAction" value="Delete User" onclick="return deleteUserValidate()"/>
+                </div>
+            </div>
+            <br/><br/>
+
+            <!-- UPDATE USER PROFILE -->
+            <div style="text-align: center;">
+                <h2><b>Update User Profile</b></h2><br/>
+                <h4><b>Which user need to be updated?</b></h4>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="inner-addon left-addon col-md-4">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" class="form-control" id="user_name" name="userName" form="execute_form" placeholder="User Name"/>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <br/>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="inner-addon left-addon col-md-4">
+                    <span style="color:red">(information will be restored if area is empty)</span>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="inner-addon left-addon col-md-4">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" class="form-control" name="newUserName" placeholder="New User Name"/>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="inner-addon left-addon col-md-4">
+                    <i class="glyphicon glyphicon-eye-open"></i>
+                    <input type="text" class="form-control" name="newPassword" placeholder="New Password"/>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="inner-addon left-addon col-md-4">
+                    <i class="glyphicon glyphicon-envelope"></i>
+                    <input type="email" name="newEmail" class="form-control" placeholder="New Email"/>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input type="text" name="newRealName" class="form-control" placeholder="New Real Name"/>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <label for="newGender">New Gender</label>
+                    <select name="newGender" class="form-control" id="newGender">
+                        <option value=""></option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <label>New Birthday
+                        <input type="date" name="newBirthday" class="form-control"/>
+                    </label>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <label for="newCountry">New Country
+                        <select name="newCountry" class="form-control" id="newCountry">
                             <option value=""></option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
@@ -358,29 +442,40 @@
                             <option value="Zaire">Zaire</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select></td>
-                    </tr>
-                    <tr>
-                        <td colspan=2><input type="submit" name="updateUserAction" value="Update User" onclick="return updateUserValidate()"/></td>
-                    </tr>
+                        </select>
+                    </label>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <br/>
+            <div class="container" style="text-align: center;">
+                <input type="submit" class="btn btn-warning btn-lg" name="updateUserAction" value="Update User" onclick="return updateUserValidate()"/>
+            </div>
+            <br/><br/>
 
-                    <tr><th><h2>Delete a post</h2></th></tr>
-                    <td colspan=2>Enter the post id to delete a post:
-                        <span style="color:red">(this action may not be reversed)</span></td>
-                    <br/>
-                    <tr>
-                        <td>
-                            <input type="text" id="delete_post_record" name="deletePostRecord" placeholder="Enter a post id"/>
-                            <input type="submit" name="deletePostAction" value="Delete Post" onclick="return deletePostValidate()"/>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-        <hr/>
+            <!-- UPDATE A POST -->
+            <div style="text-align: center;">
+                <h2><b>Delete A Post</b></h2><br/>
+                <h4><b>Enter the post id to delete a post:</b></h4>
+                <span style="color:red">(this action may not be reversed)</span>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="inner-addon left-addon col-md-4">
+                    <i class="glyphicon glyphicon-file"></i>
+                    <input type="text" id="delete_post_record" name="deletePostRecord"
+                           class="form-control" form="execute_form" placeholder="Enter a post id"/>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-warning btn-lg" name="deletePostAction" value="Delete Post" onclick="return deletePostValidate()"/>
+                </div>
+            </div>
+        </form>
+        <br/><br/>
+
         <div class="container" style="text-align: center;">
-            <button><a href="admin_panel.jsp">Go back to panel</a></button>
-            <button><a href="main.jsp">Log out</a></button>
+            <a href="admin_panel.jsp" class="btn btn-primary btn-lg" role="button">Go Back To Panel</a>
+            <a href="main.jsp" class="btn btn-info btn-lg" role="button">Log Out</a>
         </div>
 
         <script language="javascript">
