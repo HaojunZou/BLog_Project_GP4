@@ -138,6 +138,39 @@ public class PostDAO {
         return postList;
     }
 
+    public List<Post> getPostsByFuzzySearch(String fuzzy) throws SQLException {
+        List<Post> postList = new LinkedList<Post>();
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String postSearchQuery = "select * from Posts where postTitle like ? or postBody like ?";
+            PreparedStatement pstSearch = connection.prepareStatement(postSearchQuery);
+            pstSearch.setString(1, "%" + fuzzy + "%");
+            pstSearch.setString(2, "%" + fuzzy + "%");
+            ResultSet resultSet = pstSearch.executeQuery();
+            while (resultSet.next()){
+                Post post = new Post();
+                post.setId(resultSet.getInt("post_id"));
+                post.setTitle(resultSet.getString("postTitle"));
+                post.setBody(resultSet.getString("postBody"));
+                post.setUserId(resultSet.getInt("userId"));
+                post.setDate(resultSet.getString("publishedDate"));
+                post.setPublished(resultSet.getBoolean("published"));
+
+                int categoryId = resultSet.getInt("categoryId");
+                CategoryDAO categoryDAO = new CategoryDAO();
+                post.setCategory(categoryDAO.getCategoryById(categoryId));
+
+                postList.add(post);
+            }
+            pstSearch.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+        return postList;
+    }
+
     public Post getPostById(int id){
         return null;
     }
@@ -148,10 +181,10 @@ public class PostDAO {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         String publishedDate = dateFormat.format(date);
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try {
             UserDAO userDAO = new UserDAO();
             userId = userDAO.getUserIdByUserName(author);
-            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
             if(userId!=0){
                 try{
                     String idCheckQuery = "select * from Posts where post_id=?"; //check if this id number has been token
@@ -180,17 +213,17 @@ public class PostDAO {
                     preparedStatement.setString(5, publishedDate);
                     preparedStatement.executeUpdate();
                     preparedStatement.close();
-                    connection.close();
                     published = true;
                 }catch (Exception e){
                     e.printStackTrace();
                 }
             }else{
-                connection.close();
                 published = false;
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            connection.close();
         }
         return published;
     }
@@ -204,15 +237,15 @@ public class PostDAO {
             ResultSet checkResult = pstCheck.executeQuery();
             if(checkResult.next()){
                 pstCheck.close();
-                connection.close();
                 return true;
             }else {
                 pstCheck.close();
-                connection.close();
                 return false;
             }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            connection.close();
         }
         return false;
     }

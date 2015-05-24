@@ -29,17 +29,20 @@ public class HomeControl extends HttpServlet {
         TextFilter textFilter = new TextFilter();
         PostService postService = new PostService(post);
         HttpSession session = request.getSession();
-        List<Post> usersPosts;
+        List<Post> resultPosts;
+        //List<Post> usersPosts;
 
         String title = textFilter.filterHtml(request.getParameter("title"));
         String body = request.getParameter("body");
         String blogUserName = (String) session.getAttribute("blogUserName");
-        String showUsersBlog = request.getParameter("showUsersBlog");
         String sendBlog = request.getParameter("sendBlog");
-        int postUserId = Integer.parseInt(request.getParameter("author"));
+        String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
+        //String showUsersBlog = request.getParameter("showUsersBlog");
+        //int postUserId = Integer.parseInt(request.getParameter("author"));
         //String category = request.getParameter("category");
         //String author = request.getParameter("author");
         try {
+            /*
             if("Show this person's blog".equals(showUsersBlog)){
                 if(postUserId!=0){
                     usersPosts = postService.getPostsByUserId(postUserId);
@@ -55,8 +58,16 @@ public class HomeControl extends HttpServlet {
                     );
                 }
             }
+            */
 
-            if("Send This Blog".equals(sendBlog)){
+            if(!fuzzySearchBlog.equals("")){
+                resultPosts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
+                request.setAttribute("resultPosts", resultPosts);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
+                dispatcher.forward(request, response);
+            }
+
+            if("Send This Blog".equals(sendBlog) && !title.equals("")){
                 if(blogUserName != null){
                     if(postService.publishNewPost(title, body, blogUserName)){
                         response.sendRedirect("/blog/home.jsp");
@@ -76,6 +87,14 @@ public class HomeControl extends HttpServlet {
                                     "</script>"
                     );
                 }
+            }
+
+            else {
+                out.print(
+                        "<script type='text/javascript'>" +
+                                "history.go(-1)" +
+                                "</script>"
+                );
             }
 
         } catch (Exception e) {

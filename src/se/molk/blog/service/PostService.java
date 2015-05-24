@@ -16,7 +16,6 @@ public class PostService {
 
     public List<Post> getAllPosts() throws SQLException, ClassNotFoundException {
         return postDAO.getAllPosts();
-
     }
 
     public boolean publishNewPost(String title, String body, String author) throws SQLException {
@@ -29,6 +28,10 @@ public class PostService {
 
     public List<Post> getPostsByUserId(int userId) throws SQLException{
         return postDAO.getPostsByUserId(userId);
+    }
+
+    public List<Post> getPostsByFuzzySearch(String fuzzy) throws SQLException {
+        return postDAO.getPostsByFuzzySearch(fuzzy);
     }
 
     public boolean deleteAPost(int post_id) throws SQLException{

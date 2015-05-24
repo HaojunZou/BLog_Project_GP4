@@ -51,11 +51,10 @@ public class UserDAO {
         return userList;
     }
 
-    public List<User> getUserByFuzzySearch(String fuzzy){
+    public List<User> getUserByFuzzySearch(String fuzzy) throws SQLException {
         List<User> userList = new LinkedList<User>();
-
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try {
-            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
             String fuzzySearchQuery = "select * from Users where userName like ? or userPassword like ?";
             PreparedStatement pstSearch = connection.prepareStatement(fuzzySearchQuery);
             pstSearch.setString(1, "%" + fuzzy + "%");
@@ -72,14 +71,13 @@ public class UserDAO {
                 user.setGender(resultSet.getString("gender"));
                 user.setBirthday(resultSet.getString("birthday"));
                 user.setCountry(resultSet.getString("country"));
-
                 userList.add(user);
             }
             pstSearch.close();
-            connection.close();
-
         }catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            connection.close();
         }
         return userList;
     }
@@ -104,7 +102,6 @@ public class UserDAO {
                 user.setGender(resultSet.getString("gender"));
                 user.setBirthday(resultSet.getString("birthday"));
                 user.setCountry(resultSet.getString("country"));
-
                 userList.add(user);
             }
             preparedStatement.close();
@@ -162,10 +159,10 @@ public class UserDAO {
         return info;
     }
 
-    public String logIn(String userName, String userPassword){
+    public String logIn(String userName, String userPassword) throws SQLException {
         String userType = null;
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try {
-            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
             String searchQuery = "select * from Users where userName = ? and userPassword = ?";
             PreparedStatement pstSearch = connection.prepareStatement(searchQuery);
             pstSearch.setString(1, userName);
@@ -174,12 +171,13 @@ public class UserDAO {
             if(resultSet.next()) {
                 userType = resultSet.getString("userType");
                 pstSearch.close();
-                connection.close();
             }else{
                 userType = "Unknown";
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            connection.close();
         }
         return userType;
     }
@@ -216,10 +214,11 @@ public class UserDAO {
                 pstDelete.setString(1, userName);
                 pstDelete.executeUpdate();
                 pstDelete.close();
-                connection.close();
                 return true;
             } catch (SQLException e) {
                 e.printStackTrace();
+            }finally {
+                connection.close();
             }
         }else{
             connection.close();
@@ -272,15 +271,15 @@ public class UserDAO {
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
                 preparedStatementExist.close();
-                connection.close();
                 return true;
             }else{
                 preparedStatementExist.close();
-                connection.close();
                 return false;
             }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            connection.close();
         }
         return false;
     }
@@ -296,10 +295,11 @@ public class UserDAO {
                 pstChangePwd.setString(2, currentUserName);
                 pstChangePwd.executeUpdate();
                 pstChangePwd.close();
-                connection.close();
                 return true;
             } catch (SQLException e) {
                 e.printStackTrace();
+            }finally {
+                connection.close();
             }
         }else{
             connection.close();
@@ -327,10 +327,11 @@ public class UserDAO {
                 pstUpdateInfo.setString(5, currentUserName);
                 pstUpdateInfo.executeUpdate();
                 pstUpdateInfo.close();
-                connection.close();
                 return true;
             } catch (SQLException e) {
                 e.printStackTrace();
+            }finally {
+                connection.close();
             }
         }else{
             connection.close();
@@ -343,7 +344,6 @@ public class UserDAO {
                                       String newRealName, String newGender, String newBirthday, String newCountry) throws SQLException {
         String updateResult = null;
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
-
         try{
             String checkQuery = "select * from Users where userName=? or email=?";
             String updateInfoQuery = "update Users set userName=?, email=?, userPassword=?, realName=?, gender=?, birthday=?, country=? where userName=?";
@@ -400,7 +400,6 @@ public class UserDAO {
         }finally {
             connection.close();
         }
-
         return updateResult;
     }
 

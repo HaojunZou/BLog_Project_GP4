@@ -1,7 +1,7 @@
 <%
     LinkedList<User> userList;
     LinkedList<Post> postLinkedList;
-    LinkedList<Post> userPostLinkedList;
+    LinkedList<Post> resultPostsList;
     String currentUserName = (String) session.getAttribute("currentUserName");
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -28,6 +29,26 @@
 
 </head>
 <body background="img/bg.jpg">
+<style>
+    .inner-addon {
+        position: relative;
+    }
+
+    /* style icon */
+    .inner-addon .glyphicon {
+        position: absolute;
+        padding: 10px;
+        pointer-events: none;
+    }
+
+    /* align icon */
+    .left-addon .glyphicon  { left:  15px;}
+    .right-addon .glyphicon { right: 15px;}
+
+    /* add padding  */
+    .left-addon input  { padding-left:  30px; }
+    .right-addon input { padding-right: 30px; }
+</style>
 
 <div class="container-fluid">
     <nav class="navbar">
@@ -35,7 +56,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
-                                                             style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
+                style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
                 </a><br/>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#navbar-collapse-3">
@@ -48,13 +69,19 @@
 
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="user_update_profile.jsp"><i class="fa fa-cog"><b> Config my profile</b></i></a></li>
-                    <li><a href="user_change_pwd.jsp"><i class="fa fa-eye"><b> Change Password</b></i></a></li>
-                    <li><a href="#"><i class="fa fa-phone"><b> Contact</b></i></a></li>
-                    <li><a href="main.jsp"><i class="fa fa-sign-out"><b> Log Out</b></i></a></li>
+                    <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown"><b> Config my profile</b></i></a></li>
+                    <li><a href="user_change_pwd.jsp"><i class="fa fa-eye animated fadeInDown"><b> Change Password</b></i></a></li>
+                    <li><a href="#"><i class="fa fa-phone animated fadeInDown"><b> Contact</b></i></a></li>
+                    <li><a href="main.jsp"><i class="fa fa-sign-out animated fadeInDown"><b> Log Out</b></i></a></li>
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
+            <div class="col-md-9"></div>
+            <div class="inner-addon right-addon col-md-3">
+                <i class="glyphicon glyphicon-search"></i>
+                <input type="text" class="form-control" name="fuzzySearchBlog" form="home_control" placeholder="Search" onsubmit="return SearchValidate()"/>
+            </div>
         </div>
         <!-- /.container -->
     </nav>
@@ -66,7 +93,7 @@
 
         <!--LEFT COLUMN, USERS LIST-->
         <form action="home.jsp" method="post">
-            <div class="container col-md-3">
+            <div class="container col-md-3 animated bounceInLeft">
                 <div class="well" id="userList">
                     <%
                         userList = (LinkedList<User>)session.getAttribute("users");
@@ -130,8 +157,6 @@
                                         </div>
                                         <div class="panel-body">
                                             <%= post.getBody() %>
-                                            <textarea type="text" name="author" form="blogBody" readonly><%= post.getUserId() %></textarea>
-                                            <!--<input type="submit" name="showUsersBlog" value="Show this person's blog" form="blogBody" onclick="showUsersPosts()"/>-->
                                         </div>
                                     </div>
                                 </div>
@@ -142,14 +167,14 @@
                 </div>
 
                 <!-- USERS BLOG POSTS -->
-                <div id="users_all_posts">
+                <div id="result_all_posts">
                     <%
-                        userPostLinkedList = (LinkedList<Post>)request.getAttribute("usersPosts");
-                        if(userPostLinkedList == null){
-                            userPostLinkedList = new LinkedList<Post>();
+                        resultPostsList = (LinkedList<Post>)request.getAttribute("resultPosts");
+                        if(resultPostsList == null){
+                            resultPostsList = new LinkedList<Post>();
                         }
                         int j=0;
-                        for(Post post : userPostLinkedList) {
+                        for(Post post : resultPostsList) {
                             j++;
                             if(j>10)
                                 break;
@@ -187,20 +212,19 @@
                 </div>
 
                 <div>
-                    <label for="title"><b>Blog Title:</b></label>
-                    <input type="text" name="title" id="title" form="blogBody"/><br/>
-                    <textarea name="body" form="blogBody">Write blog here...<br/><br/><br/>
-                    <textarea style="text-align: right" form="blogBody"><%= currentUserName%></textarea></textarea><br/>
+                    <input type="text" class="form-control" name="title" id="title" form="home_control" placeholder="Title"/><br/>
+                    <textarea name="body" form="home_control">Write blog here...<br/><br/><br/>
+                    <textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
                     <script>
                         CKEDITOR.replace("body");
                     </script>
-                    <input type="submit" name="sendBlog" value="Send This Blog" form="blogBody"/>
+                    <input type="submit" name="sendBlog" value="Send This Blog" form="home_control"/>
                 </div>
             </div>
         </form>
         <br/><br/><br/><br/>
 
-        <form action="/blog/HomeControl" method="post" id="blogBody">
+        <form action="/blog/HomeControl" method="post" name="home_control" id="home_control">
             <%session.setAttribute("blogUserName", currentUserName);%>
 
             <!--
@@ -215,7 +239,7 @@
         </form>
         <!--RIGHT COLUMN, CHOOSE BLOG POST BY DATE -->
         <div class="container col-md-1"></div>
-        <div class="container col-md-2">
+        <div class="container col-md-2 animated bounceInRight">
             <b>Date:</b><br/>
             <input type="date" name="date"/>
         </div>
@@ -223,10 +247,18 @@
 </div>
 
 <script language="JavaScript">
-    function showUsersPosts(){
-        $("#users_all_posts").show();
-        $("#all_posts").hide();
+    function SearchValidate() {
+        if (document.home_control.fuzzySearchBlog.value==""){
+            alert("Please enter a value to delete a post!");
+            document.home_control.fuzzySearchBlog.focus();
+            return false;
+        }else{
+            $("#result_all_posts").show();
+            $("#all_posts").hide();
+            return true;
+        }
     }
+
 </script>
 </body>
 </html>

@@ -43,10 +43,10 @@ public class CategoryDAO {
         return categoryList;
     }
 
-    public Category getCategoryById(int cate_id){
+    public Category getCategoryById(int cate_id) throws SQLException {
         Category category = new Category();
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try{
-            Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
             String categorySearchQuery = "select * from Categories where cate_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(categorySearchQuery);
             preparedStatement.setInt(1, cate_id);
@@ -56,9 +56,10 @@ public class CategoryDAO {
                 category.setName(resultSet.getString("cateName"));
             }
             preparedStatement.close();
-            connection.close();
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            connection.close();
         }
         return category;
     }

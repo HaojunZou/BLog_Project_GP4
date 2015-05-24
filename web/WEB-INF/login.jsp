@@ -12,8 +12,38 @@
         <meta http-equiv="Content-Type" content="text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Log In</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
     </head>
-    <body background="img/bg.jpg">
+    <body background="img/bg-color.jpg">
+    <style>
+        .inner-addon {
+            position: relative;
+        }
+
+        /* style icon */
+        .inner-addon .glyphicon {
+            position: absolute;
+            padding: 10px;
+            pointer-events: none;
+        }
+
+        /* align icon */
+        .left-addon .glyphicon  { left:  15px;}
+        .right-addon .glyphicon { right: 15px;}
+
+        /* add padding  */
+        .left-addon input  { padding-left:  30px; }
+        .right-addon input { padding-right: 30px; }
+    </style>
 
         <div>
             <a class="navbar-brand" style="font-size:40" href="main.jsp">
@@ -21,35 +51,38 @@
             </a><br/>
         </div>
 
-        <div style="text-align: center;">
-            <h1>Welcome</h1>
+        <div style="text-align: center;" class="animated flipInX">
+            <h1 style="color:#ffffff;"><b>Welcome</b></h1>
         </div>
-        <form action="/blog/UserLogInControl" method="post" onsubmit="return validate(this)">
-            <div style="text-align: center;">
-                <table align="center">
-                    <tr>
-                        <td>User Name</td><td><input type="text" class="form-control" name="userName" placeholder="User Name"/></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td><td><input type="password" class="form-control" name="userPassword" placeholder="Password"/></td>
-                    </tr>
-                </table>
+        <br/><br/><br/>
+
+        <form action="/blog/UserLogInControl" method="post" id="log_in_form" onsubmit="return validate(this)">
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="inner-addon left-addon col-md-4">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" class="form-control" name="userName" form="log_in_form" placeholder="User Name"/>
+                </div>
+                <div class="col-md-4"></div>
             </div>
             <br/>
-            <div style="text-align: center;">
-                <tr>
-                    <input type="submit" value="Log in"/>
-                    <button><a href="main.jsp">Back to main</a></button>
-                </tr>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="inner-addon left-addon col-md-4">
+                    <i class="glyphicon glyphicon-eye-open"></i>
+                    <input type="password" class="form-control" name="userPassword" form="log_in_form" placeholder="Password"/>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <br/><br/>
+            <div class="container" style="text-align: center;">
+                <input type="submit" class="btn btn-primary btn-lg animated flip" value="Log in"/>
+                <input type="submit" class="btn btn-success btn-lg animated flip" value="Sign up" form="sign_up_form"/>
+                <a href="main.jsp" class="btn btn-info btn-lg animated flip" role="button">Back to main</a>
             </div>
         </form>
-        <form action="signup.jsp" method="post">
-            <div style="text-align: center;">
-                <p>New here?</p>
-                <tr>
-                    <input type="submit" value="Sign up"/>
-                </tr>
-            </div>
+        <form action="signup.jsp" id="sign_up_form" method="post">
+
         </form>
 
         <!-- check if name or password is empty -->
