@@ -52,7 +52,7 @@
     </style>
 
 </head>
-<body background="img/bg.jpg">
+<body>
 
 <div class="container-fluid">
     <nav class="navbar">

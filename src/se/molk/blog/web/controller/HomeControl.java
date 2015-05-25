@@ -100,7 +100,7 @@ public class HomeControl extends HttpServlet {
                 }
             }
 
-            if("Send Comment".equals(commentPost)){
+            if("Send Comment".equals(commentPost) && !commentBody.equals("")){
                 commentService.postNewComment(commentBody);
                 response.sendRedirect("/blog/home.jsp");
             }

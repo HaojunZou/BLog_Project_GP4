@@ -13,7 +13,7 @@ public class PostDAO {
     private static final String driver = "org.gjt.mm.mysql.Driver";
     private static final String url = "jdbc:mysql://localhost/blog";
     private static final String dbUserName = "root";
-    private static final String dbPassword = "christelle";
+    private static final String dbPassword = "haojun";
 
     public PostDAO() throws Exception{
         try{
@@ -255,6 +255,28 @@ public class PostDAO {
         if(checkPostByPostId(post_id)){
             try{
                 String deleteQuery = "delete from Posts where post_id = ?";
+                PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
+                pstDelete.setInt(1, post_id);
+                pstDelete.executeUpdate();
+                pstDelete.close();
+                return true;
+            }catch (Exception e){
+                e.printStackTrace();
+            }finally {
+                connection.close();
+            }
+        }else{
+            connection.close();
+            return false;
+        }
+        return false;
+    }
+
+    public boolean updateAPost(int post_id) throws SQLException {
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        if(checkPostByPostId(post_id)){
+            try{
+                String deleteQuery = "update Posts set  from Posts where post_id = ?";
                 PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
                 pstDelete.setInt(1, post_id);
                 pstDelete.executeUpdate();
