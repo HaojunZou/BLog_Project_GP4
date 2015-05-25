@@ -19,6 +19,9 @@
         <title>Admin Panel Result</title>
 
         <style>
+            body{
+                background-color: #bdbdbd;
+            }
             .inner-addon {
                 position: relative;
             }
