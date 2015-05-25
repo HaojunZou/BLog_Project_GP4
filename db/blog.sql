@@ -35,3 +35,13 @@ CREATE TABLE Posts
 	published	BOOL,
 	publishedDate	VARCHAR(20)
 );
+
+CREATE TABLE PostComment
+(
+	comment_id	INT(9),
+	PRIMARY KEY(comment_id),
+	postId		INT,
+	FOREIGN KEY (postId) REFERENCES Posts(post_id),
+	commentBody	VARCHAR(200),
+	commentDate	VARCHAR(20)
+);

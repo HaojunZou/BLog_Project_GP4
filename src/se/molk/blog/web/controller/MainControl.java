@@ -13,14 +13,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("/HomeControl")
-public class HomeControl extends HttpServlet {
-
+@WebServlet("/MainControl")
+public class MainControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -37,14 +35,9 @@ public class HomeControl extends HttpServlet {
         TextFilter textFilter = new TextFilter();
         PostService postService = new PostService(post);
         CommentService commentService = new CommentService(comment);
-        HttpSession session = request.getSession();
         List<Post> resultPosts;
         //List<Post> usersPosts;
 
-        String title = textFilter.filterHtml(request.getParameter("title"));
-        String body = request.getParameter("body");
-        String blogUserName = (String) session.getAttribute("blogUserName");
-        String sendBlog = request.getParameter("sendBlog");
         String commentPost = request.getParameter("commentPost");
         String commentBody = textFilter.filterHtml(request.getParameter("commentBody"));
         String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
@@ -74,35 +67,13 @@ public class HomeControl extends HttpServlet {
             if(!fuzzySearchBlog.equals("")){
                 resultPosts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
                 request.setAttribute("resultPosts", resultPosts);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/main.jsp");
                 dispatcher.forward(request, response);
-            }
-
-            if("Send This Blog".equals(sendBlog) && !title.equals("")){
-                if(blogUserName != null){
-                    if(postService.publishNewPost(title, body, blogUserName)){
-                        response.sendRedirect("/blog/home.jsp");
-                    }else {
-                        out.print(
-                                "<script type='text/javascript'>" +
-                                        "window.alert('You can't post blog');" +
-                                        "history.go(-1)" +
-                                        "</script>"
-                        );
-                    }
-                }else{
-                    out.print(
-                            "<script type='text/javascript'>" +
-                                    "window.alert('You need to log in to write a blog');" +
-                                    "history.go(-1)" +
-                                    "</script>"
-                    );
-                }
             }
 
             if("Send Comment".equals(commentPost)){
                 commentService.postNewComment(commentBody);
-                response.sendRedirect("/blog/home.jsp");
+                response.sendRedirect("/blog/main.jsp");
             }
 
             else {
@@ -116,10 +87,10 @@ public class HomeControl extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
 }
-

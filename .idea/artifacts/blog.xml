@@ -5,6 +5,9 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="Blog_Project_GP4" />
+          <element id="library" level="application" name="jquery" />
+          <element id="library" level="application" name="bootstrap" />
+          <element id="library" level="application" name="ckeditor" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="lib" />

@@ -1,29 +1,36 @@
 <%
     LinkedList<User> userList;
+    LinkedList<Post> postLinkedList;
+    LinkedList<Post> resultPostsList;
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ page import="se.molk.blog.domain.Comment" %>
+<%@ page import="se.molk.blog.domain.Post" %>
 <%@ page import="se.molk.blog.domain.User" %>
 <%@ page import="java.util.LinkedList" %>
-<%@ page import="se.molk.blog.domain.Post" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <base href="<%=basePath%>">
     <meta charset="UTF-8">
-    <title>Main</title>
+    <title>Home</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <style>
+        body{
+            background-color: #a9bcf5;
+        }
         .inner-addon {
             position: relative;
         }
@@ -52,7 +59,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="main.jsp"><img src="img/logo-white.png"
+                <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
                 style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
                 </a><br/>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -66,23 +73,28 @@
 
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-phone"><b> Contact</b></i></a></li>
-                    <li><a href="login.jsp"><i class="fa fa-sign-in"><b> Log In</b></i></a></li>
+                    <li><a href="#"><i class="fa fa-phone animated fadeInDown"><b> Contact</b></i></a></li>
+                    <li><a href="login.jsp"><i class="fa fa-sign-out animated fadeInDown"><b> Log In</b></i></a></li>
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
+            <div class="col-md-9"></div>
+            <div class="inner-addon right-addon col-md-3">
+                <i class="glyphicon glyphicon-search"></i>
+                <input type="text" class="form-control" name="fuzzySearchBlog" form="main_control" placeholder="Search" onsubmit="return SearchValidate()"/>
+            </div>
         </div>
         <!-- /.container -->
     </nav>
     <!-- /.navbar -->
 
     <div class="container-fluid "><br/><br/>
-        <link rel="stylesheet"
-              href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
+
 
         <!--LEFT COLUMN, USERS LIST-->
         <form action="main.jsp" method="post">
-            <div class="container col-md-3">
+            <div class="container col-md-3 animated bounceInLeft">
                 <div class="well" id="userList">
                     <%
                         userList = (LinkedList<User>)request.getAttribute("users");
@@ -110,60 +122,154 @@
                 </div>
             </div>
 
-            <!-- BLOG POSTS -->
             <div class="container col-md-6">
+                <!-- BLOG POSTS -->
+                <div id="all_posts">
                     <%
-                    LinkedList<Post> postLinkedList = (LinkedList<Post>)request.getAttribute("posts");
-                    if(postLinkedList == null){
-                        postLinkedList = new LinkedList<Post>();
-                    }
-                    int i=0;
-                    for(Post post : postLinkedList) {
-                        i++;
-                        if(i>=10)
-                            break;
-                %>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-6">
-                            <div id="postlist">
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <div class="text-center">
-                                            <div class="row">
-                                                <div class="col-sm-9">
-                                                    <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <h4 class="pull-right">
-                                                        <small><em><%= post.getDate() %><br></em></small>
-                                                    </h4>
+                        postLinkedList = (LinkedList<Post>)request.getAttribute("posts");
+                        if(postLinkedList == null){
+                            postLinkedList = new LinkedList<Post>();
+                        }
+                        LinkedList<Comment> commentLinkedList = (LinkedList<Comment>)request.getAttribute("comments");
+                        if(commentLinkedList == null){
+                            commentLinkedList = new LinkedList<Comment>();
+                        }
+                        int i=0;
+                        for(Post post : postLinkedList) {
+                            i++;
+                            if(i>10)
+                                break;
+                    %>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-6">
+                                <div id="postlist">
+                                    <div class="panel">
+                                        <div class="panel-heading">
+                                            <div class="text-center">
+                                                <div class="row">
+                                                    <div class="col-sm-9">
+                                                        <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <h4 class="pull-right">
+                                                            <small><em><%= post.getDate() %><br></em></small>
+                                                        </h4>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="panel-body">
-                                        <%= post.getBody() %>
+                                        <div class="panel-body">
+                                            <%= post.getBody() %>
+                                            <!-- COMMENT BOX -->
+                                            <hr/>
+                                            <div>
+                                                <div>
+                                                    <%for(Comment comment : commentLinkedList) {%>
+                                                    <%= comment.getCommentBody()%><br/><%}%>
+                                                    <hr/>
+                                                    <input type="text" name="commentBody" placeholder="Your Comment..." size="35" form="main_control"/><p></p>
+                                                    <input type="submit" name="commentPost" value="Send Comment" form="main_control"/>
+                                                </div></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <br/><%}%>
                 </div>
-                <br/><%}%>
+
+                <!-- USERS BLOG POSTS -->
+                <div id="result_all_posts">
+                    <%
+                        resultPostsList = (LinkedList<Post>)request.getAttribute("resultPosts");
+                        if(resultPostsList == null){
+                            resultPostsList = new LinkedList<Post>();
+                        }
+                        int j=0;
+                        for(Post post : resultPostsList) {
+                            j++;
+                            if(j>10)
+                                break;
+                    %>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-6">
+                                <div id="userPostlist">
+                                    <div class="panel">
+                                        <div class="panel-heading">
+                                            <div class="text-center">
+                                                <div class="row">
+                                                    <div class="col-sm-9">
+                                                        <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <h4 class="pull-right">
+                                                            <small><em><%= post.getDate() %><br></em></small>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <%= post.getBody() %>
+                                            <div>
+                                                <%for(Comment comment : commentLinkedList) {%>
+                                                <%= comment.getCommentBody()%><br/><%}%>
+                                                <hr/>
+                                                <input type="text" name="commentBody" placeholder="Your Comment..." size="35" form="main_control"/><p></p>
+                                                <input type="submit" name="commentPost" value="Send Comment" form="main_control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/><%}%>
+                    <br/><br/>
+                </div>
+            </div>
         </form>
         <br/><br/><br/><br/>
 
-    </div>
+        <form action="/blog/MainControl" method="post" name="main_control" id="main_control">
 
-    <!--RIGHT COLUMN, CHOOSE BLOG POST BY DATE -->
-    <div class="container col-md-1"></div>
-    <div class="container col-md-2">
-        <b>Date:</b><br/>
-        <input type="date" name="date"/>
+            <!--
+            <select name="category">
+                <option value=""></option>
+                <option value="life">life</option>
+                <option value="education">education</option>
+                <option value="animal">animal</option>
+            </select>
+            -->
+
+        </form>
+        <!--RIGHT COLUMN, CHOOSE BLOG POST BY DATE -->
+        <div class="container col-md-1"></div>
+        <div class="container col-md-2 animated bounceInRight">
+            <b>Date:</b><br/>
+            <input type="date" name="date"/>
+        </div>
     </div>
 </div>
-</div>
+
+<script language="JavaScript">
+    function SearchValidate() {
+        if (document.main_control.fuzzySearchBlog.value==""){
+            alert("Please enter a value to delete a post!");
+            document.main_control.fuzzySearchBlog.focus();
+            return false;
+        }else{
+            $("#result_all_posts").show();
+            $("#all_posts").hide();
+            return true;
+        }
+    }
+
+</script>
 </body>
 </html>
