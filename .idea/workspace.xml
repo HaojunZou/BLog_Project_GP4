@@ -7,16 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel_executed.html" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel_executed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/home.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/login.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/main.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/signup.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/signup.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/user_change_pwd.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/user_change_pwd.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/user_profile_executed.html" afterPath="$PROJECT_DIR$/web/WEB-INF/user_profile_executed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/user_update_profile.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/user_update_profile.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimpleServlet.iws" />
@@ -58,22 +49,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/home.jsp">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.538462" vertical-offset="1180" max-vertical-offset="4590">
-              <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+            <state vertical-scroll-proportion="-3.0" vertical-offset="1112" max-vertical-offset="2040">
+              <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
+      <file leaf-file-name="PostDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.3076925" vertical-offset="1214" max-vertical-offset="2040">
-              <caret line="78" column="63" selection-start-line="78" selection-start-column="63" selection-end-line="78" selection-end-column="63" />
-              <folding />
+            <state vertical-scroll-proportion="1.1156813" vertical-offset="263" max-vertical-offset="986">
+              <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getAllPosts#0;class#PostDAO#0" expanded="false" />
+                <element signature="method#getPostsByTitle#0;class#PostDAO#0" expanded="false" />
+                <element signature="e#2751#2757#0" expanded="true" />
+                <element signature="method#getPostsByUserId#0;class#PostDAO#0" expanded="false" />
+                <element signature="e#4196#4202#0" expanded="true" />
+                <element signature="method#getPostsByFuzzySearch#0;class#PostDAO#0" expanded="false" />
+                <element signature="e#5628#5634#0" expanded="true" />
+                <element signature="method#publishNewPost#0;class#PostDAO#0" expanded="false" />
+                <element signature="method#checkPostByPostId#0;class#PostDAO#0" expanded="false" />
+                <element signature="method#deleteAPost#0;class#PostDAO#0" expanded="false" />
+                <marker date="1432535416557" expanded="true" signature="1235:1282" placeholder="select * fro..Posts..." />
+                <marker date="1432535416557" expanded="true" signature="2902:2972" placeholder="select * fro..Posts..." />
+                <marker date="1432535416557" expanded="true" signature="4347:4411" placeholder="select * fro..Posts..." />
+                <marker date="1432535416557" expanded="true" signature="5779:5868" placeholder="select * fro..Posts..." />
+                <marker date="1432535416557" expanded="true" signature="7711:7746" placeholder="select * fro..Posts..." />
+                <marker date="1432535416557" expanded="true" signature="7860:7989" placeholder="insert into ..." />
+                <marker date="1432535416557" expanded="true" signature="9953:9990" placeholder="select * fro..Posts..." />
+                <marker date="1432535416557" expanded="true" signature="10778:10813" placeholder="delete from ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_panel_result.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin_panel_result.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3761468" vertical-offset="2464" max-vertical-offset="4777">
-              <caret line="157" column="44" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
+            <state vertical-scroll-proportion="-22.923077" vertical-offset="2107" max-vertical-offset="4777">
+              <caret line="159" column="60" selection-start-line="159" selection-start-column="60" selection-end-line="159" selection-end-column="60" />
               <folding>
                 <element signature="n#select#0;n#label#0;n#div#1;n#div#11;n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -207,7 +218,6 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/users_post.jsp" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/UsersPostControl.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/UI/UsersPost.java" />
-        <option value="$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/service/PostService.java" />
@@ -215,13 +225,14 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/main.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/home.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/admin_panel_executed.html" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/login.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/signup.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/user_change_pwd.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/user_profile_executed.html" />
         <option value="$PROJECT_DIR$/web/WEB-INF/user_update_profile.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/admin_panel.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/login.jsp" />
+        <option value="$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java" />
       </list>
     </option>
   </component>
@@ -230,10 +241,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="196" />
+    <option name="y" value="4" />
+    <option name="width" value="1163" />
+    <option name="height" value="714" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -976,13 +987,7 @@
       <workItem from="1432107876174" duration="883000" />
       <workItem from="1432109192826" duration="56762000" />
       <workItem from="1432364956104" duration="32265000" />
-      <workItem from="1432404792346" duration="45512000" />
-    </task>
-    <task id="LOCAL-00029" summary="database has been upgraded">
-      <created>1430986129420</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1430986129420</updated>
+      <workItem from="1432404792346" duration="46364000" />
     </task>
     <task id="LOCAL-00030" summary="database has been upgraded">
       <created>1430986974644</created>
@@ -1272,11 +1277,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432486491257</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Redesigned site">
+      <created>1432508345794</created>
+      <option name="number" value="00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1432508345795</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="561750000" />
+    <option name="totallyTimeSpent" value="562602000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1299,7 +1310,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="196" y="4" width="1163" height="714" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1316,13 +1327,13 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32588455" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2630719" sideWeight="0.49864987" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2611684" sideWeight="0.49864987" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32659933" sideWeight="0.4994995" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32352942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19818456" sideWeight="0.49534452" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.237534" sideWeight="0.49534452" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24484536" sideWeight="0.5046555" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31958762" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1349,7 +1360,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="database has been upgraded" />
     <MESSAGE value="Admin panel, search function added, log in with name: admin, password: admin" />
     <MESSAGE value="making delect function" />
     <MESSAGE value="Basic delect function works. Ever register serlvet can automatically take those id number has not been registered, if database is full, it gives warning." />
@@ -1374,7 +1384,8 @@
     <MESSAGE value="main page implement" />
     <MESSAGE value="added userId while post a blog" />
     <MESSAGE value="Search function in home.jsp added. Redesigned login.jsp and signup.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search function in home.jsp added. Redesigned login.jsp and signup.jsp" />
+    <MESSAGE value="Redesigned site" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redesigned site" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1428,19 +1439,20 @@
             <element signature="method#getPostsByTitle#0;class#PostDAO#0" expanded="false" />
             <element signature="e#2751#2757#0" expanded="true" />
             <element signature="method#getPostsByUserId#0;class#PostDAO#0" expanded="false" />
-            <element signature="e#4168#4174#0" expanded="true" />
-            <element signature="e#5572#5578#0" expanded="true" />
+            <element signature="e#4196#4202#0" expanded="true" />
+            <element signature="method#getPostsByFuzzySearch#0;class#PostDAO#0" expanded="false" />
+            <element signature="e#5628#5634#0" expanded="true" />
             <element signature="method#publishNewPost#0;class#PostDAO#0" expanded="false" />
             <element signature="method#checkPostByPostId#0;class#PostDAO#0" expanded="false" />
             <element signature="method#deleteAPost#0;class#PostDAO#0" expanded="false" />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1432535416557" expanded="true" signature="1235:1282" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="2902:2972" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="4347:4411" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="5779:5868" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="7711:7746" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="7860:7989" placeholder="insert into ..." />
+            <marker date="1432535416557" expanded="true" signature="9953:9990" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="10778:10813" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
@@ -1736,33 +1748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="657" max-vertical-offset="1513">
-          <caret line="146" column="34" selection-start-line="146" selection-start-column="34" selection-end-line="146" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getAllPosts#0;class#PostDAO#0" expanded="false" />
-            <element signature="method#getPostsByTitle#0;class#PostDAO#0" expanded="false" />
-            <element signature="e#2751#2757#0" expanded="true" />
-            <element signature="method#getPostsByUserId#0;class#PostDAO#0" expanded="false" />
-            <element signature="e#4168#4174#0" expanded="true" />
-            <element signature="e#5572#5578#0" expanded="true" />
-            <element signature="method#publishNewPost#0;class#PostDAO#0" expanded="false" />
-            <element signature="method#checkPostByPostId#0;class#PostDAO#0" expanded="false" />
-            <element signature="method#deleteAPost#0;class#PostDAO#0" expanded="false" />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="select * fro..Posts..." />
-            <marker date="1432459942878" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/PostService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="748">
@@ -1893,20 +1878,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.923077" vertical-offset="2107" max-vertical-offset="4777">
+          <caret line="159" column="60" selection-start-line="159" selection-start-column="60" selection-end-line="159" selection-end-column="60" />
+          <folding>
+            <element signature="n#select#0;n#label#0;n#div#1;n#div#11;n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3076925" vertical-offset="1214" max-vertical-offset="2040">
-          <caret line="78" column="63" selection-start-line="78" selection-start-column="63" selection-end-line="78" selection-end-column="63" />
+        <state vertical-scroll-proportion="-3.0" vertical-offset="1112" max-vertical-offset="2040">
+          <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/admin_panel_result.jsp">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3761468" vertical-offset="2464" max-vertical-offset="4777">
-          <caret line="157" column="44" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
+        <state vertical-scroll-proportion="1.1156813" vertical-offset="263" max-vertical-offset="986">
+          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
-            <element signature="n#select#0;n#label#0;n#div#1;n#div#11;n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#getAllPosts#0;class#PostDAO#0" expanded="false" />
+            <element signature="method#getPostsByTitle#0;class#PostDAO#0" expanded="false" />
+            <element signature="e#2751#2757#0" expanded="true" />
+            <element signature="method#getPostsByUserId#0;class#PostDAO#0" expanded="false" />
+            <element signature="e#4196#4202#0" expanded="true" />
+            <element signature="method#getPostsByFuzzySearch#0;class#PostDAO#0" expanded="false" />
+            <element signature="e#5628#5634#0" expanded="true" />
+            <element signature="method#publishNewPost#0;class#PostDAO#0" expanded="false" />
+            <element signature="method#checkPostByPostId#0;class#PostDAO#0" expanded="false" />
+            <element signature="method#deleteAPost#0;class#PostDAO#0" expanded="false" />
+            <marker date="1432535416557" expanded="true" signature="1235:1282" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="2902:2972" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="4347:4411" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="5779:5868" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="7711:7746" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="7860:7989" placeholder="insert into ..." />
+            <marker date="1432535416557" expanded="true" signature="9953:9990" placeholder="select * fro..Posts..." />
+            <marker date="1432535416557" expanded="true" signature="10778:10813" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>

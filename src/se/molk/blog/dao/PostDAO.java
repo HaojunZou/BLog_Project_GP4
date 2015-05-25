@@ -78,7 +78,7 @@ public class PostDAO {
         List<Post> postList = new LinkedList<Post>();
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try{
-            String postSearchQuery = "select * from Posts where postTitle like ?";
+            String postSearchQuery = "select * from Posts where postTitle like ? order by publishedDate desc";
             PreparedStatement pstSearch = connection.prepareStatement(postSearchQuery);
             pstSearch.setString(1, "%" + title + "%");
             ResultSet resultSet = pstSearch.executeQuery();
@@ -110,7 +110,7 @@ public class PostDAO {
         List<Post> postList = new LinkedList<Post>();
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try{
-            String postSearchQuery = "select * from Posts where userId = ?";
+            String postSearchQuery = "select * from Posts where userId = ? order by publishedDate desc";
             PreparedStatement pstSearch = connection.prepareStatement(postSearchQuery);
             pstSearch.setInt(1, userId);
             ResultSet resultSet = pstSearch.executeQuery();
@@ -142,7 +142,7 @@ public class PostDAO {
         List<Post> postList = new LinkedList<Post>();
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try{
-            String postSearchQuery = "select * from Posts where postTitle like ? or postBody like ?";
+            String postSearchQuery = "select * from Posts where postTitle like ? or postBody like ? order by publishedDate desc";
             PreparedStatement pstSearch = connection.prepareStatement(postSearchQuery);
             pstSearch.setString(1, "%" + fuzzy + "%");
             pstSearch.setString(2, "%" + fuzzy + "%");
