@@ -29,7 +29,7 @@
 
     <style>
         body{
-            background-color: #a9bcf5;
+            background-color: #A9BCF5;
         }
         .inner-addon {
             position: relative;
@@ -168,8 +168,9 @@
                                                     <%for(Comment comment : commentLinkedList) {%>
                                                     <%= comment.getCommentBody()%><br/><%}%>
                                                     <hr/>
-                                                    <input type="text" name="commentBody" placeholder="Your Comment..." size="35" form="main_control"/><p></p>
-                                                    <input type="submit" name="commentPost" value="Send Comment" form="main_control"/>
+                                                    <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="main_control" ></textarea>
+                                                    <p></p>
+                                                    <button type="submit" name="commentPost" value="Send Comment" form="main_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                                 </div></div>
                                         </div>
                                     </div>

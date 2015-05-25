@@ -31,7 +31,7 @@
 
     <style>
         body{
-            background-color: #a9bcf5;
+            background-color: #A9BCF5;
         }
         .inner-addon {
             position: relative;
@@ -94,8 +94,8 @@
     <!-- /.navbar -->
 
     <div class="container-fluid "><br/><br/>
-        <link rel="stylesheet"
-              href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
+       <!-- <link rel="stylesheet"
+              href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>-->
 
         <!--LEFT COLUMN, USERS LIST-->
         <form action="home.jsp" method="post">
@@ -107,7 +107,7 @@
                             userList = new LinkedList<User>();
                         }
                     %>
-                    <h1>Welcome back, <%=currentUserName %>!</h1>
+                    <h4>Welcome back, <%=currentUserName %>!</h4>
                     <table>
                         <tr>
                             <th>User List:</th>
@@ -173,9 +173,11 @@
                                                     <%for(Comment comment : commentLinkedList) {%>
                                                     <%= comment.getCommentBody()%><br/><%}%>
                                                     <hr/>
-                                                    <input type="text" name="commentBody" placeholder="Your Comment..." size="35" form="home_control"/><p></p>
-                                                    <input type="submit" name="commentPost" value="Send Comment" form="home_control"/>
-                                                </div></div>
+                                                    <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
+                                                    <p></p>
+                                                    <button type="submit" name="commentPost" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -223,8 +225,9 @@
                                                 <%for(Comment comment : commentLinkedList) {%>
                                                 <%= comment.getCommentBody()%><br/><%}%>
                                                 <hr/>
-                                                <input type="text" name="commentBody" placeholder="Your Comment..." size="35" form="home_control"/><p></p>
-                                                <input type="submit" name="commentPost" value="Send Comment" form="home_control"/>
+                                                <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control" ></textarea>
+                                                <p></p>
+                                                <button type="submit" name="commentPost" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                             </div>
                                         </div>
                                     </div>
@@ -243,7 +246,7 @@
                     <script>
                         CKEDITOR.replace("body");
                     </script>
-                    <input type="submit" name="sendBlog" value="Send This Blog" form="home_control"/>
+                    <button type="submit" name="sendBlog" value="Send This Blog" form="home_control" class="btn btn-primary "><i class="fa fa-share"></i> Publish</button>
                 </div>
             </div>
         </form>

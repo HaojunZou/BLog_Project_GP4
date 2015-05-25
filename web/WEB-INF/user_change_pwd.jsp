@@ -8,10 +8,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet" type="text/css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
+
         <title>Change Password</title>
 
         <style>
@@ -33,6 +35,13 @@
             /* add padding  */
             .left-addon input  { padding-left:  30px; }
             .right-addon input { padding-right: 30px; }
+
+            h2 {
+                font: 400 50px/1.3 'Oleo Script', Helvetica, sans-serif;
+                color: #2b2b2b;
+                text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+            }
+
         </style>
 
     </head>
@@ -42,12 +51,14 @@
             String currentUserName = (String) session.getAttribute("currentUserName");
             session.setAttribute("userName", currentUserName);
         %>
-        <form action="user_change_pwd.jsp" method="post">
-            <div style="text-align: center;" class="animated slideInDown">
-                <h1 style="color:#ffffff;"><b><%=currentUserName %></b></h1>
+        <!-- <form action="user_change_pwd.jsp" method="post">
+             <div style="text-align: center;" class="animated slideInDown">
+
+                 <h1 style="color:#ffffff;"><b><//%=currentUserName %></b></h1>
             </div>
-        </form>
+        </form> -->
         <form action="/blog/UserChangePwdControl" method="post" name="change_pw_form" id="change_pw_form" onsubmit="return validate(this)">
+            <br/><br/><br/><br/><br/><br/>
             <div style="text-align: center;" class="animated slideInDown">
                 <h2 style="color:#ffffff;"><b>Change Password</b></h2>
             </div>
