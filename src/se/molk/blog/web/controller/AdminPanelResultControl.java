@@ -30,8 +30,8 @@ public class AdminPanelResultControl extends HttpServlet {
         PostService postService = new PostService(post);
         String deleteUserAction = request.getParameter("deleteUserAction");
         String updateUserAction = request.getParameter("updateUserAction");
-        String deleteUserRecord = textFilter.filterHtml(request.getParameter("deleteUserRecord"));
         String deletePostAction = request.getParameter("deletePostAction");
+        String deleteUserRecord = textFilter.filterHtml(request.getParameter("deleteUserRecord"));
         String userName = textFilter.filterHtml(request.getParameter("userName"));
         String newUserName = textFilter.filterHtml(request.getParameter("newUserName"));
         String newPassword = textFilter.filterHtml(request.getParameter("newPassword"));

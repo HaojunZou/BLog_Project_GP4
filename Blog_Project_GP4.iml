@@ -26,5 +26,7 @@
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="ckeditor" level="application" />
+    <orderEntry type="library" name="honehone_clock_wh" level="application" />
+    <orderEntry type="library" name="honehone_clock_tr" level="application" />
   </component>
 </module>

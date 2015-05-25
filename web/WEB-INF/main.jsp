@@ -1,7 +1,20 @@
 <%
-    LinkedList<User> userList;
-    LinkedList<Post> postLinkedList;
-    LinkedList<Post> resultPostsList;
+    LinkedList<User> userList = (LinkedList<User>)session.getAttribute("users");
+    if(userList == null){
+        userList = new LinkedList<User>();
+    }
+    LinkedList<Post> postLinkedList = (LinkedList<Post>)request.getAttribute("posts");
+    if(postLinkedList == null){
+        postLinkedList = new LinkedList<Post>();
+    }
+    LinkedList<Post> resultPostsList = (LinkedList<Post>)request.getAttribute("resultPosts");
+    if(resultPostsList == null){
+        resultPostsList = new LinkedList<Post>();
+    }
+    LinkedList<Comment> commentLinkedList = (LinkedList<Comment>)request.getAttribute("comments");
+    if(commentLinkedList == null){
+        commentLinkedList = new LinkedList<Comment>();
+    }
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
@@ -59,7 +72,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
+                <a class="navbar-brand" href="main.jsp"><img src="img/logo-white.png"
                 style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
                 </a><br/>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -82,9 +95,9 @@
             <div class="col-md-9"></div>
             <div class="col-md-3">
                 <div class="input-group ">
-                    <input type="text" class="form-control" name="fuzzySearchBlog" form="main_control" placeholder="Search for blog posts..." onsubmit="return SearchValidate()"/>
+                    <input type="text" class="form-control" name="fuzzySearchBlog" form="main_control" placeholder="Search for blog posts..."/>
                       <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="main_control" ><i class="fa fa-search"></i></button>
+                        <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="main_control" onclick="return SearchBlogValidate()"><i class="fa fa-search"></i></button>
                       </span>
                 </div><!-- /input-group -->
             </div>
@@ -100,13 +113,7 @@
         <form action="main.jsp" method="post">
             <div class="container col-md-3 animated bounceInLeft">
                 <div class="well" id="userList">
-                    <%
-                        userList = (LinkedList<User>)request.getAttribute("users");
-                        if(userList == null){
-                            userList = new LinkedList<User>();
-                        }
-                    %>
-                    <h1>Welcome!</h1>
+                    <h4>Welcome!</h4>
                     <table>
                         <tr>
                             <th>User List:</th>
@@ -130,14 +137,6 @@
                 <!-- BLOG POSTS -->
                 <div id="all_posts">
                     <%
-                        postLinkedList = (LinkedList<Post>)request.getAttribute("posts");
-                        if(postLinkedList == null){
-                            postLinkedList = new LinkedList<Post>();
-                        }
-                        LinkedList<Comment> commentLinkedList = (LinkedList<Comment>)request.getAttribute("comments");
-                        if(commentLinkedList == null){
-                            commentLinkedList = new LinkedList<Comment>();
-                        }
                         int i=0;
                         for(Post post : postLinkedList) {
                             i++;
@@ -168,14 +167,15 @@
                                             <!-- COMMENT BOX -->
                                             <hr/>
                                             <div>
-                                                <div>
+                                                <div><p>Comments:</p>
                                                     <%for(Comment comment : commentLinkedList) {%>
                                                     <%= comment.getCommentBody()%><br/><%}%>
                                                     <hr/>
                                                     <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="main_control" ></textarea>
                                                     <p></p>
-                                                    <button type="submit" name="commentPost" value="Send Comment" form="main_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
-                                                </div></div>
+                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="main_control" class="btn btn-success green" onclick="return SendCommentValidate()"><i class="fa fa-share"></i> Send</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -188,10 +188,6 @@
                 <!-- USERS BLOG POSTS -->
                 <div id="result_all_posts">
                     <%
-                        resultPostsList = (LinkedList<Post>)request.getAttribute("resultPosts");
-                        if(resultPostsList == null){
-                            resultPostsList = new LinkedList<Post>();
-                        }
                         int j=0;
                         for(Post post : resultPostsList) {
                             j++;
@@ -219,12 +215,17 @@
                                         </div>
                                         <div class="panel-body">
                                             <%= post.getBody() %>
+                                            <!-- COMMENT BOX -->
+                                            <hr/>
                                             <div>
-                                                <%for(Comment comment : commentLinkedList) {%>
-                                                <%= comment.getCommentBody()%><br/><%}%>
-                                                <hr/>
-                                                <input type="text" name="commentBody" placeholder="Your Comment..." size="35" form="main_control"/><p></p>
-                                                <input type="submit" name="commentPost" value="Send Comment" form="main_control"/>
+                                                <div><p>Comments:</p>
+                                                    <%for(Comment comment : commentLinkedList) {%>
+                                                    <%= comment.getCommentBody()%><br/><%}%>
+                                                    <hr/>
+                                                    <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="main_control" ></textarea>
+                                                    <p></p>
+                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="main_control" class="btn btn-success green" onclick="return SendCommentValidate()"><i class="fa fa-share"></i> Send</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -251,14 +252,20 @@
             -->
 
         </form>
-        <!--RIGHT COLUMN, CHOOSE BLOG POST BY DATE -->
+        <!--RIGHT COLUMN, FLASH GAME -->
         <div class="container col-md-3 animated bounceInRight">
-            <b>Date:</b><br/>
-            <input type="date" name="date"/>
-            <br/><br/><br/>
+            <script charset="Shift_JIS"
+                src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js">
+            </script>
+            <!--
+            <b>Date:</b>
+            <label>
+                <input type="date" name="date"/>
+            </label>
+            -->
             <object type="application/x-shockwave-flash" style="outline:none;"
-                    data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="300"
-                    height="225"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
+                    data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="263"
+                    height="197"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
                 <param name="AllowScriptAccess" value="always">
                 <param name="wmode" value="opaque">
             </object>
@@ -267,15 +274,22 @@
 </div>
 
 <script language="JavaScript">
-    function SearchValidate() {
+    function SearchBlogValidate() {
         if (document.main_control.fuzzySearchBlog.value==""){
-            alert("Please enter a value to delete a post!");
+            alert("Nothing found!");
             document.main_control.fuzzySearchBlog.focus();
             return false;
         }else{
             $("#result_all_posts").show();
             $("#all_posts").hide();
             return true;
+        }
+    }
+    function SendCommentValidate(){
+        if (document.main_control.commentBody.value==""){
+            alert("Please enter comment!");
+            document.main_control.commentBody.focus();
+            return false;
         }
     }
 

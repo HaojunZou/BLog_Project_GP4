@@ -38,15 +38,46 @@ public class MainControl extends HttpServlet {
         List<Post> resultPosts;
         //List<Post> usersPosts;
 
-        String commentPost = request.getParameter("commentPost");
-        String commentBody = textFilter.filterHtml(request.getParameter("commentBody"));
-        String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
         String fuzzySearchAction = request.getParameter("fuzzySearchAction");
+        String sentCommentAction = request.getParameter("sentCommentAction");
+        String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
+        String commentBody = textFilter.filterHtml(request.getParameter("commentBody"));
         //String showUsersBlog = request.getParameter("showUsersBlog");
         //int postUserId = Integer.parseInt(request.getParameter("author"));
         //String category = request.getParameter("category");
         //String author = request.getParameter("author");
         try {
+            // search action
+            if("Fuzzy Search".equals(fuzzySearchAction)){
+                resultPosts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
+                if(resultPosts == null){
+                    out.print(
+                            "<script type='text/javascript'>" +
+                                    "window.alert('Nothing found!');" +
+                                    "history.go(-1)" +
+                                    "</script>"
+                    );
+                }else{
+                    request.setAttribute("resultPosts", resultPosts);
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/main.jsp");
+                    dispatcher.forward(request, response);
+                }
+            }
+
+            // send comment action
+            if("Send Comment".equals(sentCommentAction)){
+                if(commentService.postNewComment(commentBody)){
+                    response.sendRedirect("/blog/main.jsp");
+                }else {
+                    out.print(
+                            "<script type='text/javascript'>" +
+                                    "window.alert('You can't post comment!');" +
+                                    "history.go(-1)" +
+                                    "</script>"
+                    );
+                }
+            }
+
             /*
             if("Show this person's blog".equals(showUsersBlog)){
                 if(postUserId!=0){
@@ -65,30 +96,9 @@ public class MainControl extends HttpServlet {
             }
             */
 
-            if("Fuzzy Search".equals(fuzzySearchAction) && !fuzzySearchBlog.equals("")){
-                resultPosts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
-                request.setAttribute("resultPosts", resultPosts);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/main.jsp");
-                dispatcher.forward(request, response);
-            }
-
-            if("Send Comment".equals(commentPost) && !commentBody.equals("")){
-                commentService.postNewComment(commentBody);
-                response.sendRedirect("/blog/main.jsp");
-            }
-
-            else {
-                out.print(
-                        "<script type='text/javascript'>" +
-                                "history.go(-1)" +
-                                "</script>"
-                );
-            }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
