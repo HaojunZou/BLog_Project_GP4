@@ -147,7 +147,6 @@
                     %>
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-1"></div>
                             <div class="col-md-6">
                                 <div id="postlist">
                                     <div class="panel">
@@ -201,7 +200,6 @@
                     %>
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-1"></div>
                             <div class="col-md-6">
                                 <div id="userPostlist">
                                     <div class="panel">
@@ -265,10 +263,16 @@
 
         </form>
         <!--RIGHT COLUMN, CHOOSE BLOG POST BY DATE -->
-        <div class="container col-md-1"></div>
-        <div class="container col-md-2 animated bounceInRight">
+        <div class="container col-md-3 animated bounceInRight">
             <b>Date:</b><br/>
             <input type="date" name="date"/>
+            <br/><br/><br/>
+            <object type="application/x-shockwave-flash" style="outline:none;"
+                    data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="300"
+                    height="225"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
+                <param name="AllowScriptAccess" value="always">
+                <param name="wmode" value="opaque">
+            </object>
         </div>
     </div>
 </div>

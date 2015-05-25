@@ -71,7 +71,7 @@ public class MainControl extends HttpServlet {
                 dispatcher.forward(request, response);
             }
 
-            if("Send Comment".equals(commentPost)  && !commentBody.equals("")){
+            if("Send Comment".equals(commentPost) && !commentBody.equals("")){
                 commentService.postNewComment(commentBody);
                 response.sendRedirect("/blog/main.jsp");
             }

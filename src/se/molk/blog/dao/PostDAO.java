@@ -13,7 +13,7 @@ public class PostDAO {
     private static final String driver = "org.gjt.mm.mysql.Driver";
     private static final String url = "jdbc:mysql://localhost/blog";
     private static final String dbUserName = "root";
-    private static final String dbPassword = "haojun";
+    private static final String dbPassword = "";
 
     public PostDAO() throws Exception{
         try{
