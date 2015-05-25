@@ -48,6 +48,7 @@ public class HomeControl extends HttpServlet {
         String commentPost = request.getParameter("commentPost");
         String commentBody = textFilter.filterHtml(request.getParameter("commentBody"));
         String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
+        String fuzzySearchAction = request.getParameter("fuzzySearchAction");
         //String showUsersBlog = request.getParameter("showUsersBlog");
         //int postUserId = Integer.parseInt(request.getParameter("author"));
         //String category = request.getParameter("category");
@@ -71,7 +72,7 @@ public class HomeControl extends HttpServlet {
             }
             */
 
-            if(!fuzzySearchBlog.equals("")){
+            if("Fuzzy Search".equals(fuzzySearchAction) && !fuzzySearchBlog.equals("")){
                 resultPosts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
                 request.setAttribute("resultPosts", resultPosts);
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");

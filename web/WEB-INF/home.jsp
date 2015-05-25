@@ -84,14 +84,16 @@
             </div>
             <!-- /.navbar-collapse -->
             <div class="col-md-9"></div>
-            <div class="inner-addon right-addon col-md-3">
-                <i class="glyphicon glyphicon-search"></i>
-                <input type="text" class="form-control" name="fuzzySearchBlog" form="home_control" placeholder="Search" onsubmit="return SearchValidate()"/>
+            <div class="col-md-3">
+                <div class="input-group ">
+                    <input type="text" class="form-control" name="fuzzySearchBlog" form="home_control" placeholder="Search for blog posts..." onsubmit="return SearchValidate()"/>
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="home_control" ><i class="fa fa-search"></i></button>
+                      </span>
+                </div><!-- /input-group -->
             </div>
         </div>
-        <!-- /.container -->
     </nav>
-    <!-- /.navbar -->
 
     <div class="container-fluid "><br/><br/>
        <!-- <link rel="stylesheet"
