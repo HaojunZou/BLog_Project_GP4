@@ -38,7 +38,7 @@
 
     <style>
         body{
-            background-color: #A9BCF5;
+            background-attachment: fixed;
         }
         .inner-addon {
             position: relative;
@@ -82,8 +82,8 @@
 
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-phone animated fadeInDown"><b> Contact</b></i></a></li>
-                    <li><a href="login.jsp"><i class="fa fa-sign-out animated fadeInDown"><b> Log In</b></i></a></li>
+                    <li><a href="#"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
+                    <li><a href="login.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff;"><b> Log In</b></i></a></li>
                 </ul>
 
             </div>
