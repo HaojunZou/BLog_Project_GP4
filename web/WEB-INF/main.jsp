@@ -7,10 +7,6 @@
     if(postLinkedList == null){
         postLinkedList = new LinkedList<Post>();
     }
-    LinkedList<Post> resultPostsList = (LinkedList<Post>)request.getAttribute("resultPosts");
-    if(resultPostsList == null){
-        resultPostsList = new LinkedList<Post>();
-    }
     LinkedList<Comment> commentLinkedList = (LinkedList<Comment>)request.getAttribute("comments");
     if(commentLinkedList == null){
         commentLinkedList = new LinkedList<Comment>();
@@ -41,7 +37,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <style>
-        body {
+        body{
             background-attachment: fixed;
         }
         .inner-addon {
@@ -65,7 +61,7 @@
     </style>
 
 </head>
-<body background="img/bg-water.jpg">
+<body>
 
 <div class="container-fluid">
     <nav class="navbar">
@@ -73,7 +69,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="main.jsp"><img src="img/logo-white.png"
-                style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
+                                                             style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
                 </a><br/>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#navbar-collapse-3">
@@ -173,7 +169,7 @@
                                                     <hr/>
                                                     <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="main_control" ></textarea>
                                                     <p></p>
-                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="main_control" class="btn btn-success green" onclick="return SendCommentValidate()"><i class="fa fa-share"></i> Send</button>
+                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="main_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -183,58 +179,6 @@
                         </div>
                     </div>
                     <br/><%}%>
-                </div>
-
-                <!-- USERS BLOG POSTS -->
-                <div id="result_all_posts">
-                    <%
-                        int j=0;
-                        for(Post post : resultPostsList) {
-                            j++;
-                            if(j>10)
-                                break;
-                    %>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div id="userPostlist">
-                                    <div class="panel">
-                                        <div class="panel-heading">
-                                            <div class="text-center">
-                                                <div class="row">
-                                                    <div class="col-sm-9">
-                                                        <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <h4 class="pull-right">
-                                                            <small><em><%= post.getDate() %><br></em></small>
-                                                        </h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel-body">
-                                            <%= post.getBody() %>
-                                            <!-- COMMENT BOX -->
-                                            <hr/>
-                                            <div>
-                                                <div><p>Comments:</p>
-                                                    <%for(Comment comment : commentLinkedList) {%>
-                                                    <%= comment.getCommentBody()%><br/><%}%>
-                                                    <hr/>
-                                                    <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="main_control" ></textarea>
-                                                    <p></p>
-                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="main_control" class="btn btn-success green" onclick="return SendCommentValidate()"><i class="fa fa-share"></i> Send</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br/><%}%>
-                    <br/><br/>
                 </div>
             </div>
         </form>
@@ -254,7 +198,7 @@
         <!--RIGHT COLUMN, FLASH GAME -->
         <div class="container col-md-3 animated bounceInRight">
             <script charset="Shift_JIS"
-                src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js">
+                    src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js">
             </script>
             <!--
             <b>Date:</b>
@@ -278,10 +222,6 @@
             alert("Nothing found!");
             document.main_control.fuzzySearchBlog.focus();
             return false;
-        }else{
-            $("#result_all_posts").show();
-            $("#all_posts").hide();
-            return true;
         }
     }
     function SendCommentValidate(){

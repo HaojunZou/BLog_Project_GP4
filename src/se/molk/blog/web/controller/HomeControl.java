@@ -2,6 +2,7 @@ package se.molk.blog.web.controller;
 
 import se.molk.blog.dao.CommentDAO;
 import se.molk.blog.dao.PostDAO;
+import se.molk.blog.domain.Comment;
 import se.molk.blog.domain.Post;
 import se.molk.blog.service.CommentService;
 import se.molk.blog.service.PostService;
@@ -38,8 +39,8 @@ public class HomeControl extends HttpServlet {
         PostService postService = new PostService(post);
         CommentService commentService = new CommentService(comment);
         HttpSession session = request.getSession();
-        List<Post> resultPosts;
-        //List<Post> usersPosts;
+        List<Post> posts;
+        List<Comment> comments;
 
         String fuzzySearchAction = request.getParameter("fuzzySearchAction");
         String sentCommentAction = request.getParameter("sentCommentAction");
@@ -55,21 +56,15 @@ public class HomeControl extends HttpServlet {
         //String category = request.getParameter("category");
         //String author = request.getParameter("author");
         try {
+            comments = commentService.getAllComments();
+            request.setAttribute("comments", comments);
+
             // search action
             if("Fuzzy Search".equals(fuzzySearchAction)){
-                resultPosts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
-                if(resultPosts == null){
-                    out.print(
-                            "<script type='text/javascript'>" +
-                                    "window.alert('Nothing found!');" +
-                                    "history.go(-1)" +
-                                    "</script>"
-                    );
-                }else{
-                    request.setAttribute("resultPosts", resultPosts);
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
-                    dispatcher.forward(request, response);
-                }
+                posts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
+                request.setAttribute("posts", posts);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
+                dispatcher.forward(request, response);
             }
 
             // send blog action
@@ -97,15 +92,24 @@ public class HomeControl extends HttpServlet {
 
             // send comment action
             if("Send Comment".equals(sentCommentAction)){
-                if(commentService.postNewComment(commentBody)){
-                    response.sendRedirect("/blog/home.jsp");
-                }else {
+                if(commentBody.equals("")){
                     out.print(
                             "<script type='text/javascript'>" +
-                                    "window.alert('You can't post comment!');" +
+                                    "window.alert('Please enter a comment!');" +
                                     "history.go(-1)" +
                                     "</script>"
                     );
+                }else{
+                    if(commentService.postNewComment(commentBody)){
+                        response.sendRedirect("/blog/home.jsp");
+                    }else {
+                        out.print(
+                                "<script type='text/javascript'>" +
+                                        "window.alert('You can't post comment!');" +
+                                        "history.go(-1)" +
+                                        "</script>"
+                        );
+                    }
                 }
             }
 
@@ -136,4 +140,3 @@ public class HomeControl extends HttpServlet {
         doPost(request, response);
     }
 }
-

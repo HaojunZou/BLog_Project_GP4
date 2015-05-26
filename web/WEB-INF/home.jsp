@@ -7,10 +7,6 @@
     if(postLinkedList == null){
         postLinkedList = new LinkedList<Post>();
     }
-    LinkedList<Post> resultPostsList = (LinkedList<Post>)request.getAttribute("resultPosts");
-    if(resultPostsList == null){
-        resultPostsList = new LinkedList<Post>();
-    }
     LinkedList<Comment> commentLinkedList = (LinkedList<Comment>)request.getAttribute("comments");
     if(commentLinkedList == null){
         commentLinkedList = new LinkedList<Comment>();
@@ -43,10 +39,9 @@
     <script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
 
     <style>
-        body {
-            background-attachment: fixed;
+        body{
+            background-attachment: fixed
         }
-        
         .inner-addon {
             position: relative;
         }
@@ -68,7 +63,7 @@
     </style>
 
 </head>
-<body background="img/bg-water.jpg">
+<body>
 
 <div class="container-fluid">
     <nav class="navbar">
@@ -76,7 +71,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
-                style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
+                                                             style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
                 </a><br/>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#navbar-collapse-3">
@@ -87,12 +82,12 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
-                <ul class="nav navbar-nav navbar-right" >
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown" style="color: #ffffff;"><b> Config my profile</b></i></a></li>
                     <li><a href="user_change_pwd.jsp"><i class="fa fa-eye animated fadeInDown" style="color: #ffffff;"><b> Change Password</b></i></a></li>
                     <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
                     <li><a href="main.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff;"><b> Log Out</b></i></a></li>
-                </ul>
+            </ul>
             </div><!-- /.navbar-collapse -->
         </div>
         <div class="container">
@@ -109,8 +104,8 @@
     </nav>
 
     <div class="container-fluid "><br/><br/>
-       <!-- <link rel="stylesheet"
-              href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>-->
+        <!-- <link rel="stylesheet"
+               href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>-->
 
         <!--LEFT COLUMN, USERS LIST-->
         <form action="home.jsp" method="post">
@@ -170,13 +165,13 @@
                                             <!-- COMMENT BOX -->
                                             <hr/>
                                             <div>
-                                                <div><p><b>Comments:</b></p>
+                                                <div><p>Comments:</p>
                                                     <%for(Comment comment : commentLinkedList) {%>
                                                     <%= comment.getCommentBody()%><br/><%}%>
                                                     <hr/>
                                                     <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
                                                     <p></p>
-                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green" onclick="return SendCommentValidate()"><i class="fa fa-share"></i> Send</button>
+                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -186,65 +181,12 @@
                         </div>
                     </div>
                     <br/><%}%>
-                </div>
-
-                <!-- USERS BLOG POSTS -->
-                <div id="result_all_posts">
-                    <%
-                        int j=0;
-                        for(Post post : resultPostsList) {
-                            j++;
-                            if(j>10)
-                                break;
-                    %>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div id="userPostlist">
-                                    <div class="panel">
-                                        <div class="panel-heading">
-                                            <div class="text-center">
-                                                <div class="row">
-                                                    <div class="col-sm-9">
-                                                        <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <h4 class="pull-right">
-                                                            <small><em><%= post.getDate() %><br></em></small>
-                                                        </h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel-body">
-                                            <%= post.getBody() %>
-                                            <!-- COMMENT BOX -->
-                                            <hr/>
-                                            <div>
-                                                <div><p><b>Comments:</b></p>
-                                                    <%for(Comment comment : commentLinkedList) {%>
-                                                    <%= comment.getCommentBody()%><br/><%}%>
-                                                    <hr/>
-                                                    <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
-                                                    <p></p>
-                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green" onclick="return SendCommentValidate()"><i class="fa fa-share"></i> Send</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br/><%}%>
-                    <br/><br/>
                 </div>
 
                 <div>
                     <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/><br/>
                     <textarea name="blogBody" id="blogBody" form="home_control">Write blog here...<br/><br/><br/>
-                        <textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea>
-                    </textarea><br/>
+                        <textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
                     <script>
                         CKEDITOR.replace("blogBody");
                     </script>
@@ -252,6 +194,7 @@
                 </div>
             </div>
         </form>
+        <br/><br/><br/><br/>
 
         <form action="/blog/HomeControl" method="post" name="home_control" id="home_control">
             <%session.setAttribute("blogUserName", currentUserName);%>
@@ -269,7 +212,7 @@
         <!-- RIGHT COLUMN, FLASH GAME -->
         <div class="container col-md-3 animated bounceInRight">
             <script charset="Shift_JIS"
-                src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js">
+                    src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js">
             </script>
             <!--
             <b>Date:</b>
@@ -293,10 +236,6 @@
             alert("Nothing found!");
             document.home_control.fuzzySearchBlog.focus();
             return false;
-        }else{
-            $("#result_all_posts").show();
-            $("#all_posts").hide();
-            return true;
         }
     }
     function SendBlogValidate(){
