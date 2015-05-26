@@ -22,8 +22,7 @@ public class Comment {
     public String getCommentDate() {
         return commentDate;
     }
-
-
+    
     public void setComment_id(int comment_id) {
         this.comment_id = comment_id;
     }
