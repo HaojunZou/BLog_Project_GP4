@@ -1,7 +1,16 @@
 <%
-    LinkedList<User> userList;
-    LinkedList<Post> postLinkedList;
-    LinkedList<Post> resultPostsList;
+    LinkedList<User> userList = (LinkedList<User>)session.getAttribute("users");
+    if(userList == null){
+        userList = new LinkedList<User>();
+    }
+    LinkedList<Post> postLinkedList = (LinkedList<Post>)request.getAttribute("posts");
+    if(postLinkedList == null){
+        postLinkedList = new LinkedList<Post>();
+    }
+    LinkedList<Comment> commentLinkedList = (LinkedList<Comment>)request.getAttribute("comments");
+    if(commentLinkedList == null){
+        commentLinkedList = new LinkedList<Comment>();
+    }
     String currentUserName = (String) session.getAttribute("currentUserName");
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -72,7 +81,6 @@
                     <span class="icon-bar" style="background:white"></span>
                 </button>
             </div>
-
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown"><b> Config my profile</b></i></a></li>
@@ -80,15 +88,15 @@
                     <li><a href="#"><i class="fa fa-phone animated fadeInDown"><b> Contact</b></i></a></li>
                     <li><a href="main.jsp"><i class="fa fa-sign-out animated fadeInDown"><b> Log Out</b></i></a></li>
                 </ul>
-
-            </div>
-            <!-- /.navbar-collapse -->
+            </div><!-- /.navbar-collapse -->
+        </div>
+        <div class="container">
             <div class="col-md-9"></div>
             <div class="col-md-3">
                 <div class="input-group ">
-                    <input type="text" class="form-control" name="fuzzySearchBlog" form="home_control" placeholder="Search for blog posts..." onsubmit="return SearchValidate()"/>
+                    <input type="text" class="form-control" name="fuzzySearchBlog" form="home_control" placeholder="Search for blog posts..."/>
                       <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="home_control" ><i class="fa fa-search"></i></button>
+                        <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="home_control" onclick="return SearchBlogValidate()"><i class="fa fa-search"></i></button>
                       </span>
                 </div><!-- /input-group -->
             </div>
@@ -96,19 +104,13 @@
     </nav>
 
     <div class="container-fluid "><br/><br/>
-       <!-- <link rel="stylesheet"
-              href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>-->
+        <!-- <link rel="stylesheet"
+               href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>-->
 
         <!--LEFT COLUMN, USERS LIST-->
         <form action="home.jsp" method="post">
             <div class="container col-md-3 animated bounceInLeft">
                 <div class="well" id="userList">
-                    <%
-                        userList = (LinkedList<User>)session.getAttribute("users");
-                        if(userList == null){
-                            userList = new LinkedList<User>();
-                        }
-                    %>
                     <h4>Welcome back, <%=currentUserName %>!</h4>
                     <table>
                         <tr>
@@ -133,14 +135,6 @@
                 <!-- BLOG POSTS -->
                 <div id="all_posts">
                     <%
-                        postLinkedList = (LinkedList<Post>)request.getAttribute("posts");
-                        if(postLinkedList == null){
-                            postLinkedList = new LinkedList<Post>();
-                        }
-                        LinkedList<Comment> commentLinkedList = (LinkedList<Comment>)request.getAttribute("comments");
-                        if(commentLinkedList == null){
-                            commentLinkedList = new LinkedList<Comment>();
-                        }
                         int i=0;
                         for(Post post : postLinkedList) {
                             i++;
@@ -171,13 +165,13 @@
                                             <!-- COMMENT BOX -->
                                             <hr/>
                                             <div>
-                                                <div>
+                                                <div><p>Comments:</p>
                                                     <%for(Comment comment : commentLinkedList) {%>
                                                     <%= comment.getCommentBody()%><br/><%}%>
                                                     <hr/>
                                                     <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
                                                     <p></p>
-                                                    <button type="submit" name="commentPost" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
+                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -187,68 +181,16 @@
                         </div>
                     </div>
                     <br/><%}%>
-                </div>
-
-                <!-- USERS BLOG POSTS -->
-                <div id="result_all_posts">
-                    <%
-                        resultPostsList = (LinkedList<Post>)request.getAttribute("resultPosts");
-                        if(resultPostsList == null){
-                            resultPostsList = new LinkedList<Post>();
-                        }
-                        int j=0;
-                        for(Post post : resultPostsList) {
-                            j++;
-                            if(j>10)
-                                break;
-                    %>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div id="userPostlist">
-                                    <div class="panel">
-                                        <div class="panel-heading">
-                                            <div class="text-center">
-                                                <div class="row">
-                                                    <div class="col-sm-9">
-                                                        <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <h4 class="pull-right">
-                                                            <small><em><%= post.getDate() %><br></em></small>
-                                                        </h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel-body">
-                                            <%= post.getBody() %>
-                                            <div>
-                                                <%for(Comment comment : commentLinkedList) {%>
-                                                <%= comment.getCommentBody()%><br/><%}%>
-                                                <hr/>
-                                                <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control" ></textarea>
-                                                <p></p>
-                                                <button type="submit" name="commentPost" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br/><%}%>
-                    <br/><br/>
                 </div>
 
                 <div>
-                    <input type="text" class="form-control" name="title" id="title" form="home_control" placeholder="Title"/><br/>
-                    <textarea name="body" form="home_control">Write blog here...<br/><br/><br/>
+                    <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/><br/>
+                    <textarea name="blogBody" id="blogBody" form="home_control">Write blog here...<br/><br/><br/>
                         <textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
                     <script>
-                        CKEDITOR.replace("body");
+                        CKEDITOR.replace("blogBody");
                     </script>
-                    <button type="submit" name="sendBlog" value="Send This Blog" form="home_control" class="btn btn-primary "><i class="fa fa-share"></i> Publish</button>
+                    <button type="submit" name="sendBlogAction" value="Send This Blog" form="home_control" class="btn btn-primary" onclick="return SendBlogValidate()"><i class="fa fa-share"></i> Publish</button>
                 </div>
             </div>
         </form>
@@ -267,14 +209,20 @@
             -->
 
         </form>
-        <!--RIGHT COLUMN, CHOOSE BLOG POST BY DATE -->
+        <!-- RIGHT COLUMN, FLASH GAME -->
         <div class="container col-md-3 animated bounceInRight">
-            <b>Date:</b><br/>
-            <input type="date" name="date"/>
-            <br/><br/><br/>
+            <script charset="Shift_JIS"
+                    src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js">
+            </script>
+            <!--
+            <b>Date:</b>
+            <label>
+                <input type="date" name="date"/>
+            </label>
+            -->
             <object type="application/x-shockwave-flash" style="outline:none;"
-                    data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="300"
-                    height="225"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
+                    data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="263"
+                    height="197"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
                 <param name="AllowScriptAccess" value="always">
                 <param name="wmode" value="opaque">
             </object>
@@ -283,15 +231,25 @@
 </div>
 
 <script language="JavaScript">
-    function SearchValidate() {
+    function SearchBlogValidate() {
         if (document.home_control.fuzzySearchBlog.value==""){
-            alert("Please enter a value to delete a post!");
+            alert("Nothing found!");
             document.home_control.fuzzySearchBlog.focus();
             return false;
-        }else{
-            $("#result_all_posts").show();
-            $("#all_posts").hide();
-            return true;
+        }
+    }
+    function SendBlogValidate(){
+        if (document.home_control.blogTitle.value==""){
+            alert("Please enter a title!");
+            document.home_control.blogTitle.focus();
+            return false;
+        }
+    }
+    function SendCommentValidate(){
+        if (document.home_control.commentBody.value==""){
+            alert("Please enter comment!");
+            document.home_control.commentBody.focus();
+            return false;
         }
     }
 
