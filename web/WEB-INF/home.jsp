@@ -170,7 +170,7 @@
                                             <!-- COMMENT BOX -->
                                             <hr/>
                                             <div>
-                                                <div><p>Comments:</p>
+                                                <div><p><b>Comments:</b></p>
                                                     <%for(Comment comment : commentLinkedList) {%>
                                                     <%= comment.getCommentBody()%><br/><%}%>
                                                     <hr/>
@@ -221,7 +221,7 @@
                                             <!-- COMMENT BOX -->
                                             <hr/>
                                             <div>
-                                                <div><p>Comments:</p>
+                                                <div><p><b>Comments:</b></p>
                                                     <%for(Comment comment : commentLinkedList) {%>
                                                     <%= comment.getCommentBody()%><br/><%}%>
                                                     <hr/>
@@ -243,7 +243,8 @@
                 <div>
                     <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/><br/>
                     <textarea name="blogBody" id="blogBody" form="home_control">Write blog here...<br/><br/><br/>
-                        <textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
+                        <textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea>
+                    </textarea><br/>
                     <script>
                         CKEDITOR.replace("blogBody");
                     </script>
@@ -251,7 +252,6 @@
                 </div>
             </div>
         </form>
-        <br/><br/><br/><br/>
 
         <form action="/blog/HomeControl" method="post" name="home_control" id="home_control">
             <%session.setAttribute("blogUserName", currentUserName);%>

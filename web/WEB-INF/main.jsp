@@ -86,7 +86,7 @@
 
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
+                    <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
                     <li><a href="login.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff;"><b> Log In</b></i></a></li>
                 </ul>
 
@@ -167,7 +167,7 @@
                                             <!-- COMMENT BOX -->
                                             <hr/>
                                             <div>
-                                                <div><p>Comments:</p>
+                                                <div><p><b>Comments:</b></p>
                                                     <%for(Comment comment : commentLinkedList) {%>
                                                     <%= comment.getCommentBody()%><br/><%}%>
                                                     <hr/>
@@ -238,7 +238,6 @@
                 </div>
             </div>
         </form>
-        <br/><br/><br/><br/>
 
         <form action="/blog/MainControl" method="post" name="main_control" id="main_control">
 
