@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/img/Thumbs.db" afterPath="$PROJECT_DIR$/web/img/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/contact.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/contact.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimpleServlet.iws" />
@@ -966,7 +964,7 @@
       <workItem from="1432564558520" duration="19885000" />
       <workItem from="1432664020856" duration="3388000" />
       <workItem from="1432667597877" duration="1119000" />
-      <workItem from="1432671962142" duration="2864000" />
+      <workItem from="1432671962142" duration="2884000" />
     </task>
     <task id="LOCAL-00035" summary="database has been upgraded">
       <created>1430987314480</created>
@@ -1268,11 +1266,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432672139929</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="better contact page">
+      <created>1432674858292</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1432674858292</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="605748000" />
+    <option name="totallyTimeSpent" value="605768000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1345,7 +1349,6 @@
       <TodoPanelSettings />
     </option>
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="password input changed" />
     <MESSAGE value="admin panel search function returns as a list" />
     <MESSAGE value="new colum user status added in database, make sure you update your database first or rebuilt it." />
     <MESSAGE value="admin searching function upgraded" />
@@ -1370,7 +1373,8 @@
     <MESSAGE value="button added to search function" />
     <MESSAGE value="small changes, but comment function still not works perfect :(" />
     <MESSAGE value="fixed background" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed background" />
+    <MESSAGE value="better contact page" />
+    <option name="LAST_COMMIT_MESSAGE" value="better contact page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
