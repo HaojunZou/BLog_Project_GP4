@@ -2,7 +2,6 @@ package se.molk.blog.web.controller;
 
 import se.molk.blog.dao.CommentDAO;
 import se.molk.blog.dao.PostDAO;
-import se.molk.blog.domain.Comment;
 import se.molk.blog.domain.Post;
 import se.molk.blog.service.CommentService;
 import se.molk.blog.service.PostService;
@@ -36,52 +35,18 @@ public class MainControl extends HttpServlet {
         TextFilter textFilter = new TextFilter();
         PostService postService = new PostService(post);
         CommentService commentService = new CommentService(comment);
-        List<Post> posts;
-        List<Comment> comments;
+        List<Post> resultPosts;
+        //List<Post> usersPosts;
 
-        String fuzzySearchAction = request.getParameter("fuzzySearchAction");
-        String sentCommentAction = request.getParameter("sentCommentAction");
-        String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
+        String commentPost = request.getParameter("commentPost");
         String commentBody = textFilter.filterHtml(request.getParameter("commentBody"));
+        String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
+        String fuzzySearchAction = request.getParameter("fuzzySearchAction");
         //String showUsersBlog = request.getParameter("showUsersBlog");
         //int postUserId = Integer.parseInt(request.getParameter("author"));
         //String category = request.getParameter("category");
         //String author = request.getParameter("author");
         try {
-            comments = commentService.getAllComments();
-            request.setAttribute("comments", comments);
-
-            // search action
-            if("Fuzzy Search".equals(fuzzySearchAction)){
-                posts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
-                request.setAttribute("posts", posts);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/main.jsp");
-                dispatcher.forward(request, response);
-            }
-
-            // send comment action
-            if("Send Comment".equals(sentCommentAction)){
-                if(commentBody.equals("")){
-                    out.print(
-                            "<script type='text/javascript'>" +
-                                    "window.alert('Please enter a comment!');" +
-                                    "history.go(-1)" +
-                                    "</script>"
-                    );
-                }else{
-                    if(commentService.postNewComment(commentBody)){
-                        response.sendRedirect("/blog/main.jsp");
-                    }else {
-                        out.print(
-                                "<script type='text/javascript'>" +
-                                        "window.alert('You can't post comment!');" +
-                                        "history.go(-1)" +
-                                        "</script>"
-                        );
-                    }
-                }
-            }
-
             /*
             if("Show this person's blog".equals(showUsersBlog)){
                 if(postUserId!=0){
@@ -100,9 +65,30 @@ public class MainControl extends HttpServlet {
             }
             */
 
+            if("Fuzzy Search".equals(fuzzySearchAction) && !fuzzySearchBlog.equals("")){
+                resultPosts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
+                request.setAttribute("resultPosts", resultPosts);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/main.jsp");
+                dispatcher.forward(request, response);
+            }
+
+            if("Send Comment".equals(commentPost) && !commentBody.equals("")){
+                commentService.postNewComment(commentBody);
+                response.sendRedirect("/blog/main.jsp");
+            }
+
+            else {
+                out.print(
+                        "<script type='text/javascript'>" +
+                                "history.go(-1)" +
+                                "</script>"
+                );
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

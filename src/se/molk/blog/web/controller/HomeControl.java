@@ -2,7 +2,6 @@ package se.molk.blog.web.controller;
 
 import se.molk.blog.dao.CommentDAO;
 import se.molk.blog.dao.PostDAO;
-import se.molk.blog.domain.Comment;
 import se.molk.blog.domain.Post;
 import se.molk.blog.service.CommentService;
 import se.molk.blog.service.PostService;
@@ -39,80 +38,22 @@ public class HomeControl extends HttpServlet {
         PostService postService = new PostService(post);
         CommentService commentService = new CommentService(comment);
         HttpSession session = request.getSession();
-        List<Post> posts;
-        List<Comment> comments;
+        List<Post> resultPosts;
+        //List<Post> usersPosts;
 
-        String fuzzySearchAction = request.getParameter("fuzzySearchAction");
-        String sentCommentAction = request.getParameter("sentCommentAction");
-        String sendBlogAction = request.getParameter("sendBlogAction");
-        String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
-        String blogTitle = textFilter.filterHtml(request.getParameter("blogTitle"));
-        String blogBody = request.getParameter("blogBody");
+        String title = textFilter.filterHtml(request.getParameter("title"));
+        String body = request.getParameter("body");
         String blogUserName = (String) session.getAttribute("blogUserName");
+        String sendBlog = request.getParameter("sendBlog");
+        String commentPost = request.getParameter("commentPost");
         String commentBody = textFilter.filterHtml(request.getParameter("commentBody"));
-
+        String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
+        String fuzzySearchAction = request.getParameter("fuzzySearchAction");
         //String showUsersBlog = request.getParameter("showUsersBlog");
         //int postUserId = Integer.parseInt(request.getParameter("author"));
         //String category = request.getParameter("category");
         //String author = request.getParameter("author");
         try {
-            comments = commentService.getAllComments();
-            request.setAttribute("comments", comments);
-
-            // search action
-            if("Fuzzy Search".equals(fuzzySearchAction)){
-                posts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
-                request.setAttribute("posts", posts);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
-                dispatcher.forward(request, response);
-            }
-
-            // send blog action
-            if("Send This Blog".equals(sendBlogAction)){
-                if(blogUserName != null){
-                    if(postService.publishNewPost(blogTitle, blogBody, blogUserName)){
-                        response.sendRedirect("/blog/home.jsp");
-                    }else {
-                        out.print(
-                                "<script type='text/javascript'>" +
-                                        "window.alert('You can't post blog!');" +
-                                        "history.go(-1)" +
-                                        "</script>"
-                        );
-                    }
-                }else{
-                    out.print(
-                            "<script type='text/javascript'>" +
-                                    "window.alert('You need to log in to write a blog!');" +
-                                    "history.go(-1)" +
-                                    "</script>"
-                    );
-                }
-            }
-
-            // send comment action
-            if("Send Comment".equals(sentCommentAction)){
-                if(commentBody.equals("")){
-                    out.print(
-                            "<script type='text/javascript'>" +
-                                    "window.alert('Please enter a comment!');" +
-                                    "history.go(-1)" +
-                                    "</script>"
-                    );
-                }else{
-                    if(commentService.postNewComment(commentBody)){
-                        response.sendRedirect("/blog/home.jsp");
-                    }else {
-                        out.print(
-                                "<script type='text/javascript'>" +
-                                        "window.alert('You can't post comment!');" +
-                                        "history.go(-1)" +
-                                        "</script>"
-                        );
-                    }
-                }
-            }
-
             /*
             if("Show this person's blog".equals(showUsersBlog)){
                 if(postUserId!=0){
@@ -130,6 +71,48 @@ public class HomeControl extends HttpServlet {
                 }
             }
             */
+
+            if("Fuzzy Search".equals(fuzzySearchAction) && !fuzzySearchBlog.equals("")){
+                resultPosts = postService.getPostsByFuzzySearch(fuzzySearchBlog);
+                request.setAttribute("resultPosts", resultPosts);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
+                dispatcher.forward(request, response);
+            }
+
+            if("Send This Blog".equals(sendBlog) && !title.equals("")){
+                if(blogUserName != null){
+                    if(postService.publishNewPost(title, body, blogUserName)){
+                        response.sendRedirect("/blog/home.jsp");
+                    }else {
+                        out.print(
+                                "<script type='text/javascript'>" +
+                                        "window.alert('You can't post blog');" +
+                                        "history.go(-1)" +
+                                        "</script>"
+                        );
+                    }
+                }else{
+                    out.print(
+                            "<script type='text/javascript'>" +
+                                    "window.alert('You need to log in to write a blog');" +
+                                    "history.go(-1)" +
+                                    "</script>"
+                    );
+                }
+            }
+
+            if("Send Comment".equals(commentPost) && !commentBody.equals("")){
+                commentService.postNewComment(commentBody);
+                response.sendRedirect("/blog/home.jsp");
+            }
+
+            else {
+                out.print(
+                        "<script type='text/javascript'>" +
+                                "history.go(-1)" +
+                                "</script>"
+                );
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
