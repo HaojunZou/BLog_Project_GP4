@@ -43,9 +43,10 @@
     <script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
 
     <style>
-        body{
-            background-color: #A9BCF5;
+        body {
+            background-attachment: fixed;
         }
+        
         .inner-addon {
             position: relative;
         }
@@ -67,7 +68,7 @@
     </style>
 
 </head>
-<body>
+<body background="img/bg-water.jpg">
 
 <div class="container-fluid">
     <nav class="navbar">
@@ -86,11 +87,11 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown"><b> Config my profile</b></i></a></li>
-                    <li><a href="user_change_pwd.jsp"><i class="fa fa-eye animated fadeInDown"><b> Change Password</b></i></a></li>
-                    <li><a href="#"><i class="fa fa-phone animated fadeInDown"><b> Contact</b></i></a></li>
-                    <li><a href="main.jsp"><i class="fa fa-sign-out animated fadeInDown"><b> Log Out</b></i></a></li>
+                <ul class="nav navbar-nav navbar-right" >
+                    <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown" style="color: #ffffff;"><b> Config my profile</b></i></a></li>
+                    <li><a href="user_change_pwd.jsp"><i class="fa fa-eye animated fadeInDown" style="color: #ffffff;"><b> Change Password</b></i></a></li>
+                    <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
+                    <li><a href="main.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff;"><b> Log Out</b></i></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>

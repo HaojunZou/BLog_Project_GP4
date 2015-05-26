@@ -41,8 +41,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <style>
-        body{
-            background-color: #A9BCF5;
+        body {
+            background-attachment: fixed;
         }
         .inner-addon {
             position: relative;
@@ -65,7 +65,7 @@
     </style>
 
 </head>
-<body>
+<body background="img/bg-water.jpg">
 
 <div class="container-fluid">
     <nav class="navbar">
@@ -86,8 +86,8 @@
 
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-phone animated fadeInDown"><b> Contact</b></i></a></li>
-                    <li><a href="login.jsp"><i class="fa fa-sign-out animated fadeInDown"><b> Log In</b></i></a></li>
+                    <li><a href="#"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
+                    <li><a href="login.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff;"><b> Log In</b></i></a></li>
                 </ul>
 
             </div>
