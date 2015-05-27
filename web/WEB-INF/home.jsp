@@ -60,19 +60,77 @@
         /* add padding  */
         .left-addon input  { padding-left:  30px; }
         .right-addon input { padding-right: 30px; }
+
+        #nav {
+            background-color: #102444;;
+            color: white;
+            height: 90px;
+            left: 0;
+            right: 0;
+            box-shadow: 0 0 20px 10px #102444;
+        }
+        #nav_list a:hover{
+            background-color: #339fff;
+            box-shadow: 0 0 20px 10px #339fff;
+            color: #fff;
+            bottom: 5px;
+            height: 45px;
+        }
+        #hone_hone_clock_bg{
+            position:absolute;
+            top: 45px;
+            left: 225px;
+            width: 135px;
+            height: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px 10px #ffffff;
+        }
+        #hone_hone_clock{
+            position: absolute;
+            top: 10px;
+            left: 220px;
+        }
+        #user_list{
+            background-color: #f5f5f5;
+            box-shadow: 0 0 10px 5px #f5f5f5;
+        }
+        #post_list{
+            background-color: #ffffff;
+            box-shadow: 0 0 10px 5px #ffffff;
+        }
+        #hamster{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+        #blog_editor {
+            background-color: #102444;
+            box-shadow: 0 0 10px 5px #102444;
+            color: white;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+        }
+
     </style>
 
 </head>
 <body background="img/bg-water.jpg">
 
-<div class="container-fluid">
+
+    <div id="nav">
     <nav class="navbar">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
-                                                             style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
-                </a><br/>
+                style="position:absolute; top:15px; left:15px; width:160px; height:60px;"/>
+                </a>
+                <a id="hone_hone_clock_bg"></a>
+                <a id="hone_hone_clock">
+                    <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
+                </a>
+                <br/>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#navbar-collapse-3">
                     <span class="sr-only">Toggle navigation</span>
@@ -82,7 +140,7 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" id="nav_list">
                     <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown" style="color: #ffffff;"><b> Config my profile</b></i></a></li>
                     <li><a href="user_change_pwd.jsp"><i class="fa fa-eye animated fadeInDown" style="color: #ffffff;"><b> Change Password</b></i></a></li>
                     <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
@@ -102,19 +160,21 @@
             </div>
         </div>
     </nav>
+    </div>
 
-    <div class="container-fluid "><br/><br/>
+    <div class="container-fluid"><br/><br/>
         <!-- <link rel="stylesheet"
                href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>-->
 
         <!--LEFT COLUMN, USERS LIST-->
         <form action="home.jsp" method="post">
             <div class="container col-md-3 animated bounceInLeft">
-                <div class="well" id="userList">
+                <div class="well" id="user_list">
                     <h4>Welcome back, <%=currentUserName %>!</h4>
+                    <br/>
                     <table>
                         <tr>
-                            <th>User List:</th>
+                            <th>Our Users:</th>
                         </tr>
                         <%
                             for(User user : userList) {
@@ -144,7 +204,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <div id="postlist">
+                                <div id="post_list">
                                     <div class="panel">
                                         <div class="panel-heading">
                                             <div class="text-center">
@@ -183,7 +243,7 @@
                     <br/><%}%>
                 </div>
 
-                <div>
+                <div id="blog_editor">
                     <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/><br/>
                     <textarea name="blogBody" id="blogBody" form="home_control">Write blog here...<br/><br/><br/>
                         <textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
@@ -211,24 +271,24 @@
         </form>
         <!-- RIGHT COLUMN, FLASH GAME -->
         <div class="container col-md-3 animated bounceInRight">
-            <script charset="Shift_JIS"
-                    src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js">
-            </script>
+
+        </div>
             <!--
             <b>Date:</b>
             <label>
                 <input type="date" name="date"/>
             </label>
             -->
+        <a id="hamster">
             <object type="application/x-shockwave-flash" style="outline:none;"
                     data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="263"
                     height="197"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
                 <param name="AllowScriptAccess" value="always">
                 <param name="wmode" value="opaque">
             </object>
-        </div>
+        </a>
     </div>
-</div>
+
 
 <script language="JavaScript">
     /**

@@ -130,13 +130,16 @@
             </div>
             <div class="container">
                 <div class="col-md-4"></div>
-                <div class="inner-addon left-addon col-md-4">
-                    <i class="glyphicon glyphicon-user"></i>
-                    <input type="text" id="delete_user_record" name="deleteUserRecord"
-                           class="form-control" form="execute_form" placeholder="User name?"/>
-                </div>
                 <div class="col-md-4">
-                    <input type="submit" class="btn btn-warning btn-lg" name="deleteUserAction" value="Delete User" onclick="return deleteUserValidate()"/>
+                    <div class="inner-addon left-addon col-md-6">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="text" id="delete_user_record" name="deleteUserRecord"
+                               class="form-control" form="execute_form" placeholder="User name?"/>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="submit" class="btn btn-warning btn-lg" name="deleteUserAction" value="Delete User" onclick="return deleteUserValidate()"/>
+                    </div>
+                    <div class="col-md-4"></div>
                 </div>
             </div>
             <br/><br/>
@@ -468,14 +471,17 @@
             </div>
             <div class="container">
                 <div class="col-md-4"></div>
-                <div class="inner-addon left-addon col-md-4">
-                    <i class="glyphicon glyphicon-file"></i>
-                    <input type="text" id="delete_post_record" name="deletePostRecord"
-                           class="form-control" form="execute_form" placeholder="Post ID?"/>
-                </div>
                 <div class="col-md-4">
-                    <input type="submit" class="btn btn-warning btn-lg" name="deletePostAction" value="Delete Post" onclick="return deletePostValidate()"/>
+                    <div class="inner-addon left-addon col-md-6">
+                        <i class="glyphicon glyphicon-file"></i>
+                        <input type="text" id="delete_post_record" name="deletePostRecord"
+                               class="form-control" form="execute_form" placeholder="Post ID?"/>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="submit" class="btn btn-warning btn-lg" name="deletePostAction" value="Delete Post" onclick="return deletePostValidate()"/>
+                    </div>
                 </div>
+                <div class="col-md-4"></div>
             </div>
 
             <!-- UPDATE A POST -->
@@ -484,7 +490,8 @@
                 <div class="container">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                        <div class="col-md-6">
+                        <div class="inner-addon left-addon col-md-6">
+                            <i class="glyphicon glyphicon-file"></i>
                             <input type="text" class="form-control" name="searchPostId" form="execute_form" placeholder="Post ID?"/>
                             <input type="hidden" class="form-control" name="thisPostId" value="<%= selectedPost.getId() %>" form="execute_form"/>
                         </div>

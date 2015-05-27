@@ -51,6 +51,14 @@
             background-color: #A9BCF5;
         }
 
+        #nav_list a:hover{
+            background-color: #339fff;
+            box-shadow: 0 0 20px 10px #339fff;
+            color: #fff;
+            bottom: 5px;
+            height: 45px;
+        }
+
     </style>
 </head>
 
@@ -60,7 +68,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
+                <a class="navbar-brand" href="main.jsp"><img src="img/logo-white.png"
                                                              style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
                 </a><br/>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -73,9 +81,8 @@
             </div>
 
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="home.jsp"><i class="fa fa-home" style="color: #ffffff;"><b> Home</b></i></a></li>
-                    <li><a href="contact.jsp"><i class="fa fa-phone" style="color: #ffffff;"><b> Contact</b></i></a></li>
+                <ul class="nav navbar-nav navbar-right" id="nav_list">
+                    <li><a href="main.jsp"><i class="fa fa-home" style="color: #ffffff;"><b> Go to main</b></i></a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
