@@ -7,17 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="358ddae9-868b-402c-b9a2-79177df8996b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/se/molk/blog/se/molk/blog/test/CommentDAOTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelControl.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelResultControl.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelResultControl.java" />
+      <change type="DELETED" beforePath="C:\Users\Emil\SkyDrive\GitHub\Blog_Project_GP4\src\se\molk\blog\se\molk\blog\test\CommentDAOTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Blog_Project_GP4.iml" afterPath="$PROJECT_DIR$/Blog_Project_GP4.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/dao/CategoryDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/dao/CommentDAO.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/dao/CommentDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/web/UI/Home.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/Home.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/web/UI/Main.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/web/UI/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/dao/PostDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/service/PostService.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/service/PostService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/se/molk/blog/dao/UserDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimpleServlet.iws" />
@@ -51,17 +42,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-              <folding>
-                <marker date="1432713530987" expanded="true" signature="1233:1280" placeholder="select * fro..Posts..." />
-                <marker date="1432713530987" expanded="true" signature="2900:2970" placeholder="select * fro..Posts..." />
-                <marker date="1432713530987" expanded="true" signature="4345:4409" placeholder="select * fro..Posts..." />
-                <marker date="1432713530987" expanded="true" signature="5777:5866" placeholder="select * fro..Posts..." />
-                <marker date="1432713530987" expanded="true" signature="7709:7744" placeholder="select * fro..Posts..." />
-                <marker date="1432713530987" expanded="true" signature="7858:7987" placeholder="insert into ..." />
-                <marker date="1432713530987" expanded="true" signature="9951:9988" placeholder="select * fro..Posts..." />
-                <marker date="1432713530987" expanded="true" signature="10776:10811" placeholder="delete from ..." />
-                <marker date="1432713530987" expanded="true" signature="11562:11608" placeholder="update Posts..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,10 +52,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-              <folding>
-                <marker date="1432713531010" expanded="true" signature="910:934" placeholder="select * fro..Categories..." />
-                <marker date="1432713531010" expanded="true" signature="1760:1802" placeholder="select * fro..Categories..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,12 +62,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-              <folding>
-                <marker date="1432713530999" expanded="true" signature="1001:1052" placeholder="select * fro..PostComment..." />
-                <marker date="1432713530999" expanded="true" signature="2634:2678" placeholder="select * fro..PostComment..." />
-                <marker date="1432713530999" expanded="true" signature="2784:2896" placeholder="insert into ..." />
-                <marker date="1432713530999" expanded="true" signature="4496:4540" placeholder="delete from ..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,34 +73,42 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
               <folding>
-                <marker date="1432713530971" expanded="true" signature="830:849" placeholder="select * fro..Users..." />
-                <marker date="1432713530971" expanded="true" signature="2175:2239" placeholder="select * fro..Users..." />
-                <marker date="1432713530971" expanded="true" signature="3697:3734" placeholder="select * fro..Users..." />
-                <marker date="1432713530971" expanded="true" signature="5118:5162" placeholder="select user_..Users..." />
-                <marker date="1432713530971" expanded="true" signature="5942:6045" placeholder="select userN..Users..." />
-                <marker date="1432713530971" expanded="true" signature="7112:7171" placeholder="select * fro..Users..." />
-                <marker date="1432713530971" expanded="true" signature="8024:8062" placeholder="select * fro..Users..." />
-                <marker date="1432713530971" expanded="true" signature="8883:8919" placeholder="delete from ..." />
-                <marker date="1432713530971" expanded="true" signature="9835:9888" placeholder="select user_..Users..." />
-                <marker date="1432713530971" expanded="true" signature="9960:9995" placeholder="select * fro..Users..." />
-                <marker date="1432713530971" expanded="true" signature="10093:10256" placeholder="insert into ..." />
-                <marker date="1432713530971" expanded="true" signature="12898:12950" placeholder="update Users..." />
-                <marker date="1432713530971" expanded="true" signature="14155:14232" placeholder="update Users..." />
-                <marker date="1432713530971" expanded="true" signature="15402:15449" placeholder="select * fro..Users..." />
-                <marker date="1432713530971" expanded="true" signature="15490:15604" placeholder="update Users..." />
+                <marker date="1432717512976" expanded="true" signature="832:851" placeholder="select * fro..Users..." />
+                <marker date="1432717512976" expanded="true" signature="2177:2241" placeholder="select * fro..Users..." />
+                <marker date="1432717512976" expanded="true" signature="3699:3736" placeholder="select * fro..Users..." />
+                <marker date="1432717512976" expanded="true" signature="5120:5164" placeholder="select user_..Users..." />
+                <marker date="1432717512976" expanded="true" signature="5944:6047" placeholder="select userN..Users..." />
+                <marker date="1432717512976" expanded="true" signature="7114:7173" placeholder="select * fro..Users..." />
+                <marker date="1432717512976" expanded="true" signature="8026:8064" placeholder="select * fro..Users..." />
+                <marker date="1432717512976" expanded="true" signature="8885:8921" placeholder="delete from ..." />
+                <marker date="1432717512976" expanded="true" signature="9837:9890" placeholder="select user_..Users..." />
+                <marker date="1432717512976" expanded="true" signature="9962:9997" placeholder="select * fro..Users..." />
+                <marker date="1432717512976" expanded="true" signature="10095:10258" placeholder="insert into ..." />
+                <marker date="1432717512976" expanded="true" signature="12900:12952" placeholder="update Users..." />
+                <marker date="1432717512976" expanded="true" signature="14157:14234" placeholder="update Users..." />
+                <marker date="1432717512976" expanded="true" signature="15404:15451" placeholder="select * fro..Users..." />
+                <marker date="1432717512976" expanded="true" signature="15492:15606" placeholder="update Users..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentDAOTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/se/molk/blog/test/CommentDAOTest.java">
+      <file leaf-file-name="DAOTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/test/DAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3137255">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.18335901">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlogService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/BlogService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/WEB-INF/user_profile.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/update_profile.jsp" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserUpdateProfile.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUp.java" />
@@ -244,8 +224,9 @@
         <option value="$PROJECT_DIR$/src/se/molk/blog/se/molk/blog/test/PostServiceTest.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelResultControl.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelControl.java" />
-        <option value="$PROJECT_DIR$/src/se/molk/blog/se/molk/blog/test/CommentDAOTest.java" />
         <option value="$PROJECT_DIR$/src/se/molk/blog/dao/CommentDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/se/molk/blog/se/molk/blog/test/CommentDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/se/molk/blog/se/molk/blog/test/DAOTest.java" />
       </list>
     </option>
   </component>
@@ -257,10 +238,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1050" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -456,7 +437,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -478,7 +459,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1061,6 +1042,7 @@
       <workItem from="1432707846114" duration="2634000" />
       <workItem from="1432713486025" duration="706000" />
       <workItem from="1432716340385" duration="1165000" />
+      <workItem from="1432717676649" duration="437000" />
     </task>
     <task id="LOCAL-00039" summary="Admin panel, search function added, log in with name: admin, password: admin">
       <created>1431022077879</created>
@@ -1360,7 +1342,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="611103000" />
+    <option name="totallyTimeSpent" value="611540000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1383,11 +1365,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.267316" sideWeight="0.49864006" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2761438" sideWeight="0.50135994" order="7" side_tool="true" content_ui="tabs" />
@@ -1396,10 +1379,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32659933" sideWeight="0.4994995" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20053476" sideWeight="0.49534452" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20042644" sideWeight="0.49534452" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24484536" sideWeight="0.5046555" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3188889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31783783" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24835372" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1411,7 +1394,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32588455" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2688889" sideWeight="0.49864006" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32352942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1430,7 +1412,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="new colum user status added in database, make sure you update your database first or rebuilt it." />
     <MESSAGE value="admin searching function upgraded" />
     <MESSAGE value="New architecture, new database. Make sure remake database and application" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;src/se/molk/blog/web/controller/GetAllUsersServlet.java&#10;" />
@@ -1455,7 +1436,8 @@
     <MESSAGE value="fixed background" />
     <MESSAGE value="better contact page" />
     <MESSAGE value="bg-water.jpg added" />
-    <option name="LAST_COMMIT_MESSAGE" value="bg-water.jpg added" />
+    <MESSAGE value="Rättat till mocktesterna och mapparna" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rättat till mocktesterna och mapparna" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1468,17 +1450,28 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/ContactControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/UserSignUpControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/se/molk/blog/web/controller/AdminPanelControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/BlogService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1778,10 +1771,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-          <folding>
-            <marker date="1432713531010" expanded="true" signature="910:934" placeholder="select * fro..Categories..." />
-            <marker date="1432713531010" expanded="true" signature="1760:1802" placeholder="select * fro..Categories..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1790,21 +1780,21 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
           <folding>
-            <marker date="1432713530971" expanded="true" signature="830:849" placeholder="select * fro..Users..." />
-            <marker date="1432713530971" expanded="true" signature="2175:2239" placeholder="select * fro..Users..." />
-            <marker date="1432713530971" expanded="true" signature="3697:3734" placeholder="select * fro..Users..." />
-            <marker date="1432713530971" expanded="true" signature="5118:5162" placeholder="select user_..Users..." />
-            <marker date="1432713530971" expanded="true" signature="5942:6045" placeholder="select userN..Users..." />
-            <marker date="1432713530971" expanded="true" signature="7112:7171" placeholder="select * fro..Users..." />
-            <marker date="1432713530971" expanded="true" signature="8024:8062" placeholder="select * fro..Users..." />
-            <marker date="1432713530971" expanded="true" signature="8883:8919" placeholder="delete from ..." />
-            <marker date="1432713530971" expanded="true" signature="9835:9888" placeholder="select user_..Users..." />
-            <marker date="1432713530971" expanded="true" signature="9960:9995" placeholder="select * fro..Users..." />
-            <marker date="1432713530971" expanded="true" signature="10093:10256" placeholder="insert into ..." />
-            <marker date="1432713530971" expanded="true" signature="12898:12950" placeholder="update Users..." />
-            <marker date="1432713530971" expanded="true" signature="14155:14232" placeholder="update Users..." />
-            <marker date="1432713530971" expanded="true" signature="15402:15449" placeholder="select * fro..Users..." />
-            <marker date="1432713530971" expanded="true" signature="15490:15604" placeholder="update Users..." />
+            <marker date="1432717512976" expanded="true" signature="832:851" placeholder="select * fro..Users..." />
+            <marker date="1432717512976" expanded="true" signature="2177:2241" placeholder="select * fro..Users..." />
+            <marker date="1432717512976" expanded="true" signature="3699:3736" placeholder="select * fro..Users..." />
+            <marker date="1432717512976" expanded="true" signature="5120:5164" placeholder="select user_..Users..." />
+            <marker date="1432717512976" expanded="true" signature="5944:6047" placeholder="select userN..Users..." />
+            <marker date="1432717512976" expanded="true" signature="7114:7173" placeholder="select * fro..Users..." />
+            <marker date="1432717512976" expanded="true" signature="8026:8064" placeholder="select * fro..Users..." />
+            <marker date="1432717512976" expanded="true" signature="8885:8921" placeholder="delete from ..." />
+            <marker date="1432717512976" expanded="true" signature="9837:9890" placeholder="select user_..Users..." />
+            <marker date="1432717512976" expanded="true" signature="9962:9997" placeholder="select * fro..Users..." />
+            <marker date="1432717512976" expanded="true" signature="10095:10258" placeholder="insert into ..." />
+            <marker date="1432717512976" expanded="true" signature="12900:12952" placeholder="update Users..." />
+            <marker date="1432717512976" expanded="true" signature="14157:14234" placeholder="update Users..." />
+            <marker date="1432717512976" expanded="true" signature="15404:15451" placeholder="select * fro..Users..." />
+            <marker date="1432717512976" expanded="true" signature="15492:15606" placeholder="update Users..." />
           </folding>
         </state>
       </provider>
@@ -1813,17 +1803,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding>
-            <marker date="1432713530987" expanded="true" signature="1233:1280" placeholder="select * fro..Posts..." />
-            <marker date="1432713530987" expanded="true" signature="2900:2970" placeholder="select * fro..Posts..." />
-            <marker date="1432713530987" expanded="true" signature="4345:4409" placeholder="select * fro..Posts..." />
-            <marker date="1432713530987" expanded="true" signature="5777:5866" placeholder="select * fro..Posts..." />
-            <marker date="1432713530987" expanded="true" signature="7709:7744" placeholder="select * fro..Posts..." />
-            <marker date="1432713530987" expanded="true" signature="7858:7987" placeholder="insert into ..." />
-            <marker date="1432713530987" expanded="true" signature="9951:9988" placeholder="select * fro..Posts..." />
-            <marker date="1432713530987" expanded="true" signature="10776:10811" placeholder="delete from ..." />
-            <marker date="1432713530987" expanded="true" signature="11562:11608" placeholder="update Posts..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1847,22 +1827,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <marker date="1432713530999" expanded="true" signature="1001:1052" placeholder="select * fro..PostComment..." />
-            <marker date="1432713530999" expanded="true" signature="2634:2678" placeholder="select * fro..PostComment..." />
-            <marker date="1432713530999" expanded="true" signature="2784:2896" placeholder="insert into ..." />
-            <marker date="1432713530999" expanded="true" signature="4496:4540" placeholder="delete from ..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/se/molk/blog/test/CommentDAOTest.java">
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/service/BlogService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3137255">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/molk/blog/test/DAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18335901">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
