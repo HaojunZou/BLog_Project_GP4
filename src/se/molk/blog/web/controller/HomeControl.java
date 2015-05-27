@@ -47,7 +47,7 @@ public class HomeControl extends HttpServlet {
         String sendBlogAction = request.getParameter("sendBlogAction");
         String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
         String blogTitle = textFilter.filterHtml(request.getParameter("blogTitle"));
-        String blogBody = textFilter.filterHtml(request.getParameter("blogBody"));
+        String blogBody = request.getParameter("blogBody");
         String blogUserName = (String) session.getAttribute("blogUserName");
         String commentBody = textFilter.filterHtml(request.getParameter("commentBody"));
 
