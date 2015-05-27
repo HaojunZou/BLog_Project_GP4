@@ -124,9 +124,7 @@ public class AdminPanelResultControl extends HttpServlet {
             if("Get This Post".equals(searchPostAction)){
                 selectedPost = postService.getPostById(Integer.parseInt(searchPostId));
                 if(selectedPost != null) {
-                    request.setAttribute("selectedPostId", selectedPost.getId());
-                    request.setAttribute("selectedPostTitle", selectedPost.getTitle());
-                    request.setAttribute("selectedPostBody", selectedPost.getBody());
+                    request.setAttribute("selectedPost", selectedPost);
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/admin_panel_result.jsp");
                     dispatcher.forward(request, response);
                 }else{

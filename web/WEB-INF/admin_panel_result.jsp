@@ -1,4 +1,9 @@
-
+<%
+    Post selectedPost = (Post) request.getAttribute("selectedPost");
+    if(selectedPost == null){
+        selectedPost = new Post();
+    }
+%>
 <%@ page import="se.molk.blog.domain.User" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="se.molk.blog.domain.Post" %>
@@ -481,10 +486,10 @@
                     <div class="col-md-4">
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="searchPostId" form="execute_form" placeholder="Post ID?"/>
-                            <input type="hidden" class="form-control" name="thisPostId" value="<%=request.getAttribute("selectedPostId")%>" form="execute_form"/>
+                            <input type="hidden" class="form-control" name="thisPostId" value="<%= selectedPost.getId() %>" form="execute_form"/>
                         </div>
                         <div class="col-md-6">
-                            <input class="btn btn-default btn-lg" type="submit" name="searchPostAction" value="Get This Post" form="execute_form"/>
+                            <input class="btn btn-default btn-lg" type="submit" name="searchPostAction" value="Get This Post" form="execute_form" onclick="return updatePostValidate()"/>
                         </div>
                     </div>
                     <div class="col-md-4"></div>
@@ -495,8 +500,11 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <label>New Post Title
-                        <input type="text" class="form-control" name="newPostTitle" value="<%=request.getAttribute("selectedPostTitle")%>" form="execute_form"/>
+                        <textarea class="form-control" name="newPostTitle" form="execute_form"><%= selectedPost.getTitle() %></textarea>
                     </label>
+                    <script>
+                        CKEDITOR.replace("newPostTitle");
+                    </script>
                 </div>
                 <div class="col-md-4"></div>
             </div>
@@ -504,8 +512,11 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <label>New Post Body
-                        <textarea class="form-control" name="newPostBody" cols="60" rows="10" form="execute_form"><%=request.getAttribute("selectedPostBody")%></textarea>
+                        <textarea class="form-control" name="newPostBody" cols="60" rows="10" form="execute_form"><%= selectedPost.getBody() %></textarea>
                     </label>
+                    <script>
+                        CKEDITOR.replace("newPostBody");
+                    </script>
                 </div>
                 <div class="col-md-4"></div>
             </div>
@@ -540,6 +551,13 @@
                 if (document.execute_form.userName.value==""){
                     alert("Please enter a value to update an user!");
                     document.execute_form.userName.focus();
+                    return false;
+                }
+            }
+            function updatePostValidate(){
+                if (document.execute_form.searchPostId.value==""){
+                    alert("Please enter a post ID!");
+                    document.execute_form.searchPostId.focus();
                     return false;
                 }
             }
