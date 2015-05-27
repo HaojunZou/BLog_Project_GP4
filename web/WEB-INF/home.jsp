@@ -231,21 +231,30 @@
 </div>
 
 <script language="JavaScript">
-    function SearchBlogValidate() {
+    /**
+ * @return {boolean}
+ */
+function SearchBlogValidate() {
         if (document.home_control.fuzzySearchBlog.value==""){
             alert("Nothing found!");
             document.home_control.fuzzySearchBlog.focus();
             return false;
         }
     }
-    function SendBlogValidate(){
+    /**
+ * @return {boolean}
+ */
+function SendBlogValidate(){
         if (document.home_control.blogTitle.value==""){
             alert("Please enter a title!");
             document.home_control.blogTitle.focus();
             return false;
         }
     }
-    function SendCommentValidate(){
+    /**
+ * @return {boolean}
+ */
+function SendCommentValidate(){
         if (document.home_control.commentBody.value==""){
             alert("Please enter comment!");
             document.home_control.commentBody.focus();
