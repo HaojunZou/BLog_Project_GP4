@@ -26,6 +26,10 @@ public class PostService {
         return postDAO.getPostsByTitle(title);
     }
 
+    public Post getPostById(int post_id) throws SQLException {
+        return postDAO.getPostById(post_id);
+    }
+
     public List<Post> getPostsByUserId(int userId) throws SQLException{
         return postDAO.getPostsByUserId(userId);
     }
@@ -34,7 +38,11 @@ public class PostService {
         return postDAO.getPostsByFuzzySearch(fuzzy);
     }
 
-    public boolean deleteAPost(int post_id) throws SQLException{
+    public boolean deleteAPost(int post_id) throws Exception {
         return postDAO.deleteAPost(post_id);
+    }
+
+    public boolean updateAPost(int post_id, String postTitle, String postBody) throws SQLException {
+        return postDAO.updateAPost(post_id, postTitle, postBody);
     }
 }

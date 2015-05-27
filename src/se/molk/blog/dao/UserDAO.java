@@ -205,19 +205,22 @@ public class UserDAO {
         return hasUser;
     }
 
-    public boolean deleteAnUser(String userName) throws SQLException {
+    public boolean deleteAnUser(String userName) throws Exception {
+        PostDAO postDAO = new PostDAO();
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
-        if(checkUserByUserName(userName)) {
+        int user_id = getUserIdByUserName(userName);
+        if(user_id != 0) {
+            postDAO.deleteAPostByUserId(user_id);
             try {
-                String deleteQuery = "delete from Users where userName = ?";
-                PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
-                pstDelete.setString(1, userName);
-                pstDelete.executeUpdate();
-                pstDelete.close();
+                String deleteUserQuery = "delete from Users where userName = ?";
+                PreparedStatement pstDeleteUser = connection.prepareStatement(deleteUserQuery);
+                pstDeleteUser.setString(1, userName);
+                pstDeleteUser.executeUpdate();
+                pstDeleteUser.close();
                 return true;
             } catch (SQLException e) {
                 e.printStackTrace();
-            }finally {
+            } finally {
                 connection.close();
             }
         }else{

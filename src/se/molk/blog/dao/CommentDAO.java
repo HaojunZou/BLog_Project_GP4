@@ -27,8 +27,6 @@ public class CommentDAO {
 
     public List<Comment> getAllComments() throws ClassNotFoundException, SQLException {
         List<Comment> commentList = new LinkedList<Comment>();
-
-
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try{
             String postSearchQuery = "select * from PostComment order by commentDate desc";
@@ -57,6 +55,28 @@ public class CommentDAO {
         List<Comment> commentList= new LinkedList<Comment>();
 
         return commentList;
+    }
+
+    public boolean checkCommentByPostId(int post_id) throws SQLException {
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String postSearchQuery = "select * from PostComment where postId=?";
+            PreparedStatement pstCheck = connection.prepareStatement(postSearchQuery);
+            pstCheck.setInt(1, post_id);
+            ResultSet checkResult = pstCheck.executeQuery();
+            if(checkResult.next()){
+                pstCheck.close();
+                return true;
+            }else {
+                pstCheck.close();
+                return false;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+        return false;
     }
 
     public boolean postNewComment(String commentBody) throws SQLException {
@@ -106,9 +126,30 @@ public class CommentDAO {
         return published;
     }
 
-    public boolean deleteComment(int comment_id) throws SQLException{
+    public boolean deleteCommentByPostId(int post_id) throws SQLException{
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        if(checkCommentByPostId(post_id)){
+            try{
+                String deleteQuery = "delete from PostComment where postId = ?";
+                PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
+                pstDelete.setInt(1, post_id);
+                pstDelete.executeUpdate();
+                pstDelete.close();
+                return true;
+            }catch (Exception e){
+                e.printStackTrace();
+            }finally {
+                connection.close();
+            }
+        }else{
+            connection.close();
+            return false;
+        }
+        return false;
+    }
 
+    public boolean deleteCommentById(int comment_id) throws SQLException{
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
         try{
             String deleteQuery = "delete from PostComment where comment_id = ?";
             PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);

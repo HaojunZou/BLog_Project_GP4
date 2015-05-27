@@ -93,7 +93,7 @@
         <div class="container">
             <div class="col-md-9"></div>
             <div class="col-md-3">
-                <div class="input-group ">
+                <div class="input-group">
                     <input type="text" class="form-control" name="fuzzySearchBlog" form="home_control" placeholder="Search for blog posts..."/>
                       <span class="input-group-btn">
                         <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="home_control" onclick="return SearchBlogValidate()"><i class="fa fa-search"></i></button>

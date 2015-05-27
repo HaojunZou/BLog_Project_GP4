@@ -171,8 +171,53 @@ public class PostDAO {
         return postList;
     }
 
-    public Post getPostById(int id){
-        return null;
+    public Post getPostById(int post_id) throws SQLException {
+        List<Post> postList = new LinkedList<Post>();
+        Post post = null;
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String userSearchQuery = "select * from Posts where post_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(userSearchQuery);
+            preparedStatement.setInt(1, post_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                post = new Post();
+                post.setId(resultSet.getInt("post_id"));
+                post.setTitle(resultSet.getString("postTitle"));
+                post.setBody(resultSet.getString("postBody"));
+                post.setUserId(resultSet.getInt("userId"));
+                post.setDate(resultSet.getString("publishedDate"));
+
+                postList.add(post);
+            }
+            preparedStatement.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+        return post;
+    }
+
+    public String [] getPostInfoById(int post_id) throws SQLException {
+        String [] info = new String[2];
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String userSearchQuery = "select postTitle, postBody from Posts where post_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(userSearchQuery);
+            preparedStatement.setInt(1, post_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                info[0] = resultSet.getString(1);
+                info[1] = resultSet.getString(2);
+            }
+            preparedStatement.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+        return info;
     }
 
     public boolean publishNewPost(String title, String body, String author) throws SQLException {
@@ -250,9 +295,33 @@ public class PostDAO {
         return false;
     }
 
-    public boolean deleteAPost(int post_id) throws SQLException {
+    public boolean checkPostByUserId(int user_id) throws SQLException {
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String checkQuery = "select * from Posts where userId = ?";
+            PreparedStatement pstCheck = connection.prepareStatement(checkQuery);
+            pstCheck.setInt(1, user_id);
+            ResultSet checkResult = pstCheck.executeQuery();
+            if(checkResult.next()){
+                pstCheck.close();
+                return true;
+            }else {
+                pstCheck.close();
+                return false;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+        return false;
+    }
+
+    public boolean deleteAPost(int post_id) throws Exception {
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        CommentDAO commentDAO = new CommentDAO();
         if(checkPostByPostId(post_id)){
+            commentDAO.deleteCommentByPostId(post_id);
             try{
                 String deleteQuery = "delete from Posts where post_id = ?";
                 PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
@@ -272,17 +341,44 @@ public class PostDAO {
         return false;
     }
 
-    public boolean updateAPost(int post_id) throws SQLException {
+    public boolean deleteAPostByUserId(int user_id) throws Exception {
         Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
-        if(checkPostByPostId(post_id)){
+        if(checkPostByUserId(user_id)){
             try{
-                String deleteQuery = "update Posts set  from Posts where post_id = ?";
+                String deleteQuery = "delete from Posts where userId = ?";
                 PreparedStatement pstDelete = connection.prepareStatement(deleteQuery);
-                pstDelete.setInt(1, post_id);
+                pstDelete.setInt(1, user_id);
                 pstDelete.executeUpdate();
                 pstDelete.close();
                 return true;
             }catch (Exception e){
+                e.printStackTrace();
+            }finally {
+                connection.close();
+            }
+        }else{
+            connection.close();
+            return false;
+        }
+        return false;
+    }
+
+    public boolean updateAPost(int post_id, String postTitle, String postBody) throws SQLException {
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        String[] info = getPostInfoById(post_id);
+        if(info!=null){
+            if(postTitle == ""){postTitle = info[0];}
+            if(postBody == ""){postBody = info[1];}
+            try{
+                String updateInfoQuery = "update Posts set postTitle=?, postBody=? where post_id=?";
+                PreparedStatement pstUpdateInfo = connection.prepareStatement(updateInfoQuery);
+                pstUpdateInfo.setString(1, postTitle);
+                pstUpdateInfo.setString(2, postBody);
+                pstUpdateInfo.setInt(3, post_id);
+                pstUpdateInfo.executeUpdate();
+                pstUpdateInfo.close();
+                return true;
+            } catch (SQLException e) {
                 e.printStackTrace();
             }finally {
                 connection.close();

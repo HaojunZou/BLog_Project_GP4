@@ -27,7 +27,7 @@ public class CommentService {
         return commentDAO.postNewComment(commentBody);
     }
 
-    public boolean deleteComment(int comment_id) throws SQLException{
-        return commentDAO.deleteComment(comment_id);
+    public boolean deleteCommentById(int comment_id) throws SQLException{
+        return commentDAO.deleteCommentById(comment_id);
     }
 }

@@ -31,7 +31,7 @@ public class UserService {
         return getUserType;
     }
 
-    public boolean deleteAnUser(String userName) throws SQLException {
+    public boolean deleteAnUser(String userName) throws Exception {
         return userDAO.deleteAnUser(userName);
     }
 

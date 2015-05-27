@@ -49,7 +49,7 @@
             <div style="text-align: center;" class="animated slideInDown">
                 <h1><b>Here's the result, Administrator</b></h1>
             </div>
-            <form action="admin_panel_result.jsp" method="post">
+            <form action="admin_panel_result.jsp" method="post" name="admin_panel_result" id="admin_panel_result">
                 <%
                     LinkedList<User> userList = (LinkedList<User>)request.getAttribute("users");
                     if(userList == null){
@@ -128,7 +128,7 @@
                 <div class="inner-addon left-addon col-md-4">
                     <i class="glyphicon glyphicon-user"></i>
                     <input type="text" id="delete_user_record" name="deleteUserRecord"
-                           class="form-control" form="execute_form" placeholder="Enter an user name"/>
+                           class="form-control" form="execute_form" placeholder="User name?"/>
                 </div>
                 <div class="col-md-4">
                     <input type="submit" class="btn btn-warning btn-lg" name="deleteUserAction" value="Delete User" onclick="return deleteUserValidate()"/>
@@ -139,13 +139,12 @@
             <!-- UPDATE USER PROFILE -->
             <div style="text-align: center;">
                 <h2><b>Update User Profile</b></h2><br/>
-                <h4><b>Which user need to be updated?</b></h4>
             </div>
             <div class="container">
                 <div class="col-md-4"></div>
                 <div class="inner-addon left-addon col-md-4">
                     <i class="glyphicon glyphicon-user"></i>
-                    <input type="text" class="form-control" id="user_name" name="userName" form="execute_form" placeholder="User Name"/>
+                    <input type="text" class="form-control" id="user_name" name="userName" form="execute_form" placeholder="User Name?"/>
                 </div>
                 <div class="col-md-4"></div>
             </div>
@@ -456,7 +455,7 @@
             </div>
             <br/><br/>
 
-            <!-- UPDATE A POST -->
+            <!-- DELETE A POST -->
             <div style="text-align: center;">
                 <h2><b>Delete A Post</b></h2><br/>
                 <h4><b>Enter the post id to delete a post:</b></h4>
@@ -467,14 +466,55 @@
                 <div class="inner-addon left-addon col-md-4">
                     <i class="glyphicon glyphicon-file"></i>
                     <input type="text" id="delete_post_record" name="deletePostRecord"
-                           class="form-control" form="execute_form" placeholder="Enter a post id"/>
+                           class="form-control" form="execute_form" placeholder="Post ID?"/>
                 </div>
                 <div class="col-md-4">
                     <input type="submit" class="btn btn-warning btn-lg" name="deletePostAction" value="Delete Post" onclick="return deletePostValidate()"/>
                 </div>
             </div>
+
+            <!-- UPDATE A POST -->
+            <div style="text-align: center;">
+                <h2><b>Update A Post</b></h2><br/>
+                <div class="container">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="searchPostId" form="execute_form" placeholder="Post ID?"/>
+                            <input type="hidden" class="form-control" name="thisPostId" value="<%=request.getAttribute("selectedPostId")%>" form="execute_form"/>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="btn btn-default btn-lg" type="submit" name="searchPostAction" value="Get This Post" form="execute_form"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+            <br/>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <label>New Post Title
+                        <input type="text" class="form-control" name="newPostTitle" value="<%=request.getAttribute("selectedPostTitle")%>" form="execute_form"/>
+                    </label>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <label>New Post Body
+                        <textarea class="form-control" name="newPostBody" cols="60" rows="10" form="execute_form"><%=request.getAttribute("selectedPostBody")%></textarea>
+                    </label>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <br/>
+            <div class="container" style="text-align: center;">
+                <input type="submit" class="btn btn-warning btn-lg" name="updatePostAction" value="Update This Post" form="execute_form"/>
+            </div>
+            <br/><br/>
         </form>
-        <br/><br/>
 
         <div class="container" style="text-align: center;">
             <a href="admin_panel.jsp" class="btn btn-primary btn-lg" role="button">Go Back To Panel</a>
