@@ -119,47 +119,47 @@
 
 
     <div id="nav">
-    <nav class="navbar">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
-                style="position:absolute; top:15px; left:15px; width:160px; height:60px;"/>
-                </a>
-                <a id="hone_hone_clock_bg"></a>
-                <a id="hone_hone_clock">
-                    <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
-                </a>
-                <br/>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#navbar-collapse-3">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar" style="background:white"></span>
-                    <span class="icon-bar" style="background:white"></span>
-                    <span class="icon-bar" style="background:white"></span>
-                </button>
+        <nav class="navbar">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
+                    style="position:absolute; top:15px; left:15px; width:160px; height:60px;"/>
+                    </a>
+                    <a id="hone_hone_clock_bg"></a>
+                    <a id="hone_hone_clock">
+                        <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
+                    </a>
+                    <br/>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navbar-collapse-3">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar" style="background:white"></span>
+                        <span class="icon-bar" style="background:white"></span>
+                        <span class="icon-bar" style="background:white"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-3">
+                    <ul class="nav navbar-nav navbar-right" id="nav_list">
+                        <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown" style="color: #ffffff;"><b> Config my profile</b></i></a></li>
+                        <li><a href="user_change_pwd.jsp"><i class="fa fa-eye animated fadeInDown" style="color: #ffffff;"><b> Change Password</b></i></a></li>
+                        <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
+                        <li><a href="main.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff;"><b> Log Out</b></i></a></li>
+                </ul>
+                </div><!-- /.navbar-collapse -->
             </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-3">
-                <ul class="nav navbar-nav navbar-right" id="nav_list">
-                    <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown" style="color: #ffffff;"><b> Config my profile</b></i></a></li>
-                    <li><a href="user_change_pwd.jsp"><i class="fa fa-eye animated fadeInDown" style="color: #ffffff;"><b> Change Password</b></i></a></li>
-                    <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
-                    <li><a href="main.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff;"><b> Log Out</b></i></a></li>
-            </ul>
-            </div><!-- /.navbar-collapse -->
-        </div>
-        <div class="container">
-            <div class="col-md-9"></div>
-            <div class="col-md-3">
-                <div class="input-group">
-                    <input type="text" class="form-control" name="fuzzySearchBlog" form="home_control" placeholder="Search for blog posts..."/>
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="home_control" onclick="return SearchBlogValidate()"><i class="fa fa-search"></i></button>
-                      </span>
-                </div><!-- /input-group -->
+            <div class="container">
+                <div class="col-md-9"></div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="fuzzySearchBlog" form="home_control" placeholder="Search for blog posts..."/>
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="home_control" onclick="return SearchBlogValidate()"><i class="fa fa-search"></i></button>
+                          </span>
+                    </div><!-- /input-group -->
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     </div>
 
     <div class="container-fluid"><br/><br/>
@@ -167,31 +167,8 @@
                href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>-->
 
         <!--LEFT COLUMN, USERS LIST-->
-        <form action="home.jsp" method="post">
-            <div class="container col-md-3 animated bounceInLeft">
-                <div class="well" id="user_list">
-                    <h4>Welcome back, <%=currentUserName %>!</h4>
-                    <br/>
-                    <table>
-                        <tr>
-                            <th>Our Users:</th>
-                        </tr>
-                        <%
-                            for(User user : userList) {
-                                if(user.getUserType().equals("Administrator")){
-                                    continue;
-                                }
-                        %>
-                        <tbody align="center" valign="middle">
-                        <tr>
-                            <td><%= user.getUserName() %></td>
-                        </tr>
-                        </tbody><%}%>
-                    </table>
-                </div>
-            </div>
-
-            <div class="container col-md-6">
+        <div class="col-md-9">
+            <form action="home.jsp" method="post">
                 <!-- BLOG POSTS -->
                 <div id="all_posts">
                     <%
@@ -201,38 +178,36 @@
                             if(i>10)
                                 break;
                     %>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div id="post_list">
-                                    <div class="panel">
-                                        <div class="panel-heading">
-                                            <div class="text-center">
-                                                <div class="row">
-                                                    <div class="col-sm-9">
-                                                        <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <h4 class="pull-right">
-                                                            <small><em><%= post.getDate() %><br></em></small>
-                                                        </h4>
-                                                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="post_list">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <div class="text-center">
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <h4 class="pull-right">
+                                                        <small><em><%= post.getDate() %><br></em></small>
+                                                    </h4>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel-body">
-                                            <%= post.getBody() %>
-                                            <!-- COMMENT BOX -->
-                                            <hr/>
-                                            <div>
-                                                <div><p>Comments:</p>
-                                                    <%for(Comment comment : commentLinkedList) {%>
-                                                    <%= comment.getCommentBody()%><br/><%}%>
-                                                    <hr/>
-                                                    <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
-                                                    <p></p>
-                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
-                                                </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <%= post.getBody() %>
+                                        <!-- COMMENT BOX -->
+                                        <hr/>
+                                        <div>
+                                            <div><p>Comments:</p>
+                                                <%for(Comment comment : commentLinkedList) {%>
+                                                <%= comment.getCommentBody()%><br/><%}%>
+                                                <hr/>
+                                                <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
+                                                <p></p>
+                                                <button type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                             </div>
                                         </div>
                                     </div>
@@ -252,43 +227,54 @@
                     </script>
                     <button type="submit" name="sendBlogAction" value="Send This Blog" form="home_control" class="btn btn-primary" onclick="return SendBlogValidate()"><i class="fa fa-share"></i> Publish</button>
                 </div>
-            </div>
-        </form>
-        <br/><br/><br/><br/>
-
-        <form action="/blog/HomeControl" method="post" name="home_control" id="home_control">
-            <%session.setAttribute("blogUserName", currentUserName);%>
-
-            <!--
-            <select name="category">
-                <option value=""></option>
-                <option value="life">life</option>
-                <option value="education">education</option>
-                <option value="animal">animal</option>
-            </select>
-            -->
-
-        </form>
-        <!-- RIGHT COLUMN, FLASH GAME -->
-        <div class="container col-md-3 animated bounceInRight">
-
+            </form>
         </div>
-            <!--
-            <b>Date:</b>
-            <label>
-                <input type="date" name="date"/>
-            </label>
-            -->
-        <a id="hamster">
-            <object type="application/x-shockwave-flash" style="outline:none;"
-                    data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="263"
-                    height="197"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
-                <param name="AllowScriptAccess" value="always">
-                <param name="wmode" value="opaque">
-            </object>
-        </a>
+
+        <!-- RIGHT COLUMN, USER LIST, FLASH GAME -->
+        <div class="col-md-3 animated bounceInRight">
+            <div class="well" id="user_list">
+                <h4>Welcome back, <%=currentUserName %>!</h4>
+                <br/>
+                <table>
+                    <tr>
+                        <th>Our Users:</th>
+                    </tr>
+                    <%
+                        for(User user : userList) {
+                            if(user.getUserType().equals("Administrator")){
+                                continue;
+                            }
+                    %>
+                    <tbody align="center" valign="middle">
+                    <tr>
+                        <td><%= user.getUserName() %></td>
+                    </tr>
+                    </tbody><%}%>
+                </table>
+            </div>
+        </div>
     </div>
 
+    <form action="/blog/HomeControl" method="post" name="home_control" id="home_control">
+        <%session.setAttribute("blogUserName", currentUserName);%>
+        <!--
+        <select name="category">
+            <option value=""></option>
+            <option value="life">life</option>
+            <option value="education">education</option>
+            <option value="animal">animal</option>
+        </select>
+        -->
+    </form>
+
+    <a id="hamster">
+        <object type="application/x-shockwave-flash" style="outline:none;"
+                data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="263"
+                height="197"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
+            <param name="AllowScriptAccess" value="always">
+            <param name="wmode" value="opaque">
+        </object>
+    </a>
 
 <script language="JavaScript">
     /**

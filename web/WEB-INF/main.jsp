@@ -151,33 +151,9 @@
     <!-- /.navbar -->
     </div>
 
-    <div class="container-fluid "><br/><br/>
-        <!--LEFT COLUMN, USERS LIST-->
-        <form action="main.jsp" method="post">
-            <div class="container col-md-3 animated bounceInLeft">
-                <div class="well" id="user_list">
-                    <h4>Welcome!</h4>
-                    <br/>
-                    <table>
-                        <tr>
-                            <th>Our Users:</th>
-                        </tr>
-                        <%
-                            for(User user : userList) {
-                                if(user.getUserType().equals("Administrator")){
-                                    continue;
-                                }
-                        %>
-                        <tbody align="center" valign="middle">
-                        <tr>
-                            <td><%= user.getUserName() %></td>
-                        </tr>
-                        </tbody><%}%>
-                    </table>
-                </div>
-            </div>
-
-            <div class="container col-md-6">
+    <div class="container-fluid"><br/><br/>
+        <div class="col-md-9">
+            <form action="main.jsp" method="post">
                 <!-- BLOG POSTS -->
                 <div id="all_posts">
                     <%
@@ -187,38 +163,36 @@
                             if(i>10)
                                 break;
                     %>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div id="post_list">
-                                    <div class="panel">
-                                        <div class="panel-heading">
-                                            <div class="text-center">
-                                                <div class="row">
-                                                    <div class="col-sm-9">
-                                                        <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <h4 class="pull-right">
-                                                            <small><em><%= post.getDate() %><br></em></small>
-                                                        </h4>
-                                                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="post_list">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <div class="text-center">
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <h4 class="pull-right">
+                                                        <small><em><%= post.getDate() %><br></em></small>
+                                                    </h4>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel-body">
-                                            <%= post.getBody() %>
-                                            <!-- COMMENT BOX -->
-                                            <hr/>
-                                            <div>
-                                                <div><p><b>Comments:</b></p>
-                                                    <%for(Comment comment : commentLinkedList) {%>
-                                                    <%= comment.getCommentBody()%><br/><%}%>
-                                                    <hr/>
-                                                    <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="main_control" ></textarea>
-                                                    <p></p>
-                                                    <button type="submit" name="sentCommentAction" value="Send Comment" form="main_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
-                                                </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <%= post.getBody() %>
+                                        <!-- COMMENT BOX -->
+                                        <hr/>
+                                        <div>
+                                            <div><p><b>Comments:</b></p>
+                                                <%for(Comment comment : commentLinkedList) {%>
+                                                <%= comment.getCommentBody()%><br/><%}%>
+                                                <hr/>
+                                                <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="main_control" ></textarea>
+                                                <p></p>
+                                                <button type="submit" name="sentCommentAction" value="Send Comment" form="main_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                             </div>
                                         </div>
                                     </div>
@@ -228,11 +202,34 @@
                     </div>
                     <br/><%}%>
                 </div>
+            </form>
+        </div>
+
+        <!-- RIGHT COLUMN, USER LIST, FLASH GAME -->
+        <div class="col-md-3 animated bounceInRight">
+            <div class="well" id="user_list">
+                <h4>Welcome!</h4>
+                <br/>
+                <table>
+                    <tr>
+                        <th>Our Users:</th>
+                    </tr>
+                    <%
+                        for(User user : userList) {
+                            if(user.getUserType().equals("Administrator")){
+                                continue;
+                            }
+                    %>
+                    <tbody align="center" valign="middle">
+                    <tr>
+                        <td><%= user.getUserName() %></td>
+                    </tr>
+                    </tbody><%}%>
+                </table>
             </div>
-        </form>
+        </div>
 
         <form action="/blog/MainControl" method="post" name="main_control" id="main_control">
-
             <!--
             <select name="category">
                 <option value=""></option>
@@ -241,18 +238,8 @@
                 <option value="animal">animal</option>
             </select>
             -->
-
         </form>
-        <!--RIGHT COLUMN, FLASH GAME -->
-        <div class="container col-md-3 animated bounceInRight">
 
-        </div>
-            <!--
-            <b>Date:</b>
-            <label>
-                <input type="date" name="date"/>
-            </label>
-            -->
         <a id="hamster">
             <object type="application/x-shockwave-flash" style="outline:none;"
                     data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="263"
@@ -262,7 +249,6 @@
             </object>
         </a>
     </div>
-</div>
 
 <script language="JavaScript">
     function SearchBlogValidate() {
