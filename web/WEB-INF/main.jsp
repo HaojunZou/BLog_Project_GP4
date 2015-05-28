@@ -113,7 +113,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="main.jsp"><img src="img/logo-white.png"
-                style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
+                style="position:absolute; top:15px; left:15px; width:160px; height:60px;"/>
                 <a id="hone_hone_clock_bg"></a>
                 <a id="hone_hone_clock">
                     <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>

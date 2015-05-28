@@ -55,7 +55,7 @@
 
         <div>
             <a class="navbar-brand" style="font-size:40" href="main.jsp">
-                <img src="img/logo-white.png" style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
+                <img src="img/logo-white.png" style="position:absolute; top:15px; left:15px; width:160px; height:60px;"/>
             </a><br/>
         </div>
 

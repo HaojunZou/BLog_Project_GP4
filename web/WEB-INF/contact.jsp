@@ -69,7 +69,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="main.jsp"><img src="img/logo-white.png"
-                                                             style="position:absolute; top:5px; left:5px; width:160px; height:60px;"/>
+                style="position:absolute; top:15px; left:15px; width:160px; height:60px;"/>
                 </a><br/>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#navbar-collapse-3">
