@@ -21,6 +21,14 @@ public class UserService {
         return userDAO.getUserByFuzzySearch(fuzzy);
     }
 
+    public User getUserByUserName(String userName) throws SQLException{
+        return userDAO.getUserByUserName(userName);
+    }
+
+    public int getUserIdByUserName(String userName) throws SQLException{
+        return userDAO.getUserIdByUserName(userName);
+    }
+
     public int logIn(String userName, String userPassword) throws SQLException {
         String userType = userDAO.logIn(userName, userPassword);
         int getUserType;
@@ -56,5 +64,9 @@ public class UserService {
 
     public boolean isLogged(String currentUserName){
         return currentUserName != null;
+    }
+
+    public String [] getUserInfoByName(String userName) throws SQLException{
+        return userDAO.getUserInfoByName(userName);
     }
 }

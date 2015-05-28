@@ -24,7 +24,7 @@
 <head lang="en">
     <base href="<%=basePath%>">
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Main</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -95,11 +95,6 @@
             background-color: #ffffff;
             box-shadow: 0 0 10px 5px #ffffff;
         }
-        #hamster{
-            position: fixed;
-            bottom: 0;
-            right: 0;
-        }
 
     </style>
 
@@ -107,54 +102,53 @@
 <body background="img/bg-light-purple.jpg">
 
     <div id="nav">
-    <nav class="navbar">
-        <div class="container col-md-12">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="main.jsp"><img src="img/logo-white.png"
-                style="position:absolute; top:15px; left:15px; width:160px; height:60px;"/>
-                <a id="hone_hone_clock_bg"></a>
-                <a id="hone_hone_clock">
-                    <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
-                </a>
-                </a><br/>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#navbar-collapse-3">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar" style="background:white"></span>
-                    <span class="icon-bar" style="background:white"></span>
-                    <span class="icon-bar" style="background:white"></span>
-                </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbar-collapse-3">
-                <ul class="nav navbar-nav navbar-right" id="nav_list">
-                    <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Contact</b></i></a></li>
-                    <li><a href="login.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Log In</b></i></a></li>
-                </ul>
-
-            </div>
-            <!-- /.navbar-collapse -->
+        <nav class="navbar">
             <div class="container col-md-12">
-            <div class="col-md-10"></div>
-            <div class="col-md-2">
-                <div class="input-group " style="padding-top: 20px; padding-right: 15px;">
-                    <input type="text" class="form-control" name="fuzzySearchBlog" form="main_control" placeholder="Search for blog posts or users..."/>
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="main_control" onclick="return SearchBlogValidate()"><i class="fa fa-search"></i></button>
-                      </span>
-                </div><!-- /input-group -->
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="main.jsp"><img src="img/logo-white.png"
+                    style="position:absolute; top:15px; left:15px; width:160px; height:60px;"/>
+                    <a id="hone_hone_clock_bg"></a>
+                    <a id="hone_hone_clock">
+                        <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
+                    </a>
+                    </a><br/>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navbar-collapse-3">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar" style="background:white"></span>
+                        <span class="icon-bar" style="background:white"></span>
+                        <span class="icon-bar" style="background:white"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse-3">
+                    <ul class="nav navbar-nav navbar-right" id="nav_list">
+                        <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Contact</b></i></a></li>
+                        <li><a href="login.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Log In</b></i></a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+                <div class="container col-md-12">
+                    <div class="col-md-10"></div>
+                    <div class="col-md-2">
+                        <div class="input-group ">
+                            <input type="text" class="form-control" name="fuzzySearchBlog" form="main_control" placeholder="Search for blog posts..."/>
+                              <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="main_control" onclick="return SearchBlogValidate()"><i class="fa fa-search"></i></button>
+                              </span>
+                        </div><!-- /input-group -->
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
-        <!-- /.container -->
-    </nav>
-    <!-- /.navbar -->
+            <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
     </div>
 
     <div class="container-fluid"><br/><br/>
         <div class="col-md-9">
-            <form action="main.jsp" method="post">
+            <form action="main.jsp" method="post" onSubmit="return checkLength(this)">
                 <!-- BLOG POSTS -->
                 <div id="all_posts">
                     <%
@@ -212,9 +206,6 @@
                 <h4>Welcome!</h4>
                 <br/>
                 <table>
-                    <tr>
-                        <th>Our Users:</th>
-                    </tr>
                     <%
                         for(User user : userList) {
                             if(user.getUserType().equals("Administrator")){
@@ -230,7 +221,7 @@
             </div>
         </div>
 
-        <form action="/blog/MainControl" method="post" name="main_control" id="main_control">
+        <form action="/blog/MainControl" method="post" name="main_control" id="main_control" onSubmit="return checkLength(this)">
             <!--
             <select name="category">
                 <option value=""></option>
@@ -241,14 +232,6 @@
             -->
         </form>
 
-        <a id="hamster">
-            <object type="application/x-shockwave-flash" style="outline:none;"
-                    data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="263"
-                    height="197"><param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
-                <param name="AllowScriptAccess" value="always">
-                <param name="wmode" value="opaque">
-            </object>
-        </a>
     </div>
 
 <script language="JavaScript">
@@ -265,6 +248,17 @@
             document.main_control.commentBody.focus();
             return false;
         }
+    }
+    function checkLength(form){
+        if (form.fuzzySearchBlog.value.length > 100){
+            alert("Text too long. Must be 100 characters or less");
+            return false;
+        }
+        if (form.commentBody.value.length > 200){
+            alert("Text too long. Must be 200 characters or less");
+            return false;
+        }
+        return true;
     }
 
 </script>

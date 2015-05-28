@@ -183,7 +183,6 @@
 </head>
 <body background="img/bg-light-purple.jpg">
 
-
     <div id="nav">
         <nav class="navbar">
             <div class="container col-md-12">
@@ -207,8 +206,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse-3">
                     <ul class="nav navbar-nav navbar-right" id="nav_list">
-                        <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Config my profile</b></i></a></li>
-                        <li><a href="user_change_pwd.jsp"><i class="fa fa-eye animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Change Password</b></i></a></li>
+                        <li><a href="user_profile.jsp"><i class="fa fa-cog animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> My Profile</b></i></a></li>
                         <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Contact</b></i></a></li>
                         <li><a href="main.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Log Out</b></i></a></li>
                 </ul>
@@ -234,7 +232,7 @@
 
         <!--LEFT COLUMN, USERS LIST-->
         <div class="col-md-9">
-            <form action="home.jsp" method="post">
+            <form action="home.jsp" method="post" onSubmit="return checkLength(this)">
                 <!-- BLOG POSTS -->
                 <div id="all_posts">
                     <%
@@ -273,7 +271,7 @@
                                                 <hr/>
                                                 <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
                                                 <p></p>
-                                                <button style= "padding-top: -10px;"type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
+                                                <button style= "padding-top: -10px;" type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                             </div>
                                         </div>
                                     </div>
@@ -303,9 +301,6 @@
                 <h4>Welcome back, <%=currentUserName %>!</h4>
                 <br/>
                 <table>
-                    <tr>
-                        <th>Our Users:</th>
-                    </tr>
                     <%
                         for(User user : userList) {
                             if(user.getUserType().equals("Administrator")){
@@ -322,7 +317,7 @@
         </div>
     </div>
 
-    <form action="/blog/HomeControl" method="post" name="home_control" id="home_control">
+    <form action="/blog/HomeControl" method="post" name="home_control" id="home_control" onSubmit="return checkLength(this)">
         <%session.setAttribute("blogUserName", currentUserName);%>
         <!--
         <select name="category">
@@ -352,35 +347,54 @@
         });
     });
 
-    /**
- * @return {boolean}
- */
-function SearchBlogValidate() {
-        if (document.home_control.fuzzySearchBlog.value==""){
-            alert("Nothing found!");
-            document.home_control.fuzzySearchBlog.focus();
+        /**
+     * @return {boolean}
+     */
+    function SearchBlogValidate() {
+            if (document.home_control.fuzzySearchBlog.value==""){
+                alert("Nothing found!");
+                document.home_control.fuzzySearchBlog.focus();
+                return false;
+            }
+        }
+        /**
+     * @return {boolean}
+     */
+    function SendBlogValidate(){
+            if (document.home_control.blogTitle.value==""){
+                alert("Please enter a title!");
+                document.home_control.blogTitle.focus();
+                return false;
+            }
+        }
+        /**
+     * @return {boolean}
+     */
+    function SendCommentValidate(){
+            if (document.home_control.commentBody.value==""){
+                alert("Please enter comment!");
+                document.home_control.commentBody.focus();
+                return false;
+            }
+        }
+    function checkLength(form){
+        if (form.fuzzySearchBlog.value.length > 100){
+            alert("Text too long. Must be 100 characters or less");
             return false;
         }
-    }
-    /**
- * @return {boolean}
- */
-function SendBlogValidate(){
-        if (document.home_control.blogTitle.value==""){
-            alert("Please enter a title!");
-            document.home_control.blogTitle.focus();
+        if (form.commentBody.value.length > 200){
+            alert("Text too long. Must be 200 characters or less");
             return false;
         }
-    }
-    /**
- * @return {boolean}
- */
-function SendCommentValidate(){
-        if (document.home_control.commentBody.value==""){
-            alert("Please enter comment!");
-            document.home_control.commentBody.focus();
+        if (form.blogTitle.value.length > 100){
+            alert("Text too long. Must be 100 characters or less");
             return false;
         }
+        if (form.blogBody.value.length > 2000){
+            alert("Text too long. Must be 2000 characters or less");
+            return false;
+        }
+        return true;
     }
 
 </script>

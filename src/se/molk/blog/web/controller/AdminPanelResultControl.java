@@ -20,11 +20,10 @@ public class AdminPanelResultControl extends HttpServlet {
 
         UserDAO user = null;
         PostDAO post = null;
-        Post selectedPost = null;
+        Post selectedPost;
         try {
             user = new UserDAO();
             post = new PostDAO();
-            selectedPost = new Post();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -33,7 +33,7 @@ public class UserUpdateProfileControl extends HttpServlet {
         try {
             boolean profileUpdated = userService.updateUserInfo(currentUserName, realName, gender, birthday, country);
             if(profileUpdated){
-                response.sendRedirect("/blog/user_profile_executed.html");
+                response.sendRedirect("/blog/user_profile_updated.html");
             }else {
                 out.print(
                         "<script type='text/javascript'>" +

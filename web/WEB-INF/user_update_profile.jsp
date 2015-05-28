@@ -335,7 +335,7 @@
             <br/><br/><br/>
             <div class="container" style="text-align: center;">
                 <input type="submit" class="btn btn-success btn-lg animated slideInUp" value="Update Profile" form="update_profile"/>
-                <a href="home.jsp" class="btn btn-info btn-lg animated slideInUp" role="button">Back To Home</a>
+                <a href="user_profile.jsp" class="btn btn-info btn-lg animated slideInUp" role="button">Back</a>
             </div>
         </form>
 

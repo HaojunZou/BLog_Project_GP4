@@ -8,9 +8,13 @@
           <element id="library" level="application" name="jquery" />
           <element id="library" level="application" name="bootstrap" />
           <element id="library" level="application" name="ckeditor" />
+          <element id="library" level="application" name="honehone_clock_wh" />
+          <element id="library" level="application" name="honehone_clock_tr" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="lib" />
+          <element id="file-copy" path="C:/Program Files/Apache Software Foundation/Tomcat 8.0/webapps/junit-4.7.jar" />
+          <element id="library" level="module" name="JUnit4" module-name="Blog_Project_GP4" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="Blog_Project_GP4/web/Web" />

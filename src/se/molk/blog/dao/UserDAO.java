@@ -89,7 +89,38 @@ public class UserDAO {
         try{
             String userSearchQuery = "select * from Users where user_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(userSearchQuery);
-            preparedStatement.setString(1, Integer.toString(user_id));
+            preparedStatement.setInt(1, user_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                user = new User();
+                user.setUserId(resultSet.getInt("user_id"));
+                user.setUserType(resultSet.getString("userType"));
+                user.setUserName(resultSet.getString("userName"));
+                user.setEmail(resultSet.getString("email"));
+                user.setUserPassword(resultSet.getString("userPassword"));
+                user.setRealName(resultSet.getString("realName"));
+                user.setGender(resultSet.getString("gender"));
+                user.setBirthday(resultSet.getString("birthday"));
+                user.setCountry(resultSet.getString("country"));
+                userList.add(user);
+            }
+            preparedStatement.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            connection.close();
+        }
+        return user;
+    }
+
+    public User getUserByUserName(String userName) throws SQLException {
+        List<User> userList = new LinkedList<User>();
+        User user = null;
+        Connection connection = DriverManager.getConnection(url, dbUserName, dbPassword);
+        try{
+            String userSearchQuery = "select * from Users where userName = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(userSearchQuery);
+            preparedStatement.setString(1, userName);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 user = new User();

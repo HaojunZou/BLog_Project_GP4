@@ -121,7 +121,7 @@
             </form>
         </div>
 
-        <form action="/blog/AdminPanelResultControl" method="post" name="execute_form" id="execute_form">
+        <form action="/blog/AdminPanelResultControl" method="post" name="execute_form" id="execute_form" onsubmit="return checkLength(this)">
             <!-- DELETE USER-->
             <div style="text-align: center;">
                 <h2><b>Delete An User</b></h2><br/>
@@ -474,7 +474,7 @@
                 <div class="col-md-4">
                     <div class="inner-addon left-addon col-md-6">
                         <i class="glyphicon glyphicon-file"></i>
-                        <input type="text" id="delete_post_record" name="deletePostRecord"
+                        <input type="number" id="delete_post_record" name="deletePostRecord" min="1" max="999999999"
                                class="form-control" form="execute_form" placeholder="Post ID?"/>
                     </div>
                     <div class="col-md-6">
@@ -492,7 +492,7 @@
                     <div class="col-md-4">
                         <div class="inner-addon left-addon col-md-6">
                             <i class="glyphicon glyphicon-file"></i>
-                            <input type="text" class="form-control" name="searchPostId" form="execute_form" placeholder="Post ID?"/>
+                            <input type="number" class="form-control" name="searchPostId" form="execute_form"  min="1" max="999999999" placeholder="Post ID?"/>
                             <input type="hidden" class="form-control" name="thisPostId" value="<%= selectedPost.getId() %>" form="execute_form"/>
                         </div>
                         <div class="col-md-6">
@@ -504,8 +504,7 @@
             </div>
             <br/>
             <div class="container">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label>New Post Title
                         <textarea class="form-control" name="newPostTitle" form="execute_form"><%= selectedPost.getTitle() %></textarea>
                     </label>
@@ -513,11 +512,7 @@
                         CKEDITOR.replace("newPostTitle");
                     </script>
                 </div>
-                <div class="col-md-4"></div>
-            </div>
-            <div class="container">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label>New Post Body
                         <textarea class="form-control" name="newPostBody" cols="60" rows="10" form="execute_form"><%= selectedPost.getBody() %></textarea>
                     </label>
@@ -525,7 +520,6 @@
                         CKEDITOR.replace("newPostBody");
                     </script>
                 </div>
-                <div class="col-md-4"></div>
             </div>
             <br/>
             <div class="container" style="text-align: center;">
@@ -567,6 +561,17 @@
                     document.execute_form.searchPostId.focus();
                     return false;
                 }
+            }
+            function checkLength(form){
+                if (form.newPostTitle.value.length > 100){
+                    alert("Text too long. Must be 100 characters or less");
+                    return false;
+                }
+                if (form.newPostBody.value.length > 2000){
+                    alert("Text too long. Must be 2000 characters or less");
+                    return false;
+                }
+                return true;
             }
         </script>
 
