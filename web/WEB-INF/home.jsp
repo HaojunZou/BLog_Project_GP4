@@ -111,6 +111,72 @@
             text-align: center;
             padding: 5px;
         }
+        .breath {
+            right:0;
+            margin:20px auto;
+            text-indent:-999em;
+            height:4px;
+            line-height: 4px;
+            width: 700px;
+            overflow:hidden;
+            background: #99dd33;
+            color: #fff;
+            opacity:0.1;
+            -webkit-box-shadow: 0 0 5px #99dd33;
+            -moz-box-shadow: 0 0 5px #99dd33;
+            -ms-box-shadow: 0 0 5px #99dd33;
+            -o-box-shadow: 0 0 5px #99dd33;
+            box-shadow: 0 0 5px #99dd33;
+            -webkit-border-radius:2px;
+            -moz-border-radius:2px;
+            -ms-border-radius:2px;
+            -o-border-radius:2px;
+            border-radius:2px;
+            -webkit-animation-name: breath;
+            -webkit-animation-duration: 6s;     /* breath duration */
+            -webkit-animation-timing-function: ease-in-out;
+            -webkit-animation-iteration-count: infinite;
+        }
+        @-webkit-keyframes 'breath' {
+        from {
+            opacity:0.1;
+        }
+        50% {
+            opacity:1;
+        }
+        to {
+            opacity:0.1;
+        }
+        }
+        @-webkit-keyframes 'breath2' {
+        from {
+            opacity:0.5;
+        }
+        50% {
+            opacity:1;
+        }
+        to {
+            opacity:0.5;
+        }
+        }
+        .size2{
+            position: fixed;
+            bottom: 180px;
+            right: 0;
+            width:100px;
+            height:30px;
+            line-height:25px;
+            text-indent:0;
+            background:orange;
+            text-align:center;
+            text-shadow:1px 1px 3px #333;
+            -webkit-box-shadow:0 0 5px orange;
+            -moz-box-shadow: 0 0 5px orange;
+            -ms-box-shadow: 0 0 5px orange;
+            -o-box-shadow: 0 0 5px orange;
+            box-shadow: 0 0 5px orange;
+            -webkit-animation-name: breath2;
+        }
 
     </style>
 
@@ -217,6 +283,7 @@
                     </div>
                     <br/><%}%>
                 </div>
+                <div class="breath">line</div>
 
                 <div id="blog_editor">
                     <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/>
@@ -267,6 +334,8 @@
         -->
     </form>
 
+    <div class="breath size2" id="show_hamster">My Hamster</div>
+
     <a id="hamster">
         <object type="application/x-shockwave-flash" style="outline:none;"
                 data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="263"
@@ -277,6 +346,12 @@
     </a>
 
 <script language="JavaScript">
+    $(document).ready(function(){
+        $("#show_hamster").click(function(){
+            $("#hamster").toggle();
+        });
+    });
+
     /**
  * @return {boolean}
  */
