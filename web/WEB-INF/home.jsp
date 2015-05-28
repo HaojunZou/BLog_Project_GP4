@@ -61,17 +61,17 @@
         .left-addon input  { padding-left:  30px; }
         .right-addon input { padding-right: 30px; }
 
-        #nav {
+        /*#nav {
             background-color: #102444;;
             color: white;
             height: 90px;
             left: 0;
             right: 0;
             box-shadow: 0 0 20px 10px #102444;
-        }
+        }*/
         #nav_list a:hover{
-            background-color: #339fff;
-            box-shadow: 0 0 20px 10px #339fff;
+            background-color: #f06fff;
+            box-shadow: 0 0 20px 10px #f06fff;
             color: #fff;
             bottom: 5px;
             height: 45px;
@@ -104,8 +104,8 @@
             right: 0;
         }
         #blog_editor {
-            background-color: #102444;
-            box-shadow: 0 0 10px 5px #102444;
+            /*background-color: #b353c9;
+            box-shadow: 0 0 10px 5px #b353c9;*/
             color: white;
             clear: both;
             text-align: center;
@@ -115,7 +115,7 @@
     </style>
 
 </head>
-<body background="img/bg-water.jpg">
+<body background="img/bg-light-purple.jpg">
 
 
     <div id="nav">
@@ -219,7 +219,7 @@
                 </div>
 
                 <div id="blog_editor">
-                    <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/><br/>
+                    <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/>
                     <textarea name="blogBody" id="blogBody" form="home_control">Write blog here...<br/><br/><br/>
                         <textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
                     <script>

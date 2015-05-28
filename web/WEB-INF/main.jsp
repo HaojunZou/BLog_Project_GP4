@@ -58,18 +58,17 @@
         /* add padding  */
         .left-addon input  { padding-left:  30px; }
         .right-addon input { padding-right: 30px; }
-
-        #nav {
+        /*#nav {
             background-color: #102444;;
             color: white;
             height: 90px;
             left: 0;
             right: 0;
             box-shadow: 0 0 20px 10px #102444;
-        }
+        }*/
         #nav_list a:hover{
-            background-color: #339fff;
-            box-shadow: 0 0 20px 10px #339fff;
+            background-color: #f06fff;
+            box-shadow: 0 0 20px 10px #f06fff;
             color: #fff;
             bottom: 5px;
             height: 45px;
@@ -105,7 +104,7 @@
     </style>
 
 </head>
-<body background="img/bg-water.jpg">
+<body background="img/bg-light-purple.jpg">
 
     <div id="nav">
     <nav class="navbar">

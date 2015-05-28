@@ -62,7 +62,7 @@
     </style>
 </head>
 
-<body background="img/bg-water.jpg">
+<body background="img/bg-grey.jpg">
 <div class="container-fluid">
     <nav class="navbar">
         <div class="container">
