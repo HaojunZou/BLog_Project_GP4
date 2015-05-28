@@ -100,72 +100,6 @@
             bottom: 0;
             right: 0;
         }
-        .breath {
-            right:0;
-            margin:20px auto;
-            text-indent:-999em;
-            height:4px;
-            line-height: 4px;
-            width: 700px;
-            overflow:hidden;
-            background: #99dd33;
-            color: #fff;
-            opacity:0.1;
-            -webkit-box-shadow: 0 0 5px #99dd33;
-            -moz-box-shadow: 0 0 5px #99dd33;
-            -ms-box-shadow: 0 0 5px #99dd33;
-            -o-box-shadow: 0 0 5px #99dd33;
-            box-shadow: 0 0 5px #99dd33;
-            -webkit-border-radius:2px;
-            -moz-border-radius:2px;
-            -ms-border-radius:2px;
-            -o-border-radius:2px;
-            border-radius:2px;
-            -webkit-animation-name: breath;
-            -webkit-animation-duration: 6s;     /* breath duration */
-            -webkit-animation-timing-function: ease-in-out;
-            -webkit-animation-iteration-count: infinite;
-        }
-        @-webkit-keyframes 'breath' {
-            from {
-                opacity:0.1;
-            }
-            50% {
-                opacity:1;
-            }
-            to {
-                opacity:0.1;
-            }
-        }
-        @-webkit-keyframes 'breath2' {
-            from {
-                opacity:0.5;
-            }
-            50% {
-                opacity:1;
-            }
-            to {
-                opacity:0.5;
-            }
-        }
-        .size2{
-            position: fixed;
-            bottom: 180px;
-            right: 0;
-            width:100px;
-            height:30px;
-            line-height:25px;
-            text-indent:0;
-            background:orange;
-            text-align:center;
-            text-shadow:1px 1px 3px #333;
-            -webkit-box-shadow:0 0 5px orange;
-            -moz-box-shadow: 0 0 5px orange;
-            -ms-box-shadow: 0 0 5px orange;
-            -o-box-shadow: 0 0 5px orange;
-            box-shadow: 0 0 5px orange;
-            -webkit-animation-name: breath2;
-        }
 
     </style>
 
@@ -174,7 +108,7 @@
 
     <div id="nav">
     <nav class="navbar">
-        <div class="container">
+        <div class="container col-md-12">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="main.jsp"><img src="img/logo-white.png"
@@ -195,20 +129,22 @@
 
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
                 <ul class="nav navbar-nav navbar-right" id="nav_list">
-                    <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
-                    <li><a href="login.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff;"><b> Log In</b></i></a></li>
+                    <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Contact</b></i></a></li>
+                    <li><a href="login.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Log In</b></i></a></li>
                 </ul>
 
             </div>
             <!-- /.navbar-collapse -->
-            <div class="col-md-9"></div>
-            <div class="col-md-3">
-                <div class="input-group ">
-                    <input type="text" class="form-control" name="fuzzySearchBlog" form="main_control" placeholder="Search for blog posts..."/>
+            <div class="container col-md-12">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+                <div class="input-group " style="padding-top: 20px; padding-right: 15px;">
+                    <input type="text" class="form-control" name="fuzzySearchBlog" form="main_control" placeholder="Search for blog posts or users..."/>
                       <span class="input-group-btn">
                         <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="main_control" onclick="return SearchBlogValidate()"><i class="fa fa-search"></i></button>
                       </span>
                 </div><!-- /input-group -->
+            </div>
             </div>
         </div>
         <!-- /.container -->
@@ -305,8 +241,6 @@
             -->
         </form>
 
-        <div class="breath size2" id="show_hamster">My Hamster</div>
-
         <a id="hamster">
             <object type="application/x-shockwave-flash" style="outline:none;"
                     data="http://cdn.abowman.com/widgets/hamster/hamster.swf?" width="263"
@@ -318,12 +252,6 @@
     </div>
 
 <script language="JavaScript">
-    $(document).ready(function(){
-        $("#show_hamster").click(function(){
-            $("#hamster").toggle();
-        });
-    });
-
     function SearchBlogValidate() {
         if (document.main_control.fuzzySearchBlog.value==""){
             alert("Nothing found!");

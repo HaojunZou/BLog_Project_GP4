@@ -186,7 +186,7 @@
 
     <div id="nav">
         <nav class="navbar">
-            <div class="container">
+            <div class="container col-md-12">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="home.jsp"><img src="img/logo-white.png"
@@ -207,18 +207,18 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse-3">
                     <ul class="nav navbar-nav navbar-right" id="nav_list">
-                        <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown" style="color: #ffffff;"><b> Config my profile</b></i></a></li>
-                        <li><a href="user_change_pwd.jsp"><i class="fa fa-eye animated fadeInDown" style="color: #ffffff;"><b> Change Password</b></i></a></li>
-                        <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff;"><b> Contact</b></i></a></li>
-                        <li><a href="main.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff;"><b> Log Out</b></i></a></li>
+                        <li><a href="user_update_profile.jsp"><i class="fa fa-cog animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Config my profile</b></i></a></li>
+                        <li><a href="user_change_pwd.jsp"><i class="fa fa-eye animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Change Password</b></i></a></li>
+                        <li><a href="contact.jsp"><i class="fa fa-phone animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Contact</b></i></a></li>
+                        <li><a href="main.jsp"><i class="fa fa-sign-out animated fadeInDown" style="color: #ffffff; font-size: 16px;"><b> Log Out</b></i></a></li>
                 </ul>
                 </div><!-- /.navbar-collapse -->
             </div>
-            <div class="container">
-                <div class="col-md-9"></div>
-                <div class="col-md-3">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="fuzzySearchBlog" form="home_control" placeholder="Search for blog posts..."/>
+            <div class="container col-md-12">
+                <div class="col-md-10"></div>
+                <div class="col-md-2">
+                    <div class="input-group" style="padding-top: 20px;">
+                        <input type="text" class="form-control" name="fuzzySearchBlog" form="home_control" placeholder="Search for blog posts or users..."/>
                           <span class="input-group-btn">
                             <button class="btn btn-default" type="submit" name="fuzzySearchAction" value="Fuzzy Search" form="home_control" onclick="return SearchBlogValidate()"><i class="fa fa-search"></i></button>
                           </span>
@@ -273,7 +273,7 @@
                                                 <hr/>
                                                 <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
                                                 <p></p>
-                                                <button type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
+                                                <button style= "padding-top: -10px;"type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                             </div>
                                         </div>
                                     </div>

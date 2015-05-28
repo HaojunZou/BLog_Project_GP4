@@ -54,7 +54,7 @@
     <body background="img/bg-color.jpg">
 
         <div>
-            <a class="navbar-brand" style="font-size:40" href="main.jsp">
+            <a class="navbar-brand" style="font-size: 40px;" href="main.jsp">
                 <img src="img/logo-white.png" style="position:absolute; top:15px; left:15px; width:160px; height:60px;"/>
             </a><br/>
         </div>
