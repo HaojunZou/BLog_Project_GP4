@@ -8,10 +8,10 @@ public class TextFilter {
             value = value.replaceAll("&", "&amp;");
             value = value.replaceAll("<", "&lt;");
             value = value.replaceAll(">", "&gt;");
-            value = value.replaceAll(" ", "&nbsp;");
+            //value = value.replaceAll(" ", "&nbsp;");
             value = value.replaceAll("'", "&#39;");
             value = value.replaceAll("\"", "&quot;");
-            value = value.replaceAll("\n", "&nbsp;");
+            //value = value.replaceAll("\n", "&nbsp;");
         }
         return value;
     }

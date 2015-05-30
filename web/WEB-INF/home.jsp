@@ -20,6 +20,7 @@
 <%@ page import="se.molk.blog.domain.User" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -102,14 +103,6 @@
             position: fixed;
             bottom: 0;
             right: 0;
-        }
-        #blog_editor {
-            /*background-color: #b353c9;
-            box-shadow: 0 0 10px 5px #b353c9;*/
-            color: white;
-            clear: both;
-            text-align: center;
-            padding: 5px;
         }
         .breath {
             right:0;
@@ -232,7 +225,7 @@
 
         <!--LEFT COLUMN, USERS LIST-->
         <div class="col-md-9">
-            <form action="home.jsp" method="post" onSubmit="return checkLength(this)">
+            <form action="home.jsp" method="post">
                 <!-- BLOG POSTS -->
                 <div id="all_posts">
                     <%
@@ -270,6 +263,9 @@
                                                 <%= comment.getCommentBody()%><br/><%}%>
                                                 <hr/>
                                                 <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
+                                            <%--<textarea name="commentBody_<%=i%>" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
+                                            <input type="hidden" name="commentOfPostId_<%=i%>" value="<%=post.getId()%>" form="home_control"/>
+                                            <%request.setAttribute("commentOfPostId_" + Integer.toString(i), post.getId());%>--%>
                                                 <p></p>
                                                 <button style= "padding-top: -10px;" type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                             </div>
@@ -284,12 +280,12 @@
                 <div class="breath">line</div>
 
                 <div id="blog_editor">
-                    <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/>
-                    <textarea name="blogBody" id="blogBody" form="home_control">Write blog here...<br/><br/><br/>
-                        <textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
+                    <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/><br/>
+                    <textarea name="blogBody" id="blogBody" cols="100" rows="20" form="home_control" placeholder="Write blog here..."></textarea><br/><br/><br/>
+                        <%--<textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
                     <script>
                         CKEDITOR.replace("blogBody");
-                    </script>
+                    </script>--%>
                     <button type="submit" name="sendBlogAction" value="Send This Blog" form="home_control" class="btn btn-primary" onclick="return SendBlogValidate()"><i class="fa fa-share"></i> Publish</button>
                 </div>
             </form>
@@ -369,7 +365,7 @@
         }
         /**
      * @return {boolean}
-     */
+    */
     function SendCommentValidate(){
             if (document.home_control.commentBody.value==""){
                 alert("Please enter comment!");

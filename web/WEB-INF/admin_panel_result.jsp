@@ -508,17 +508,17 @@
                     <label>New Post Title
                         <textarea class="form-control" name="newPostTitle" form="execute_form"><%= selectedPost.getTitle() %></textarea>
                     </label>
-                    <script>
+                    <%--<script>
                         CKEDITOR.replace("newPostTitle");
-                    </script>
+                    </script>--%>
                 </div>
                 <div class="col-md-6">
                     <label>New Post Body
-                        <textarea class="form-control" name="newPostBody" cols="60" rows="10" form="execute_form"><%= selectedPost.getBody() %></textarea>
+                        <textarea class="form-control" name="newPostBody" cols="100" rows="20" form="execute_form"><%= selectedPost.getBody() %></textarea>
                     </label>
-                    <script>
+                    <%--<script>
                         CKEDITOR.replace("newPostBody");
-                    </script>
+                    </script>--%>
                 </div>
             </div>
             <br/>

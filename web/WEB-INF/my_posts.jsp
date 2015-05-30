@@ -132,17 +132,13 @@
                 <label>New Post Title
                     <textarea class="form-control" name="newPostTitle" form="my_posts_control"><%= selectedPost.getTitle() %></textarea>
                 </label>
-                <script>
-                    CKEDITOR.replace("newPostTitle");
-                </script>
+
             </div>
             <div class="col-md-6">
                 <label>New Post Body
-                    <textarea class="form-control" name="newPostBody" cols="60" rows="10" form="my_posts_control"><%= selectedPost.getBody() %></textarea>
+                    <textarea class="form-control" name="newPostBody" cols="100" rows="20" form="my_posts_control"><%= selectedPost.getBody() %></textarea>
                 </label>
-                <script>
-                    CKEDITOR.replace("newPostBody");
-                </script>
+
             </div>
         </div>
         <br/>

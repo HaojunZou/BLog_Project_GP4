@@ -148,7 +148,7 @@
 
     <div class="container-fluid"><br/><br/>
         <div class="col-md-9">
-            <form action="main.jsp" method="post" onSubmit="return checkLength(this)">
+            <form action="main.jsp" method="post">
                 <!-- BLOG POSTS -->
                 <div id="all_posts">
                     <%
