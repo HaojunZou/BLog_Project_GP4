@@ -240,35 +240,39 @@
                             <div id="post_list">
                                 <div class="panel">
                                     <div class="panel-heading">
-                                        <div class="text-center">
+                                        <div>
                                             <div class="row">
-                                                <div class="col-sm-9">
-                                                    <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
+                                                <div>
+                                                    <div class="col-sm-9"></div>
+                                                    <div class="col-sm-3">
+                                                        <h4 class="pull-right">
+                                                            <small><em><%= post.getDate() %><br></em></small>
+                                                        </h4>
+                                                    </div>
                                                 </div>
-                                                <div class="col-sm-3">
-                                                    <h4 class="pull-right">
-                                                        <small><em><%= post.getDate() %><br></em></small>
-                                                    </h4>
+                                                <br/>
+                                                <div class="pull-center" style="text-align: center;">
+                                                    <h3><strong><%= post.getTitle() %></strong></h3>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="panel-body">
-                                        <%= post.getBody() %>
+                                        <pre><%= post.getBody() %></pre>
                                         <%--<!-- COMMENT BOX -->
                                         <hr/>
                                         <div>
-                                            <div><p>Comments:</p>
-                                                <%for(Comment comment : commentLinkedList) {%>
-                                                <%= comment.getCommentBody()%><br/><%}%>
-                                                <hr/>
-                                                <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
-                                            &lt;%&ndash;<textarea name="commentBody_<%=i%>" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
-                                            <input type="hidden" name="commentOfPostId_<%=i%>" value="<%=post.getId()%>" form="home_control"/>
-                                            <%request.setAttribute("commentOfPostId_" + Integer.toString(i), post.getId());%>&ndash;%&gt;
-                                                <p></p>
-                                                <button style= "padding-top: -10px;" type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
-                                            </div>
+                                        <div><p>Comments:</p>
+                                            <%for(Comment comment : commentLinkedList) {%>
+                                            <%= comment.getCommentBody()%><br/><%}%>
+                                            <hr/>
+                                            <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
+                                        &lt;%&ndash;<textarea name="commentBody_<%=i%>" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
+                                        <input type="hidden" name="commentOfPostId_<%=i%>" value="<%=post.getId()%>" form="home_control"/>
+                                        <%request.setAttribute("commentOfPostId_" + Integer.toString(i), post.getId());%>&ndash;%&gt;
+                                            <p></p>
+                                            <button style= "padding-top: -10px;" type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
+                                        </div>
                                         </div>--%>
                                     </div>
                                 </div>
@@ -277,20 +281,30 @@
                     </div>
                     <br/><%}%>
                 </div>
-                <div class="breath">line</div>
 
-                <div id="blog_editor">
-                    <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/><br/>
-                    <textarea name="blogBody" id="blogBody" cols="100" rows="20" form="home_control" placeholder="Write blog here..."></textarea><br/><br/><br/>
-                    <%--<textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
-                <script>
-                    CKEDITOR.replace("blogBody");
-                </script>--%>
-                    <button type="submit" name="sendBlogAction" value="Send This Blog" form="home_control" class="btn btn-primary" onclick="return SendBlogValidate()"><i class="fa fa-share"></i> Publish</button>
+
+                <!-- BLOG EDITOR -->
+                <div id="blog_editor" style="text-align:center;">
+                    <div class="breath">line</div>
+                    <table style="margin:auto;">
+                        <tr><th>
+                            <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/><b
+                        </th></tr>
+                        <tr><td>
+                            <textarea name="blogBody" id="blogBody" cols="100" rows="20" form="home_control" placeholder="Write blog here..."></textarea><br/><br/>
+                            <%--<textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
+                            <script>
+                                CKEDITOR.replace("blogBody");
+                            </script>--%>
+                        </td></tr>
+                        <tr><td>
+                            <button type="submit" name="sendBlogAction" value="Send This Blog" form="home_control" class="btn btn-primary" onclick="return SendBlogValidate()"><i class="fa fa-share"></i> Publish</button>
+                        </td></tr>
+                    </table>
                 </div>
+                <br/>
             </form>
         </div>
-        <br/>
 
         <!-- RIGHT COLUMN, USER LIST, FLASH GAME -->
         <div class="col-md-3 animated bounceInRight">

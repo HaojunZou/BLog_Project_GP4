@@ -163,21 +163,25 @@
                             <div id="post_list">
                                 <div class="panel">
                                     <div class="panel-heading">
-                                        <div class="text-center">
+                                        <div>
                                             <div class="row">
-                                                <div class="col-sm-9">
-                                                    <h3 class="pull-left"><th><%= post.getTitle() %></th></h3>
+                                                <div>
+                                                    <div class="col-sm-9"></div>
+                                                    <div class="col-sm-3">
+                                                        <h4 class="pull-right">
+                                                            <small><em><%= post.getDate() %><br></em></small>
+                                                        </h4>
+                                                    </div>
                                                 </div>
-                                                <div class="col-sm-3">
-                                                    <h4 class="pull-right">
-                                                        <small><em><%= post.getDate() %><br></em></small>
-                                                    </h4>
+                                                <br/>
+                                                <div class="pull-center" style="text-align: center;">
+                                                    <h3><strong><%= post.getTitle() %></strong></h3>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="panel-body">
-                                        <%= post.getBody() %>
+                                        <pre><%= post.getBody() %></pre>
                                         <%--<!-- COMMENT BOX -->
                                         <hr/>
                                         <div>
