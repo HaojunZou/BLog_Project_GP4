@@ -221,7 +221,7 @@
             </div>
         </div>
 
-        <form action="/blog/MainControl" method="post" name="main_control" id="main_control" onSubmit="return checkLength(this)">
+        <form action="/blog/MainControl" method="post" name="main_control" id="main_control">
             <!--
             <select name="category">
                 <option value=""></option>
@@ -242,23 +242,22 @@
             return false;
         }
     }
-    function SendCommentValidate(){
+/*    function SendCommentValidate(){
         if (document.main_control.commentBody.value==""){
             alert("Please enter comment!");
             document.main_control.commentBody.focus();
             return false;
         }
-    }
+    }*/
     function checkLength(form){
         if (form.fuzzySearchBlog.value.length > 100){
             alert("Text too long. Must be 100 characters or less");
             return false;
         }
-        if (form.commentBody.value.length > 200){
+/*        if (form.commentBody.value.length > 200){
             alert("Text too long. Must be 200 characters or less");
             return false;
-        }
-        return true;
+        }*/
     }
 
 </script>

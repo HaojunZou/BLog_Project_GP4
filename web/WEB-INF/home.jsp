@@ -314,7 +314,7 @@
         </div>
     </div>
 
-    <form action="/blog/HomeControl" method="post" name="home_control" id="home_control" onSubmit="return checkLength(this)">
+    <form action="/blog/HomeControl" method="post" name="home_control" id="home_control" onsubmit="return checkLength(this)">
         <%session.setAttribute("blogUserName", currentUserName);%>
         <!--
         <select name="category">
@@ -367,22 +367,22 @@
         /**
      * @return {boolean}
     */
-    function SendCommentValidate(){
+/*    function SendCommentValidate(){
             if (document.home_control.commentBody.value==""){
                 alert("Please enter comment!");
                 document.home_control.commentBody.focus();
                 return false;
             }
-        }
+        }*/
     function checkLength(form){
         if (form.fuzzySearchBlog.value.length > 100){
             alert("Text too long. Must be 100 characters or less");
             return false;
         }
-        if (form.commentBody.value.length > 200){
+        /*if (form.commentBody.value.length > 200){
             alert("Text too long. Must be 200 characters or less");
             return false;
-        }
+        }*/
         if (form.blogTitle.value.length > 100){
             alert("Text too long. Must be 100 characters or less");
             return false;
@@ -391,7 +391,6 @@
             alert("Text too long. Must be 2000 characters or less");
             return false;
         }
-        return true;
     }
 
 </script>
