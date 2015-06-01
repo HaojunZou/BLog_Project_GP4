@@ -85,7 +85,7 @@
             </div>
             <br/>
             <div class="container" style="text-align: center;">
-                <a href="contact.jsp" style="color: #ffffff;" role="button">Forgot your password? Contact us...</a><br/><br/>
+                <a href="contact.jsp" style="color: #ffffff;" role="button">Forgot your user name or password? Contact us...</a><br/><br/>
                 <input type="submit" class="btn btn-primary btn-lg animated flip" value="Log In"/>
                 <input type="submit" class="btn btn-success btn-lg animated flip" value="Sign Up" form="sign_up_form"/>
                 <a href="main.jsp" class="btn btn-info btn-lg animated flip" role="button">Back To Main</a>

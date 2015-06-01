@@ -29,6 +29,10 @@ public class UserService {
         return userDAO.getUserIdByUserName(userName);
     }
 
+    public User getUserById(int user_id) throws SQLException{
+        return userDAO.getUserById(user_id);
+    }
+
     public int logIn(String userName, String userPassword) throws SQLException {
         String userType = userDAO.logIn(userName, userPassword);
         int getUserType;

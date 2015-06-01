@@ -54,6 +54,7 @@ public class Home extends HttpServlet {
             HttpSession session = request.getSession();
             request.setAttribute("comments", comments);
             session.setAttribute("users", users);
+
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
             dispatcher.forward(request, response);
         } catch (Exception e) {

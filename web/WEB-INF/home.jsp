@@ -255,7 +255,7 @@
                                     </div>
                                     <div class="panel-body">
                                         <%= post.getBody() %>
-                                        <!-- COMMENT BOX -->
+                                        <%--<!-- COMMENT BOX -->
                                         <hr/>
                                         <div>
                                             <div><p>Comments:</p>
@@ -263,13 +263,13 @@
                                                 <%= comment.getCommentBody()%><br/><%}%>
                                                 <hr/>
                                                 <textarea name="commentBody" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
-                                            <%--<textarea name="commentBody_<%=i%>" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
+                                            &lt;%&ndash;<textarea name="commentBody_<%=i%>" placeholder="Your Comment..." cols="60" rows="3" form="home_control"></textarea>
                                             <input type="hidden" name="commentOfPostId_<%=i%>" value="<%=post.getId()%>" form="home_control"/>
-                                            <%request.setAttribute("commentOfPostId_" + Integer.toString(i), post.getId());%>--%>
+                                            <%request.setAttribute("commentOfPostId_" + Integer.toString(i), post.getId());%>&ndash;%&gt;
                                                 <p></p>
                                                 <button style= "padding-top: -10px;" type="submit" name="sentCommentAction" value="Send Comment" form="home_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                             </div>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                 </div>
                             </div>
@@ -282,14 +282,15 @@
                 <div id="blog_editor">
                     <input type="text" class="form-control" name="blogTitle" id="blogTitle" form="home_control" placeholder="Title"/><br/>
                     <textarea name="blogBody" id="blogBody" cols="100" rows="20" form="home_control" placeholder="Write blog here..."></textarea><br/><br/><br/>
-                        <%--<textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
-                    <script>
-                        CKEDITOR.replace("blogBody");
-                    </script>--%>
+                    <%--<textarea style="text-align: right" form="home_control"><%= currentUserName%></textarea></textarea><br/>
+                <script>
+                    CKEDITOR.replace("blogBody");
+                </script>--%>
                     <button type="submit" name="sendBlogAction" value="Send This Blog" form="home_control" class="btn btn-primary" onclick="return SendBlogValidate()"><i class="fa fa-share"></i> Publish</button>
                 </div>
             </form>
         </div>
+        <br/>
 
         <!-- RIGHT COLUMN, USER LIST, FLASH GAME -->
         <div class="col-md-3 animated bounceInRight">

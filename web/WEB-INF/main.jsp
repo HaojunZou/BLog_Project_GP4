@@ -178,7 +178,7 @@
                                     </div>
                                     <div class="panel-body">
                                         <%= post.getBody() %>
-                                        <!-- COMMENT BOX -->
+                                        <%--<!-- COMMENT BOX -->
                                         <hr/>
                                         <div>
                                             <div><p><b>Comments:</b></p>
@@ -189,7 +189,7 @@
                                                 <p></p>
                                                 <button type="submit" name="sentCommentAction" value="Send Comment" form="main_control" class="btn btn-success green"><i class="fa fa-share"></i> Send</button>
                                             </div>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                 </div>
                             </div>
