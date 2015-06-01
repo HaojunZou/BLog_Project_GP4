@@ -101,7 +101,7 @@
 <section><p></p>
     <ul id='services'>
         <li>
-            <a href="mailto: blog@gmail.com"><div class='fa fa-envelope-o'></div></a>
+            <a href="mailto: haojunzou84@gmail.com"><div class='fa fa-envelope-o'></div></a>
             <span>E-mail Us</span>
         </li>
         <li>
