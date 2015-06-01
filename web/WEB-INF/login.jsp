@@ -2,7 +2,7 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="utf-8"%>
 
 <!DOCTYPE html>
 <html>

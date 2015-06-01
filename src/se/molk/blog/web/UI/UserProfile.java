@@ -16,6 +16,8 @@ public class UserProfile extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         UserDAO user = null;
         try {
             user = new UserDAO();

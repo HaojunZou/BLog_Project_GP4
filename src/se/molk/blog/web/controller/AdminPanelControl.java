@@ -20,6 +20,9 @@ import java.util.List;
 @WebServlet("/AdminPanelControl")
 public class AdminPanelControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
         UserDAO user = null;
         PostDAO post = null;
         try {

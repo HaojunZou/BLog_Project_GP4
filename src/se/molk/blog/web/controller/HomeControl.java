@@ -24,6 +24,8 @@ public class HomeControl extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
         PostDAO post = null;
@@ -47,7 +49,9 @@ public class HomeControl extends HttpServlet {
         String sendBlogAction = request.getParameter("sendBlogAction");
         String fuzzySearchBlog = request.getParameter("fuzzySearchBlog");
         String blogTitle = textFilter.filterHtml(request.getParameter("blogTitle"));
-        String blogBody = textFilter.filterHtml(request.getParameter("blogBody")) + " --- " + session.getAttribute("blogUserName");
+        String blogBody = textFilter.filterHtml(request.getParameter("blogBody")) +
+                "\n\n ———————————————————————————————— \n Author: " +
+                session.getAttribute("blogUserName");
         String blogUserName = (String) session.getAttribute("blogUserName");
         String commentBody = textFilter.filterHtml(request.getParameter("commentBody"));
 

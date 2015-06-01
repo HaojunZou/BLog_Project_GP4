@@ -4,7 +4,7 @@
     session.setAttribute("userName", currentUserName);
     User userInfo = (User) request.getAttribute("userInfo");
 %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="utf-8"%>
 <html>
 <head>
     <title>My Profile</title>
